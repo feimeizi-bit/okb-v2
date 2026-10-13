@@ -186,7 +186,8 @@ def build_report(run_dirs, paper_rows, *, thr_n=10, thr_cov=0.8, sensitivity=Fal
             if miss or ext:
                 problems.append(f"{d}/{ag}: 缺行 {sorted(miss)[:5]} 多行 {sorted(ext)[:5]}")
         for ag, got in sorted(by_agent.items()):
-            entry = {"label": f"{os.path.basename(d.rstrip('/\\'))}/{ag}", "dir": d, "agent": ag,
+            run_base = os.path.basename(d.rstrip("/\\"))
+            entry = {"label": f"{run_base}/{ag}", "dir": d, "agent": ag,
                      "dims": {}, "overall": {}}
             for dim in DIMS:
                 lst = [r for _k, r in sorted(got.items()) if dim_of.get(r["sample_id"]) == dim]

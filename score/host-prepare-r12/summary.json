@@ -1,0 +1,44 @@
+{
+  "format": "okb-four-layer-v2",
+  "mode": "prepare",
+  "tasks": 552,
+  "evidence_valid": 552,
+  "assessed": 32,
+  "unassessable": 520,
+  "comparison": {
+    "not_comparable": 536,
+    "same": 12,
+    "different": 4
+  },
+  "distribution": {
+    "wrongly_reused": 6,
+    "omitted": 10
+  },
+  "attempted_requests": 0,
+  "cache_hits": 0,
+  "model": null,
+  "inputs_unchanged": true,
+  "extra_replay_records": 0,
+  "formal_quota_accepted": 0,
+  "release_authorized": false,
+  "semantic_reliability_validated": false,
+  "limits": [
+    "request/citation validity is not semantic truth",
+    "prepare never makes semantic passes",
+    "no official scores; explicit authored plan may differ from original rubric",
+    "human review separate; no inherited old kappa",
+    "tiered scoped gate: memory conclusions carry evidence tier T0-T3, none of which is independent-instance verification; absent memory evidence (T0) or any contradiction still blocks the task"
+  ],
+  "task_outcomes": {
+    "unassessable": 520,
+    "fail": 32
+  },
+  "classification_resolved": 16,
+  "legacy_report_compatible": false,
+  "evidence_policy": "scoped-v2",
+  "dependency_reasons": {},
+  "evidence_tiers": {
+    "T2_bound_snapshot": 546
+  },
+  "artifact_representations": {}
+}

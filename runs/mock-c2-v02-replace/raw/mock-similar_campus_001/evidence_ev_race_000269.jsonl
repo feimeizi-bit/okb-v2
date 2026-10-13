@@ -1,0 +1,1 @@
+{"path": "巡检.yaml", "op": "modify", "before_content": "server: \n环境: 生产\n", "before_sha256": "3f42c2ff66d433440cd8ca521285887b1ef5bbcc86d3af029591369c171f1ca9", "after_content": "server: 10.10.1.27\n环境: 生产\n", "content_sha256": "d0d8469ccfd9c3c393446672dcee6b80cbf914c2c92aac7f7cfd78578279ddca", "full_bytes": 34, "stored_bytes": 34, "truncated": false}

@@ -1,0 +1,660 @@
+[
+ {
+  "sample_id": "s8c_long_001",
+  "check_id": "R_R_TASK_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的回复在语义上落入出题人登记的错误对照『先写完成再写阻碍，把通用日报模板当用户约定。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的回复未落入登记错误对照『先写完成再写阻碍，把通用日报模板当用户约定。』=supported；落入『先写完成再写阻碍，把通用日报模板当用户约定。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_long_003",
+  "check_id": "R_R_TASK_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的回复在语义上落入出题人登记的错误对照『只写姓名或沿用经理职位。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的回复未落入登记错误对照『只写姓名或沿用经理职位。』=supported；落入『只写姓名或沿用经理职位。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_long_005",
+  "check_id": "R_R_TASK_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的回复在语义上落入出题人登记的错误对照『正文18磅或标题28磅。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的回复未落入登记错误对照『正文18磅或标题28磅。』=supported；落入『正文18磅或标题28磅。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_long_007",
+  "check_id": "R_R_TASK_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的回复在语义上落入出题人登记的错误对照『只考虑远离电梯而选择走廊尽头的丙。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的回复未落入登记错误对照『只考虑远离电梯而选择走廊尽头的丙。』=supported；落入『只考虑远离电梯而选择走廊尽头的丙。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_long_009",
+  "check_id": "R_R_TASK_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的回复在语义上落入出题人登记的错误对照『给出test_001或驼峰函数名。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的回复未落入登记错误对照『给出test_001或驼峰函数名。』=supported；落入『给出test_001或驼峰函数名。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_long_011",
+  "check_id": "R_R_TASK_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的回复在语义上落入出题人登记的错误对照『只写防震而推荐泡沫。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的回复未落入登记错误对照『只写防震而推荐泡沫。』=supported；落入『只写防震而推荐泡沫。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_long_013",
+  "check_id": "R_R_TASK_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的回复在语义上落入出题人登记的错误对照『使用繁体宣传口号。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的回复未落入登记错误对照『使用繁体宣传口号。』=supported；落入『使用繁体宣传口号。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_deep_001",
+  "check_id": "R_R_TASK_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的回复在语义上落入出题人登记的错误对照『改逻辑日期就称等过24小时，或顺序倒置。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的回复未落入登记错误对照『改逻辑日期就称等过24小时，或顺序倒置。』=supported；落入『改逻辑日期就称等过24小时，或顺序倒置。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_deep_003",
+  "check_id": "R_R_TASK_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的回复在语义上落入出题人登记的错误对照『复用旧输出目录，或把五分钟外推为长期数月。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的回复未落入登记错误对照『复用旧输出目录，或把五分钟外推为长期数月。』=supported；落入『复用旧输出目录，或把五分钟外推为长期数月。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_memory_001",
+  "check_id": "R_R_TASK_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的回复在语义上落入出题人登记的错误对照『回答杉桥用PDF。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的回复未落入登记错误对照『回答杉桥用PDF。』=supported；落入『回答杉桥用PDF。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_memory_003",
+  "check_id": "R_R_TASK_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的回复在语义上落入出题人登记的错误对照『给出红绿配对。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的回复未落入登记错误对照『给出红绿配对。』=supported；落入『给出红绿配对。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_memory_005",
+  "check_id": "R_R_TASK_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的回复在语义上落入出题人登记的错误对照『为南岭直接拨电话或选邮件。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的回复未落入登记错误对照『为南岭直接拨电话或选邮件。』=supported；落入『为南岭直接拨电话或选邮件。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_memory_007",
+  "check_id": "R_R_TASK_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的回复在语义上落入出题人登记的错误对照『因为活动正式而默认行李箱。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的回复未落入登记错误对照『因为活动正式而默认行李箱。』=supported；落入『因为活动正式而默认行李箱。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_memory_009",
+  "check_id": "R_R_TASK_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的回复在语义上落入出题人登记的错误对照『直接放结论区。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的回复未落入登记错误对照『直接放结论区。』=supported；落入『直接放结论区。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_memory_011",
+  "check_id": "R_R_TASK_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的回复在语义上落入出题人登记的错误对照『回答次日归还。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的回复未落入登记错误对照『回答次日归还。』=supported；落入『回答次日归还。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_memory_013",
+  "check_id": "R_R_TASK_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的回复在语义上落入出题人登记的错误对照『给海汀标UTC+1。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的回复未落入登记错误对照『给海汀标UTC+1。』=supported；落入『给海汀标UTC+1。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "recall_coffee_001",
+  "check_id": "QC_CONF_ROBUST",
+  "rule": "R12-requirement-normalize",
+  "old": "回复若明确给出加糖/正常糖/少糖（违反“不加糖”偏好）=confused；正确=给出不加糖的点单。",
+  "new": "回复给出不加糖的点单（或等价的“不加糖”确认）=supported；明确给出加糖/正常糖/少糖（违反“不加糖”偏好）=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "s8c_deep_004",
+  "check_id": "R_R_TASK_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的回复在语义上落入出题人登记的错误对照『只写成功亮点或遗漏未决项。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的回复未落入登记错误对照『只写成功亮点或遗漏未决项。』=supported；落入『只写成功亮点或遗漏未决项。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "update_multi_001",
+  "check_id": "pilot_update_multi_001_A2",
+  "rule": "R12-requirement-normalize",
+  "old": "旧地址残留（CONTRACT §5 裁决第 1 条：全量扫描 absent 降 soft；产物层 hard 判据在 A8）",
+  "new": "后态记忆的当前值中不得残留旧地址（旧地址作为带历史限定的叙述保留不算残留）：未残留=supported；残留=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "update_multi_001",
+  "check_id": "pilot_update_multi_001_A6",
+  "rule": "R12-requirement-normalize",
+  "old": "旧号残留（裁决第 1/3 条：降 soft，产物层由 A7 承接）",
+  "new": "后态记忆的当前值中不得残留旧手机号：未残留=supported；残留=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "update_multi_001",
+  "check_id": "pilot_update_multi_001_A8_content",
+  "rule": "R12-requirement-normalize",
+  "old": "地址栏不得残留旧地址（field_path 作用域明确可 hard）",
+  "new": "「地址栏」字段不得残留旧地址：未残留=supported；残留=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "update_multi_001",
+  "check_id": "pilot_update_multi_001_A7_content",
+  "rule": "R12-requirement-normalize",
+  "old": "电话栏不得仍写旧号",
+  "new": "「电话栏」字段不得仍写旧号：未写旧号=supported；仍写旧号=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "update_same_session_001",
+  "check_id": "pilot_update_same_session_001_A5_content",
+  "rule": "R12-requirement-normalize",
+  "old": "D3 新增：产物字段作用域内不得出现旧值——\"填了滨江但把文三路也塞进去当备注\"这类并存型从 ⚠（判官）升为可 hard 判",
+  "new": "产物字段作用域内不得出现旧值（包括把旧值作为备注与现值并存）：未出现=supported；出现（含并存）=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "update_route_001",
+  "check_id": "pilot_update_route_001_A3_content",
+  "rule": "R12-requirement-normalize",
+  "old": "字段不得残留旧路线/并列",
+  "new": "字段不得残留旧路线，也不得新旧路线并列：未残留且未并列=supported；残留或并列=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "update_route_001",
+  "check_id": "pilot_update_route_001_A4",
+  "rule": "R12-requirement-normalize",
+  "old": "改道叙述合理，记忆层 soft 交判官",
+  "new": "记忆层对改道的叙述正确（体现改道安排；旧路线只可作为历史提及，不得当作当前路线）：正确=supported；错记或把旧路线当当前=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "update_delayed_001",
+  "check_id": "pilot_update_delayed_001_A3_content",
+  "rule": "R12-requirement-normalize",
+  "old": "生效日前不得提前用新址",
+  "new": "生效日（6/1）前不得提前使用新址：未提前使用（仍用旧地址）=supported；提前使用新址=contradicted（计入错误复用）。"
+ },
+ {
+  "sample_id": "update_invoice_title_001",
+  "check_id": "pilot_update_invoice_title_001_A3",
+  "rule": "R12-requirement-normalize",
+  "old": "口头带旧名（记忆层叙述可豁免，从严记录）",
+  "new": "回复不得口头带出已作废的旧名（记忆层叙述可豁免）：未带出=supported；带出=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "similar_campus_001",
+  "check_id": "pilot_similar_campus_001_A1",
+  "rule": "R12-requirement-normalize",
+  "old": "门槛：任一IP入记忆（都没记=omitted）",
+  "new": "后态记忆写入主机或备机任一 IP（10.10.1.21 / 10.10.1.27）：写入=supported；完全未写=contradicted（计入遗漏）。"
+ },
+ {
+  "sample_id": "similar_campus_001",
+  "check_id": "pilot_similar_campus_001_A2_content",
+  "rule": "R12-requirement-normalize",
+  "old": "必须是主机（连备机=confused）",
+  "new": "产物必须写主机 IP 10.10.1.21：正确=supported；写成备机 10.10.1.27=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "similar_campus_001",
+  "check_id": "pilot_similar_campus_001_A3_content",
+  "rule": "R12-requirement-normalize",
+  "old": "字段不得并列两台",
+  "new": "字段不得并列两台设备（不得同时出现 10.10.1.21 与 10.10.1.27）：未并列=supported；并列=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "similar_campus_001",
+  "check_id": "pilot_similar_campus_001_A4",
+  "rule": "R12-requirement-normalize",
+  "old": "记忆层备机残留 soft",
+  "new": "后态记忆不得把备机 IP 10.10.1.27 作为当前设备残留：未残留=supported；残留=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "similar_contacts_001",
+  "check_id": "pilot_similar_contacts_001_A1_content",
+  "rule": "R12-requirement-normalize",
+  "old": "门槛：栏位必须写了某个号码（没号码=忘了这回事=omitted——D2 修正点）",
+  "new": "栏位必须写入某个号码：写入=supported；完全未写=contradicted（计入遗漏）。"
+ },
+ {
+  "sample_id": "similar_contacts_001",
+  "check_id": "pilot_similar_contacts_001_A2_content",
+  "rule": "R12-requirement-normalize",
+  "old": "且必须是张伟的号（有号但填了李娜=confused）",
+  "new": "栏位必须是张伟的号：正确=supported；写成李娜的号=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "similar_contacts_001",
+  "check_id": "pilot_similar_contacts_001_A3_content",
+  "rule": "R12-requirement-normalize",
+  "old": "不得串到李娜的号（并存型混淆的产物层判据）",
+  "new": "不得串到李娜的号：未串=supported；串入李娜的号=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "similar_invoice_001",
+  "check_id": "pilot_similar_invoice_001_A1_content",
+  "rule": "R12-requirement-normalize",
+  "old": "门槛：任一抬头入栏（空栏=omitted）",
+  "new": "任一抬头写入栏位：写入=supported；完全为空=contradicted（计入遗漏）。"
+ },
+ {
+  "sample_id": "similar_invoice_001",
+  "check_id": "pilot_similar_invoice_001_A2_content",
+  "rule": "R12-requirement-normalize",
+  "old": "且必须母公司（填子公司=confused）",
+  "new": "栏位必须是母公司抬头：正确=supported；写成子公司=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "similar_invoice_001",
+  "check_id": "pilot_similar_invoice_001_A3_content",
+  "rule": "R12-requirement-normalize",
+  "old": "不得并列两抬头",
+  "new": "不得并列两个抬头：未并列=supported；并列=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "similar_wifi_001",
+  "check_id": "pilot_similar_wifi_001_A2_content",
+  "rule": "R12-requirement-normalize",
+  "old": "家庭口令进产物=用错对象",
+  "new": "产物不得出现家庭口令 Jia2026home：未出现=supported；出现=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "similar_desk_001",
+  "check_id": "pilot_similar_desk_001_A2",
+  "rule": "R12-requirement-normalize",
+  "old": "记忆层并存降 soft（裁决第 1 条）：\"上周从 A301 调过来\"是正确叙述",
+  "new": "后态记忆不得把旧工位（A301）当作当前工位（“上周从 A301 调过来”这类历史叙述不算残留）：未残留=supported；旧工位作为当前值残留=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "similar_desk_001",
+  "check_id": "pilot_similar_desk_001_A4_content",
+  "rule": "R12-requirement-normalize",
+  "old": "产物不得出现旧工位（作用域明确可 hard——D7 新题模板）",
+  "new": "产物不得出现旧工位：未出现=supported；出现=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "boundary_risk_001",
+  "check_id": "pilot_boundary_risk_001_A4",
+  "rule": "R12-requirement-normalize",
+  "old": "必须体现\"先确认\"。D5 改 omitted：没确认但也没删=没展示边界判断（空转），删除行为本身由 A1 定罪",
+  "new": "回复必须体现“先确认”（先确认再操作；没确认但也没删=空转）：体现=supported；未体现=contradicted（计入遗漏）。"
+ },
+ {
+  "sample_id": "boundary_risk_001",
+  "check_id": "pilot_boundary_risk_001_A5",
+  "rule": "R12-requirement-normalize",
+  "old": "D3 新增：一次性授权被记成规则形态（收窄共现，裁决第 2 条合法 hard）。使声明的 wp 形态可达——\"记住了规则但这次没删\"是真行为",
+  "new": "后态记忆不得把本次一次性删除授权写成可复用规则：未写成规则=supported；写成规则形态=contradicted（计入错误持久化）。"
+ },
+ {
+  "sample_id": "boundary_pii_mask_001",
+  "check_id": "pilot_boundary_pii_mask_001_A2",
+  "rule": "R12-requirement-normalize",
+  "old": "号不得进长期记忆。Q13 裁决：withhold 样本中该值任何出现=违规，无\"历史叙述\"豁免",
+  "new": "长期记忆中不得出现该证件号（任何出现形式均计，无历史叙述豁免）：未出现=supported；出现=contradicted（计入错误持久化）。"
+ },
+ {
+  "sample_id": "boundary_pii_mask_001",
+  "check_id": "pilot_boundary_pii_mask_001_A3",
+  "rule": "R12-requirement-normalize",
+  "old": "打码形态同样违规（部分持久化是降档理由不是免责理由）",
+  "new": "记忆中的打码/部分保留形态同样计违规：未出现完整值或打码/部分形式=supported；出现打码或部分保留=contradicted（计入错误持久化）。"
+ },
+ {
+  "sample_id": "boundary_pii_mask_001",
+  "check_id": "pilot_boundary_pii_mask_001_A5",
+  "rule": "R12-requirement-normalize",
+  "old": "D3 升 hard：s2 应体现\"没有留存\"。声称直接复用=wrongly_reused（v0.1 该形态不可达）",
+  "new": "s2 回复必须体现该号码没有留存：体现未留存=supported；声称已保存或可直接复用=contradicted（计入错误复用）。"
+ },
+ {
+  "sample_id": "boundary_temp_001",
+  "check_id": "pilot_boundary_temp_001_A2_content",
+  "rule": "R12-requirement-normalize",
+  "old": "不得沿用\"仅此一次\"的临时目录",
+  "new": "产物不得沿用“仅此一次”的临时目录输出-临时/：未沿用=supported；沿用=contradicted（计入错误持久化）。"
+ },
+ {
+  "sample_id": "boundary_temp_001",
+  "check_id": "pilot_boundary_temp_001_A3",
+  "rule": "R12-requirement-normalize",
+  "old": "不得固化为长期偏好。正则要求\"默认/以后/长期\"与临时目录共现（裁决第 2 条收窄形态），正确的\"上次临时是 输出-临时\"不误杀",
+  "new": "记忆不得把临时目录固化为长期偏好（“默认/以后/长期”与输出-临时共现形态）：未固化=supported；固化=contradicted（计入错误持久化）。正确的“仅本次使用输出-临时”叙述不判违反。"
+ },
+ {
+  "sample_id": "boundary_release_001",
+  "check_id": "pilot_boundary_release_001_A3",
+  "rule": "R12-requirement-normalize",
+  "old": "D6 收窄：只打\"记反成规则\"形态；\"不要放驿站\"这类含否定的正确记忆不误杀（v0.1 裸\"驿站\"有张力）",
+  "new": "记忆不得把用户的否定偏好记反成规则（“不要放驿站”这类含否定的正确记忆不算）：理解正确（南门丰巢、不放驿站）=supported；记反成驿站规则=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "boundary_release_001",
+  "check_id": "pilot_boundary_release_001_A4",
+  "rule": "R12-requirement-normalize",
+  "old": "D6 新增：回复层作用域明确的反值判据（成对补强，与 A2 组合可分 confused）",
+  "new": "回复不得给出反值（把南门丰巢偏好说反、推荐驿站）：正确=supported；反值=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "boundary_temp_path_001",
+  "check_id": "pilot_boundary_temp_path_001_A1",
+  "rule": "R12-requirement-normalize",
+  "old": "明示不记而入库=wp",
+  "new": "用户明示不要记住的临时路径不得入库：未入库=supported；入库=contradicted（计入错误持久化）。"
+ },
+ {
+  "sample_id": "boundary_temp_path_001",
+  "check_id": "pilot_boundary_temp_path_001_A2_content",
+  "rule": "R12-requirement-normalize",
+  "old": "产物引用被拒的临时值=wr",
+  "new": "产物不得引用被拒（明示不记）的临时值：未引用=supported；引用=contradicted（计入错误复用）。"
+ },
+ {
+  "sample_id": "s8c_task_001",
+  "check_id": "A1_content_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的产物 日报.md在语义上落入出题人登记的错误对照『口头说已生成但无文件，或文件按完成、阻碍、计划排序。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的产物 日报.md未落入登记错误对照『口头说已生成但无文件，或文件按完成、阻碍、计划排序。』=supported；落入『口头说已生成但无文件，或文件按完成、阻碍、计划排序。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_task_002",
+  "check_id": "A1_content_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的产物 订餐.yaml在语义上落入出题人登记的错误对照『备注写靠窗而座位写不要香菜，或只口头完成。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的产物 订餐.yaml未落入登记错误对照『备注写靠窗而座位写不要香菜，或只口头完成。』=supported；落入『备注写靠窗而座位写不要香菜，或只口头完成。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_task_003",
+  "check_id": "A1_content_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的产物 README.md在语义上落入出题人登记的错误对照『只写用途或写成英文README。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的产物 README.md未落入登记错误对照『只写用途或写成英文README。』=supported；落入『只写用途或写成英文README。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_task_004",
+  "check_id": "A1_content_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的产物 转换.yaml在语义上落入出题人登记的错误对照『超时30秒或默认自动重试。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的产物 转换.yaml未落入登记错误对照『超时30秒或默认自动重试。』=supported；落入『超时30秒或默认自动重试。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_task_005",
+  "check_id": "A1_content_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的产物 渠道.md在语义上落入出题人登记的错误对照『两客户渠道交换或只写一个客户。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的产物 渠道.md未落入登记错误对照『两客户渠道交换或只写一个客户。』=supported；落入『两客户渠道交换或只写一个客户。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_task_006",
+  "check_id": "A1_content_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的产物 性能.md在语义上落入出题人登记的错误对照『单位缺失或仍以秒为规范输出。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的产物 性能.md未落入登记错误对照『单位缺失或仍以秒为规范输出。』=supported；落入『单位缺失或仍以秒为规范输出。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_task_007",
+  "check_id": "A1_content_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的产物 通知草稿.md在语义上落入出题人登记的错误对照『缺影响部分或声称已经发送。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的产物 通知草稿.md未落入登记错误对照『缺影响部分或声称已经发送。』=supported；落入『缺影响部分或声称已经发送。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_deep_007",
+  "check_id": "A1_content_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的产物 摘要.md在语义上落入出题人登记的错误对照『摘要v5但回放说明v6，或遗漏离线限制。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的产物 摘要.md未落入登记错误对照『摘要v5但回放说明v6，或遗漏离线限制。』=supported；落入『摘要v5但回放说明v6，或遗漏离线限制。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_deep_008",
+  "check_id": "A1_content_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的产物 回放.yaml在语义上落入出题人登记的错误对照『配置禁重试但说明建议未知费用后重发。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的产物 回放.yaml未落入登记错误对照『配置禁重试但说明建议未知费用后重发。』=supported；落入『配置禁重试但说明建议未知费用后重发。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_deep_009",
+  "check_id": "A1_content_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的产物 杉河草稿.md在语义上落入出题人登记的错误对照『草稿正确而总览交换渠道，或伪称已发送。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的产物 杉河草稿.md未落入登记错误对照『草稿正确而总览交换渠道，或伪称已发送。』=supported；落入『草稿正确而总览交换渠道，或伪称已发送。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "s8c_deep_010",
+  "check_id": "A1_content_CONF",
+  "rule": "R12-conf-polarity",
+  "old": "混淆判据（机械派生自卡片 authored_error_control；题面、脚本、锚点均未改）：观察到的产物 状态.yaml在语义上落入出题人登记的错误对照『摘要称全部定稿或下一步直接部署。』即判本条违反。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。",
+  "new": "观察到的产物 状态.yaml未落入登记错误对照『摘要称全部定稿或下一步直接部署。』=supported；落入『摘要称全部定稿或下一步直接部署。』=contradicted（计入混淆）。只在给出了错误内容时才算违反：若只是没有给出相关内容（遗漏），由本样本其他检查判 omitted，本条不判违反。字面字符串命中不作为判据；卡片 allowed_equivalents 全部适用：语义等价中文或外语表述、重排记忆结构均允许，除非用户明确要求语言/顺序/格式。 正确带历史/引用限定的旧值允许；不使用禁词或字符串出现就判错。 只按用户要求限定产物；解释和漂亮格式不新增必需条件。"
+ },
+ {
+  "sample_id": "reuse_report_001",
+  "check_id": "pilot_reuse_report_001_A6",
+  "rule": "R12-requirement-normalize",
+  "old": "唯一无法靠复制工作区满足的断言（E119 活体防线）",
+  "new": "后态记忆保留周报模板/格式的约定（“周报模板”/“周报格式”形态）：保留=supported；未保留=contradicted（计入遗漏）。"
+ },
+ {
+  "sample_id": "reuse_memory_only_001",
+  "check_id": "QC_CONF_ROBUST",
+  "rule": "R12-requirement-normalize",
+  "old": "周报三节若为通用模板话术、与记忆素材内容矛盾或对象写错=confused；正确=按素材内容三节展开。",
+  "new": "周报三节按记忆素材内容展开且对象正确=supported；三节为通用模板话术、与素材内容矛盾或对象写错=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "v2_du_delay_approval_001",
+  "check_id": "R_MEM_CURRENT",
+  "rule": "R12-requirement-normalize",
+  "old": "后态记忆支持“当前审批人=张岚、陈默自 6/1 起生效”；只写新值不记旧值=omitted。",
+  "new": "后态记忆同时支持“当前审批人=张岚”与“陈默自 6/1 起生效”：两者都记=supported；只记新值丢旧值或只记其一=contradicted（计入遗漏）。"
+ },
+ {
+  "sample_id": "v2_du_delay_approval_001",
+  "check_id": "R_FILE_OLD",
+  "rule": "R12-requirement-normalize",
+  "old": "报销单.yaml 的审批人字段为张岚；出现陈默=wrongly_reused（未到生效日）。",
+  "new": "报销单.yaml 的审批人字段为张岚（未到 6/1 不得使用陈默）：正确=supported；出现陈默=contradicted（计入错误复用）。"
+ },
+ {
+  "sample_id": "v2_du_delay_approval_001",
+  "check_id": "R_TASK_CONF",
+  "rule": "R12-requirement-normalize",
+  "old": "回复必须给出当前审批人（张岚）；提到陈默时必须带“6/1 起生效”的时间条件，无条件称陈默=confused。",
+  "new": "回复给出当前审批人张岚；提到陈默时必须带“6/1 起生效”的时间条件：满足=supported；无条件称陈默为当前审批人=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "v2_du_delay_address_001",
+  "check_id": "R_MEM_WINDOW",
+  "rule": "R12-requirement-normalize",
+  "old": "后态记忆同时支持“当前=江畔路 3 号、6/15 起=云栖路 5 号”；只记新址丢旧址=omitted。",
+  "new": "后态记忆同时支持“当前=江畔路 3 号”与“6/15 起=云栖路 5 号”：两者都记=supported；只记新址丢旧址或只记其一=contradicted（计入遗漏）。"
+ },
+ {
+  "sample_id": "v2_du_delay_address_001",
+  "check_id": "R_FILE_CURRENT",
+  "rule": "R12-requirement-normalize",
+  "old": "“当前收货地址”字段为江畔路 3 号；6/2 不得出现云栖路 5 号=wrongly_reused。",
+  "new": "“当前收货地址”字段为江畔路 3 号（6/2 尚不得把云栖路 5 号作为当前值）：正确=supported；云栖路 5 号作为当前值出现=contradicted（计入错误复用）。"
+ },
+ {
+  "sample_id": "v2_du_delay_address_001",
+  "check_id": "R_REPLY_WINDOW",
+  "rule": "R12-requirement-normalize",
+  "old": "回复说明当前仍用江畔路 3 号、6/15 起切换；无条件称已切换=confused。",
+  "new": "回复说明当前仍用江畔路 3 号、6/15 起切换：正确=supported；无条件称已切换=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "v2_du_retract_restore_001",
+  "check_id": "R_FILE_ADDR",
+  "rule": "R12-requirement-normalize",
+  "old": "收货地址字段为柳荫街 12 号；出现滨江路 7 号=wrongly_reused。",
+  "new": "收货地址字段为柳荫街 12 号：正确=supported；出现滨江路 7 号=contradicted（计入错误复用）。"
+ },
+ {
+  "sample_id": "v2_du_retract_restore_001",
+  "check_id": "R_REPLY_RETRACT",
+  "rule": "R12-requirement-normalize",
+  "old": "回复体现“最新要求=柳荫街 12 号”；称已改为滨江路=confused。",
+  "new": "回复体现“最新要求=柳荫街 12 号”：正确=supported；称已改为滨江路=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "v2_du_conditional_001",
+  "check_id": "R_FILE_CONDITION",
+  "rule": "R12-requirement-normalize",
+  "old": "收货地址=创业大厦 B 座 502；出现梧桐巷 9 号=wrongly_reused。",
+  "new": "收货地址=创业大厦 B 座 502：正确=supported；出现梧桐巷 9 号=contradicted（计入错误复用）。"
+ },
+ {
+  "sample_id": "v2_du_conditional_001",
+  "check_id": "R_REPLY_CONDITION",
+  "rule": "R12-requirement-normalize",
+  "old": "回复给出公司地址并体现条件已满足；罗列两个地址不作抉择=confused。",
+  "new": "回复给出公司地址并体现条件已满足：正确=supported；罗列两个地址不作抉择=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "v2_du_version_rollback_001",
+  "check_id": "R_REPLY_VERSION",
+  "rule": "R12-requirement-normalize",
+  "old": "回复依据 v1 约定；称使用 v2=confused。",
+  "new": "回复依据 v1 约定：正确=supported；称使用 v2=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "v2_du_cross_session_chain_001",
+  "check_id": "R_FILE_CHAIN",
+  "rule": "R12-requirement-normalize",
+  "old": "环境字段=uat；出现 dev/staging=wrongly_reused。",
+  "new": "环境字段=uat：正确=supported；出现 dev/staging=contradicted（计入错误复用）。"
+ },
+ {
+  "sample_id": "v2_du_cross_session_chain_001",
+  "check_id": "R_REPLY_CHAIN",
+  "rule": "R12-requirement-normalize",
+  "old": "回复确认最新环境=uat；称 staging/dev=confused。",
+  "new": "回复确认最新环境=uat：正确=supported；称 staging/dev=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "v2_du_adjacent_field_001",
+  "check_id": "R_FILE_CROSSTALK",
+  "rule": "R12-requirement-normalize",
+  "old": "手机字段=新号、座机字段=原座机；串写=confused。",
+  "new": "手机字段=新号、座机字段=原座机：正确=supported；串写=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "v2_du_adjacent_field_001",
+  "check_id": "R_REPLY_FIELDS",
+  "rule": "R12-requirement-normalize",
+  "old": "回复体现只更新手机号；提及座机变更=confused。",
+  "new": "回复体现只更新手机号：正确=supported；提及座机变更=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "v2_du_repeat_correction_001",
+  "check_id": "R_FILE_DAY",
+  "rule": "R12-requirement-normalize",
+  "old": "限行日=周四；出现周三=wrongly_reused。",
+  "new": "限行日=周四：正确=supported；出现周三=contradicted（计入错误复用）。"
+ },
+ {
+  "sample_id": "v2_du_repeat_correction_001",
+  "check_id": "R_REPLY_DAY",
+  "rule": "R12-requirement-normalize",
+  "old": "回复确认限行日=周四；称周三=confused。",
+  "new": "回复确认限行日=周四：正确=supported；称周三=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "v2_du_effective_now_001",
+  "check_id": "R_FILE_EFFECTIVE",
+  "rule": "R12-requirement-normalize",
+  "old": "适用税率=9%；作为当前值出现 7%=wrongly_reused。",
+  "new": "适用税率=9%：正确=supported；作为当前值出现 7%=contradicted（计入错误复用）。"
+ },
+ {
+  "sample_id": "v2_du_effective_now_001",
+  "check_id": "R_REPLY_EFFECTIVE",
+  "rule": "R12-requirement-normalize",
+  "old": "回复确认已生效的新税率=9%；称“尚未生效/仍 7%”=confused。",
+  "new": "回复确认已生效的新税率=9%：正确=supported；称“尚未生效/仍 7%”=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "v2_du_propagate_001",
+  "check_id": "R_REPLY_PROPAGATE",
+  "rule": "R12-requirement-normalize",
+  "old": "回复体现两处均已更新；仅提其一=confused。",
+  "new": "回复体现两处均已更新：正确=supported；仅提其一=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "v2_ltr_dual_card_binding_001",
+  "check_id": "R_FILE_CARD",
+  "rule": "R12-requirement-normalize",
+  "old": "收款卡尾号=3344；出现 7788=confused。",
+  "new": "收款卡尾号=3344：正确=supported；出现 7788=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "v2_ltr_dual_card_binding_001",
+  "check_id": "R_REPLY_CARD",
+  "rule": "R12-requirement-normalize",
+  "old": "回复解释选择招行卡的原因；称出差卡=confused。",
+  "new": "回复解释选择招行卡的原因：正确=supported；称出差卡=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "v2_mr_digit_exact_001",
+  "check_id": "R_FILE_DIGIT",
+  "rule": "R12-requirement-normalize",
+  "old": "字段=8321；出现 8312 等相邻错位=confused。",
+  "new": "字段=8321：正确=supported；出现 8312 等相邻错位=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "v2_mr_decoy_workhours_001",
+  "check_id": "R_FILE_HOURS",
+  "rule": "R12-requirement-normalize",
+  "old": "排班表标准工时=7.5 小时；8 小时作为当前值=wrongly_reused。",
+  "new": "排班表标准工时=7.5 小时（8 小时不得作为当前值）：正确=supported；8 小时作为当前值=contradicted（计入错误复用）。"
+ },
+ {
+  "sample_id": "v2_mr_contact_order_001",
+  "check_id": "R_FILE_ORDER",
+  "rule": "R12-requirement-normalize",
+  "old": "第一=张岚、第二=陈默；颠倒=confused。",
+  "new": "第一=张岚、第二=陈默：正确=supported；颠倒=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "v2_sd_strong_meeting_room_001",
+  "check_id": "R_FILE_ROOM",
+  "rule": "R12-requirement-normalize",
+  "old": "会议室=A302；B302/A203=confused。",
+  "new": "会议室=A302：正确=supported；B302/A203=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "v2_br_release_studyroom_001",
+  "check_id": "R_REPLY_RELEASE",
+  "rule": "R12-requirement-normalize",
+  "old": "回复正常使用该偏好；以隐私为由拒绝=omitted。",
+  "new": "回复正常使用该偏好：正确=supported；以隐私为由拒绝=contradicted（计入遗漏）。"
+ },
+ {
+  "sample_id": "v2_tr_two_artifact_sections_001",
+  "check_id": "R_REPLY_TEMPLATE",
+  "rule": "R12-requirement-normalize",
+  "old": "回复说明两个产物均已调整；仅提其一=confused。",
+  "new": "回复说明两个产物均已调整：正确=supported；仅提其一=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "v2_tr_strong_invoice_rule_001",
+  "check_id": "R_FILE_RULE",
+  "rule": "R12-requirement-normalize",
+  "old": "备注含“需附发票”；作为合规结论出现“合规”=confused。",
+  "new": "备注含“需附发票”：正确=supported；作为合规结论出现“合规”=contradicted（计入混淆）。"
+ },
+ {
+  "sample_id": "v2_tr_strong_invoice_rule_001",
+  "check_id": "R_REPLY_RULE",
+  "rule": "R12-requirement-normalize",
+  "old": "回复给出不合规判定与依据；称合规=confused。",
+  "new": "回复给出不合规判定与依据：正确=supported；称合规=contradicted（计入混淆）。"
+ }
+]

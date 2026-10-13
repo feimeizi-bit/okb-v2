@@ -1,0 +1,1 @@
+{"record": {"session": "s1", "turn": 1}, "memory_ops": 1, "file_ops": 0}

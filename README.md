@@ -24,8 +24,9 @@
 ```bash
 python v2/02-generators/build_stock_v2.py     # 存量 68 题选举+修复（含两遍法 W207 注记）
 python v2/02-generators/assemble_v2.py        # 92 题装配 → paper-v2 + 四层计划 → validate_plan
+                                              #   含：判官口径归一化(R12) + plan-lint(E201/E202) 阻断级防线
 python v2/02-generators/build_registry.py     # 断言库 registry（629 槽位）
-python v2/02-generators/qc_v2.py              # 质检总检（红线1/3/4 + 历史失败模式对照）
+python v2/02-generators/qc_v2.py              # 质检总检（红线1/3/4/5 + 历史失败模式对照）
 # 作者稿有改动时先跑：python v2/02-generators/v2_split_plan.py <作者稿.yaml>…
 ```
 
@@ -36,7 +37,31 @@ python v2/02-generators/qc_v2.py              # 质检总检（红线1/3/4 + 历
 - **配额**：六维 15/15/15/15/15+17；withhold 10 / release 5；深化槽 时间 3 / 强扰动 3 / 多步 ≥4
 - **lint**：0 error / 61 warning（W205 注记 ×52、W207 豁免 ×9）；**W206/W208/W212 = 0**
 - **质检**：`v2/06-qc/qc-v2-report.md`；五档格 `expect-cells-v2.json`（92 格）
+- **plan-lint**：0 error（E201 元注释/裸失败类、E202 absent 派生缺映射均为阻断级）
+- **判官口径归一化（2026-10-13）**：94 条 semantic requirement 改写为「合规命题 + supported/contradicted 显式映射」（R12；台账 `v2/01-paper-v2/plan-requirement-normalization.json`）。
+  背景：552 任务判官审计确认旧计划 17 个任务被极性反判判死（11 应 pass / 6 应 unassessable）、2 个假通过。
+  **paper sha 不变**（只改计划层判官输入）。2026-10-13 已完成全量重判：`score/judge-full-3`（1674 次调用 0 失败）→ `score/judge-full-3-replay` → 新报告 `score/final-report-r12/`；验收：wifi 检查 6/6 翻转正确、17 个反判任务全部纠正。判官批次间仍有 12 个未改检查任务波动 → 需人工复核或走 multirun 多轮协议。
 - **anchorcal**：死谓词 0、路径 0（对旧全局语料；新题待冒烟后复跑）
+
+## 2026-10-13 追加（P0 交付面，全部离线可复算）
+
+- **数据质量校准**：`v2/06-qc/item-stats-v2.{json,md}`（`tools/item_stats.py`）——
+  92 题的难度/区分度台账（高区分 23 / 饱和 30 / 地板 9 / 重复波动 30），替代旧 QC 里未定义的"T1−T2"占位。
+- **指标双口径 + 检查族**：`v2/06-qc/metric-bounds-v2.{json,md}` + `radar-six-dim-lower.{json,svg}`
+  （`tools/metric_bounds.py`）——assessed-only 与 unassessable-按失败下界并列；失败按
+  memory-store / artifact / reply / task-application 拆族（族名为启发式分流，见表注）。
+- **样例包 b**：`v2/07-deliverable-b/`（`tools/make_sample_pack.py`）——3 个真实案例的
+  任务+证据切片+逐检查解释+复现命令，同输入同字节。
+- **方案补充**：`docs/benchmark-design-v2.md`——数据生成方式、覆盖与校准、评分口径、五类映射、创新点、限制。
+- **workspace 自足（P0-5）**：补回 `okb/`（一键 CLI 分发器）与 `pyproject.toml`、旧冻结夹具
+  （pilot-v0.2/judge-anchor-cases/four-layer-r1 等）；修 `tools/report.py` 3.11 兼容；
+  修 `tools/portable/bundle.py` 离线入口在 Windows 上的 spawn 泄漏（platform.system/machine 回退到子进程）；
+  `tools/tests` 全绿（872 passed / 63 skipped，skip 均带理由），`engine/tests` 42 passed。
+- **判官 A/A 稳定性（2026-10-13）**：同计划同请求再跑一轮 `score/judge-full-4`
+  （1674/1674 成功），`tools/judge_aa.py` 报告：请求级翻转 **21/1674 = 1.25%**
+  （决定性 supported↔contradicted 仅 2 条 = 0.12%；其余为 sufficient↔insufficient 弃权摆动），
+  任务级变化 12/552 = 2.17% → 低于 3% 阈值，单批结论可引用，第三轮多数投票暂不触发。
+  报告：`v2/06-qc/judge-aa-v2.{json,md}`。
 
 ## 边界
 

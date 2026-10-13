@@ -1,0 +1,1 @@
+{"action": "reset", "ok": true, "cmd": "mock-reset", "policy": "samples/mock-policies/remember.v0.2.yaml"}

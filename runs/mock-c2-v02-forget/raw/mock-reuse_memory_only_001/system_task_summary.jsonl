@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "mock-reuse_memory_only_001", "status": "ok", "reason": null, "duration_ms": 30, "counts": {"message": 11, "memory_read": 2, "file_write": 1}, "models": [], "usage": null}

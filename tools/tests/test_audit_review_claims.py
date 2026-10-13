@@ -14,6 +14,14 @@ sys.path[:0] = [str(ROOT), str(ROOT / 'tools'), str(ROOT / 'tools' / 'tests')]
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 
+# 这两组用例审计的是旧仓（okb-int）冻结链产物：cards-r3 → freeze_candidates →
+# notes/paper-r1-coverage-matrix.json。okb-v2 走自有生成器链（v2/02-generators），
+# 冻结产物不在本工作区；缺它时如实跳过而不是假红（同 test_judge_drift 的守卫模式）。
+FREEZE_ARTEFACTS_PRESENT = (ROOT / 'notes/paper-r1-coverage-matrix.json').is_file()
+
+
+@unittest.skipUnless(FREEZE_ARTEFACTS_PRESENT,
+                     "旧仓冻结产物（cards-r3 编译链）不在 okb-v2；v2 走自有生成器链")
 class DocClaimTests(unittest.TestCase):
     def test_review_document_claims_match_artefacts(self):
         out = subprocess.run([sys.executable, str(ROOT / 'tools/audit_review_claims.py')],
@@ -94,6 +102,8 @@ class PendingEvidencePredicateTests(unittest.TestCase):
                         "有未取得项已取得证据，文档需同步：%s" % [k for k, v in got.items() if v])
 
 
+@unittest.skipUnless(FREEZE_ARTEFACTS_PRESENT,
+                     "旧仓冻结产物（cards-r3 编译链）不在 okb-v2；v2 走自有生成器链")
 class FingerprintKnownSetTests(unittest.TestCase):
     """文档引用的包指纹在 dist/ 缺席时也必须可核对——否则结论按运行顺序变。
 

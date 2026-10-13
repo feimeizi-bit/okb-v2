@@ -4,6 +4,7 @@ import csv
 import hashlib
 import io
 import json
+import os
 import platform
 from pathlib import Path, PurePosixPath
 import re
@@ -69,8 +70,25 @@ def no_links(path, root):
             raise ValueError('symbolic links and reparse points are not portable inputs')
 
 
+def _system_name():
+    """Spawn-free system name: platform.system() may fall back to `cmd /c ver`
+    (subprocess) on some Windows interpreters, which the portable audit hook
+    forbids by design. os.name is spawn-free and yields the same 'Windows'
+    label for ABI comparison."""
+    return "Windows" if os.name == "nt" else platform.system()
+
+
+def _machine_name():
+    """Spawn-free machine ABI: on Windows platform.machine() may route through
+    platform.uname()/win32_ver() and spawn `cmd /c ver`; PROCESSOR_ARCHITECTURE
+    is what platform.machine() reports there anyway. POSIX uname is spawn-free."""
+    if os.name == "nt":
+        return os.environ.get("PROCESSOR_ARCHITECTURE") or platform.machine()
+    return platform.machine()
+
+
 def runtime_abi():
-    return dict(system=platform.system(), machine=platform.machine(),
+    return dict(system=_system_name(), machine=_machine_name(),
                 implementation=platform.python_implementation(), cache_tag=sys.implementation.cache_tag,
                 python_version=platform.python_version())
 

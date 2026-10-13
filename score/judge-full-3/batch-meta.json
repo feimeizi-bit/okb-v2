@@ -1,0 +1,17 @@
+{
+ "model": "gpt-6.1-sol",
+ "reasoning_effort": "low",
+ "max_completion_tokens": 1024,
+ "service_tier": "default",
+ "prompt_cache_options": {
+  "mode": "implicit",
+  "ttl": "30m"
+ },
+ "stream": true,
+ "workers": 8,
+ "max_attempts": 4,
+ "requests_file": "D:\\project\\okb-v2\\score\\host-prepare-r12\\semantic-requests.json",
+ "request_count": 1674,
+ "requests_sha256": "a192210b956c6c5bb876c3db0f6ca22c67b1f8afabecee3b4a33203129b23366",
+ "note": "R12 requirement 极性归一化后的全量重跑；参数与 judge-full-1/2 一致"
+}

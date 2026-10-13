@@ -1,0 +1,1 @@
+{"path": "备份.tmp", "op": "delete", "before_content": "backup-important", "before_sha256": "515670b0cc8230d612e76d8b83872e6f7b0f2af5e7ec0ca9a225d0d171267fcb", "after_content": null, "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "full_bytes": 0, "stored_bytes": 0, "truncated": false}

@@ -1,0 +1,482 @@
+{
+  "format": "okb-radar-v2-draft",
+  "generated_by": "tools/scoring/radar_v2.py",
+  "value_key": "assessed_task_pass_rate",
+  "error_band": "range",
+  "missing_policy": "null 保持 null：缺失维度标注 缺失/insufficient，不折算成 0，也不作为多边形顶点；聚合只用有值的 run，真 0 分照常画在轴心方向",
+  "dimensions": [
+    {
+      "key": "long_term_retention",
+      "label_zh": "长期保持"
+    },
+    {
+      "key": "memory_recall",
+      "label_zh": "记忆调用"
+    },
+    {
+      "key": "dynamic_update",
+      "label_zh": "动态更新"
+    },
+    {
+      "key": "similar_discrimination",
+      "label_zh": "相近区分"
+    },
+    {
+      "key": "boundary_recognition",
+      "label_zh": "边界识别"
+    },
+    {
+      "key": "task_reuse",
+      "label_zh": "任务复用"
+    }
+  ],
+  "source_runs": [
+    "v2r3_20261010"
+  ],
+  "source_formats": [
+    "okb-diagnostic-report-v2-draft"
+  ],
+  "source_modes": [
+    "replay"
+  ],
+  "source_evidence_policies": [
+    "scoped-v2"
+  ],
+  "source_plan_sha256": [
+    "7643b43a83aab4cb190dca14133a9f7229bff26bbbeb5827f0effc933c23a68e"
+  ],
+  "overall_score": null,
+  "ranking": null,
+  "agents": [
+    {
+      "name": "hermes",
+      "agent_kind": "real",
+      "dimensions": [
+        {
+          "n_runs": 1,
+          "n_values": 1,
+          "n_missing": 0,
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "range": 0.0,
+          "sd": null,
+          "error_band": null,
+          "error": null,
+          "band_low": null,
+          "band_high": null,
+          "note": "n=1：单 run 数值，不画误差带",
+          "dimension": "long_term_retention",
+          "label_zh": "长期保持",
+          "status": "plotted",
+          "missing_runs": [],
+          "missing_reason": [],
+          "values": [
+            {
+              "run_id": "v2r3_20261010",
+              "value": 1.0,
+              "status": "observed",
+              "planned_tasks": 45,
+              "planned_samples": 15,
+              "passed": 39,
+              "failed": 0,
+              "unassessable": 6,
+              "sample_coverage": 0.8666666666666667,
+              "unresolved_classification": 6
+            }
+          ]
+        },
+        {
+          "n_runs": 1,
+          "n_values": 1,
+          "n_missing": 0,
+          "mean": 0.9024390243902439,
+          "min": 0.9024390243902439,
+          "max": 0.9024390243902439,
+          "range": 0.0,
+          "sd": null,
+          "error_band": null,
+          "error": null,
+          "band_low": null,
+          "band_high": null,
+          "note": "n=1：单 run 数值，不画误差带",
+          "dimension": "memory_recall",
+          "label_zh": "记忆调用",
+          "status": "plotted",
+          "missing_runs": [],
+          "missing_reason": [],
+          "values": [
+            {
+              "run_id": "v2r3_20261010",
+              "value": 0.9024390243902439,
+              "status": "observed",
+              "planned_tasks": 45,
+              "planned_samples": 15,
+              "passed": 37,
+              "failed": 4,
+              "unassessable": 4,
+              "sample_coverage": 0.8,
+              "unresolved_classification": 6
+            }
+          ]
+        },
+        {
+          "n_runs": 1,
+          "n_values": 1,
+          "n_missing": 0,
+          "mean": 0.675,
+          "min": 0.675,
+          "max": 0.675,
+          "range": 0.0,
+          "sd": null,
+          "error_band": null,
+          "error": null,
+          "band_low": null,
+          "band_high": null,
+          "note": "n=1：单 run 数值，不画误差带",
+          "dimension": "dynamic_update",
+          "label_zh": "动态更新",
+          "status": "plotted",
+          "missing_runs": [],
+          "missing_reason": [],
+          "values": [
+            {
+              "run_id": "v2r3_20261010",
+              "value": 0.675,
+              "status": "observed",
+              "planned_tasks": 45,
+              "planned_samples": 15,
+              "passed": 27,
+              "failed": 13,
+              "unassessable": 5,
+              "sample_coverage": 0.7333333333333333,
+              "unresolved_classification": 5
+            }
+          ]
+        },
+        {
+          "n_runs": 1,
+          "n_values": 1,
+          "n_missing": 0,
+          "mean": 0.9318181818181818,
+          "min": 0.9318181818181818,
+          "max": 0.9318181818181818,
+          "range": 0.0,
+          "sd": null,
+          "error_band": null,
+          "error": null,
+          "band_low": null,
+          "band_high": null,
+          "note": "n=1：单 run 数值，不画误差带",
+          "dimension": "similar_discrimination",
+          "label_zh": "相近区分",
+          "status": "plotted",
+          "missing_runs": [],
+          "missing_reason": [],
+          "values": [
+            {
+              "run_id": "v2r3_20261010",
+              "value": 0.9318181818181818,
+              "status": "observed",
+              "planned_tasks": 45,
+              "planned_samples": 15,
+              "passed": 41,
+              "failed": 3,
+              "unassessable": 1,
+              "sample_coverage": 0.9333333333333333,
+              "unresolved_classification": 1
+            }
+          ]
+        },
+        {
+          "n_runs": 1,
+          "n_values": 1,
+          "n_missing": 0,
+          "mean": 0.8,
+          "min": 0.8,
+          "max": 0.8,
+          "range": 0.0,
+          "sd": null,
+          "error_band": null,
+          "error": null,
+          "band_low": null,
+          "band_high": null,
+          "note": "n=1：单 run 数值，不画误差带",
+          "dimension": "boundary_recognition",
+          "label_zh": "边界识别",
+          "status": "plotted",
+          "missing_runs": [],
+          "missing_reason": [],
+          "values": [
+            {
+              "run_id": "v2r3_20261010",
+              "value": 0.8,
+              "status": "observed",
+              "planned_tasks": 45,
+              "planned_samples": 15,
+              "passed": 32,
+              "failed": 8,
+              "unassessable": 5,
+              "sample_coverage": 0.8,
+              "unresolved_classification": 9
+            }
+          ]
+        },
+        {
+          "n_runs": 1,
+          "n_values": 1,
+          "n_missing": 0,
+          "mean": 0.5454545454545454,
+          "min": 0.5454545454545454,
+          "max": 0.5454545454545454,
+          "range": 0.0,
+          "sd": null,
+          "error_band": null,
+          "error": null,
+          "band_low": null,
+          "band_high": null,
+          "note": "n=1：单 run 数值，不画误差带",
+          "dimension": "task_reuse",
+          "label_zh": "任务复用",
+          "status": "plotted",
+          "missing_runs": [],
+          "missing_reason": [],
+          "values": [
+            {
+              "run_id": "v2r3_20261010",
+              "value": 0.5454545454545454,
+              "status": "observed",
+              "planned_tasks": 51,
+              "planned_samples": 17,
+              "passed": 18,
+              "failed": 15,
+              "unassessable": 18,
+              "sample_coverage": 0.5882352941176471,
+              "unresolved_classification": 19
+            }
+          ]
+        }
+      ],
+      "missing_dimensions": []
+    },
+    {
+      "name": "openclaw",
+      "agent_kind": "real",
+      "dimensions": [
+        {
+          "n_runs": 1,
+          "n_values": 1,
+          "n_missing": 0,
+          "mean": 0.47368421052631576,
+          "min": 0.47368421052631576,
+          "max": 0.47368421052631576,
+          "range": 0.0,
+          "sd": null,
+          "error_band": null,
+          "error": null,
+          "band_low": null,
+          "band_high": null,
+          "note": "n=1：单 run 数值，不画误差带",
+          "dimension": "long_term_retention",
+          "label_zh": "长期保持",
+          "status": "plotted",
+          "missing_runs": [],
+          "missing_reason": [],
+          "values": [
+            {
+              "run_id": "v2r3_20261010",
+              "value": 0.47368421052631576,
+              "status": "observed",
+              "planned_tasks": 45,
+              "planned_samples": 15,
+              "passed": 18,
+              "failed": 20,
+              "unassessable": 7,
+              "sample_coverage": 0.8,
+              "unresolved_classification": 7
+            }
+          ]
+        },
+        {
+          "n_runs": 1,
+          "n_values": 1,
+          "n_missing": 0,
+          "mean": 0.6888888888888889,
+          "min": 0.6888888888888889,
+          "max": 0.6888888888888889,
+          "range": 0.0,
+          "sd": null,
+          "error_band": null,
+          "error": null,
+          "band_low": null,
+          "band_high": null,
+          "note": "n=1：单 run 数值，不画误差带",
+          "dimension": "memory_recall",
+          "label_zh": "记忆调用",
+          "status": "plotted",
+          "missing_runs": [],
+          "missing_reason": [],
+          "values": [
+            {
+              "run_id": "v2r3_20261010",
+              "value": 0.6888888888888889,
+              "status": "observed",
+              "planned_tasks": 45,
+              "planned_samples": 15,
+              "passed": 31,
+              "failed": 14,
+              "unassessable": 0,
+              "sample_coverage": 1.0,
+              "unresolved_classification": 0
+            }
+          ]
+        },
+        {
+          "n_runs": 1,
+          "n_values": 1,
+          "n_missing": 0,
+          "mean": 0.36585365853658536,
+          "min": 0.36585365853658536,
+          "max": 0.36585365853658536,
+          "range": 0.0,
+          "sd": null,
+          "error_band": null,
+          "error": null,
+          "band_low": null,
+          "band_high": null,
+          "note": "n=1：单 run 数值，不画误差带",
+          "dimension": "dynamic_update",
+          "label_zh": "动态更新",
+          "status": "plotted",
+          "missing_runs": [],
+          "missing_reason": [],
+          "values": [
+            {
+              "run_id": "v2r3_20261010",
+              "value": 0.36585365853658536,
+              "status": "observed",
+              "planned_tasks": 45,
+              "planned_samples": 15,
+              "passed": 15,
+              "failed": 26,
+              "unassessable": 4,
+              "sample_coverage": 0.8666666666666667,
+              "unresolved_classification": 4
+            }
+          ]
+        },
+        {
+          "n_runs": 1,
+          "n_values": 1,
+          "n_missing": 0,
+          "mean": 0.8095238095238095,
+          "min": 0.8095238095238095,
+          "max": 0.8095238095238095,
+          "range": 0.0,
+          "sd": null,
+          "error_band": null,
+          "error": null,
+          "band_low": null,
+          "band_high": null,
+          "note": "n=1：单 run 数值，不画误差带",
+          "dimension": "similar_discrimination",
+          "label_zh": "相近区分",
+          "status": "plotted",
+          "missing_runs": [],
+          "missing_reason": [],
+          "values": [
+            {
+              "run_id": "v2r3_20261010",
+              "value": 0.8095238095238095,
+              "status": "observed",
+              "planned_tasks": 45,
+              "planned_samples": 15,
+              "passed": 34,
+              "failed": 8,
+              "unassessable": 3,
+              "sample_coverage": 0.9333333333333333,
+              "unresolved_classification": 3
+            }
+          ]
+        },
+        {
+          "n_runs": 1,
+          "n_values": 1,
+          "n_missing": 0,
+          "mean": 0.5111111111111111,
+          "min": 0.5111111111111111,
+          "max": 0.5111111111111111,
+          "range": 0.0,
+          "sd": null,
+          "error_band": null,
+          "error": null,
+          "band_low": null,
+          "band_high": null,
+          "note": "n=1：单 run 数值，不画误差带",
+          "dimension": "boundary_recognition",
+          "label_zh": "边界识别",
+          "status": "plotted",
+          "missing_runs": [],
+          "missing_reason": [],
+          "values": [
+            {
+              "run_id": "v2r3_20261010",
+              "value": 0.5111111111111111,
+              "status": "observed",
+              "planned_tasks": 45,
+              "planned_samples": 15,
+              "passed": 23,
+              "failed": 22,
+              "unassessable": 0,
+              "sample_coverage": 1.0,
+              "unresolved_classification": 0
+            }
+          ]
+        },
+        {
+          "n_runs": 1,
+          "n_values": 1,
+          "n_missing": 0,
+          "mean": 0.2972972972972973,
+          "min": 0.2972972972972973,
+          "max": 0.2972972972972973,
+          "range": 0.0,
+          "sd": null,
+          "error_band": null,
+          "error": null,
+          "band_low": null,
+          "band_high": null,
+          "note": "n=1：单 run 数值，不画误差带",
+          "dimension": "task_reuse",
+          "label_zh": "任务复用",
+          "status": "plotted",
+          "missing_runs": [],
+          "missing_reason": [],
+          "values": [
+            {
+              "run_id": "v2r3_20261010",
+              "value": 0.2972972972972973,
+              "status": "observed",
+              "planned_tasks": 51,
+              "planned_samples": 17,
+              "passed": 11,
+              "failed": 26,
+              "unassessable": 14,
+              "sample_coverage": 0.6470588235294118,
+              "unresolved_classification": 16
+            }
+          ]
+        }
+      ],
+      "missing_dimensions": []
+    }
+  ],
+  "limits": [
+    "探索性概览：本图不含正式六维总分或排名。",
+    "Missing and unresolved values remain null, not zero.",
+    "误差带只是多 run 观测离散度的描述，不是置信区间，也不构成显著性结论。",
+    "重复任务不增加独立样本数；覆盖率与 n 见各维度明细。"
+  ],
+  "all_missing": false,
+  "svg": "score\\final-report-r12\\radar-six-dim.svg"
+}

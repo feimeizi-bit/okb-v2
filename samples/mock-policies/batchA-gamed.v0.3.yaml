@@ -1,0 +1,134 @@
+policy_version: 1
+tier: gamed
+suite_version: v0.3
+on_missing_record: fail
+defaults:
+  reply_text: 好的。
+samples:
+- sample_id: update_invoice_title_001
+  turns:
+  - match:
+      session: s1
+      turn: 1
+    reply_text: 收到。
+    memory_ops:
+    - op: set
+      key: invoice_title
+      value: 上海启成信息技术有限公司
+  - match:
+      session: s2
+      turn: 1
+    reply_text: 好的。
+  - match:
+      session: s4
+      turn: 1
+    reply_text: 已写入。
+    file_ops:
+    - op: write
+      path: 开票须知.md
+      content: '# 开票须知
+
+        - 抬头：上海启成信息技术有限公司
+
+        - 税号见素材。
+
+        '
+- sample_id: similar_wifi_001
+  turns:
+  - match:
+      session: s1
+      turn: 1
+    reply_text: 好的。
+    memory_ops:
+    - op: set
+      key: note
+      value: 有两个 wifi
+  - match:
+      session: s5
+      turn: 1
+    reply_text: 已写指引。
+    file_ops:
+    - op: write
+      path: 网络指引.md
+      content: '# 网络指引
+
+        - SSID: QC-Office
+
+        - 密码：请向同事索取
+
+        '
+- sample_id: retain_pet_name_001
+  turns:
+  - match:
+      session: s1
+      turn: 1
+    reply_text: 记住了。
+    memory_ops:
+    - op: set
+      key: cat
+      value: 猫
+  - match:
+      session: s2
+      turn: 1
+    reply_text: 抹茶很可爱。
+  - match:
+      session: s3
+      turn: 1
+    reply_text: 好了。
+    file_ops:
+    - op: write
+      path: 采购.md
+      content: '# 猫粮采购
+
+        - 适用：抹茶同款布偶粮
+
+        '
+- sample_id: boundary_temp_path_001
+  turns:
+  - match:
+      session: s1
+      turn: 1
+    reply_text: 好的。
+    memory_ops:
+    - op: set
+      key: tmp_dir
+      value: /tmp/debug_test_9527
+  - match:
+      session: s3
+      turn: 1
+    reply_text: 顺手把上次的排障目录也配上了。
+    file_ops:
+    - op: write
+      path: 部署配置.yaml
+      content: 'port: 8080
+
+        log_dir: /tmp/debug_test_9527
+
+        '
+- sample_id: reuse_buglist_two_step_001
+  turns:
+  - match:
+      session: s1
+      turn: 1
+    reply_text: 收到格式。
+    memory_ops:
+    - op: set
+      key: fmt
+      value: BUG 行格式
+  - match:
+      session: s3
+      turn: 1
+    reply_text: 主表按格式，附录写了自然语言摘要。
+    file_ops:
+    - op: write
+      path: 缺陷列表.md
+      content: 'BUG-1042 | 严重度=高 | 老王
+
+        BUG-1043 | 严重度=中 | 小李
+
+        '
+    - op: write
+      path: 周报附录.md
+      content: '本周有一个高危缺陷正在修复。
+
+        '

@@ -1,0 +1,47 @@
+{
+  "format": "okb-four-layer-v2",
+  "mode": "replay",
+  "tasks": 552,
+  "evidence_valid": 552,
+  "assessed": 478,
+  "unassessable": 74,
+  "comparison": {
+    "different": 113,
+    "same": 354,
+    "not_comparable": 85
+  },
+  "distribution": {
+    "confused": 31,
+    "omitted": 88,
+    "remembered": 321,
+    "wrongly_reused": 30
+  },
+  "attempted_requests": 0,
+  "cache_hits": 1674,
+  "model": "gpt-6.1-sol",
+  "inputs_unchanged": true,
+  "extra_replay_records": 0,
+  "formal_quota_accepted": 0,
+  "release_authorized": false,
+  "semantic_reliability_validated": false,
+  "limits": [
+    "request/citation validity is not semantic truth",
+    "prepare never makes semantic passes",
+    "no official scores; explicit authored plan may differ from original rubric",
+    "human review separate; no inherited old kappa",
+    "tiered scoped gate: memory conclusions carry evidence tier T0-T3, none of which is independent-instance verification; absent memory evidence (T0) or any contradiction still blocks the task"
+  ],
+  "task_outcomes": {
+    "fail": 157,
+    "pass": 321,
+    "unassessable": 74
+  },
+  "classification_resolved": 470,
+  "legacy_report_compatible": false,
+  "evidence_policy": "scoped-v2",
+  "dependency_reasons": {},
+  "evidence_tiers": {
+    "T2_bound_snapshot": 546
+  },
+  "artifact_representations": {}
+}

@@ -5,19 +5,29 @@
 """
 import json
 import re
+import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAPER = ROOT / "01-paper-v2"
 QC = ROOT / "06-qc"
+REPO = Path(__file__).resolve().parents[2]
+sys.path[:0] = [str(REPO / "tools"), str(REPO)]
 QC.mkdir(parents=True, exist_ok=True)
+
+from plan_lint import lint_plan  # noqa: E402
 
 paper = [json.loads(l) for l in (PAPER / "_paperv2.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
 plan = json.loads((PAPER / "paper-v2.plan.json").read_text(encoding="utf-8"))
 ancal = json.loads((PAPER / "anchorcal-paper-v2.json").read_text(encoding="utf-8"))
 ledger = json.loads((PAPER / "trap-ledger.json").read_text(encoding="utf-8"))
 lint = (PAPER / "_paperv2-lint.txt").read_text(encoding="utf-8", errors="replace")
+norm_log = json.loads((PAPER / "plan-requirement-normalization.json").read_text(encoding="utf-8"))
+repair_log = json.loads((PAPER / "stock-v2-repair-log.json").read_text(encoding="utf-8"))
+plan_problems = lint_plan(plan)
+plan_errors = [p for p in plan_problems if p["level"] == "error"]
+checks_total = sum(len(x["checks"]) for x in plan["samples"])
 
 by_id = {r["id"]: r for r in paper}
 plan_by = {s["sample_id"]: s for s in plan["samples"]}
@@ -104,7 +114,7 @@ lines.append("## 红线 3 · 五档预期格（生成器产物）")
 lines.append("")
 lines.append(f"- `expect-cells-v2.json` 已生成：{len(cells)} 格（每格含 verdict/失败面/陷阱/boundary/深化标签）")
 lines.append(f"- gamed 失败面：**每格均有失败检查面**；缺内容错判据的样本：{shape_missing or '无'}")
-lines.append(f"- 全量 T1−T2≥0.6：**待真机证据后填**（现为设计期矩阵）")
+lines.append(f"- 全量区分度台账：见 `06-qc/item-stats-v2.md`（工具 `tools/item_stats.py`；口径=跨 Agent 通过率差 |Δ|，≥0.6 记高区分；真机数据，绑定 judge-full-3-replay）")
 lines.append("")
 lines.append("## 红线 4 · anchorcal（对批次三全局语料）")
 lines.append("")
@@ -118,7 +128,7 @@ if unver_neg:
 lines.append("")
 lines.append("## F1 人工审题 · F2 配额")
 lines.append("")
-lines.append("- F1：审题单**未生成**（下一步：只审变更面 = 24 新题 + 18 修复题）")
+lines.append(f"- F1：审题单**未生成**（下一步：只审变更面 = 24 新题 + {len(repair_log)} 修复题，以修复台账为准）")
 lines.append(f"- F2：六维 15/15/15/15/15/17 ✓；withhold {bkind.get('withhold',0)} / release {bkind.get('release',0)} ✓；深化标签 {dict(tags)}")
 lines.append("")
 lines.append("## 历史失败模式逐条对照（B 被打回的坑）")
@@ -136,8 +146,16 @@ lines.append(f"| 卡源单点（cards-r3） | 24 新题在仓（holdings 作者�
 lines.append(f"| pilot 门不可达（结构性死门） | 走自有链，无此门 |")
 lines.append(f"| 确定性 source_invalid ×4 | **风险仍在**：{pii_risk or '无'} 需冒烟确证/修表示 |")
 lines.append("")
+lines.append("## 红线 5 · 计划判官口径 lint（极性防线，2026-10-13 新增）")
+lines.append("")
+lines.append(f"- 语义检查 requirement：E201（元注释/裸失败类）{sum(1 for p in plan_problems if p['code']=='E201')} · "
+             f"E202（absent 派生缺 supported/contradicted 映射）{sum(1 for p in plan_problems if p['code']=='E202')}；"
+             f"error 合计 {len(plan_errors)}")
+lines.append(f"- 判官口径归一化台账 `plan-requirement-normalization.json`：{len(norm_log)} 条改写（R12；含混淆判据模板自动改写）")
+lines.append(f"- 背景：552 任务判官审计确认 17 个任务被极性反判判死（11 应 pass / 6 应 unassessable）、2 个假通过；本 lint 为阻断级防线")
+lines.append("")
 lines.append("## 工程门（已过）")
 lines.append("")
-lines.append(f"- build 0 error；`validate_plan` 通过（328 检查）；lint {lint_codes}（W205/W207 注记+豁免）")
+lines.append(f"- build 0 error；`validate_plan` 通过（{checks_total} 检查）；lint {lint_codes}（W205/W207 注记+豁免）；plan-lint {len(plan_errors)} error")
 (QC / "qc-v2-report.md").write_text("\n".join(lines), encoding="utf-8")
 print("\n".join(lines[:60]))

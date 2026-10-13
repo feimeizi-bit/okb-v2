@@ -19,7 +19,8 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 PAPER = ROOT / "01-paper-v2"
 REPO = Path(__file__).resolve().parents[2]
-sys.path[:0] = [str(REPO / "tools"), str(REPO)]
+GEN = Path(__file__).resolve().parent
+sys.path[:0] = [str(GEN), str(REPO / "tools"), str(REPO)]
 
 PARTS = [("stock-v2", "stock"), ("sample-template.fixed", "new"),
          ("new-items-du.fixed", "new"), ("new-items-rest.fixed", "new")]
@@ -198,7 +199,26 @@ def main():
 
     plan_rows = [{"sample_id": s["id"], "anchor_disposition": disp_by[s["id"]],
                   "checks": checks_by[s["id"]]} for s in samples]
+
+    # 判官口径归一化（R12）+ 计划层 lint（E201/E202）：requirement 必须是
+    # 合规命题 + supported/contradicted 显式映射；台账与 lint 结果随卷落盘。
+    import plan_repairs_v2
+    norm_log = plan_repairs_v2.normalize(plan_rows)
+    (PAPER / "plan-requirement-normalization.json").write_text(
+        json.dumps(norm_log, ensure_ascii=False, indent=1), encoding="utf-8")
+
     plan = {"format": "okb-four-layer-v1", "paper_sha256": sha, "samples": plan_rows}
+
+    from plan_lint import lint_plan
+    problems = lint_plan(plan)
+    errors = [p for p in problems if p["level"] == "error"]
+    (PAPER / "plan-lint.txt").write_text(
+        "\n".join("[%s] %s:%s %s" % (p["code"], p["sample_id"], p["check_id"], p["message"])
+                  for p in problems) or "plan-lint：0 error / 0 warning", encoding="utf-8")
+    if errors:
+        for p in errors:
+            print("[%s] %s:%s %s" % (p["code"], p["sample_id"], p["check_id"], p["message"]))
+        raise SystemExit("plan lint failed: %d error" % len(errors))
     (PAPER / "paper-v2.plan.json").write_text(json.dumps(plan, ensure_ascii=False, indent=1), encoding="utf-8")
 
     rows = [json.loads(l) for l in (PAPER / "_paperv2.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
@@ -207,6 +227,8 @@ def main():
     print("VALIDATE_PLAN OK | samples:", len(plan_rows),
           "| checks:", sum(len(x["checks"]) for x in plan_rows),
           "| sha:", sha[:16])
+    print("REQUIREMENT NORMALIZE:", len(norm_log), "rewrites | plan-lint:",
+          len(errors), "error /", len(problems) - len(errors), "warning")
     print("WROTE paper-v2.yaml / paper-v2.plan.json / trap-ledger.json / _paperv2.jsonl")
 
 

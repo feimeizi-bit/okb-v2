@@ -49,8 +49,8 @@ def main() -> int:
                     "status": "incumbent", "spec": spec, "metrics": None}],
             })
     reg = {
-        "format": "okb-assertion-registry-v2", "version": "v2.0-draft0",
-        "generated": "2026-10-09",
+        "format": "okb-assertion-registry-v2", "version": "v2.0-draft1",
+        "generated": "2026-10-13",
         "paper_files": ["paper-v2.yaml", "paper-v2.plan.json"],
         "slots": slots,
     }

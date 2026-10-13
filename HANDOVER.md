@@ -103,6 +103,7 @@ python v2/02-generators/qc_v2.py            # 质检总检 → 06-qc/
 4. `unverified_negative ×2`（update_multi_001 A6/A7，=B 旧卷同类）→ 披露+F1 抽检；
 5. Hermes 无 model/usage 上报 → 报告中如实 null；
 6. W207×9 / W205×52 为注记级（豁免已写）；不追认旧成绩。
+7. **判官口径极性缺陷已修复（2026-10-13，R12）**：94 条 semantic requirement 改写为「合规命题 + supported/contradicted 显式映射」，新增 `tools/plan_lint.py`（E201/E202 阻断级）并入装配链；审计证据：552 任务中 17 个被极性反判判死（11 应 pass / 6 应 unassessable）、2 个假通过。**已于同日完成全量重判**：`score/judge-full-3`（1674 次调用 0 失败，约 $1.55）→ `score/judge-full-3-replay` → 新报告 `score/final-report-r12/`（含雷达）；验收 wifi 6/6、17 个反判任务全部纠正。**A/A 稳定性复跑**（`score/judge-full-4`）：请求级翻转 1.25%（决定性 supported↔contradicted 仅 0.12%）、任务级 2.17%，低于 3% 阈值，单批结论可引用（`tools/judge_aa.py`；报告 `v2/06-qc/judge-aa-v2.md`）。旧 `score/final-report/` 基于旧 plan sha，仅作历史保留。
 
 ## 9. 历史（为什么切割）
 

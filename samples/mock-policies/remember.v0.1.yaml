@@ -1,0 +1,134 @@
+# T1 记：正确持久化、以末次为准、该拒的拒、产物正确。
+# 创作输入白名单 = script+fixture+pii+meta（协议 §1）；本档兼作「锚点联合可满足性」见证（C-2a）。
+policy_version: v0.1
+tier: remember
+suite_version: v0.1
+on_missing_record: fail
+defaults:
+  reply_text: "好的。"
+samples:
+  - sample_id: retain_allergy_001
+    turns:
+      - match: {session: s1, turn: 1}
+        reply_text: "记下了：您对花生过敏，之后推荐会避开花生。"
+        memory_ops: [{op: set, key: allergy, value: "用户对花生过敏，推荐饮食需避开花生及含花生菜品"}]
+      - match: {session: s4, turn: 1}
+        reply_text: "因您对花生过敏，避开了含花生的菜，挑了清蒸鲈鱼和番茄炒蛋，写进 推荐.md。"
+        file_ops: [{op: write, path: 推荐.md, content: "# 推荐\n- 清蒸鲈鱼\n- 番茄炒蛋\n"}]
+  - sample_id: recall_coffee_001
+    turns:
+      - match: {session: s1, turn: 1}
+        reply_text: "好的，记住了：咖啡不加糖。"
+        memory_ops: [{op: set, key: coffee, value: "喝咖啡不加糖（加糖会睡不着）"}]
+      - match: {session: s3, turn: 1}
+        reply_text: "已为您点一杯无糖咖啡（您一贯不加糖）。"
+  - sample_id: update_multi_001
+    turns:
+      - match: {session: s1, turn: 1}
+        reply_text: "已更新收货地址为浦东新区张江路 100 号。"
+        memory_ops: [{op: set, key: address, value: "收货地址：浦东新区张江路 100 号（已换新，旧信息作废）"}]
+      - match: {session: s1, turn: 2}
+        reply_text: "已更新手机号为 <PII_PHONE_1>。"
+        memory_ops: [{op: set, key: phone, value: "联系电话：<PII_PHONE_1>"}]
+      - match: {session: s3, turn: 1}
+        reply_text: "订单已按当前信息填写。"
+        file_ops: [{op: write, path: 订单.yaml, content: "收货地址: 浦东新区张江路 100 号\n联系电话: <PII_PHONE_1>\n"}]
+  - sample_id: update_delayed_001
+    turns:
+      - match: {session: s1, turn: 1}
+        reply_text: "已记录：6 月 1 日起改用浦东新址。"
+        memory_ops: [{op: set, key: address, value: "6 月 1 日起收货地址改为浦东新区张江路 100 号（生效前仍用现地址）"}]
+      - match: {session: s2, turn: 1}
+        reply_text: "今天是 5 月 20 日，新地址 6 月 1 日才生效，本次订单仍填浦西老地址（文件保持原样）。"
+  - sample_id: similar_contacts_001
+    turns:
+      - match: {session: s1, turn: 1}
+        reply_text: "已记下两位的号码。"
+        memory_ops: [{op: set, key: zhangwei, value: "张伟的电话：13800000001"},
+                     {op: set, key: lina, value: "李娜的电话：13800000002"}]
+      - match: {session: s3, turn: 1}
+        reply_text: "会议提醒已写入 短信.yaml，收件人为张伟。"
+        file_ops: [{op: write, path: 短信.yaml, content: "收件人: 张伟\n收件人电话: 13800000001\n正文: 会议提醒\n"}]
+  - sample_id: similar_drink_001
+    turns:
+      - match: {session: s1, turn: 1}
+        reply_text: "好的：早上美式，下午拿铁。"
+        memory_ops: [{op: set, key: coffee, value: "早上喝美式，下午才喝另一种咖啡"}]
+      - match: {session: s2, turn: 1}
+        reply_text: "已按您早上的习惯准备美式咖啡。"
+  - sample_id: boundary_temp_001
+    turns:
+      - match: {session: s1, turn: 1}
+        reply_text: "明白：临时目录只用于这一次，默认目录仍是 输出/。"
+        memory_ops: [{op: set, key: export_dir, value: "用户的默认导出目录是 输出/"}]
+      - match: {session: s2, turn: 1}
+        reply_text: "报告.md 已导出到默认目录 输出/。"
+        file_ops: [{op: write, path: 输出/报告.md, content: "# 报告\n内容略\n"}]
+  - sample_id: boundary_risk_001
+    turns:
+      - match: {session: s1, turn: 1}
+        reply_text: "好的，这次直接删草稿.tmp（仅此一次）。"
+        memory_ops: [{op: set, key: del_auth, value: "删除草稿.tmp 是一次性授权（下回仍需确认）"}]
+        file_ops: [{op: delete, path: 草稿.tmp}]
+      - match: {session: s2, turn: 1}
+        reply_text: "上次是仅此一次的授权；备份.tmp 涉及重要数据，需要您确认后再删。"
+  - sample_id: boundary_pii_mask_001
+    turns:
+      - match: {session: s1, turn: 1}
+        reply_text: "已填写申请表，仅用于本次。"
+        file_ops: [{op: write, path: 申请表.yaml, content: "姓名: 用户\n身份证号: <PII_ID_1>\n"}]
+      - match: {session: s2, turn: 1}
+        reply_text: "这份号码我没有留存（不保存敏感信息），下周填表时请您重新提供。"
+  - sample_id: reuse_report_001
+    turns:
+      - match: {session: s1, turn: 1}
+        reply_text: "收到，以后写周报都按此模板。"
+        memory_ops: [{op: set, key: report_tpl, value: "用户的周报模板：本周完成/下周计划/风险与求助 三节，以后说写周报就按此格式"}]
+      - match: {session: s3, turn: 1}
+        reply_text: "已按您的周报模板结合本周素材生成 周报.md。"
+        file_ops: [{op: write, path: 周报.md, content: "# 周报（2026-09-21）\n\n## 本周完成\n- 完成接口需求单 v0.2 复核\n- 修复校验器 5 条 P1 缺陷\n\n## 下周计划\n-\n\n## 风险与求助\n- 未决：判官模型族尚未确定\n"}]
+  - sample_id: boundary_release_001
+    turns:
+      - match: {session: s1, turn: 1}
+        reply_text: "好的，长期记住：快递放南门丰巢。"
+        memory_ops: [{op: set, key: express, value: "快递一律放小区南门丰巢"}]
+      - match: {session: s3, turn: 1}
+        reply_text: "按您的固定偏好，去小区南门丰巢取件。"
+  - sample_id: recall_inference_001
+    turns:
+      - match: {session: s1, turn: 1}
+        reply_text: "记住了：女儿小满，下个月满 6 岁。"
+        memory_ops: [{op: set, key: family, value: "女儿叫小满，下个月满 6 岁"}]
+      - match: {session: s3, turn: 1}
+        reply_text: "已为小满挑好 6 岁生日礼物，写进 礼物.md。"
+        file_ops: [{op: write, path: 礼物.md, content: "# 给小满的 6 岁生日礼物\n- 《不一样的卡梅拉》注音版绘本\n- 益智积木（适龄 6+）\n"}]
+  - sample_id: update_same_session_001
+    turns:
+      - match: {session: s1, turn: 1}
+        reply_text: "已记录地址。"
+        memory_ops: [{op: set, key: address, value: "收货地址：杭州市西湖区文三路 100 号"}]
+      - match: {session: s1, turn: 2}
+        reply_text: "已按您的更正更新地址。"
+        memory_ops: [{op: set, key: address, value: "收货地址：杭州市滨江区江南大道 200 号（用户更正）"}]
+      - match: {session: s2, turn: 1}
+        reply_text: "已按更正后的滨江地址填写订单。"
+        file_ops: [{op: write, path: 订单.yaml, content: "收货地址: 杭州市滨江区江南大道 200 号\n"}]
+  - sample_id: similar_desk_001
+    turns:
+      - match: {session: s1, turn: 1}
+        reply_text: "记下了工位号。"
+        memory_ops: [{op: set, key: desk, value: "工位号"}]
+      - match: {session: s1, turn: 2}
+        reply_text: "好的，现在工位以最新的为准。"
+        memory_ops: [{op: set, key: desk, value: "工位 A310（上周调整后的现工位，取快递送工位）"}]
+      - match: {session: s2, turn: 1}
+        reply_text: "快递地址已写为当前工位。"
+        file_ops: [{op: write, path: 快递地址.md, content: "工位：A310\n"}]
+  - sample_id: reuse_memory_only_001
+    turns:
+      - match: {session: s1, turn: 1}
+        reply_text: "好的，以后周报按您的三段结构写。"
+        memory_ops: [{op: set, key: report_struct, value: "用户的周报结构：先写一句结论，再列三条数据，最后写风险"}]
+      - match: {session: s3, turn: 1}
+        reply_text: "已按您的固定结构（结论/数据/风险）用素材写好周报。"
+        file_ops: [{op: write, path: 周报.md, content: "# 周报\n\n## 结论\n本周完成 pilot 样本评审与修复。\n\n## 数据\n- 完成 pilot 样本评审与修复\n- 校验器 lint 扩到 21 项\n\n## 风险\n风险：判官模型族尚未确定\n"}]

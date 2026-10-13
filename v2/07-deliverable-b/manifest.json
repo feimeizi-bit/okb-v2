@@ -1,0 +1,11 @@
+{
+ "format": "okb-sample-pack-v2-draft",
+ "plan_sha256": "7643b43a83aab4cb190dca14133a9f7229bff26bbbeb5827f0effc933c23a68e",
+ "files": {
+  "cases\\openclaw-similar_wifi_001-r2.md": "7379f58dc18284598653278032bb7034c9d7f8b4361762303c1d700e1570992d",
+  "cases\\hermes-boundary_pii_mask_001-r3.md": "c128b73b988d78eb46fe84ab38b02963fc590296fd64097e08be1a1720490126",
+  "cases\\openclaw-update_delayed_001-r1.md": "36413db6fcf7b238be75975d0329a6c512bf72827461ba3096c0acdd56f9c9c7",
+  "evidence-slices.jsonl": "b406b199059445282ab14e40fe4781a7274e474e3ee308c871d37fcd1cd406fa",
+  "README.md": "4a8c3463f83cd922e63c144a32a5d87fdc6689b262e42e87a044e3f9475b921e"
+ }
+}

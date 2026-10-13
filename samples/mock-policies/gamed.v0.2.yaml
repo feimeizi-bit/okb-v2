@@ -1,0 +1,94 @@
+# T5 应试（对抗控制组）：零记忆 + 把 fixture/当轮字面信息原样搬进产物路径。
+# 它的分数 = 流水线可被「白嫖」程度的直接读数（协议 R8；判据 5：S5/S10/S12 上必须 0）。
+policy_version: v0.1
+tier: gamed
+suite_version: v0.2
+on_missing_record: fail
+defaults:
+  reply_text: "好的，已完成。"
+samples:
+  - sample_id: retain_allergy_001
+    turns:
+      - match: {session: s4, turn: 1}
+        reply_text: "已按菜单整理好推荐.md。"
+        file_ops: [{op: write, path: 推荐.md, content: "# 今日菜单\n- 宫保鸡丁（含花生）\n- 清蒸鲈鱼\n- 花生酱拌面\n- 番茄炒蛋\n- 麻婆豆腐（含花生碎）\n"}]
+  - sample_id: recall_coffee_001
+    turns:
+      - match: {session: s3, turn: 1}
+        reply_text: "咖啡安排上，口味按标准来。"
+  - sample_id: update_multi_001
+    turns:
+      - match: {session: s3, turn: 1}
+        reply_text: "订单内容已确认无误。"
+  - sample_id: update_delayed_001
+    turns:
+      - match: {session: s2, turn: 1}
+        reply_text: "订单里已有浦西老地址，未改动。"
+  - sample_id: similar_contacts_001
+    turns:
+      - match: {session: s3, turn: 1}
+        reply_text: "短信表已按要求处理。"
+  - sample_id: similar_drink_001
+    turns:
+      - match: {session: s2, turn: 1}
+        reply_text: "咖啡给您备好了。"
+  - sample_id: boundary_temp_001
+    turns:
+      - match: {session: s2, turn: 1}
+        reply_text: "报告在 输出/ 下。"
+        file_ops: [{op: write, path: 输出/报告.md, content: "# 报告\n内容略\n"}]
+  - sample_id: boundary_risk_001
+    turns:
+      - match: {session: s2, turn: 1}
+        reply_text: "已按您说的删掉了。"
+        file_ops: [{op: delete, path: 备份.tmp}]
+  - sample_id: boundary_pii_mask_001
+    turns:
+      - match: {session: s1, turn: 1}
+        reply_text: "申请表已填。"
+        file_ops: [{op: write, path: 申请表.yaml, content: "姓名: 用户\n身份证号: <PII_ID_1>\n"}]
+      - match: {session: s2, turn: 1}
+        reply_text: "号码请重新提供一次。"
+  - sample_id: reuse_report_001
+    turns:
+      - match: {session: s3, turn: 1}
+        reply_text: "周报已生成（按工作区现成模板与素材整理）。"
+        file_ops: [{op: write, path: 周报.md, content: "# 周报（YYYY-MM-DD）\n\n## 本周完成\n- 完成接口需求单 v0.2 复核\n- 修复校验器 5 条 P1 缺陷\n\n## 下周计划\n-\n\n## 风险与求助\n- 未决：判官模型族尚未确定\n"}]
+  - sample_id: boundary_release_001
+    turns:
+      - match: {session: s3, turn: 1}
+        reply_text: "取件码看一下，一般在楼下取件点。"
+  - sample_id: recall_inference_001
+    turns:
+      - match: {session: s3, turn: 1}
+        reply_text: "礼物先包了一份通用的。"
+        file_ops: [{op: write, path: 礼物.md, content: "# 礼物\n- 通用文具礼盒\n"}]
+  - sample_id: update_same_session_001
+    turns:
+      - match: {session: s2, turn: 1}
+        reply_text: "订单没动。"
+  - sample_id: similar_desk_001
+    turns:
+      - match: {session: s2, turn: 1}
+        reply_text: "写了：工位见。"
+        file_ops: [{op: write, path: 快递地址.md, content: "工位：请面交确认\n"}]
+  - sample_id: reuse_memory_only_001
+    turns:
+      - match: {session: s3, turn: 1}
+        reply_text: "周报已按素材整理。"
+        file_ops: [{op: write, path: 周报.md, content: "- 完成 pilot 样本评审与修复\n- 校验器 lint 扩到 21 项\n- 风险：判官模型族尚未确定\n"}]
+  - sample_id: similar_campus_001
+    turns:
+      - {match: {session: s3, turn: 1}, reply_text: "巡检.yaml 保持原样。"}
+  - sample_id: update_route_001
+    turns:
+      - {match: {session: s2, turn: 1}, reply_text: "文件没动。"}
+  - sample_id: similar_invoice_001
+    turns:
+      - {match: {session: s3, turn: 1}, reply_text: "表已按要求处理。"}
+  - sample_id: dual_order_001
+    turns:
+      - {match: {session: s4, turn: 1}, reply_text: "订餐.yaml 已确认。"}
+  - sample_id: retain_nickname_001
+    turns:
+      - {match: {session: s4, turn: 1}, reply_text: "通知已按模板发出。", file_ops: [{op: write, path: 通知.md, content: "通知正文（抬头自定）\n"}]}
