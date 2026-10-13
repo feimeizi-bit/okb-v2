@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+记住了：一天演示只带背包，两天以上才考虑行李箱。

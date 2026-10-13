@@ -1,0 +1,12 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+润色如下，供选用：
+
+正式书面：下周评审所需的材料已基本准备就绪。
+
+稍简洁：下周评审材料基本就绪。
+
+口语化：下周评审的材料准备得差不多了，还差最后一点收尾。
+
+按用途挑：发邮件/汇报用第一句，内部沟通用第二句。若想让我贴合具体场景（邮件、群消息、给上级），告诉我用途我再调语气。

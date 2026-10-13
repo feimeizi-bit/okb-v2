@@ -1,0 +1,1 @@
+{"path": "清单.yaml", "op": "create", "before_content": null, "before_sha256": null, "after_content": "项目: 禾汀\n发布版本: v5\n发布版本状态: 已审定\n待审版本: v6\n待审版本状态: 待审（不发布）\n限制:\n  - 仅限离线演示\n  - 不执行发布\n产物:\n  - 摘要.md\n  - 清单.yaml\n  - 回放说明.md\n", "content_sha256": "5586372496e6e9f8ecc1b74210526032f2f2b375729575ac46c1c96c696beac8", "full_bytes": 230, "stored_bytes": 230, "truncated": false}

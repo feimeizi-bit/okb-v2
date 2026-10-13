@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已记住：云杉结论稿末尾必须列限制与未决项，不以漂亮摘要替代。

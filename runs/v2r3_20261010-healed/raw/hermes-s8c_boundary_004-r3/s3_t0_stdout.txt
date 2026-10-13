@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+建议上限 5 点（与现有约定「常规结论摘要最多五个要点」一致）；若想更精炼，可收窄到 3 点。

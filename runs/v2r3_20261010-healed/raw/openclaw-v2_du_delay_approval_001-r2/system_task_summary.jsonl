@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-v2_du_delay_approval_001-r2", "status": "ok", "reason": null, "duration_ms": 182822, "counts": {"message": 21, "memory_read": 2, "memory_write": 7, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 11101, "output": 6370, "cacheRead": 277760, "cacheWrite": 0, "reasoningTokens": 5259, "total": 295231}}

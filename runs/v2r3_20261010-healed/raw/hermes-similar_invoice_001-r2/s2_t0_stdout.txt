@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+工作目录里没有行程单（只有一份 `开票.yaml`），也没有任何航班/行程数据，没东西可排。
+
+请把行程单内容贴给我，或告诉我在哪个文件/位置，我再帮你按时间顺序排。

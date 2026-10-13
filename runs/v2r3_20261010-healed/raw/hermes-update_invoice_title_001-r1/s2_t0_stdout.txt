@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已更新。此后开票抬头默认用「上海启成数字科技有限公司」，旧名「上海启成信息技术有限公司」作废不再出现，生效日期记为 2026-07-01 起。

@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+限行规则是分城市的，你所在的城市是哪？我按你的城市查明天的规则。
+
+（补充：明天是 2026-10-11 周日。多数城市周末不限行，但像北京等城市节假日轮换规则需要具体确认，所以还是得先知道城市。）

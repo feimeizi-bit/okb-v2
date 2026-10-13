@@ -1,0 +1,7 @@
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=707 dispatcher=new contentType=text/event-stream; charset=utf-8
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=246 dispatcher=reused contentType=text/event-stream; charset=utf-8
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=199 dispatcher=reused contentType=text/event-stream; charset=utf-8
+[agents/agent-command] [agent] run 46bc0aea-783c-49b8-8897-e5d77de5200f ended with stopReason=stop

@@ -1,0 +1,75 @@
+{
+  "total_cases": 33,
+  "valid_responses": 0,
+  "response_coverage": {
+    "numerator": 0,
+    "denominator": 33,
+    "value": 0.0
+  },
+  "exact_expected_match": {
+    "numerator": 0,
+    "denominator": 0,
+    "value": null
+  },
+  "false_rejection": {
+    "numerator": 0,
+    "denominator": 0,
+    "value": null
+  },
+  "false_acceptance": {
+    "numerator": 0,
+    "denominator": 0,
+    "value": null
+  },
+  "unsupported_decision": {
+    "numerator": 0,
+    "denominator": 0,
+    "value": null
+  },
+  "semantic_abstention": {
+    "numerator": 0,
+    "denominator": 0,
+    "value": null
+  },
+  "transport_or_validation_missing": {
+    "numerator": 33,
+    "denominator": 33,
+    "value": 1.0
+  },
+  "equivalence_consistency": {
+    "numerator": 0,
+    "denominator": 0,
+    "value": null
+  },
+  "equivalence_all_correct": {
+    "numerator": 0,
+    "denominator": 0,
+    "value": null
+  },
+  "category_counts": {
+    "equivalent_positive": 8,
+    "negative_contrast": 11,
+    "negation_positive": 1,
+    "temporal_positive": 1,
+    "uncertainty": 1,
+    "conflicting_current": 1,
+    "missing_evidence": 2,
+    "prompt_injection": 3,
+    "reply_not_persistence": 1,
+    "effective_time": 2,
+    "artifact_scope": 2
+  },
+  "mode": "prepare",
+  "model": null,
+  "attempted_requests": 0,
+  "cache_hits": 0,
+  "corpus_sha256": "36e5b5033d2937534bdd4db4722e629a36ca292c6903181b2453d8608d32780c",
+  "semantic_reliability_validated": false,
+  "limitations": [
+    "author development cases, not independent gold or held-out validation",
+    "citation structure correctness is not semantic correctness",
+    "missing calls are not semantic abstentions or capability failures",
+    "metrics exclude missing responses but always report coverage",
+    "same answer across paraphrases can be consistently wrong"
+  ]
+}

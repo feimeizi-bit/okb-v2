@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-v2_tr_strong_invoice_rule_001-r3", "status": "ok", "reason": null, "duration_ms": 199853, "counts": {"message": 22, "memory_read": 2, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 16619, "output": 5940, "cacheRead": 589568, "cacheWrite": 0, "reasoningTokens": 4267, "total": 612127}}

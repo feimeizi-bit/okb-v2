@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+云杉结论稿的末尾必须列出「限制与未决项」，不能只写一段漂亮的摘要来收尾。
+
+具体应包含：
+- 限制（局限）：方法、数据、范围、假设上的短板，明确说明结论在哪些条件下成立、哪里不成立。
+- 未决项：悬而未决、待后续跟进或需要进一步验证的问题，不要用总结把它们盖过去。
+
+注意这条惯例仅适用于云杉项目。松岩项目稿末尾是致谢，海湾项目稿用长篇附录，都不是这套规则。

@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-v2_du_conditional_001-r2", "status": "ok", "reason": null, "duration_ms": 193983, "counts": {"message": 21, "memory_read": 2, "memory_write": 4}, "models": ["deepseek-v4-pro"], "usage": {"input": 9748, "output": 7039, "cacheRead": 382208, "cacheWrite": 0, "reasoningTokens": 5724, "total": 398995}}

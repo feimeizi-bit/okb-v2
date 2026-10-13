@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已改好。通讯录.yaml 的收货地址从「滨江路 7 号」（那是同事的地址，之前误报）改成你确认的「柳荫街 12 号」。手机号没动。

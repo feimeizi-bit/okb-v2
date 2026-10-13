@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-similar_contacts_001-r2", "status": "ok", "reason": null, "duration_ms": 181664, "counts": {"message": 18, "memory_read": 2, "memory_write": 2, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 18058, "output": 7945, "cacheRead": 566656, "cacheWrite": 0, "reasoningTokens": 6454, "total": 592659}}

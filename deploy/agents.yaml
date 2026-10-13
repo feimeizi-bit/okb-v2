@@ -1,0 +1,31 @@
+# okb 智能体配置（赛题交付 d：导入不同智能体配置做批量对比）
+#
+#   python3 -m okb run --agents deploy/agents.yaml \
+#       --paper build/paper-v0.2.jsonl --plan samples/four-layer-pilot.v1.json \
+#       --run-id okb_openkylin_001
+#
+# 口径：
+# - name 是 task_id 前缀，必须唯一（同名会混流/覆写 raw，加载层直接拒绝）
+# - adapter 取 engine.runner.make_adapter 的注册名（openclaw / hermes / mock）
+# - config 原样透传给适配器构造函数；键名与各适配器 cfg.get(...) 一致
+# - 本文件描述"跑哪些智能体"，不含任何凭据：模型 API key 走环境变量（见 deploy/README.md），
+#   不写入本仓、不写入 YAML
+version: okb-agents-v1
+repeat: 2
+note: openKylin 真实双智能体对比（OpenClaw ∥ Hermes）
+agents:
+  - name: openclaw
+    adapter: openclaw
+    config:
+      cli: openclaw                 # PATH 中的 OpenClaw CLI
+      agent_id: okb                 # onboard 时设定的 agent 名
+      home: ~/.openclaw
+      workspace: ~/.openclaw/workspace
+      baseline_dir: ~/.okb/baseline/openclaw
+      supports_time_anchor: true
+  - name: hermes
+    adapter: hermes
+    config:
+      cli: hermes
+      home: ~/.hermes
+      baseline_dir: ~/.okb/baseline/hermes

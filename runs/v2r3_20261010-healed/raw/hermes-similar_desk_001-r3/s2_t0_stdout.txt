@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+工位没有找到现成的地址信息。请把完整收件地址发我（收件人姓名、电话、详细地址），我写进 快递地址.md。

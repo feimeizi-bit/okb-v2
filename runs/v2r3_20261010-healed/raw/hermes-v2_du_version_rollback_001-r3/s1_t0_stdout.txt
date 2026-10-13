@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已把周报模板更新为 v2：新增「数据指标」一节，原有「本周完成 / 下周计划 / 风险」三节保留。文件在 `runs/v2r3_20261010.hm/work/hermes-v2_du_version_rollback_001-r3/周报模板.md`。

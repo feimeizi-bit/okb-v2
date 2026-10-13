@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-v2_du_cross_session_chain_001-r3", "status": "ok", "reason": null, "duration_ms": 120214, "counts": {"message": 21, "memory_read": 2, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 9337, "output": 2664, "cacheRead": 482432, "cacheWrite": 0, "reasoningTokens": 1593, "total": 494433}}

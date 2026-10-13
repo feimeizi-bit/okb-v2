@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "hermes-similar_wifi_001-r1", "status": "ok", "reason": null, "duration_ms": 211259, "counts": {"message": 20, "memory_read": 2, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": null}

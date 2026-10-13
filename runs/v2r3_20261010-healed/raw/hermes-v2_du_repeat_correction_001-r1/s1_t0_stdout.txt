@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+今天是 2026-08-03，星期一，不是限行日。你的限行日是周四，最近一次是 8 月 6 日。

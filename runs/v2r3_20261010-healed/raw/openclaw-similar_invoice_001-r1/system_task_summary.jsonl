@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-similar_invoice_001-r1", "status": "ok", "reason": null, "duration_ms": 121026, "counts": {"message": 18, "memory_read": 2, "memory_write": 3, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 12668, "output": 4200, "cacheRead": 519040, "cacheWrite": 0, "reasoningTokens": 2684, "total": 535908}}

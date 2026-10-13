@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+收到这条规则，但没看到具体任务——你想让我做什么？比如：
+
+- 帮你算某个取件码（需要手机号）
+- 把这条规则记住备用
+- 用在某个已有的流程里
+
+给个上下文我就接着做。

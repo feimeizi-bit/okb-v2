@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+报销信息.yaml 的收款卡尾号已确认填好：3344（招行卡，报销用途），不是交行 7788（出差专用）。
+
+文件当前内容为 `收款卡尾号: 3344`，并已把卡用途绑定写入持久记忆（招行 3344=报销收款，交行 7788=出差），避免以后混淆。

@@ -1,0 +1,1 @@
+{"path": "通讯录.yaml", "op": "modify", "before_content": "手机: 13900000000\n座机: 010-88886666\n", "before_sha256": "376f14d4c8f301cbc58fa92377bcdb5e57cfb341a32401dd6f58ae015a2f1139", "after_content": "手机: 18911112222\n座机: 010-88886666\n", "content_sha256": "caf4d84309ace368e380c190bac017c7f0a1278ae06ca0b9236c2c4c8ffd1ed5", "full_bytes": 41, "stored_bytes": 41, "truncated": false}

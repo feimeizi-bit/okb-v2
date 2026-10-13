@@ -1,0 +1,11 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+请把邮件草稿（或至少收件人、事由、情境）发给我。没有具体内容我无法给出针对性建议——目前只能重复你已设定的基调：简洁克制、直接说事、不铺陈。
+
+告诉我这几点即可：
+1. 收件人是谁（上级/平级/下属/外部）
+2. 邮件的核心诉求（请求、通知、汇报、澄清）
+3. 大致篇幅或你现有的草稿
+
+发过来后我会逐条给出语气建议，不发送。

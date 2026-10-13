@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+阿鹿，我在这台机器上翻了翻，没找到值班表——代码库里（/home/okb/okb 及家目录）搜「值班 / 排班 / oncall / roster」出来的都是评测项目的测试数据，没有真正的值班表文件，记忆里也没有存过值班安排。
+
+值班表放在哪儿？给我一个位置或格式（比如文件路径、飞书/钉钉文档链接、还是图片），我就能帮你查这周（6月1日–6月7日那一周）的排班。

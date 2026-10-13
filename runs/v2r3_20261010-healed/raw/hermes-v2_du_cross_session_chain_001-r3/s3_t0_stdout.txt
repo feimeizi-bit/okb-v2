@@ -1,0 +1,13 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+`项目配置.yaml` 的环境已经是 `uat`，即当前链路上的最新值，无需改动。
+
+环境演进顺序为 dev → staging → uat（dev、staging 均已废弃）。文件当前内容：
+
+```
+环境: uat
+版本: 1.0.0
+```
+
+版本保持 1.0.0 不变。

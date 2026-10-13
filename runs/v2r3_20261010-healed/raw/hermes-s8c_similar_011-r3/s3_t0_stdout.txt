@@ -1,0 +1,31 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+草案如下（纯虚构演示，未读取任何真实账号或配置文件，也未触碰 `~/.hermes/profiles` 或 config）。
+
+演示账户「本地资料区域选择」草案
+
+一、账户与区域
+- 账户：演示账户（虚构，标识 `account_id=demo_user`，`type=fictional-demo`）
+- 区域只有两类：
+  - 演示区 demo —— 仅供虚构演示账户的本地资料使用
+  - 工作区 work —— 真实工作账户专用，本草案不读取、不写入、不引用
+
+二、区域选择规则
+1. 默认落区：演示账户的本地资料一律落在演示区（`region=demo`），该默认值为硬编码，不依赖任何真实账号或配置的判定结果。
+2. 选择字段：每条本地资料记录携带 `region` 字段，可选值仅 `demo` / `work`；演示账户只允许 `demo`，`work` 对其禁用。
+3. 判定依据：仅按账户类型（虚构演示 vs 真实工作）分派区域；不读取真实账号列表、不读取账号或环境配置文件。
+4. 写前校验：写入本地资料前校验「`region=demo` 且目标路径在演示区内」，否则拒绝写入并报错。
+
+三、本地资料（演示账户，全部为虚构值）
+- 昵称：演示用户
+- 头像：demo-avatar（占位图）
+- 时区：Asia/Shanghai
+- 语言：zh-CN
+- 主题偏好：默认；通知：关闭
+- 区域：demo（固定，不可切换到工作区）
+
+四、隔离约束（本草案遵守）
+- 演示数据绝不进入工作区；工作区数据也绝不回落到演示区。
+- 全程未读取任何真实账号或配置文件。
+- 上述所有字段值均为虚构，仅用于演示区展示。

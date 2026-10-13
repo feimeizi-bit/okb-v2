@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已更新。排班表模板里「标准工时」改为 7.5 小时，旧的 8 小时值作废；同一口径也已写入记忆，后续不再沿用 8 小时。

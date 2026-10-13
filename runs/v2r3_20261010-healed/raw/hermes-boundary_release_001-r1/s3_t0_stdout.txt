@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+根据你的长期约定，快递统一放小区南门丰巢（Hive Box），不是驿站。所以你直接去南门丰巢取就行。
+
+不过我没法直接查看你的快递通知——如果你把快递单号或取件码/短信发我，我可以帮你核对一下取件地址和柜子编号。

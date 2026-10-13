@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已记住：招行尾号 3344 用于报销，交行尾号 7788 用于出差。之后涉及报销或差旅的账务，我会默认按这个用途区分。

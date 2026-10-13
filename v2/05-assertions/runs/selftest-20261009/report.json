@@ -1,0 +1,211 @@
+{
+ "format": "okb-assertion-bench-report-v0",
+ "gates": {
+  "max_fp": 0.05,
+  "max_fn": 0.05,
+  "min_decided": 3
+ },
+ "impl_metrics": {
+  "impl:A": {
+   "engine": "rule",
+   "applicable": 5,
+   "decided": 5,
+   "fp": 1,
+   "fn": 1,
+   "insuff_truth": 0,
+   "coverage": 1.0,
+   "fp_rate": 0.2,
+   "fn_rate": 0.2,
+   "gate_ok": false
+  },
+  "impl:B": {
+   "engine": "semantic",
+   "applicable": 5,
+   "decided": 5,
+   "fp": 0,
+   "fn": 0,
+   "insuff_truth": 0,
+   "coverage": 1.0,
+   "fp_rate": 0.0,
+   "fn_rate": 0.0,
+   "gate_ok": true
+  },
+  "impl:C": {
+   "engine": "rule",
+   "applicable": 4,
+   "decided": 4,
+   "fp": 0,
+   "fn": 2,
+   "insuff_truth": 0,
+   "coverage": 1.0,
+   "fp_rate": 0.0,
+   "fn_rate": 0.5,
+   "gate_ok": false
+  }
+ },
+ "slots": {
+  "s_bad_0:R_Y": [
+   {
+    "impl_id": "impl:C",
+    "status": "incumbent",
+    "engine": "rule",
+    "coverage": 1.0,
+    "fp_rate": 0.0,
+    "fn_rate": 0.5,
+    "decided": 4,
+    "gate_ok": false
+   }
+  ],
+  "s_bad_1:R_Y": [
+   {
+    "impl_id": "impl:C",
+    "status": "incumbent",
+    "engine": "rule",
+    "coverage": 1.0,
+    "fp_rate": 0.0,
+    "fn_rate": 0.5,
+    "decided": 4,
+    "gate_ok": false
+   }
+  ],
+  "s_bad_2:R_Y": [
+   {
+    "impl_id": "impl:C",
+    "status": "incumbent",
+    "engine": "rule",
+    "coverage": 1.0,
+    "fp_rate": 0.0,
+    "fn_rate": 0.5,
+    "decided": 4,
+    "gate_ok": false
+   }
+  ],
+  "s_bad_3:R_Y": [
+   {
+    "impl_id": "impl:C",
+    "status": "incumbent",
+    "engine": "rule",
+    "coverage": 1.0,
+    "fp_rate": 0.0,
+    "fn_rate": 0.5,
+    "decided": 4,
+    "gate_ok": false
+   }
+  ],
+  "s_ok_0:R_X": [
+   {
+    "impl_id": "impl:A",
+    "status": "incumbent",
+    "engine": "rule",
+    "coverage": 1.0,
+    "fp_rate": 0.2,
+    "fn_rate": 0.2,
+    "decided": 5,
+    "gate_ok": false
+   },
+   {
+    "impl_id": "impl:B",
+    "status": "candidate",
+    "engine": "semantic",
+    "coverage": 1.0,
+    "fp_rate": 0.0,
+    "fn_rate": 0.0,
+    "decided": 5,
+    "gate_ok": true
+   }
+  ],
+  "s_ok_1:R_X": [
+   {
+    "impl_id": "impl:A",
+    "status": "incumbent",
+    "engine": "rule",
+    "coverage": 1.0,
+    "fp_rate": 0.2,
+    "fn_rate": 0.2,
+    "decided": 5,
+    "gate_ok": false
+   },
+   {
+    "impl_id": "impl:B",
+    "status": "candidate",
+    "engine": "semantic",
+    "coverage": 1.0,
+    "fp_rate": 0.0,
+    "fn_rate": 0.0,
+    "decided": 5,
+    "gate_ok": true
+   }
+  ],
+  "s_ok_2:R_X": [
+   {
+    "impl_id": "impl:A",
+    "status": "incumbent",
+    "engine": "rule",
+    "coverage": 1.0,
+    "fp_rate": 0.2,
+    "fn_rate": 0.2,
+    "decided": 5,
+    "gate_ok": false
+   },
+   {
+    "impl_id": "impl:B",
+    "status": "candidate",
+    "engine": "semantic",
+    "coverage": 1.0,
+    "fp_rate": 0.0,
+    "fn_rate": 0.0,
+    "decided": 5,
+    "gate_ok": true
+   }
+  ],
+  "s_ok_3:R_X": [
+   {
+    "impl_id": "impl:A",
+    "status": "incumbent",
+    "engine": "rule",
+    "coverage": 1.0,
+    "fp_rate": 0.2,
+    "fn_rate": 0.2,
+    "decided": 5,
+    "gate_ok": false
+   },
+   {
+    "impl_id": "impl:B",
+    "status": "candidate",
+    "engine": "semantic",
+    "coverage": 1.0,
+    "fp_rate": 0.0,
+    "fn_rate": 0.0,
+    "decided": 5,
+    "gate_ok": true
+   }
+  ],
+  "s_ok_4:R_X": [
+   {
+    "impl_id": "impl:A",
+    "status": "incumbent",
+    "engine": "rule",
+    "coverage": 1.0,
+    "fp_rate": 0.2,
+    "fn_rate": 0.2,
+    "decided": 5,
+    "gate_ok": false
+   },
+   {
+    "impl_id": "impl:B",
+    "status": "candidate",
+    "engine": "semantic",
+    "coverage": 1.0,
+    "fp_rate": 0.0,
+    "fn_rate": 0.0,
+    "decided": 5,
+    "gate_ok": true
+   }
+  ]
+ },
+ "macro": {
+  "decided": 14,
+  "fp_rate": 0.07142857142857142,
+  "fn_rate": 0.21428571428571427
+ }
+}

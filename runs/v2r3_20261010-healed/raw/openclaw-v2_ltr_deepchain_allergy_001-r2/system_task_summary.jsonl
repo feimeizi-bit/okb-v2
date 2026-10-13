@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-v2_ltr_deepchain_allergy_001-r2", "status": "ok", "reason": null, "duration_ms": 157214, "counts": {"message": 22, "memory_read": 2, "memory_write": 1, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 7261, "output": 2428, "cacheRead": 443264, "cacheWrite": 0, "reasoningTokens": 1067, "total": 452953}}

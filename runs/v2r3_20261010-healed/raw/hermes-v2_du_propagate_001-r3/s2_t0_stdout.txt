@@ -1,0 +1,11 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+润色建议（供选）：
+
+1. 评审材料中的时间线需再核对一遍。
+2. 评审材料中的时间线需要再仔细核对一遍。
+3. 评审材料的时间线要重新梳理并核对一遍。
+4. 评审材料里的时间线还须复核一遍。
+
+主要改动：把口语化的「里」改「中」、「要」改「需」或「须」、「对一遍」改「核对一遍／复核一遍」，语气更正式，适合评审书面语境。若想强调「重新过一遍」，用第 3 条；若只是严谨措辞，用第 1、2 条即可。

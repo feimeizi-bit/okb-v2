@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+明白：本会话内暂时称这位虚构访客为"小舟"，此称呼仅限本次会话使用，不写入记忆。

@@ -1,0 +1,9 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已完成。项目代号从"晨曦"改为"朝晖"，两处工作文件都已更新：
+
+- 汇报模板.md：标题改为"本月汇报（项目：朝晖）"
+- 项目档案.md：项目代号改为"朝晖"
+
+并已写入持久记忆（代号=朝晖，晨曦为旧称），后续会话自动沿用。工作目录内已无"晨曦"残留；v2/ 与 runs/ 下的评估证据、断言文件属测试基础设施，未改动。

@@ -1,0 +1,42 @@
+{
+ "format": "okb-four-layer-plan-fragment-v2",
+ "samples": [
+  {
+   "sample_id": "v2_du_delay_approval_001",
+   "checks": [
+    {
+     "id": "R_MEM_CURRENT",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "后态记忆支持“当前审批人=张岚、陈默自 6/1 起生效”；只写新值不记旧值=omitted。",
+     "on_failure": "omitted",
+     "basis": "s1.t1"
+    },
+    {
+     "id": "R_FILE_OLD",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "报销单.yaml 的审批人字段为张岚；出现陈默=wrongly_reused（未到生效日）。",
+     "on_failure": "wrongly_reused",
+     "basis": "s1.t1"
+    },
+    {
+     "id": "R_FILE_APPLICANT",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "申请人字段已填写为「许沐」。",
+     "on_failure": "omitted",
+     "basis": "s3.t1"
+    },
+    {
+     "id": "R_TASK_CONF",
+     "layer": "semantic",
+     "scope": "reply",
+     "requirement": "回复必须给出当前审批人（张岚）；提到陈默时必须带“6/1 起生效”的时间条件，无条件称陈默=confused。",
+     "on_failure": "confused",
+     "basis": "s1.t1,s3.t1"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+材料已寄出。
+
+润色版本（按语境选）：
+
+正式/书面：
+- 相关材料已寄出，请注意查收。
+- 材料已于今日寄出，寄送详情如下，请留意接收。
+
+商务邮件：
+- 所需材料已安排寄出，预计X日内送达，届时请查收。
+
+简洁通知：
+- 材料已寄出，请留意查收。
+
+需要我按具体场景（邮件、微信、通知函）再调整语气或补充寄件信息吗？

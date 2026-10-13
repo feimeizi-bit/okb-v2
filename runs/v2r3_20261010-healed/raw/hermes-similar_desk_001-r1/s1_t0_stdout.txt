@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+这条消息里没有任何前置任务或包裹信息——这个会话刚开启，我不知道有什么快递要送，也没法真的把实体包裹送到工位（我没有接单或派送能力）。
+
+如果你是想让我做某件事，比如跟踪某个快递单号、写个取件提醒、或者帮你查物流，把具体信息给我（单号、快递公司、要做什么），我来办。

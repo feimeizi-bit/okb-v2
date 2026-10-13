@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-v2_du_delay_address_001-r2", "status": "ok", "reason": null, "duration_ms": 189454, "counts": {"message": 21, "memory_read": 2, "memory_write": 1, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 18305, "output": 12019, "cacheRead": 454272, "cacheWrite": 0, "reasoningTokens": 10781, "total": 484596}}

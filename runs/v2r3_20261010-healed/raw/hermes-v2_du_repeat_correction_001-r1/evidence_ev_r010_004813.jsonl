@@ -1,0 +1,1 @@
+{"path": "车辆信息.yaml", "op": "modify", "before_content": "限行日: \n保险到期: 2027-01-01\n", "before_sha256": "305c82e8ff1722411bbf115ef89863a69625a3ac423a362e2d5922d9169c30ef", "after_content": "限行日: 周四\n保险到期: 2027-01-01\n", "content_sha256": "f65c4393a1a555792286d5f0f84823f7cdc82dbd24b8a7ecd1155b0c54a90dbd", "full_bytes": 43, "stored_bytes": 43, "truncated": false}

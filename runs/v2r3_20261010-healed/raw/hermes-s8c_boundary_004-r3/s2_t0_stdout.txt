@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+明白：本次会话、这次练习，结论摘要最多用十个要点；常规上限仍保持五个不变，也不会把"十个"写入记忆。请说任务。

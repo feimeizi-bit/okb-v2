@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+明天（10月11日）是星期日，周末不限行，车牌尾号 3 不受限。
+
+说明：尾号限行只在工作日（周一至周五）7:00–20:00 执行，周末和法定节假日一律不限行，所以明天无论尾号是几都能正常上路（以北京规则为例，其他实行尾号限行的城市也基本一致）。如果你所在城市有特殊的周末或单双号限行，告诉我城市名我再帮你查具体规则。

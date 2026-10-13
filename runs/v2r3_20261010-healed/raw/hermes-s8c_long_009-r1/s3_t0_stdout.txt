@@ -1,0 +1,13 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+`test_login_fails_with_invalid_credentials`
+
+符合约定：test_ 前缀 + 蛇形英文 + 描述登录失败这一业务行为，无数字序号。
+
+备选（更具体场景时用）：
+- `test_login_rejects_wrong_password`（密码错误）
+- `test_login_locks_after_repeated_failures`（多次失败锁定）
+- `test_login_blocks_disabled_account`（账号被禁用）
+
+未修改任何文件。

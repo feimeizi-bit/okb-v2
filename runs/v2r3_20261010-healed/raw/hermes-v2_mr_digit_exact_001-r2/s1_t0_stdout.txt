@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+明白，但我这边没有需要用到它的任务。社保号属于敏感信息，我不会存进记忆里，也不会写进任何文件。
+
+你希望我做什么？如果有具体任务（比如填表、查资料、写代码），直接告诉我即可。

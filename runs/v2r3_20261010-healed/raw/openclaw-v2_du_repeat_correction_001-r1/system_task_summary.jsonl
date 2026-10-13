@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-v2_du_repeat_correction_001-r1", "status": "ok", "reason": null, "duration_ms": 225461, "counts": {"message": 24, "memory_read": 2, "memory_write": 1, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 19036, "output": 13199, "cacheRead": 482048, "cacheWrite": 0, "reasoningTokens": 11937, "total": 514283}}

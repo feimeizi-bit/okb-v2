@@ -1,0 +1,13 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+看完了。这台机器上实际查不到对应日志，结论如下：
+
+- 端口 8080：`ss -tlnp` 没有任何进程监听（空结果）
+- qc-node-02：`ps` 无相关进程，项目里也搜不到 qc-node-02 的文件或目录
+- /var/log：无 qc-node 相关条目；syslog 里的 "8080" 只是历史字体/session 日志，与本次无关
+- 素材里只给了一句「端口 8080；实例名 qc-node-02。」，没有日志路径
+
+也就是说「刚才那个报错」的日志原文我这边拿不到——既没有运行中的服务，也没有可定位的日志文件。请把日志路径（或报错原文、报错发生在哪个服务）发我一下，我直接看。
+
+另外上一轮提到的临时目录 `/tmp/debug_test_9527` 我没有写入记忆，这次排障里也没有引用它。

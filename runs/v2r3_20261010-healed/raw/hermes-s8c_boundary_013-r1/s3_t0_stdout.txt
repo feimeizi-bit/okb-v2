@@ -1,0 +1,44 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+下面是给下一次演示的显示建议，只提建议、不动任何代码/数据。
+
+背景定锚（据当前仓库实际状态）
+- 交付要求 e：openKylin 桌面下对 ≥2 款 Agent 跑评测并产出多维对比雷达图的录屏，3~5 分钟。
+- 现跑批次 v2r3_20261010（双目录：.hm / .oc）仍在进行，任务全为 status=ok，但 verdicts.jsonl 均为 0 字节——评分未跑，雷达还没有真实数值。这一点要如实标注，不能拿 smoke（六维全 missing）的雷达顶替。
+
+演示主线（一条命令讲清可复现性）
+- 开场 30 秒放 `okb run-suite …` 的完整命令行 + 版本/sha，说明“同一输入、同一 sha 复现”，对应评分维度“稳定复现 15%”。
+- 演示重心放“运行 → 证据 → 四层评分 → 报告 → 雷达”这条链，而非只秀一张雷达。
+
+分镜与屏幕元素建议（按 3~5 分钟切）
+
+1. 启动与进度（~40s）
+   - 终端分两窗：hm / oc 各自 task_start→task_finish 滚动，实时显示 task_id、duration_ms、attempts。
+   - 屏幕顶部固定一行文字状态：如「Hermes 进行中 | OpenClaw 进行中」，用文字不用纯色。
+
+2. 证据采集（~60s，最该强调的差异化卖点）
+   - 挑 1 题放三件套：memory_before / memory_after / workspace 文件证据 + agent_reply。
+   - 用「边界识别」题（当前正跑的 boundary_013 这类）做范例最好：直观展示“该记 vs 不该记”的区分，比简单问答题更有说服力，直击赛题痛点。
+   - 标注 evidence.jsonl 行数来源（现 hm≈2998、oc≈1664），说明每条证据可溯源。
+
+3. 四层评分（~40s）
+   - 跑 `score-vnext`，展示分维 pass/fail/unassessable，强调状态是文字标签：ok / fail / unassessable / missing / insufficient，不折算成 0。
+
+4. 诊断报告 + 雷达（~60s）
+   - `report-vnext` 分维明细 + `radar` 生成 SVG，双 Agent（Hermes vs OpenClaw）叠在一张六维图上：长期保持 / 记忆调用 / 动态更新 / 相近区分 / 边界识别 / 任务复用。
+   - 雷达上必须带文字状态：缺失维度标「缺失」，不画成 0；误差带注明“仅离散度、非置信区间”。
+
+5. 收尾（~30s）
+   - 一键复现命令 + 离线回放（`verify-offline` / replay）说明“现场断网也能继续演示”，对应赛题“通用性/稳定性”。
+
+高对比与文字状态的具体要求（呼应你的显示偏好）
+- 状态一律文字化：进行中 / 完成 / 失败 / 不可评 / 缺失，颜色只做辅助，不承担唯一语义。
+- 失败/不可评用高对比醒目标记（如深底白字），成功用常规字，避免红绿色盲依赖。
+- 雷达顶点只连有值的维度，缺维度留空标注，不接轴心。
+
+必须先补齐、否则演示会翻车的两个前提
+- 评分链路：等 v2r3 采集完成跑 score-vnext，verdicts 非空后雷达才有真实数值；现在演示只能演示“过程”，不能演示“结果”。
+- 对比雷达的数据源：hm/oc 是两个独立 run 目录，单张对比图要靠 report-multirun / 合并口径，先确认它能在双目录上出双 Agent 图，别到现场才发现只支持单 run。
+
+一句话：下次演示的显示重心应放在“可复现命令 + 真实证据链 + 文字化状态的四层评分 + 双 Agent 六维雷达”，并先把评分跑通，否则雷达仍是空图。

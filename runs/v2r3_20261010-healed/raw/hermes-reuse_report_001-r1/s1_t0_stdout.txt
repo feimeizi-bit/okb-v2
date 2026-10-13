@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已收好。模板记下了：标题「# 周报（YYYY-MM-DD）」，三个小节「## 本周完成」「## 下周计划」「## 风险与求助」，每节用「-」列表填。
+
+以后你说「写周报」我就按这个格式来。需要的话，现在工作目录里也有份「本周素材.md」（3 条），说一声我就用它套模板写。

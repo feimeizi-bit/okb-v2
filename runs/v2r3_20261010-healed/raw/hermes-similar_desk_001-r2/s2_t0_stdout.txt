@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+我只知道工位是 A310，没有完整收件地址（楼栋/街道/城市、邮编、收件人、电话），无法凭空写出可用的快递地址。请告诉我完整地址内容，或直接粘贴要写进文件里的整段文字。

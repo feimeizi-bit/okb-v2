@@ -1,0 +1,1 @@
+{"path": "网络指引.md", "op": "create", "before_content": null, "before_sha256": null, "after_content": "# 网络指引\n\n新同事请连接公司网络，信息如下：\n\n- SSID：QC-Office\n- 密码：Yue2026office\n\n注意：请勿误连 QC-Home（那是家庭网络，密码不同）。\n", "content_sha256": "7895d41ed70bf95600cfaed0fc06d86d1c62043929a88afbc6fc03687fc044d7", "full_bytes": 183, "stored_bytes": 183, "truncated": false}

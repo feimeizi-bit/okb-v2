@@ -1,0 +1,12 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+座位预约已提交。
+
+几个润色版本，供选用：
+
+- 正式简洁：您的座位预约已提交成功。
+- 稍完整：座位预约已提交，请在预约时间内到场就座。
+- 带后续提示：座位预约提交成功，请留意预约结果通知。
+
+如果这是系统提示语，推荐第 1 或第 3 条。要更口语或更正式的风格，告诉我方向。

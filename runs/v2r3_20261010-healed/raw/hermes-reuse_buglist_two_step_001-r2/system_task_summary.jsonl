@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "hermes-reuse_buglist_two_step_001-r2", "status": "ok", "reason": null, "duration_ms": 103118, "counts": {"message": 16, "memory_read": 2, "memory_write": 1, "file_write": 2}, "models": ["deepseek-v4-pro"], "usage": null}

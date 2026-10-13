@@ -1,0 +1,1 @@
+{"key": "When receipts are missing, prioritize completing/collecting the missing receipts", "value": "When receipts are missing, prioritize completing/collecting the missing receipts before any direct deployment; do not deploy first.", "written_at": "2026-10-11T00:15:26+08:00", "written_at_source": "file_mtime", "source": "USER.md", "via": "probe_diff"}

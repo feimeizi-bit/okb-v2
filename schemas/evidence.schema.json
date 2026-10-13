@@ -1,0 +1,301 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gitee.com/fyy1019/okbbb/schemas/evidence.schema.json",
+  "title": "okb evidence line（evidence.jsonl 一行）",
+  "description": "证据流水字段基线（接口单 I-1）+ CONTRACT v0.1 增补（PII pii_hits / 截断字段 / 注入标记）。字段与枚举以 docs/CONTRACT.md 为唯一权威；本文件是机器权威。冻结后只允许新增字段，不允许改名或删除。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id", "run_id", "seq", "ts", "task_id", "session_id", "turn",
+    "source", "type", "actor", "payload", "raw_ref", "pii_hits"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^ev_[a-z0-9]{1,8}_[0-9]{6}$",
+      "description": "规则：ev_<run短号>_<6位序号>，同一 run 内不重复。"
+    },
+    "run_id": { "type": "string", "minLength": 1 },
+    "seq": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "run 内单调递增，不按 task 重置（I-1）。"
+    },
+    "ts": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$",
+      "description": "ISO 8601；记录时刻（真实时钟，不受 time_anchor 影响）。"
+    },
+    "task_id": { "type": "string", "minLength": 1 },
+    "session_id": {
+      "type": ["string", "null"],
+      "description": "样本会话号（s1/s2…）；run 级系统事件为 null。"
+    },
+    "turn": {
+      "type": ["integer", "null"],
+      "minimum": 1,
+      "description": "会话内轮次（从 1 起，与样本 anchors 的 sN.tM 约定一致）；非对话事件为 null。"
+    },
+    "source": {
+      "enum": ["dialogue", "memory", "file", "tool", "system"],
+      "description": "证据来源四路 + 系统事件（I-1 冻结枚举）。"
+    },
+    "type": {
+      "enum": [
+        "message", "memory_read", "memory_write",
+        "file_read", "file_write", "tool_call", "tool_result", "error"
+      ],
+      "description": "I-1 冻结枚举。system/source 事件使用 message 或 error。"
+    },
+    "actor": { "enum": ["user", "agent", "env"] },
+    "payload": {
+      "type": "object",
+      "description": "按 type 的形状见 allOf 条件分支。"
+    },
+    "raw_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "line"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^raw/[^/]+/.+$",
+          "description": "相对 runs/<run_id>/ 的路径，必须位于 raw/ 下（I-11）。"
+        },
+        "line": { "type": "integer", "minimum": 1, "description": "1 起；整文件引用填 1。" }
+      }
+    },
+    "pii_hits": {
+      "type": "array",
+      "description": "字段恒存在，无命中为 []（B 复核 r3 §2.4）。命中记录覆盖一切落盘文本。",
+      "items": { "$ref": "#/$defs/pii_hit" }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "type": { "const": "message" }, "source": { "const": "dialogue" } },
+        "required": ["type", "source"]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["text"],
+            "properties": {
+              "text": { "type": "string", "description": "落盘前已做 PII 替换。" },
+              "injected_prefix": { "type": "boolean", "description": "该轮是否注入了 time_anchor / system_prefix 前缀。" },
+              "prefix_text": { "type": ["string", "null"], "description": "注入前缀原文（可审计）。" },
+              "model": { "type": ["string", "null"], "description": "Agent 实际使用的模型（manifest 亦记）。" },
+              "usage": { "type": ["object", "null"], "description": "token 用量等原始返回（可选）。" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "type": { "const": "message" }, "source": { "const": "system" } },
+        "required": ["type", "source"]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "required": ["action"],
+            "properties": {
+              "action": { "type": "string", "description": "系统事件动作：fixture / reset / memory_snapshot / health / workspace_listing / task_summary / skip …" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "type": { "const": "memory_read" } }, "required": ["type"] },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["phase", "coverage"],
+            "properties": {
+              "phase": { "enum": ["before", "after", "probe"] },
+              "coverage": { "$ref": "#/$defs/memory_coverage" },
+              "entries_count": { "type": "integer", "minimum": 0 },
+              "via": {
+                "enum": ["probe", "memory_api"],
+                "description": "probe=评测器拍的快照（actor=env，不得满足事件锚点）；memory_api=Agent 自己发起的检索事件（CONTRACT §5 资格表，CR-3）"
+              },
+              "query": { "type": ["string", "null"], "description": "Agent 主动检索时记录查询串（若可观测）。" },
+              "results_count": { "type": ["integer", "null"] },
+              "error": { "type": ["string", "null"], "description": "快照失败原因；失败时 entries 为空（ISS-07）" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "type": { "const": "memory_write" } }, "required": ["type"] },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["key", "value", "via"],
+            "properties": {
+              "key": { "type": "string" },
+              "value": { "type": "string" },
+              "written_at": { "type": ["string", "null"] },
+              "written_at_source": { "enum": ["entry_timestamp", "observed_metadata", "file_mtime", null] },
+              "source": { "type": ["string", "null"], "description": "记忆来源文件 / 通道。" },
+              "via": { "enum": ["probe_diff", "memory_api"], "description": "观测方式：快照差分 / Agent 记忆接口。" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "type": { "const": "file_read" } }, "required": ["type"] },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path"],
+            "properties": {
+              "path": { "type": "string" },
+              "bytes": { "type": ["integer", "null"] },
+              "sha256": { "type": ["string", "null"] }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "type": { "const": "file_write" } }, "required": ["type"] },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "op", "content_sha256", "full_bytes", "stored_bytes", "truncated"],
+            "properties": {
+              "path": { "type": "string" },
+              "op": { "enum": ["create", "modify", "delete"] },
+              "before_content": { "type": ["string", "null"] },
+              "before_sha256": { "type": ["string", "null"] },
+              "after_content": { "type": ["string", "null"] },
+              "content_sha256": { "type": "string", "description": "替换后完整内容（截断前）的 sha256（P2-4）。" },
+              "full_bytes": { "type": "integer", "minimum": 0 },
+              "stored_bytes": { "type": "integer", "minimum": 0 },
+              "truncated": { "type": "boolean" },
+              "disk_sha256": { "type": "string", "description": "物理字节域（PII 脱敏/截断前原文）的 sha256；仅当与脱敏文本域不同时出现，供 workspace listing 同域比对（spec §3 指纹域不得混用）。" },
+              "disk_bytes": { "type": "integer", "minimum": 0, "description": "物理字节域的字节数（与 disk_sha256 成对出现）。" }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "type": { "const": "tool_call" } }, "required": ["type"] },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["action"],
+            "properties": {
+              "action": { "type": "string", "description": "抽象动作（经 action_map 归一）或原始工具名。" },
+              "args": { "type": ["object", "null"] },
+              "raw_tool": { "type": ["string", "null"] }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "type": { "const": "tool_result" } }, "required": ["type"] },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["action", "status"],
+            "properties": {
+              "action": { "type": "string" },
+              "status": { "enum": ["ok", "error"] },
+              "result": { "type": ["string", "object", "null"] }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "type": { "const": "error" } }, "required": ["type"] },
+      "then": {
+        "properties": {
+          "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["code", "message"],
+            "properties": {
+              "code": { "type": "string" },
+              "message": { "type": "string" },
+              "detail": { "type": ["string", "null"] }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "span": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end"],
+      "properties": {
+        "start": { "type": "integer", "minimum": 0 },
+        "end": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "pii_hit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pii_id", "evidence_id", "field_path", "span", "matched_len", "match_mode", "form", "surface"],
+      "properties": {
+        "pii_id": { "type": "string", "pattern": "^PII_[A-Z0-9_]+$" },
+        "evidence_id": { "type": "string", "pattern": "^ev_[a-z0-9]{1,8}_[0-9]{6}$" },
+        "field_path": { "type": "string", "description": "命中所处字段路径，如 payload.text。" },
+        "span": { "$ref": "#/$defs/span" },
+        "matched_len": { "type": "integer", "minimum": 1 },
+        "match_mode": {
+          "enum": ["exact", "normalized", "partial", "masked_by_agent"],
+          "description": "partial 为预留值（v1 未启用）。"
+        },
+        "form": {
+          "enum": ["plain", "spaced", "hyphenated", "fullwidth", "tail4", "other"]
+        },
+        "surface": {
+          "enum": ["reply", "memory", "file", "tool"],
+          "description": "落盘面；memory/file 面命中 → pii_leak_detected（P0-1）。"
+        },
+        "context_excerpt": {
+          "type": ["string", "null"],
+          "description": "±40 字符上下文，命中处掩码（B 复核 r3 §2.4 第 2 层）。"
+        }
+      }
+    },
+    "memory_coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["files_scanned", "entries_scanned", "bytes_scanned"],
+      "properties": {
+        "files_scanned": { "type": "integer", "minimum": 0 },
+        "entries_scanned": { "type": "integer", "minimum": 0 },
+        "bytes_scanned": { "type": "integer", "minimum": 0 },
+        "sources": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

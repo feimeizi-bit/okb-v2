@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "hermes-v2_du_repeat_correction_001-r1", "status": "ok", "reason": null, "duration_ms": 62606, "counts": {"message": 22, "memory_read": 2, "memory_write": 1, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": null}

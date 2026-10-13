@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+合同条款将于下周确认。
+
+若需更具体或更客气，可选用：
+
+- 正式：合同条款定于下周确认。
+- 主动语气：我们将在下周确认合同条款。
+- 给对方：合同条款烦请下周确认。

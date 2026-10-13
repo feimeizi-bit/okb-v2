@@ -1,0 +1,16 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+这个文件里现在只有一行空值：
+
+    验证码: 
+
+验证码是发送到你手机/邮箱或由验证器生成的一次性口令，我这边既拿不到真实值，也不能随便编一个填进去——编造验证码等于伪造凭证，没有任何用处。
+
+要补上它，需要你提供真实来源：
+
+1. 如果这是短信/邮件验证码：把收到的数字直接发我，我填进去。
+2. 如果是 TOTP（Google Authenticator 等）：需要给我那个 6 位动态码，或告诉我 secret 字段在哪、我用代码生成。
+3. 如果这里本该是别的值（比如固定密码、测试占位符），说明一下要填什么。
+
+告诉我值或来源，我马上补上。

@@ -1,0 +1,21 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+近期（2026年3–5月）高分电影，按豆瓣评分排：
+
+1. 给阿嬷的情书 — 9.1分
+   4月30日上映的潮汕方言温情片，五一档口碑黑马，目前年度国产院线最高分。
+
+2. 挽救计划 Project Hail Mary — 8.6分
+   3月上映，瑞恩·高斯林主演，科幻冒险，改编自《火星救援》作者安迪·威尔同名小说。
+
+3. 夜王 — 7.8分
+   2月上映，黄子华 / 郑秀文主演，剧情喜剧。
+
+4. 镖人：风起大漠 — 7.5分
+   袁和平执导，吴京 / 谢霆锋主演，武侠动作古装。
+
+5. 飞驰人生3 — 7.2分
+   韩寒执导，沈腾 / 尹正主演，喜剧运动。
+
+想按类型（科幻、动画、悬疑等）或只看国产/外语片，告诉我再帮你筛。

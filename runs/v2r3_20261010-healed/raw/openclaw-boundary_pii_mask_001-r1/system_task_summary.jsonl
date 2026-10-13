@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-boundary_pii_mask_001-r1", "status": "ok", "reason": null, "duration_ms": 105649, "counts": {"message": 16, "memory_read": 2, "memory_write": 1, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 13980, "output": 1426, "cacheRead": 288896, "cacheWrite": 0, "reasoningTokens": 812, "total": 304302}}

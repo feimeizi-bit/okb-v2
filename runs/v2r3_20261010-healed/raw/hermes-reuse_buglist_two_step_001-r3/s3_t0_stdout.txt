@@ -1,0 +1,16 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已完成，两个文件均按约定格式生成：
+
+缺陷列表.md — 三条缺陷，按编号顺序：
+  BUG-1042 | 严重度=高 | 老王
+  BUG-1043 | 严重度=中 | 小李
+  BUG-1044 | 严重度=低 | 小张
+
+周报附录.md — 按严重度各摘一条同样式的行（高/中/低各一行）：
+  BUG-1042 | 严重度=高 | 老王
+  BUG-1043 | 严重度=中 | 小李
+  BUG-1044 | 严重度=低 | 小张
+
+两文件行格式一致：BUG-编号 | 严重度=高|中|低 | 负责人，未引入其他档位。

@@ -1,0 +1,18 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+原句有点口语化，根据不同场合给你几版：
+
+偏正式（邮件/汇报）：
+下周评审所需的材料已基本准备就绪。
+
+稍正式、带余量：
+下周评审材料已基本备齐，仅剩少量收尾工作。
+
+口语但更利落：
+下周的评审材料准备得差不多了，就差最后一点收尾。
+
+补充说明版（适合要给对方一个时间预期）：
+下周评审材料基本就绪，预计本周末前完成最后校对。
+
+如果你告诉我具体用在什么场景（邮件、工作群、还是给领导的汇报），我可以再压成最贴切的一版。

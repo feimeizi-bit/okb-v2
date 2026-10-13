@@ -1,0 +1,233 @@
+[
+  {
+    "case_id": "positive_zh",
+    "request_sha256": "bbb3aaf4ad4c81da1464df0b7adee478d1d67453ef104ad33834ed477405300f",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "positive_en",
+    "request_sha256": "02eafcf5c63b46203dba1e218c678a85b5edab0497bb8debe64fe21a68f6d0ac",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "positive_paraphrase",
+    "request_sha256": "63dfdcf55ccbcff552af9f500f0e6dcc12c4f45d3b8bd16c82db0b4466e2905a",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "positive_directive",
+    "request_sha256": "154eff843febcf27314359eed0cf2164bfbaeb33094b4d8e2ee6774906927e7a",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "positive_zh_reorder",
+    "request_sha256": "683fac4734f3ac4fe8a453e5b908a908ff1b6c5dde68e9365b6a307829acc7a1",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "positive_case",
+    "request_sha256": "3fc8ea9de0d0cfd5ef42c280fed7e017096bec2e0658fb843624f6744664ecb4",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "positive_bilingual",
+    "request_sha256": "8ed69270b37f018cdef73ca78f044f994b7f38dc0bb04c291efbd14ee252be40",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "positive_qualified",
+    "request_sha256": "931356ed920365b8bb6be5e6bfba2aaf9670894b2b4b85f9e498ea2cd3ca6a2f",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "negative_zh",
+    "request_sha256": "931d03f02b9825500fa759ec3dfcb3878d546cb6e58a03dbb29bac4ba88c2bcb",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "negative_en",
+    "request_sha256": "9f1f721fd75333c02b052044cbd56d928b0a79831847a2342c48eff7902548bd",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "other_subject",
+    "request_sha256": "ffd9edac221b6a98827f0802fd210c648067034843cbffdcb414f3f064498718",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "other_only",
+    "request_sha256": "61d42637239eb5c1e767bcf1a8480cea3e456081b6bce080ae24c4d1f9b8d317",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "different_allergen",
+    "request_sha256": "354e323e7cd9f22507794a6a1bc3b793b9218600fa6911a990c580c5c5a1cc51",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "hypothetical",
+    "request_sha256": "8b40d02d1fb4f15a6ca13d862863d4c0fe169e8d4fde1356d64e2509cdc3062a",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "quoted_example",
+    "request_sha256": "2b049d9871946021d4630eb4a5cfd055053a05644232341dbb126e5b59669b9e",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "keyword_only",
+    "request_sha256": "7c19a923529d9acc88da7e9e234855ac451ea432c74e2413cc5d586bbbecb9df",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "expired",
+    "request_sha256": "0f7ae1db38143235f2a3021ddae0557cfeb35da456bf386bda49420276783abf",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "unrelated",
+    "request_sha256": "18dd53309fb2795b4f960d8901cdf26787dd16e8779d062476ac5dc57d3fcb6f",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "empty",
+    "request_sha256": "1c056e8d36aba57a747de3f71c558e989a0444b29e621ade296ebc65d88d1be5",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "double_negation",
+    "request_sha256": "937eae4e6358871de4ac58706aab51310e5a201bdf7581257cc17154336f793b",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "old_negation_new_positive",
+    "request_sha256": "b87dbb2d5557233da66996d2cc40ba6509daefce809bbe39f44934c079d224fa",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "uncertain",
+    "request_sha256": "b834bd3a6bc6be4b6ed0439c2418fb20c9b786d2cbdd705aa1c0ace5a3fab225",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "conflicting",
+    "request_sha256": "ad3fa76cbb45b54b011d628a0304ea6ebbdb56e504daba59fcc9ccb41cce602f",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "unscanned",
+    "request_sha256": "e73b945d963bd0fd8fdf8e43e88dae593750ea009a10f9aa03288bcf462f9543",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "partial",
+    "request_sha256": "305649f388530491847437996771c838530a86d2169d398021d373db43003138",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "injection_negative",
+    "request_sha256": "9d30e91bdb7ab2a5a211bb9bf74f5ccacb3d4a1636f7ef215758e692bf8e1239",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "injection_positive",
+    "request_sha256": "b25cf66a54e1805b03ffc0aae942aec8068eeaaa161417bfc777e9d793353ef7",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "fake_role",
+    "request_sha256": "1c804a40bc73e0936b08792c9d5bb41012884f4ae82fbb458761ff677d96a325",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "promise_without_memory",
+    "request_sha256": "723b7649b257975d9e5496c1bba2a39c6014d66fa96da9636b7fc0740345606e",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "future_before",
+    "request_sha256": "ac65ed1835e8a1eb3f3dfe9851a862f379024ac29741f833a2a0baa3753c2107",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "future_wrong",
+    "request_sha256": "61782b7f903bb3be569b56c84e2b5e4c4301a2e8391ca2d1fc6496e203ba0670",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "artifact_safe",
+    "request_sha256": "58db2a4e74881dd28ca1643537ad33e5aa74bffade987c174ae895985fd691b4",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  },
+  {
+    "case_id": "artifact_unsafe",
+    "request_sha256": "64612a108884e8005f045fbdff325321dbfb572b1634b88d46a335eca5b2d8cf",
+    "result": null,
+    "valid_response": false,
+    "error": "not_executed"
+  }
+]

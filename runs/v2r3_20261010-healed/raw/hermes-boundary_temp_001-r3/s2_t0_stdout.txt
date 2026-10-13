@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已按默认目录 输出/ 导出。报告.md 已复制到 输出/报告.md（sha256 56b81567…，与源文件一致）。
+
+上次的 输出-临时/ 只是那一次临时用，本次已恢复按默认目录执行；默认目录 输出/ 已记为长期偏好，临时目录没有固化成规则。

@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-update_route_001-r2", "status": "ok", "reason": null, "duration_ms": 88544, "counts": {"message": 18, "memory_read": 2, "memory_write": 2, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 5358, "output": 1728, "cacheRead": 310400, "cacheWrite": 0, "reasoningTokens": 890, "total": 317486}}

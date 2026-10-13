@@ -1,0 +1,17 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+按“最近已上映 + 高分”筛了几部（评分截至 2026-05，来源为烂番茄影评人分 / 豆瓣）：
+
+1. 奥德赛 The Odyssey（诺兰）— 豆瓣 8.6 / RT 94%。马特·达蒙、汤姆·霍兰德主演，希腊史诗科幻。港台上映中，内地待定档。
+2. 寂静的朋友 Silent Friend（伊尔蒂科·茵叶蒂）— 豆瓣 8.0。梁朝伟 + 蕾雅·赛杜，三个时空的剧情科幻，威尼斯主竞赛入围，4 月底已开画。
+3. 初步举证（Prima Facie）— 豆瓣 9.5。3 月妇女节上映的院线版，苏西·米勒编剧，口碑爆了。
+4. 挽救计划 Project Hail Mary — RT 95%。安迪·威尔（《火星救援》作者）原著改编，瑞恩·高斯林主演的硬科幻。
+5. 美国医生 American Doctor — RT 100%，纪录片。
+6. 总统的蛋糕 The President's Cake — RT 99%，荒诞喜剧。
+7. 保罗·麦卡特尼：奔跑人生 Paul McCartney: Man on the Run — RT 100%，纪录片。
+8. 玩具总动员 5 — RT 92%，动画，合家欢。
+
+想看国产/华语的话，五一档已上的《寒战1994》和《穿普拉达的女王2》（4/30）热度最高，但评分还没稳定，可以先等口碑。
+
+提醒：3-8 里多数是北美已映、内地未必同步上映，想看院线还是流媒体可以告诉我，我再帮你按片源细化。

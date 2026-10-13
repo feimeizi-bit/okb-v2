@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-similar_drink_001-r1", "status": "ok", "reason": null, "duration_ms": 171403, "counts": {"message": 16, "memory_read": 2, "memory_write": 9}, "models": ["deepseek-v4-pro"], "usage": {"input": 26122, "output": 7661, "cacheRead": 225792, "cacheWrite": 0, "reasoningTokens": 6732, "total": 259575}}

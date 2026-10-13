@@ -1,0 +1,27 @@
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=503 dispatcher=new contentType=text/event-stream; charset=utf-8
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=202 dispatcher=reused contentType=text/event-stream; charset=utf-8
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=209 dispatcher=reused contentType=text/event-stream; charset=utf-8
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=180 dispatcher=reused contentType=text/event-stream; charset=utf-8
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=241 dispatcher=reused contentType=text/event-stream; charset=utf-8
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=266 dispatcher=reused contentType=text/event-stream; charset=utf-8
+[tools] nodes failed: agent=okb node=auto gateway=default action=status: Gateway not reachable at ws://127.0.0.1:18789 (ECONNREFUSED).
+Start it with `openclaw gateway run` or check `openclaw gateway status`.
+Gateway target: ws://127.0.0.1:18789
+Source: local loopback
+Config: /home/okb/.openclaw/openclaw.json
+Bind: loopback raw_params={"action":"status"}
+[memory] sync failed (session-startup-catchup): Error: Timed out waiting for memory workspace lock at plugin-state:memory-core/short-term-locks/884e29cd370c0b01a5825f97557e6f6f88f2993af52ee51f6d672a8d39b80a73
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=253 dispatcher=reused contentType=text/event-stream; charset=utf-8
+[memory] sync failed (session update): Error: Timed out waiting for memory workspace lock at plugin-state:memory-core/short-term-locks/884e29cd370c0b01a5825f97557e6f6f88f2993af52ee51f6d672a8d39b80a73
+[memory] sync failed (session update): Error: Timed out waiting for memory workspace lock at plugin-state:memory-core/short-term-locks/884e29cd370c0b01a5825f97557e6f6f88f2993af52ee51f6d672a8d39b80a73
+[memory] sync failed (session update): Error: Timed out waiting for memory workspace lock at plugin-state:memory-core/short-term-locks/884e29cd370c0b01a5825f97557e6f6f88f2993af52ee51f6d672a8d39b80a73
+[memory] sync failed (session update): Error: Timed out waiting for memory workspace lock at plugin-state:memory-core/short-term-locks/884e29cd370c0b01a5825f97557e6f6f88f2993af52ee51f6d672a8d39b80a73
+[memory] sync failed (session update): Error: Timed out waiting for memory workspace lock at plugin-state:memory-core/short-term-locks/884e29cd370c0b01a5825f97557e6f6f88f2993af52ee51f6d672a8d39b80a73
+[agents/agent-command] [agent] run a157fc37-42e8-4354-84bc-5fa184f4331a ended with stopReason=stop

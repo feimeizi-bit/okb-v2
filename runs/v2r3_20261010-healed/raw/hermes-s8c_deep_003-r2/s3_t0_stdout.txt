@@ -1,0 +1,14 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+回放器输出处理方式（拟，不运行）：
+
+1. 默认只读。回放器打开输入（run 目录、evidence.jsonl、判官缓存、manifest）一律只读，不修改、不追加、不重写任何既有文件；也不读 .env、不构造在线客户端、max_calls=0。
+
+2. 输出落新目录。所有生成产物（回放报告、对比结果、投影视图）写入一个全新的、本次才创建的输出目录，绝不写入输入 run 目录或任何已存在的路径。目录名默认按 run_id + 时间戳/递增后缀生成，或由显式 --out-dir 指定。
+
+3. 不覆盖旧结果。目标路径若已存在，排他创建失败即报错退出（或自动换一个新后缀目录），绝不覆盖、合并或原地改写已有的报告/verdict/缓存。
+
+4. 历史值可保留但不得冒充当前值。旧结果只作只读归档保留用于对照（可读出比对），但不会被重命名、改写或重新标注后当作本次回放的新结果。
+
+一句话口径：回放器只读入、只新建、不覆盖；历史产出保留为只读对照，新产出永远进独立新目录。

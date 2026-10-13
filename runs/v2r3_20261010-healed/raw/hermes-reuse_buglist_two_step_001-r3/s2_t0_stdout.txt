@@ -1,0 +1,9 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+我查过了，这个环境里没有任何「值班表」数据。
+
+- 当前工作目录只有一份 `素材.md`（缺陷清单：登录超时/导出乱码/头像裁切，编号 1042–1044）。
+- 整个 `/home/okb` 下没有名为「值班」的文件；搜「值班表」命中的全部是评测项目自身的测试数据（evidence.jsonl、request/stdout 记录），不是真实排班。
+
+所以这周的值班安排我这边没有可查来源，讨论不了具体谁哪天值。你把值班表发我（文件路径、文档链接、或直接贴内容），我再帮你梳理排班、查重叠或缺岗。

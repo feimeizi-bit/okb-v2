@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "hermes-boundary_temp_path_001-r1", "status": "ok", "reason": null, "duration_ms": 94503, "counts": {"message": 16, "memory_read": 2, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": null}

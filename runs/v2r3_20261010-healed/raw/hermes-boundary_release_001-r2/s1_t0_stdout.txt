@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+记住了，长期有效：你的快递一律放小区南门丰巢，不放驿站。以后凡是涉及收件安排的场景我都会按这个来。

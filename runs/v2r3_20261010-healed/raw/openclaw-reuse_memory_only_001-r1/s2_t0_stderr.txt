@@ -1,0 +1,15 @@
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=5245 dispatcher=new contentType=text/event-stream; charset=utf-8
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=155 dispatcher=reused contentType=text/event-stream; charset=utf-8
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=205 dispatcher=reused contentType=text/event-stream; charset=utf-8
+[tools] ask_user failed: Gateway not reachable at ws://127.0.0.1:18789 (ECONNREFUSED).
+Start it with `openclaw gateway run` or check `openclaw gateway status`.
+Gateway target: ws://127.0.0.1:18789
+Source: local loopback
+Config: /home/okb/.openclaw/openclaw.json
+Bind: loopback raw_params={"questions":[{"id":"city","header":"城市","question":"你在哪个城市？（明天是 2026-10-12 周一）","options":[{"label":"北京","description":"北京尾号限行"},{"label":"成都","description":"成都尾号限行"},{"label":"杭州","description":"杭州尾号限行"},{"label":"郑州","description":"郑州尾号限行"}]}]}
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=235 dispatcher=reused contentType=text/event-stream; charset=utf-8
+[agents/agent-command] [agent] run fa750788-dd52-4437-a189-c3c5a4fd30e6 ended with stopReason=stop

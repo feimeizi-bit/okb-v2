@@ -1,0 +1,12 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+排班表.md 已经是最新口径，无需改动。
+
+当前内容（/home/okb/okb/runs/v2r3_20261010.hm/work/hermes-v2_mr_decoy_workhours_001-r3/排班表.md）：
+```
+# 排班表（2025 版）
+- 标准工时: 7.5 小时
+```
+
+第 2 行的标准工时已经是 7.5 小时，旧的 8 小时值此前已作废；全仓库也检索不到残留的「8 小时」旧值。

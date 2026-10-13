@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-similar_campus_001-r2", "status": "ok", "reason": null, "duration_ms": 153602, "counts": {"message": 18, "memory_read": 2, "memory_write": 4, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 27448, "output": 5729, "cacheRead": 518656, "cacheWrite": 0, "reasoningTokens": 2627, "total": 551833}}

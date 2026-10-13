@@ -1,0 +1,9 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+两个文件已创建：
+
+- /home/okb/okb/runs/v2r3_20261010.hm/work/hermes-s8c_deep_008-r3/回放.yaml — 配置，三条条件一致（单进程超时 90 秒、auto_retry=false、费用未知时 stop_new_requests），YAML 合法
+- /home/okb/okb/runs/v2r3_20261010.hm/work/hermes-s8c_deep_008-r3/操作说明.md — 逐条解释三条条件，明确“不执行回放、不发起请求、不提供自动重发建议”
+
+未执行任何回放或请求。

@@ -1,0 +1,26 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+# 周报（2026-10-10）
+
+## 本周完成
+- v2 工作区整体从旧协同（okb-int）切出、独立演进，引擎/试卷/判据/质检/断言工具全部就位
+- paper-v2.0 试卷装配完成：92 题（存量修复 68 + 新著 24，sha256 bca2c68c），四层计划 330 检查，validate_plan 通过
+- 断言库 registry 629 槽位（330 计划检查 + 299 锚点）生成
+- 质检总检通过：红线1 三读法 C 读法六维全达标；anchorcal 死谓词 0、路径 0；五档预期格 expect-cells-v2.json（92 格）生成；历史失败模式逐条清零（路径钉死/reply 回声/trap 无承接/事件锚点不可校准等，W206/W208/W212=0）
+- lint 0 error / 61 warning（W205 注记 ×52、W207 豁免 ×9）
+- 真机冒烟 smoke_v2（10-10）：双 Agent 各 4 题共 8 题，7 ok / 1 timeout（openclaw-v2_du_delay_approval_001 单轮 180s 超时）
+- 双 Agent 大批次采集 v2r3 启动并运行中（OpenClaw + Hermes 并行，10-10 晚间）
+
+## 下周计划
+- 生成 F1 审题单（变更面 42 题 = 24 新题 + 18 修复题）并启动人审闭环
+- 冒烟确证确定性 source_invalid 风险（update_multi_001 / boundary_pii_mask_001），必要时修表示域
+- 继续 v2r3 采集，推进至 600 任务量（92 题 ×2 Agent ×3 轮）
+- 判官选型确认 + 预算合同，跑 assertion-bench 首轮
+- 收尾材料：报告 / 雷达图 / 数据卡 / .deb / 录屏
+
+## 风险与求助
+- 待拍板：冒烟与 600 采集的金额口令、判官选型（建议主 gpt-6.1-sol / 副 deepseek-flash）、F1 人审排期、是否 git init
+- 确定性 source_invalid ×2（update_multi_001 / boundary_pii_mask_001，listing fingerprint mismatch、PII 表示域）待确证
+- OC memory forget 偶发锁超时（约 8–10%/题）→ env_error，按纪律保留
+- 真人标签仍为 0（两条回路未回收）；Hermes 无 model/usage 上报（报告将如实记 null）

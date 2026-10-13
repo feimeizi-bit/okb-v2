@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+好，纯虚构，不查实时天气。把那段天气描写发来，或说说你想从哪个角度讨论（画面感、隐喻、氛围、用词等）。

@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+周报模板已升级到 v2：标题改为「周报模板（v2）」，首节新增「## 数据指标」，其后保持「本周完成 / 下周计划 / 风险」。同时已记住当前模板版本为 v2。

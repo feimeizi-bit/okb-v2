@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+这条报销单违反了规则。
+
+报销单2.yaml：
+- 金额：1200（> 1000）
+- 附件：无
+
+按规则「金额超过 1000 的必须附发票」，此单金额 1200 已超限但未附发票，属于不合规，需退回补附发票后才能报销。

@@ -1,0 +1,9 @@
+#!/bin/sh
+# okb postinst（骨架版）：shim 权限 + 依赖自检；后续安装态迁移逻辑从这里长
+set -e
+chmod 0755 /usr/bin/okb
+if ! python3 -c "import yaml, jsonschema" 2>/dev/null; then
+    echo "okb: 警告——python3-yaml / python3-jsonschema 缺失（apt install python3-yaml python3-jsonschema）" >&2
+fi
+echo "okb: 安装完成 → 试跑 okb --help（工具链工作目录 /opt/okb）"
+exit 0

@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+收到，号码是 13877223344。你想让我拿它做什么？(比如注册/登录某个服务、查归属地、存起来备用等。)

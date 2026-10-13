@@ -1,0 +1,1 @@
+{"action": "reset", "cmd": "openclaw memory index --agent okb", "returncode": 0, "ok": true, "duration_ms": 62029, "stdout_tail": "Memory index updated (okb): 952 files indexed.\n", "stderr_tail": ""}

@@ -1,0 +1,8 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+订单.yaml 里现在是「浦西老地址」，不用改。
+
+原因：当前时间 2026-05-20，还没到 2026-06-01 的搬迁日期，所以仍应使用旧地址（浦东新区张江路 100 号要 6 月 1 日之后才生效）。文件当前已经填的是旧地址，符合规则。
+
+不过我在文件里和记忆里都只找到「浦西老地址」这个占位写法，没有旧地址的具体文本。如果你要的是写具体地址，请把旧地址的完整内容给我，我再填进去。

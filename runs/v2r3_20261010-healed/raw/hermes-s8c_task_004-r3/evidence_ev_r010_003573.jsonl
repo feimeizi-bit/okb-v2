@@ -1,0 +1,1 @@
+{"path": "转换.yaml", "op": "create", "before_content": null, "before_sha256": null, "after_content": "# 虚构转换规则（仅配置，不运行）\ntimeout_seconds: 120\nretry: 0\n", "content_sha256": "7e55b8c54428b8293455894c59f6f55f624c0193939883b3cf7cf5531bf02042", "full_bytes": 78, "stored_bytes": 78, "truncated": false}

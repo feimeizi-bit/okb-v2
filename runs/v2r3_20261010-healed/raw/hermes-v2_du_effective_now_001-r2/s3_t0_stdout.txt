@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已更新：`适用税率` 由 7% 改为 9%（2026-05-01 起生效，当前 2026-05-10 适用 9%）。

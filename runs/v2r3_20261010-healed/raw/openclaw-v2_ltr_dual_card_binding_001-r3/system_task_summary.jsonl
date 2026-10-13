@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-v2_ltr_dual_card_binding_001-r3", "status": "ok", "reason": null, "duration_ms": 106954, "counts": {"message": 18, "memory_read": 2, "memory_write": 2, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 4298, "output": 1170, "cacheRead": 307200, "cacheWrite": 0, "reasoningTokens": 383, "total": 312668}}

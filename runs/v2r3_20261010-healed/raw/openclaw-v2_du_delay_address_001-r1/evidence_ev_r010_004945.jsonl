@@ -1,0 +1,1 @@
+{"path": "地址簿.yaml", "op": "modify", "before_content": "当前收货地址: 江畔路 3 号\n备用地址: \n", "before_sha256": "3061e8e84e13dc724bad4b999ee37a451bbd4bc37f09799813ce46e7802234c4", "after_content": "当前收货地址: 云栖路 5 号\n备用地址: 江畔路 3 号\n", "content_sha256": "ad0d35c005a7ec725401b92d09f0c16b53581219e2a10a33bba9555202aa56b6", "full_bytes": 66, "stored_bytes": 66, "truncated": false}

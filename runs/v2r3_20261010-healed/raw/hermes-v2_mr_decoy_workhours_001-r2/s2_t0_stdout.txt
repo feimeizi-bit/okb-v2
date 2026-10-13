@@ -1,0 +1,11 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+原句没问题，可读性可以再顺一点。几个方向：
+
+- 简洁：排班已确认。
+- 更完整：排班已确认，请按时到岗。
+- 更正式：您的排班已确认无误。
+- 更口语/友好：排班已定好啦，记得准时哦。
+
+需要我根据具体场景（短信通知、工作群、邮件等）再细调语气吗？

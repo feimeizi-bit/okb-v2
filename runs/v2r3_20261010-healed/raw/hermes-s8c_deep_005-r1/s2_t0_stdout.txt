@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已记录：东桥林禾负责演示、西桥林禾负责归档。团队分工现已完整（北桥部署、南桥设计、北桥林河审核、南桥林河文档、东桥演示、西桥归档）。

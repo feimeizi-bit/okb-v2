@@ -1,0 +1,1 @@
+{"path": "预订.yaml", "op": "modify", "before_content": "会议室: \n", "before_sha256": "a5489c5de8d82ec3ff047aee334672f5869bc91c79e80a23da6a429e330ed04c", "after_content": "会议室: A302（3F 东侧）\n", "content_sha256": "07a55e5fd2900d922c62b55c271dd7ab1ad873777c82975ae541e778cb560778", "full_bytes": 31, "stored_bytes": 31, "truncated": false}

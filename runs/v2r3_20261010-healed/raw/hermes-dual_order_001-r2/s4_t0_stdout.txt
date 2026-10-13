@@ -1,0 +1,9 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已填好订餐.yaml：
+
+备注: 免香菜
+座位: 靠窗、安静
+
+（备注按你对香菜过敏的固定要求写"免香菜"，座位按你靠窗、安静的习惯填写。）

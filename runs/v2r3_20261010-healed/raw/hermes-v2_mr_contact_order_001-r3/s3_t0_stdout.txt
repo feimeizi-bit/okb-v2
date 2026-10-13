@@ -1,0 +1,11 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+文件已经填好了，顺序正确，无需修改：
+
+紧急卡.yaml（/home/okb/okb/runs/v2r3_20261010.hm/work/hermes-v2_mr_contact_order_001-r3/紧急卡.yaml）
+
+第一联络人: 张岚
+第二联络人: 陈默
+
+与要求的顺序一致（第一=张岚，第二=陈默）。

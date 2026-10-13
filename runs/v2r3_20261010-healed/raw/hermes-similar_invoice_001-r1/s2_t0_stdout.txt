@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+工作区里没有行程单文件。我搜过了：当前目录只有 `开票.yaml`（空的发票抬头模板），整个 runs 目录下也搜不到任何「行程单」或行程相关的文件（`*行程*` 命中 0 条）。
+
+所以现在没有可排序的内容。你把行程单发我（文件路径或直接贴内容），我再按日期/时间排。

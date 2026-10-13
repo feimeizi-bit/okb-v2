@@ -1,0 +1,11 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+查不到——目前我这边没有任何餐厅名称或地址信息。
+
+我检查了手头能用的线索：
+- 工作目录里只有一份空的订餐模板（订餐.yaml，含"备注"和"座位"两个空字段）
+- 会话里你还没提到过具体是哪家餐厅
+- 记忆里也只有你的忌口（免香菜）和座位偏好，没有餐厅名
+
+没有餐厅名或位置，我没法去查"今晚几点打烊"。你告诉我是哪家餐厅（最好带上城市/门店），我就能去查当天的营业和打烊时间。

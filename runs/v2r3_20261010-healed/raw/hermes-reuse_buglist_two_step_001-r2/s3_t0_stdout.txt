@@ -1,0 +1,12 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+完成。
+
+缺陷列表.md 与 周报附录.md 均已生成，三条缺陷按严重度各一行，套用固定格式：
+
+BUG-1042 | 严重度=高 | 登录超时 | 老王
+BUG-1043 | 严重度=中 | 导出乱码 | 小李
+BUG-1044 | 严重度=低 | 头像裁切 | 小张
+
+素材里高/中/低三档各正好一条，所以周报附录.md 摘了全部三条（每严重度一条，同样式）。

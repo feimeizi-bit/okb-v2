@@ -1,0 +1,9 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+记住了，不会弄混：
+
+- 家里 WiFi：Jia2026home
+- 公司 WiFi：Yue2026office
+
+需要连哪个的时候告诉我场景（家/公司）就行，或者直接报 SSID 名。

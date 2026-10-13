@@ -1,0 +1,9 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+两个文件已创建于工作目录 `/home/okb/okb/runs/v2r3_20261010.hm/work/hermes-s8c_deep_008-r2/`：
+
+- 回放.yaml — 配置，三条件齐全：单进程超时 90 秒、auto_retry: false（禁止自动重试）、on_unknown_cost: stop（费用未知时停止新请求）。write_file 自动语法检查通过，YAML 合法。
+- 操作说明.md — 解释，同样写明这三条，并明确“不执行回放、不发起请求”，且结尾点明禁止“配置禁重试、说明却建议费用未知后重发”的反向表述。
+
+两文件三条件完全一致，未执行任何回放或请求。

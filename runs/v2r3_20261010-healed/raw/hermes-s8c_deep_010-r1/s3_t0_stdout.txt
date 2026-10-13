@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已创建三个文件，未执行任何采集或部署动作：
+
+- 状态.yaml — 虚构依赖清单「已审/通过」，采集说明「待审/未定稿」，环境回执「缺失」，部署标记为「否」。
+- 摘要.md — 与状态一致，明确采集说明和环境回执未就绪，不满足部署条件。
+- 下一步.md — 优先补齐环境回执，采集说明审核通过前不算定稿，两项就绪前不直接部署。
+
+三份文件口径一致：待审项不伪装通过，缺回执不自动部署。

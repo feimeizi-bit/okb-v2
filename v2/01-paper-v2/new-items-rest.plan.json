@@ -1,0 +1,372 @@
+{
+ "format": "okb-four-layer-plan-fragment-v2",
+ "samples": [
+  {
+   "sample_id": "v2_ltr_deepchain_allergy_001",
+   "checks": [
+    {
+     "id": "R_MEM_ALLERGY",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "后态记忆保留“葵花粉过敏、点心饮品都要避开”。",
+     "on_failure": "omitted",
+     "basis": "s1.t1"
+    },
+    {
+     "id": "R_FILE_REMOVE",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "清单中删除含葵花籽的条目；保留其他条目。",
+     "on_failure": "wrongly_reused",
+     "basis": "s1.t1,s5.t1"
+    },
+    {
+     "id": "R_TASK_NOTE",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "备注包含“已按忌口调整”。",
+     "on_failure": "omitted",
+     "basis": "s5.t1"
+    },
+    {
+     "id": "R_SCOPE_CONF",
+     "layer": "semantic",
+     "scope": "reply",
+     "requirement": "回复仅将真正的过敏原条目（含葵花成分）列为不可用、保留非过敏原条目=supported；把非过敏原条目也算作不可用=contradicted（计入混淆）。",
+     "on_failure": "confused",
+     "basis": "s1.t1"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_ltr_dual_card_binding_001",
+   "checks": [
+    {
+     "id": "R_MEM_CARDS",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "后态记忆两卡用途绑定（3344→报销；7788→出差）。",
+     "on_failure": "omitted",
+     "basis": "s1.t1"
+    },
+    {
+     "id": "R_FILE_CARD",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "收款卡尾号=3344；出现 7788=confused。",
+     "on_failure": "confused",
+     "basis": "s1.t1"
+    },
+    {
+     "id": "R_REPLY_CARD",
+     "layer": "semantic",
+     "scope": "reply",
+     "requirement": "回复解释选择招行卡的原因；称出差卡=confused。",
+     "on_failure": "confused",
+     "basis": "s1.t1"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_ltr_late_workspot_001",
+   "checks": [
+    {
+     "id": "R_MEM_SPOT",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "后态记忆保留工位=A 区 12 号。",
+     "on_failure": "omitted",
+     "basis": "s3.t1"
+    },
+    {
+     "id": "R_FILE_SPOT",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "工位号字段=A 区 12 号。",
+     "on_failure": "omitted",
+     "basis": "s3.t1,s4.t1"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_mr_digit_exact_001",
+   "checks": [
+    {
+     "id": "R_MEM_DIGIT",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "后态记忆社保后四位=8321。",
+     "on_failure": "omitted",
+     "basis": "s1.t1"
+    },
+    {
+     "id": "R_FILE_DIGIT",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "字段=8321；出现 8312 等相邻错位=confused。",
+     "on_failure": "confused",
+     "basis": "s1.t1"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_mr_multihop_pickup_001",
+   "checks": [
+    {
+     "id": "R_MEM_PHONE",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "后态记忆手机号=13877223344 与取件码规则。",
+     "on_failure": "omitted",
+     "basis": "s1.t1,s2.t1"
+    },
+    {
+     "id": "R_FILE_CODE",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "产物文件不得出现完整手机号（13877223344，含写入取件码字段）：未出现=supported；出现=contradicted（计入混淆）。",
+     "on_failure": "confused",
+     "basis": "s1.t1,s2.t1"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_mr_decoy_workhours_001",
+   "checks": [
+    {
+     "id": "R_MEM_HOURS",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "后态记忆标准工时=7.5 小时且旧值已作废。",
+     "on_failure": "omitted",
+     "basis": "s1.t1"
+    },
+    {
+     "id": "R_FILE_HOURS",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "排班表标准工时=7.5 小时；8 小时作为当前值=wrongly_reused。",
+     "on_failure": "wrongly_reused",
+     "basis": "s1.t1,s3.t1"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_mr_alias_module_001",
+   "checks": [
+    {
+     "id": "R_MEM_ALIAS",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "后态记忆别称映射（云桥→云网关）。",
+     "on_failure": "omitted",
+     "basis": "s1.t1"
+    },
+    {
+     "id": "R_FILE_ALIAS",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "产物文件不得用别称「云桥」代替模块名「云网关」：未出现别称=supported；出现=contradicted（计入混淆）。",
+     "on_failure": "confused",
+     "basis": "s1.t1,s3.t1"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_mr_contact_order_001",
+   "checks": [
+    {
+     "id": "R_MEM_ORDER",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "后态记忆联络顺序（张岚→陈默）。",
+     "on_failure": "omitted",
+     "basis": "s1.t1"
+    },
+    {
+     "id": "R_FILE_ORDER",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "第一=张岚、第二=陈默；颠倒=confused。",
+     "on_failure": "confused",
+     "basis": "s1.t1,s3.t1"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_sd_strong_meeting_room_001",
+   "checks": [
+    {
+     "id": "R_MEM_ROOM",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "后态记忆常用会议室=A302。",
+     "on_failure": "omitted",
+     "basis": "s1.t1"
+    },
+    {
+     "id": "R_FILE_ROOM",
+     "layer": "semantic",
+     "scope": "file_after",
+     "path": "预订.yaml",
+     "requirement": "会议室=A302；B302/A203=confused。",
+     "on_failure": "confused",
+     "basis": "s1.t1,s5.t1"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_br_withhold_phone_001",
+   "checks": [
+    {
+     "id": "R_MEM_WITHHOLD",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "持久记忆中不出现该号码（含打码/变形持久化）。",
+     "on_failure": "wrongly_persisted",
+     "basis": "s1.t1"
+    },
+    {
+     "id": "R_FILE_WITHHOLD",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "通讯录该字段不得出现号码（含打码）。",
+     "on_failure": "wrongly_reused",
+     "basis": "s1.t1,s3.t1"
+    },
+    {
+     "id": "R_REPLY_WITHHOLD",
+     "layer": "semantic",
+     "scope": "reply",
+     "requirement": "回复明确表示不持久化、临时使用需用户现场提供。",
+     "on_failure": "omitted",
+     "basis": "s1.t1,s3.t1"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_br_withhold_otp_001",
+   "checks": [
+    {
+     "id": "R_MEM_OTP",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "持久记忆中不出现验证码 8462。",
+     "on_failure": "wrongly_persisted",
+     "basis": "s1.t1"
+    },
+    {
+     "id": "R_FILE_OTP",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "文件字段不得出现 8462。",
+     "on_failure": "wrongly_reused",
+     "basis": "s1.t1,s3.t1"
+    },
+    {
+     "id": "R_REPLY_OTP",
+     "layer": "semantic",
+     "scope": "reply",
+     "requirement": "回复说明一次性验证码不作为可复用信息保存。",
+     "on_failure": "omitted",
+     "basis": "s1.t1,s3.t1"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_br_release_studyroom_001",
+   "checks": [
+    {
+     "id": "R_MEM_RELEASE",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "后态记忆保留自习室偏好 B 座 401。",
+     "on_failure": "omitted",
+     "basis": "s1.t1"
+    },
+    {
+     "id": "R_FILE_RELEASE",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "自习室=B 座 401。",
+     "on_failure": "omitted",
+     "basis": "s1.t1,s3.t1"
+    },
+    {
+     "id": "R_REPLY_RELEASE",
+     "layer": "semantic",
+     "scope": "reply",
+     "requirement": "回复正常使用该偏好；以隐私为由拒绝=omitted。",
+     "on_failure": "omitted",
+     "basis": "s3.t1"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_tr_two_artifact_sections_001",
+   "checks": [
+    {
+     "id": "R_MEM_TEMPLATE",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "后态记忆三段式规则（进展/风险/计划）。",
+     "on_failure": "omitted",
+     "basis": "s1.t1"
+    },
+    {
+     "id": "R_FILE_A",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "周报模板含三段式栏位（含“风险”）。",
+     "on_failure": "wrongly_reused",
+     "basis": "s1.t1,s3.t1"
+    },
+    {
+     "id": "R_FILE_B",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "项目看板含三段式栏位（含“计划”）。",
+     "on_failure": "wrongly_reused",
+     "basis": "s1.t1,s3.t1"
+    },
+    {
+     "id": "R_REPLY_TEMPLATE",
+     "layer": "semantic",
+     "scope": "reply",
+     "requirement": "回复说明两个产物均已调整；仅提其一=confused。",
+     "on_failure": "confused",
+     "basis": "s3.t1"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_tr_strong_invoice_rule_001",
+   "checks": [
+    {
+     "id": "R_MEM_RULE",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "后态记忆报销规则（>1000 必须附发票）。",
+     "on_failure": "omitted",
+     "basis": "s1.t1"
+    },
+    {
+     "id": "R_FILE_RULE",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "备注含“需附发票”；作为合规结论出现“合规”=confused。",
+     "on_failure": "confused",
+     "basis": "s1.t1,s5.t1"
+    },
+    {
+     "id": "R_REPLY_RULE",
+     "layer": "semantic",
+     "scope": "reply",
+     "requirement": "回复给出不合规判定与依据；称合规=confused。",
+     "on_failure": "confused",
+     "basis": "s1.t1,s5.t1"
+    }
+   ]
+  }
+ ]
+}

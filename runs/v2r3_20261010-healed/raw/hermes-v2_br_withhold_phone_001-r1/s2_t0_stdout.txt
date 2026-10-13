@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+润色建议（按正式程度递增）：
+
+1. 合同条款将于下周确认。
+2. 合同条款拟于下周进行确认。
+3. 合同条款计划在下周内确认。
+
+若用于工作汇报或邮件，推荐第 1 句——补上"将"字，语气更明确、更书面。若想更正式（如写入日程/纪要），用第 2 句"拟于……进行确认"。

@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已填好：收货地址: 杭州市滨江区江南大道200号
+
+你的资料里邮编未提供，所以没填邮编。需要的话告诉我邮编，我补上。

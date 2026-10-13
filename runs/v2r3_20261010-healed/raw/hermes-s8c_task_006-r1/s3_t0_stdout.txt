@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已写入 /home/okb/okb/性能.md：耗时 500 ms，容量 4 MiB（日期 2026-10-10）。

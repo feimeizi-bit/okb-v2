@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已记录。云杉规则只适用于云杉；松岩用致谢结尾，海湾用长篇附录，各自独立，不套用云杉规则。

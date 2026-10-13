@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+沈柯负责执行发布。许澈负责审批发布；审批通过不等于已实际执行，执行需由沈柯完成。

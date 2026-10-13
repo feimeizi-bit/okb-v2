@@ -1,0 +1,9 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+座位预约已提交，请留意预约结果。
+
+可选的几种说法：
+- 你的座位预约已提交成功。
+- 座位预约已提交，请等待确认。
+- 预约申请已提交，稍后可在"我的预约"中查看。

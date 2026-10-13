@@ -1,0 +1,9 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已填好：
+
+公司: 云栖科技有限公司
+税号: 91330100MA27X8Q123
+
+文件路径：/home/okb/okb/runs/v2r3_20261010.hm/work/hermes-similar_invoice_001-r2/开票.yaml

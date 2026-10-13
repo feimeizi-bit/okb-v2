@@ -1,0 +1,8 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已写入，未发送。
+
+文件：/home/okb/okb/runs/v2r3_20261010.hm/work/hermes-s8c_task_007-r3/通知草稿.md
+
+内容：变化 / 影响 / 下一步 三段，按你的草稿格式。

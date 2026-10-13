@@ -1,0 +1,8 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已补上。收货地址填的是公司地址「创业大厦 B 座 502」——因为你之前说过：去武汉出差就寄公司，不去寄家里（梧桐巷 9 号）；而 7 月 12 日你已经确认出差定了、去武汉，条件满足，所以用公司地址。
+
+快递单.yaml 现在是：
+收件人: 许沐
+收货地址: 创业大厦 B 座 502

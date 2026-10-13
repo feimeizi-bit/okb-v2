@@ -1,0 +1,13 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+推荐名称（符合现有 test_ 前缀 + 蛇形英文 + 描述业务行为的约定，参考仓库里 test_invalid_contract_creates_no_journal、test_unreviewed_request_never_reserves_or_sends 这类句式）：
+
+test_login_with_invalid_credentials_fails
+
+备选（按场景侧重）：
+- test_login_fails_when_password_is_wrong —— 侧重密码错误
+- test_login_rejected_with_unknown_account —— 侧重账号不存在
+- test_invalid_credentials_do_not_start_session —— 侧重“不产生会话”这一业务结果
+
+仓库现有命名里 “rejected/denied/halts/fails” 都常见，若项目对“失败”有统一措辞，请以既有用词为准。

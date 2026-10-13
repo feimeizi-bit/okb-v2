@@ -1,0 +1,276 @@
+{
+ "format": "okb-four-layer-plan-fragment-v2",
+ "samples": [
+  {
+   "sample_id": "v2_du_delay_address_001",
+   "checks": [
+    {
+     "id": "R_MEM_WINDOW",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "后态记忆同时支持“当前=江畔路 3 号、6/15 起=云栖路 5 号”；只记新址丢旧址=omitted。",
+     "on_failure": "omitted",
+     "basis": "s1.t1"
+    },
+    {
+     "id": "R_FILE_CURRENT",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "“当前收货地址”字段为江畔路 3 号；6/2 不得出现云栖路 5 号=wrongly_reused。",
+     "on_failure": "wrongly_reused",
+     "basis": "s1.t1"
+    },
+    {
+     "id": "R_REPLY_WINDOW",
+     "layer": "semantic",
+     "scope": "reply",
+     "requirement": "回复说明当前仍用江畔路 3 号、6/15 起切换；无条件称已切换=confused。",
+     "on_failure": "confused",
+     "basis": "s1.t1,s3.t1"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_du_retract_restore_001",
+   "checks": [
+    {
+     "id": "R_MEM_RETRACT",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "后态记忆的当前收货地址为柳荫街 12 号；滨江路 7 号如保留必须标注为已撤回/他人地址。",
+     "on_failure": "wrongly_reused",
+     "basis": "s2.t1"
+    },
+    {
+     "id": "R_FILE_ADDR",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "收货地址字段为柳荫街 12 号；出现滨江路 7 号=wrongly_reused。",
+     "on_failure": "wrongly_reused",
+     "basis": "s2.t1"
+    },
+    {
+     "id": "R_REPLY_RETRACT",
+     "layer": "semantic",
+     "scope": "reply",
+     "requirement": "回复体现“最新要求=柳荫街 12 号”；称已改为滨江路=confused。",
+     "on_failure": "confused",
+     "basis": "s2.t1,s3.t1"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_du_conditional_001",
+   "checks": [
+    {
+     "id": "R_MEM_CONDITION",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "后态记忆支持“出差→公司地址；不出差→家庭地址”的条件与已触发结论。",
+     "on_failure": "omitted",
+     "basis": "s1.t1,s2.t1"
+    },
+    {
+     "id": "R_FILE_CONDITION",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "收货地址=创业大厦 B 座 502；出现梧桐巷 9 号=wrongly_reused。",
+     "on_failure": "wrongly_reused",
+     "basis": "s2.t1"
+    },
+    {
+     "id": "R_REPLY_CONDITION",
+     "layer": "semantic",
+     "scope": "reply",
+     "requirement": "回复给出公司地址并体现条件已满足；罗列两个地址不作抉择=confused。",
+     "on_failure": "confused",
+     "basis": "s1.t1,s2.t1"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_du_version_rollback_001",
+   "checks": [
+    {
+     "id": "R_MEM_VERSION",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "后态记忆的当前模板版本=v1（v2 已弃用）。",
+     "on_failure": "wrongly_reused",
+     "basis": "s2.t1"
+    },
+    {
+     "id": "R_FILE_VERSION",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "文件不含“数据指标”节；标题含“当前版”。",
+     "on_failure": "wrongly_reused",
+     "basis": "s2.t1,s3.t1"
+    },
+    {
+     "id": "R_REPLY_VERSION",
+     "layer": "semantic",
+     "scope": "reply",
+     "requirement": "回复依据 v1 约定；称使用 v2=confused。",
+     "on_failure": "confused",
+     "basis": "s2.t1,s3.t1"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_du_cross_session_chain_001",
+   "checks": [
+    {
+     "id": "R_MEM_CHAIN",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "后态记忆当前环境=uat；历史 dev/staging 如需保留须标注已废弃。",
+     "on_failure": "wrongly_reused",
+     "basis": "s2.t1"
+    },
+    {
+     "id": "R_FILE_CHAIN",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "环境字段=uat；出现 dev/staging=wrongly_reused。",
+     "on_failure": "wrongly_reused",
+     "basis": "s2.t1,s3.t1"
+    },
+    {
+     "id": "R_REPLY_CHAIN",
+     "layer": "semantic",
+     "scope": "reply",
+     "requirement": "回复确认最新环境=uat；称 staging/dev=confused。",
+     "on_failure": "confused",
+     "basis": "s2.t1,s3.t1"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_du_adjacent_field_001",
+   "checks": [
+    {
+     "id": "R_MEM_PHONE",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "后态记忆手机号=18911112222；座机保持 010-88886666。",
+     "on_failure": "wrongly_reused",
+     "basis": "s1.t1"
+    },
+    {
+     "id": "R_FILE_CROSSTALK",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "手机字段=新号、座机字段=原座机；串写=confused。",
+     "on_failure": "confused",
+     "basis": "s1.t1,s3.t1"
+    },
+    {
+     "id": "R_REPLY_FIELDS",
+     "layer": "semantic",
+     "scope": "reply",
+     "requirement": "回复体现只更新手机号；提及座机变更=confused。",
+     "on_failure": "confused",
+     "basis": "s3.t1"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_du_repeat_correction_001",
+   "checks": [
+    {
+     "id": "R_MEM_CORRECT",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "后态记忆限行日=周四；周三如保留须标注已作废。",
+     "on_failure": "wrongly_reused",
+     "basis": "s1.t1,s3.t1"
+    },
+    {
+     "id": "R_FILE_DAY",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "限行日=周四；出现周三=wrongly_reused。",
+     "on_failure": "wrongly_reused",
+     "basis": "s3.t1,s4.t1"
+    },
+    {
+     "id": "R_REPLY_DAY",
+     "layer": "semantic",
+     "scope": "reply",
+     "requirement": "回复确认限行日=周四；称周三=confused。",
+     "on_failure": "confused",
+     "basis": "s3.t1,s4.t1"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_du_effective_now_001",
+   "checks": [
+    {
+     "id": "R_MEM_EFFECTIVE",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "后态记忆同时支持 7%→9% 的变更与“5/1 已生效”时间。",
+     "on_failure": "omitted",
+     "basis": "s1.t1"
+    },
+    {
+     "id": "R_FILE_EFFECTIVE",
+     "layer": "semantic",
+     "scope": "file_after",
+     "requirement": "适用税率=9%；作为当前值出现 7%=wrongly_reused。",
+     "on_failure": "wrongly_reused",
+     "basis": "s1.t1,s3.t1"
+    },
+    {
+     "id": "R_REPLY_EFFECTIVE",
+     "layer": "semantic",
+     "scope": "reply",
+     "requirement": "回复确认已生效的新税率=9%；称“尚未生效/仍 7%”=confused。",
+     "on_failure": "confused",
+     "basis": "s1.t1,s3.t1"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_du_propagate_001",
+   "checks": [
+    {
+     "id": "R_MEM_CODE",
+     "layer": "semantic",
+     "scope": "memory_after",
+     "requirement": "后态记忆当前项目代号=朝晖；晨曦须标注为旧称。",
+     "on_failure": "wrongly_reused",
+     "basis": "s1.t1"
+    },
+    {
+     "id": "R_FILE_ARCHIVE",
+     "layer": "semantic",
+     "scope": "file_after",
+     "path": "项目档案.md",
+     "requirement": "档案中代号=朝晖且无晨曦；负责人=许沐。",
+     "on_failure": "wrongly_reused",
+     "basis": "s1.t1,s3.t1"
+    },
+    {
+     "id": "R_FILE_TEMPLATE",
+     "layer": "semantic",
+     "scope": "file_after",
+     "path": "汇报模板.md",
+     "requirement": "模板中代号=朝晖且无晨曦。",
+     "on_failure": "wrongly_reused",
+     "basis": "s1.t1,s3.t1"
+    },
+    {
+     "id": "R_REPLY_PROPAGATE",
+     "layer": "semantic",
+     "scope": "reply",
+     "requirement": "回复体现两处均已更新；仅提其一=confused。",
+     "on_failure": "confused",
+     "basis": "s3.t1"
+    }
+   ]
+  }
+ ]
+}

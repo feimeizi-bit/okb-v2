@@ -1,0 +1,657 @@
+# okb 校验器 · 负向测试样本集（V1）
+#
+# 用途：证明 tools/validate.py 真的在干活。
+# 正向测试（"我写的样本能通过校验"）几乎证明不了什么；只有负向测试才能证明校验器有效。
+#
+# 约定：每条样本的 id 前缀编码了它期望触发的错误码，形如
+#   neg_e104_no_positive_gate  → 期望该样本报出 E104
+#   warn_w201_unused_pii       → 期望该样本报出 W201，且【不得有 error】
+#   pos_control_ok             → 正向对照，必须 0 error 0 warning
+# tools/tests/test_negative.py 会自动解析并断言。
+#
+# ⚠️ 本文件故意包含非法样本，**不要**放进正常的校验/构建流程。
+
+suite_version: v0.1
+
+_base: &base
+  dimension: dynamic_update
+  difficulty: L1
+  script:
+    - session: s1
+      phase: write
+      turns:
+        - text: 我的收货地址是上海市浦东新区张江路 100 号，请记住
+    - session: s2
+      phase: probe
+      turns:
+        - text: 我的收货地址是哪里？
+  anchors:
+    - id: A1
+      type: memory_entry
+      key: address
+      value_regex: 浦东
+      expect: present
+      severity: hard
+      on_violation: omitted
+  expect:
+    verdict: remembered
+  score_policy: rule_only
+
+samples:
+
+  # ── 正向对照：必须 0 error 0 warning ──────────────────────────────────
+  - <<: *base
+    id: pos_control_ok
+    expect:                      # 显式声明失败形态：正向对照也不得豁免 W211
+      verdict: remembered
+      confusions: [omitted]
+
+  # ── 第一层：schema（E001）────────────────────────────────────────────
+  - <<: *base
+    id: neg_e001_typo_field
+    titel: 字段名拼错了  # 应为 title
+
+  - <<: *base
+    id: neg_e001_bad_dimension
+    dimension: memory_update   # 不在六维枚举内
+
+  - <<: *base
+    id: neg_e001_bad_verdict
+    expect:
+      verdict: ok                # 不在五分类内
+
+  - <<: *base
+    id: neg_e001_removed_field
+    injection:
+      mode: dialogue             # v0.2 已删除该字段
+
+  - <<: *base
+    id: neg_e001_hard_missing_on_violation
+    anchors:
+      - id: A1
+        type: memory_entry
+        key: address
+        value_regex: 浦东
+        expect: present
+        severity: hard           # hard 必须给 on_violation
+
+  - <<: *base
+    id: neg_e001_file_anchor_no_path
+    score_policy: hybrid          # 避开 rule_only+soft 的干扰，让本样本只暴露目标错误
+    anchors:
+      - id: A1
+        type: memory_entry
+        key: address
+        value_regex: 浦东
+        expect: present
+        severity: hard
+        on_violation: omitted
+      - id: A2
+        type: file_content       # 缺 path
+        content_regex: 浦东
+        expect: present
+        severity: soft
+
+  - <<: *base
+    id: neg_e001_path_schema
+    fixture:
+      - path: ../escape.txt      # 第一层 pattern 就该拦下
+        content: x
+
+  # ── 第二层：loader ───────────────────────────────────────────────────
+  - <<: *base
+    id: neg_e101_dup_session
+    script:
+      - session: s1
+        phase: write
+        turns: [{text: 地址是浦东}]
+      - session: s1              # 同一个会话出现两次：引擎该重置上下文吗？两种实现结论相反
+        phase: probe
+        turns: [{text: 地址是哪里？}]
+
+  - <<: *base
+    id: neg_e102_session_gap
+    script:
+      - session: s1
+        phase: write
+        turns: [{text: 地址是浦东}]
+      - session: s3              # 跳号
+        phase: probe
+        turns: [{text: 地址是哪里？}]
+
+  - <<: *base
+    id: neg_e103_phase_order
+    script:
+      - session: s1
+        phase: probe             # 探测跑到写入前面
+        turns: [{text: 地址是哪里？}]
+      - session: s2
+        phase: write
+        turns: [{text: 地址是浦东}]
+
+  # ── 2026-10-08：`update` 相位（write < disturb < update < probe）────────────
+  - <<: *base
+    id: pos_control_update_phase   # 正向：disturb 之后的 update 必须 0 error / 0 warning
+    script:
+      - session: s1
+        phase: write
+        turns: [{text: 我的收货地址是上海市浦东新区张江路 100 号，请记住}]
+      - session: s2
+        phase: disturb
+        turns: [{text: 今天天气不错，顺便记一下我喜欢喝美式}]
+      - session: s3
+        phase: update
+        turns: [{text: 更正一下：我 6 月起搬到徐汇区漕溪北路 200 号，以新地址为准}]
+      - session: s4
+        phase: probe
+        turns: [{text: 我的收货地址填哪里？}]
+    expect:                      # 正向对照也不得豁免 W211：显式声明失败形态（与 base 锚点一致）
+      verdict: remembered
+      confusions: [omitted]
+
+  - <<: *base
+    id: neg_e103_update_before_disturb
+    script:
+      - session: s1
+        phase: write
+        turns: [{text: 地址是浦东}]
+      - session: s2
+        phase: update            # update 跑到 disturb 之前：disturb 前的修正应记 write（2026-10-08 增补）
+        turns: [{text: 更正为徐汇}]
+      - session: s3
+        phase: disturb
+        turns: [{text: 今天天气不错}]
+      - session: s4
+        phase: probe
+        turns: [{text: 地址是哪里？}]
+
+  - <<: *base
+    id: neg_e104_no_positive_gate
+    anchors:
+      - id: A1
+        type: memory_entry
+        key: "*"
+        value_regex: 浦西
+        expect: absent           # 全是负证据 → 空转 Agent 也能拿满分
+        severity: hard
+        on_violation: confused
+        evaluate_at: snapshot_after
+
+  - <<: *base
+    id: neg_e105_rule_only_soft
+    score_policy: rule_only
+    anchors:
+      - id: A1
+        type: memory_entry
+        key: address
+        value_regex: 浦东
+        expect: present
+        severity: hard
+        on_violation: omitted
+      - id: A2
+        type: reply_text
+        turn: s2.t1
+        regex: 浦东
+        expect: present
+        severity: soft           # rule_only 判不了语义项
+
+  - <<: *base
+    id: neg_e106_bad_turn_ref
+    score_policy: hybrid
+    anchors:
+      - id: A1
+        type: memory_entry
+        key: address
+        value_regex: 浦东
+        expect: present
+        severity: hard
+        on_violation: omitted
+      - id: A2
+        type: reply_text
+        turn: s2.t9              # s2 只有 1 轮
+        regex: 浦东
+        expect: present
+        severity: soft
+
+  - <<: *base
+    id: neg_e107_turn_not_probe
+    score_policy: hybrid
+    anchors:
+      - id: A1
+        type: memory_entry
+        key: address
+        value_regex: 浦东
+        expect: present
+        severity: hard
+        on_violation: omitted
+      - id: A2
+        type: reply_text
+        turn: s1.t1              # 指向 write 会话
+        regex: 好的
+        expect: present
+        severity: soft
+
+  - <<: *base
+    id: neg_e108_dup_anchor_id
+    anchors:
+      - id: A1
+        type: memory_entry
+        key: address
+        value_regex: 浦东
+        expect: present
+        severity: hard
+        on_violation: omitted
+      - id: A1                   # 锚点 id 重复
+        type: memory_entry
+        key: address
+        value_regex: 浦西
+        expect: absent
+        severity: hard
+        on_violation: confused
+        evaluate_at: snapshot_after
+
+  - <<: *base
+    id: neg_e109_undeclared_placeholder
+    script:
+      - session: s1
+        phase: write
+        turns: [{text: "帮我填表，身份证号是 <PII_ID_9>"}]   # 未在 pii 中声明
+      - session: s2
+        phase: probe
+        turns: [{text: 我的地址是哪里？}]
+
+  - <<: *base
+    id: neg_e110_bad_regex
+    anchors:
+      - id: A1
+        type: memory_entry
+        key: address
+        value_regex: "(["         # 正则不可编译
+        expect: present
+        severity: hard
+        on_violation: omitted
+
+  - <<: *base
+    id: neg_e111_drive_path
+    fixture:
+      - path: C:/Windows/system32/x.txt    # schema 放行，loader 必须拦下
+        content: x
+
+  - <<: *base
+    id: neg_e111_trailing_space
+    fixture:
+      - path: "订单.yaml "                  # 尾随空白
+        content: x
+
+  - <<: *base
+    id: neg_e112_boundary_no_kind
+    dimension: boundary_recognition        # 必须给 expect.boundary_kind
+    expect:
+      verdict: remembered
+
+  - <<: *base
+    id: neg_e113_bad_gold_evidence
+    expect:
+      verdict: remembered
+      gold_evidence: [s2.t5]               # 不存在
+
+  - <<: *base
+    id: neg_e114_bad_supersedes
+    expect:
+      verdict: remembered
+      supersedes: [s9.t1]                  # 不存在
+
+  - <<: *base
+    id: neg_e116_star_key_no_regex
+    anchors:
+      - id: A1
+        type: memory_entry
+        key: address
+        value_regex: 浦东
+        expect: present
+        severity: hard
+        on_violation: omitted
+      - id: A2
+        type: memory_entry
+        key: "*"                           # 全量扫描却没给 value_regex
+        expect: absent
+        severity: hard
+        on_violation: wrongly_persisted
+        evaluate_at: snapshot_after
+
+  - <<: *base
+    id: neg_e111_tilde_path
+    fixture:
+      - path: ~/.ssh/authorized_keys   # schema 放行，loader 必须拦下
+        content: x
+
+  - <<: *base
+    id: neg_e110_star_value_regex
+    anchors:
+      - id: A1
+        type: memory_entry
+        key: "*"
+        value_regex: "*"              # 不是可求值的正则，这条锚点会彻底不生效
+        expect: present
+        severity: hard
+        on_violation: omitted
+
+  - <<: *base
+    id: neg_e109_lowercase_placeholder
+    pii:
+      - id: PII_ID_1
+        kind: id_card
+        value: "110101199003071234"
+    script:
+      - session: s1
+        phase: write
+        turns: [{text: "我的身份证号是 <pii_id_1>"}]   # 小写写法，引擎不会物化
+      - session: s2
+        phase: probe
+        turns: [{text: 我的地址是哪里？}]
+
+  - <<: *base
+    id: neg_e109_unclosed_placeholder
+    pii:
+      - id: PII_ID_1
+        kind: id_card
+        value: "110101199003071234"
+    script:
+      - session: s1
+        phase: write
+        turns: [{text: "我的身份证号是 <PII_ID_1"}]    # 缺右括号
+      - session: s2
+        phase: probe
+        turns: [{text: 我的地址是哪里？}]
+
+  - <<: *base
+    id: neg_e117_plaintext_pii_in_anchor
+    pii:
+      - id: PII_ID_1
+        kind: id_card
+        value: "110101199003071234"
+    anchors:
+      - id: A1
+        type: memory_entry
+        key: "*"
+        value_regex: "110101199003071234"   # 写了明文：落盘证据里只有占位符，必然恒不匹配
+        expect: absent
+        severity: hard
+        on_violation: wrongly_persisted
+        evaluate_at: snapshot_after
+      - id: A2
+        type: memory_entry
+        key: address
+        value_regex: 浦东
+        expect: present
+        severity: hard
+        on_violation: omitted
+
+  - <<: *base
+    id: neg_e001_script_turns_shape
+    script:
+      - session: s1
+        phase: write
+        turns: 请记住我的地址是浦东      # 手写笔误：应该是列表，之前会让工具链直接崩
+      - session: s2
+        phase: probe
+        turns: [{text: 我的地址是哪里？}]
+
+  - <<: *base
+    id: neg_e119_vacuous_gate
+    fixture:
+      - path: f.md
+        content: hello world
+    anchors:
+      - id: A1
+        type: file_content
+        path: f.md
+        content_regex: hello
+        expect: present
+        severity: hard
+        on_violation: omitted
+
+  - <<: *base
+    id: neg_e118_equal_and_absent
+    fixture:
+      - path: f.md
+        content: hello
+    anchors:
+      - id: A1
+        type: file_content
+        path: f.md
+        content_regex: hello
+        must_equal_fixture: true
+        must_differ_from_fixture: true   # 与 must_equal 互斥
+        expect: present
+        severity: hard
+        on_violation: omitted
+
+  # ── 跨样本：E115 ─────────────────────────────────────────────────────
+  - <<: *base
+    id: neg_e115_dup_sample_id
+  - <<: *base
+    id: neg_e115_dup_sample_id
+
+  # ── 只应产生 warning（不得有 error）──────────────────────────────────
+  - <<: *base
+    id: warn_w201_unused_pii
+    pii:
+      - id: PII_ID_1
+        kind: id_card
+        value: "110101199003071234"        # 声明了但整个样本没用到
+
+  - <<: *base
+    id: warn_w202_absent_no_evaluate_at
+    anchors:
+      - id: A1
+        type: memory_entry
+        key: address
+        value_regex: 浦东
+        expect: present
+        severity: hard
+        on_violation: omitted
+      - id: A2
+        type: memory_entry
+        key: address
+        value_regex: 浦西
+        expect: absent                     # hard+absent 未显式写 evaluate_at
+        severity: hard
+        on_violation: confused
+
+  - <<: *base
+    id: warn_w203_differ_no_fixture
+    score_policy: hybrid
+    anchors:
+      - id: A1
+        type: memory_entry
+        key: address
+        value_regex: 浦东
+        expect: present
+        severity: hard
+        on_violation: omitted
+      - id: A2
+        type: file_content
+        path: 订单.yaml
+        must_differ_from_fixture: true      # 但 fixture 里没有这个文件
+        content_regex: 浦东
+        expect: present
+        severity: soft
+
+  - <<: *base
+    id: warn_w204_judge_only_hard
+    score_policy: judge_only
+    anchors:
+      - id: A1
+        type: memory_entry
+        key: address
+        value_regex: 浦东
+        expect: present
+        severity: hard
+        on_violation: omitted
+      - id: A2
+        type: memory_entry
+        key: address
+        value_regex: 浦西
+        expect: absent              # judge_only 下带裁决语气的 hard+absent 才该报警
+        severity: hard
+        on_violation: confused
+        evaluate_at: snapshot_after
+
+  # ── P1-2 新增（C-2 实证缺陷固化：E120/E121/W209/W210，2026-09-21）──────────
+  - <<: *base
+    id: neg_e120_confused_unreachable
+    expect:
+      verdict: remembered
+      confusions: [confused]        # 无任何 hard 锚点的 on_violation=confused → E120
+
+  - id: neg_e121_absent_max_matches
+    dimension: dynamic_update
+    difficulty: L1
+    script:
+      - {session: s1, phase: write, turns: [{text: 记住我的工号 7712}]}
+      - {session: s2, phase: probe, turns: [{text: 我工号多少}]}
+    anchors:
+      - {id: A1, type: memory_entry, key: "*", value_regex: "7712", expect: present, severity: hard, on_violation: omitted}
+      - {id: A2, type: memory_entry, key: "*", value_regex: 旧工号, expect: absent, severity: hard, on_violation: confused, max_matches: 1}   # absent+max 未定义 → E121
+    expect: {verdict: remembered}
+    score_policy: rule_only
+
+  - id: neg_e121_file_turn_no_attribution
+    dimension: task_reuse
+    difficulty: L1
+    script:
+      - {session: s1, phase: write, turns: [{text: 模板以后按三段来}]}
+      - {session: s2, phase: probe, turns: [{text: 写周报，输出 周报.md}]}
+    fixture:
+      - {path: 周报.md, content: "占位\n"}
+    anchors:
+      - {id: A1, type: memory_entry, key: "*", value_regex: 三段, expect: present, severity: hard, on_violation: omitted}
+      - {id: A2, type: file_content, path: 周报.md, turn: s2.t1, content_regex: 三段, expect: present, severity: hard, on_violation: confused}   # file+turn 不可判（ISS-09）→ E121
+    expect: {verdict: remembered}
+    score_policy: rule_only
+
+  - id: warn_w209_max_matches_on_reply
+    dimension: memory_recall
+    difficulty: L1
+    script:
+      - {session: s1, phase: write, turns: [{text: 咖啡不加糖}]}
+      - {session: s2, phase: probe, turns: [{text: 点杯咖啡}]}
+    anchors:
+      - {id: A1, type: reply_text, turn: s2.t1, regex: 无糖|不加糖, expect: present, severity: hard, on_violation: omitted, max_matches: 2}   # reply 上 max_matches 被忽略 → W209（无 error）
+    expect: {verdict: remembered}
+    score_policy: rule_only
+
+  - id: warn_w210_pii_declared_side
+    dimension: dynamic_update
+    difficulty: L1
+    pii:
+      - {id: PII_MOBILE_9, kind: phone, value: "13977770001"}
+    script:
+      - {session: s1, phase: write, turns: [{text: 新手机号以后用这个，具体我私发你}]}
+      - {session: s2, phase: probe, turns: [{text: 我的号码是}]}
+    anchors:
+      - {id: A1, type: memory_entry, key: "*", value_regex: 手机, expect: present, severity: hard, on_violation: omitted}
+    expect: {verdict: remembered}
+    score_policy: hybrid
+
+  - id: warn_w210_pii_literal_side
+    dimension: long_term_retention
+    difficulty: L1
+    script:
+      - {session: s1, phase: write, turns: [{text: "我表哥电话 13977770001，帮我存进通讯录"}]}   # 撞上一例的声明值 → W210 双向
+      - {session: s2, phase: probe, turns: [{text: 我表哥电话多少}]}
+    anchors:
+      - {id: A1, type: memory_entry, key: "*", value_regex: 表哥, expect: present, severity: hard, on_violation: omitted}
+    expect: {verdict: remembered}
+    score_policy: hybrid
+
+  # ── P1 评审轮补（momus 向量④：E120 死锚点洞 / W211 / W210 正则形态；review P2-3：每码 ≥2）──
+  - id: neg_e120_event_anchor_dummy
+    dimension: similar_discrimination
+    difficulty: L1
+    script:
+      - {session: s1, phase: write, turns: [{text: 主机 IP 是 10.0.0.21}]}
+      - {session: s2, phase: probe, turns: [{text: "主机 IP?"}]}
+    anchors:
+      - {id: A1, type: file_content, path: 巡检.yaml, content_regex: '10\.0\.0\.21', expect: present, severity: hard, on_violation: omitted, desc: 门槛}
+      - {id: A2, type: memory_read, key: "*", value_regex: IP, expect: present, severity: hard, on_violation: confused, desc: 死锚点（无采集恒 skip）不得充当 confused 承接}
+    expect: {verdict: remembered, confusions: [omitted, confused]}
+    score_policy: hybrid
+
+  - id: neg_e120_write_absent_anytime_dummy
+    dimension: boundary_recognition
+    difficulty: L1
+    script:
+      - {session: s1, phase: write, turns: [{text: 这是临时号码，只本次用}]}
+      - {session: s2, phase: probe, turns: [{text: 按长期偏好评一下}]}
+    anchors:
+      - {id: A1, type: file_content, path: 结果.md, content_regex: 评分, expect: present, severity: hard, on_violation: omitted, desc: 门槛}
+      - {id: A2, type: memory_write, key: "*", value_regex: 临时, expect: absent, severity: hard, on_violation: wrongly_persisted, evaluate_at: any_time, desc: 事件 absent+any_time 恒 skip，不算承接}
+    expect: {verdict: remembered, confusions: [omitted, wrongly_persisted], boundary_kind: withhold}
+    score_policy: hybrid
+
+  - id: warn_w209_max_matches_on_file
+    dimension: task_reuse
+    difficulty: L1
+    script:
+      - {session: s1, phase: write, turns: [{text: 记住模板是三节}]}
+      - {session: s2, phase: probe, turns: [{text: 按模板输出 报告.md}]}
+    anchors:
+      - {id: A1, type: file_content, path: 报告.md, content_regex: 三节, expect: present, severity: hard, on_violation: omitted, max_matches: 3, desc: max_matches 在 file_content 上不生效 → W209}
+    expect: {verdict: remembered, confusions: [omitted]}
+    score_policy: rule_only
+
+  - id: warn_w211_no_confusions_declared
+    dimension: memory_recall
+    difficulty: L1
+    script:
+      - {session: s1, phase: write, turns: [{text: 我住滨江}]}
+      - {session: s2, phase: probe, turns: [{text: 我住哪}]}
+    anchors:
+      - {id: A1, type: reply_text, turn: s2.t1, regex: 滨江, expect: present, severity: hard, on_violation: omitted, desc: 正常}
+    expect: {verdict: remembered}
+    score_policy: rule_only
+
+  - id: warn_w210_regex_form_holder
+    dimension: dynamic_update
+    difficulty: L1
+    pii:
+      - {id: PII_TEL_7, kind: phone, value: "13966660002"}
+    script:
+      - {session: s1, phase: write, turns: [{text: 新号码私发你，别写在这}]}
+      - {session: s2, phase: probe, turns: [{text: "我的新号码?"}]}
+    anchors:
+      - {id: A1, type: memory_entry, key: "*", value_regex: 号码, expect: present, severity: hard, on_violation: omitted}
+    expect: {verdict: remembered, confusions: [omitted]}
+    score_policy: hybrid
+
+  - id: warn_w210_regex_form_user
+    dimension: long_term_retention
+    difficulty: L1
+    script:
+      - {session: s1, phase: write, turns: [{text: 客服备注号码模式 1396 开头}]}
+      - {session: s2, phase: probe, turns: [{text: 客服号码尾号多少}]}
+    anchors:
+      - {id: A1, type: memory_entry, key: "*", value_regex: '139666[6]0002', expect: present, severity: hard, on_violation: omitted, desc: 正则形态藏声明值 → W210 归一化抓}
+    expect: {verdict: remembered, confusions: [omitted]}
+    score_policy: hybrid
+
+  # F-9：hard 回复词面依赖参考答案，警告而非定罪/重判。
+  - <<: *base
+    id: warn_w212_reference_echo
+    anchors:
+      - {id: A1, type: reply_text, turn: s2.t1, regex: '重新提供|不留|不保存', expect: present, severity: hard, on_violation: wrongly_reused}
+    expect:
+      verdict: remembered
+      confusions: [wrongly_reused]
+      reference_answer: ['这次帮填，但不留存号码；下次请重新提供']
+
+  - <<: *base
+    id: warn_w212_grouped_echo
+    anchors:
+      - {id: A1, type: reply_text, turn: s2.t1, regex: '^(?:不能复用|已经删除).*$', expect: present, severity: hard, on_violation: wrongly_reused}
+    expect:
+      verdict: remembered
+      confusions: [wrongly_reused]
+      reference_answer: ['这类临时数据不能复用']

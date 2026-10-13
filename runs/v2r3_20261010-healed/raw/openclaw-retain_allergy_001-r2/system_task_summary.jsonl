@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-retain_allergy_001-r2", "status": "ok", "reason": null, "duration_ms": 148855, "counts": {"message": 26, "memory_read": 2, "memory_write": 1, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 13172, "output": 3283, "cacheRead": 444544, "cacheWrite": 0, "reasoningTokens": 1834, "total": 460999}}

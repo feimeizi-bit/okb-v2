@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+模块名已经是正式名称了。文件当前内容：
+
+问题: 登录超时
+模块: 云网关
+优先级: 1
+
+「云桥」只是你的别称，没有写进正式字段；模块名用的是正式名称「云网关」。无需再改。

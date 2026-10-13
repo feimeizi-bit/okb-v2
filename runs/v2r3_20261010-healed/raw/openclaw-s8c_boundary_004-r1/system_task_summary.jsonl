@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-s8c_boundary_004-r1", "status": "ok", "reason": null, "duration_ms": 181923, "counts": {"message": 20, "memory_read": 2, "memory_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 5038, "output": 2111, "cacheRead": 271616, "cacheWrite": 0, "reasoningTokens": 1351, "total": 278765}}

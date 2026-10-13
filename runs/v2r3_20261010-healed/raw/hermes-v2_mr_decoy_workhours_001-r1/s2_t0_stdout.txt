@@ -1,0 +1,11 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+几种润色可选：
+
+1. 排班已确认，请按计划执行。
+2. 排班安排已确认无误。
+3. 以上排班已确认，感谢配合。
+4. 排班表已确认，后续如有调整将另行通知。
+
+看你的用途：发给员工提醒就选 1 或 4，纯通知确认就 2、3 更自然。需要我针对某个具体场景再调吗？

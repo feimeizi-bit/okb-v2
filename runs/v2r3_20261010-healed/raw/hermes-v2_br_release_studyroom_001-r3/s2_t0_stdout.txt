@@ -1,0 +1,11 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+几个润色方向，按语气从正式到亲切：
+
+- 座位预约已提交成功。
+- 您的座位预约已提交，请留意后续通知。
+- 座位预约已受理，祝学习愉快。
+- 预约成功，座位已为您锁定。
+
+如果是系统提示消息，推荐用「座位预约已提交成功」或「预约成功，座位已为您锁定」，更简洁明确。需要特定语境（短信/弹窗/工单回执）的话告诉我，我再调整。

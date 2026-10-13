@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+几个版本供你选：
+
+- 会议时间调整到三点。
+- 会议改期至三点。
+- 会议顺延/提前到三点（看原定时间决定用哪个词）。
+
+补充一下是上午还是下午会更清晰，比如“会议改到下午三点”。需要我按某个语气（正式/口语/书面）再调吗？

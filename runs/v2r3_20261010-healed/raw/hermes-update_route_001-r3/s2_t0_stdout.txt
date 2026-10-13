@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已写入。通勤.yaml 的 route 字段现在为 `route: 望江路`（原滨江路因围挡施工已改道望江路）。

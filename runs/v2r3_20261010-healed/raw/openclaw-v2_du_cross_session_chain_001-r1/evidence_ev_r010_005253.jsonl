@@ -1,0 +1,1 @@
+{"path": "项目配置.yaml", "op": "modify", "before_content": "环境: dev\n版本: 1.0.0\n", "before_sha256": "69d26b60ab899edcb544e90a28cf2baca5e8d715fe5f264521f32b9b991bbefd", "after_content": "环境: prod\n版本: 1.0.0\n", "content_sha256": "9c64faa79f70e91beb14ab3c8fe98526326a01a51bb5c97fab1aeaf76ebfcf0b", "full_bytes": 27, "stored_bytes": 27, "truncated": false}

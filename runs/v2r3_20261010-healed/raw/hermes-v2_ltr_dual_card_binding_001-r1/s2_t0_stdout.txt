@@ -1,0 +1,18 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+「预算表下午发你。」润色如下，按语体分几档：
+
+简洁版（原意不变，稍正式）：
+预算表下午发你。
+
+更正式、书面：
+预算表将于今天下午发送给你。
+
+商务邮件/工作沟通：
+预算表我下午整理好后发给你，请稍候。
+
+稍客气、留有余地：
+预算表预计下午发你，如有调整我会及时同步。
+
+需要我按某个具体场景（微信、邮件、对外客户）再调一版的话，说一声。

@@ -1,0 +1,1 @@
+{"action": "reset", "cmd": "restore_baseline /home/okb/.okb/baseline/hermes", "returncode": 0, "ok": true, "duration_ms": 0}

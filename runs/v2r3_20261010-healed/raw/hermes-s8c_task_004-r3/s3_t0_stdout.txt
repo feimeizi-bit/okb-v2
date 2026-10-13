@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已创建 转换.yaml（未运行转换）：
+
+/home/okb/okb/runs/v2r3_20261010.hm/work/hermes-s8c_task_004-r3/转换.yaml
+
+内容：
+  timeout_seconds: 120
+  retry: 0

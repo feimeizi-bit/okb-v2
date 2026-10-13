@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+收到，去武汉出差。需要我帮你做什么？比如查天气、看车票/机票、整理行程，或者别的，说一声就行。

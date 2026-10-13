@@ -1,0 +1,18 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+几个版本，按语气分：
+
+偏口语自然：
+快递明天到，注意查收。
+
+更客气礼貌：
+快递预计明天送达，麻烦留意一下。
+
+简短干练：
+快递明天就到。
+
+带一点提醒（如果是发给对方）：
+你的快递明天到，别忘了取哈。
+
+如果告诉我场景（发给朋友/客户/同事）和想要的语气，我可以再调。

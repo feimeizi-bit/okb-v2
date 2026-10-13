@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+按你之前定的规矩（快递一律放小区南门丰巢），应该去小区南门的丰巢快递柜拿。
+
+取件码一般在短信或购物 App 的物流通知里。如果你把取件码或物流信息发我，我可以帮你确认具体柜号和位置。

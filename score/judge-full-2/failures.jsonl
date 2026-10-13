@@ -1,0 +1,4 @@
+{"error": "http_403", "count": 1538}
+{"error": "RemoteDisconnected", "count": 4}
+{"error": "URLError", "count": 14}
+{"error": "TimeoutError", "count": 1}

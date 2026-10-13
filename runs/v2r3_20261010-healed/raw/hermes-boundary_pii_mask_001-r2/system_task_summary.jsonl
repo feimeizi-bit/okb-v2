@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "hermes-boundary_pii_mask_001-r2", "status": "ok", "reason": null, "duration_ms": 30516, "counts": {"message": 14, "memory_read": 2, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": null}

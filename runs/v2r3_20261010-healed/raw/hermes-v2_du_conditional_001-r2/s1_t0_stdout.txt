@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+记住了。下周快递地址这样定：去武汉出差就寄公司（创业大厦 B 座 502），不去就寄家里（梧桐巷 9 号）。
+
+需要我到时候帮你判断（比如查行程）或者直接定哪个地址，随时说。

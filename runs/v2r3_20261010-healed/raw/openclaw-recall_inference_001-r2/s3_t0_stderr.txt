@@ -1,0 +1,19 @@
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=526 dispatcher=new contentType=text/event-stream; charset=utf-8
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=211 dispatcher=reused contentType=text/event-stream; charset=utf-8
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=244 dispatcher=reused contentType=text/event-stream; charset=utf-8
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=255 dispatcher=reused contentType=text/event-stream; charset=utf-8
+[tools] ask_user failed: Gateway not reachable at ws://127.0.0.1:18789 (ECONNREFUSED).
+Start it with `openclaw gateway run` or check `openclaw gateway status`.
+Gateway target: ws://127.0.0.1:18789
+Source: local loopback
+Config: /home/okb/.openclaw/openclaw.json
+Bind: loopback raw_params={"questions":[{"header":"收礼人","id":"recipient","options":[{"description":"11月满6岁，按6岁小女孩来挑","label":"女儿 小满 (Recommended)"},{"label":"伴侣/女朋友"},{"label":"其他家人/朋友"}],"question":"这份生日礼物是送给谁的？"},{"header":"预算","id":"budget","options":[{"description":"贴心小礼","label":"300元以内"},{"description":"精致实用","label":"300-1000元"},{"description":"有分量的大件","label":"1000-3000元"},{"description":"不设上限","label":"3000元以上"}],"question":"预算大概在哪个范围？"},{"header":"她的兴趣","id":"interests","multiSelect":true,"options":[{"description":"涂鸦、粘土、折纸、贴纸","label":"画画/手工"},{"description":"乐高、积木、拼搭","label":"积木/乐高"},{"description":"角色扮演、厨…
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=224 dispatcher=reused contentType=text/event-stream; charset=utf-8
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=247 dispatcher=reused contentType=text/event-stream; charset=utf-8
+[agents/agent-command] [agent] run 8b40cd2c-7174-4a3c-9a0d-3c250f1e9653 ended with stopReason=stop

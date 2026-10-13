@@ -1,0 +1,9 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已填好。取件码 = 手机号 13877223344 的后四位 = 3344。
+
+取件单.yaml 现在是：
+
+  柜机: 丰巢南门
+  取件码: 3344

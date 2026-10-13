@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+原句本身已经通顺。若想更自然，可微调：
+
+- 登录流程说明已更新。（原文，简洁自然，可保留）
+- 已更新登录流程说明。（动宾更主动，适合作为动作记录）
+- 登录流程说明现已更新。（强调"现在"状态）
+
+如果是提交信息或通知，推荐保留原文或"已更新登录流程说明"。

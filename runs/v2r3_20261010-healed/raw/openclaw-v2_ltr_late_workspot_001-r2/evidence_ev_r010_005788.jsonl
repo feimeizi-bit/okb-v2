@@ -1,0 +1,1 @@
+{"path": "签到表.yaml", "op": "modify", "before_content": "姓名: 许沐\n工位号: \n", "before_sha256": "f1a77f1802dfc601311ec1667eee20328b600b8ea56cc3498383f688ca69c7fc", "after_content": "姓名: 许沐\n工位号: A区12号\n", "content_sha256": "f3c5b53d0e71d37466cb6efda7ad41fe367b357d80da09b8c1f42386fa6c8951", "full_bytes": 36, "stored_bytes": 36, "truncated": false}

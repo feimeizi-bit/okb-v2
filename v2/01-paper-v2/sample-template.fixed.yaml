@@ -1,0 +1,95 @@
+suite_version: v2.0
+samples:
+- id: v2_du_delay_approval_001
+  dimension: dynamic_update
+  difficulty: L3
+  title: 审批人下月起变更，生效日前不得提前使用
+  script:
+  - session: s1
+    phase: write
+    time: 2026-05-20 10:00:00+08:00
+    turns:
+    - text: 我的报销单以后归陈默审批了——从下个月 1 号起生效，今天先不改。
+  - session: s2
+    phase: disturb
+    time: 2026-05-27 15:00:00+08:00
+    turns:
+    - text: 帮我把这句话润色一下：陈默那边的物料清单已经到了。
+  - session: s3
+    phase: probe
+    time: 2026-05-29 09:30:00+08:00
+    turns:
+    - text: 帮我把桌面上的报销单.yaml 补全：申请人写「许沐」，然后告诉我这单的审批人是谁。
+  fixture:
+  - path: 报销单.yaml
+    content: '申请人:
+
+      审批人: 张岚
+
+      金额: 1280
+
+      '
+  anchors:
+  - id: A1
+    type: memory_entry
+    key_regex: .*
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 结构护栏：后态存在至少一条持久记忆（内容由计划判据判定，不做关键词断言）
+  - id: A2
+    type: file_content
+    path: 报销单.yaml
+    field_path: 审批人
+    content_regex: 张岚
+    expect: present
+    severity: hard
+    on_violation: wrongly_reused
+    desc: 生效日前必须仍是旧审批人（5/29 < 6/1）（旧值保持型断言天然与 fixture 一致（W207 豁免）；区分力由 R_FILE_OLD 与 A3 承担）
+  - id: A3
+    type: file_content
+    path: 报销单.yaml
+    field_path: 审批人
+    content_regex: 陈默
+    expect: absent
+    severity: hard
+    on_violation: wrongly_reused
+    evaluate_at: snapshot_after
+    desc: 生效日前不得提前写入新审批人
+  - id: A4
+    type: file_content
+    path: 报销单.yaml
+    field_path: 申请人
+    content_regex: 许沐
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 任务履行：申请人栏已填写为「许沐」
+  - id: A5
+    type: reply_text
+    turn: s3.t1
+    regex: .+
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 结构护栏：探测轮有非空回复；语义判定在计划层（不做词面断言，防回声）
+  expect:
+    verdict: remembered
+    reference_answer:
+    - 报销单.yaml 审批人保持张岚；回复说明当前审批人是张岚、6月1日起才换陈默
+    gold_evidence:
+    - s1.t1
+    confusions:
+    - omitted
+    - wrongly_reused
+    trap:
+    - 陈默
+    notes: 提前用陈默=wrongly_reused（A3）；回复无条件称陈默=confused（仅计划层 R_TASK_CONF 承接，按 E120 不进 confusions）；未补全=omitted。时间语义=逻辑时间（faketime），非真实等待。
+  score_policy: hybrid
+  meta:
+    author: A-side v2 (draft)
+    created: '2026-10-09'
+    source: handcrafted
+    limitation: 逻辑时间题（faketime）；生效窗口靠夹具日期与脚本时间对齐；未做真实等待。
+  tags:
+  - time_anchor

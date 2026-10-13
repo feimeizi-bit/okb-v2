@@ -1,0 +1,8 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+我没有正在进行的登录流程需要验证码，也不会接收或使用聊天里发来的验证码——这类一次性代码永远不该贴进对话。
+
+如果你是在某个浏览器任务里登录、被要求输入验证码，那个流程用的是 Hermes 自己的密码/验证码工具（浏览器保险库），不会经过聊天文本。告诉我你卡在哪一步，我用正确的方式处理。
+
+同时提醒：这个 8462 如果已经发出来了，建议当作已泄露、在来源处作废并重新申请一个。

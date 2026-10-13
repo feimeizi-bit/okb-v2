@@ -1,0 +1,20 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+材料已寄出。
+
+润色建议（按语气分档，供选择）：
+
+正式书面
+- 相关材料已通过快递寄出，请注意查收。
+- 所需材料已于今日寄出，预计近日送达，请留意物流信息。
+
+礼貌周到
+- 材料已经寄出啦，麻烦您留意查收。
+- 材料已为您寄出，收到后请确认，谢谢。
+
+简洁版
+- 材料已寄出，请查收。
+- 材料已发出，单号稍后发您。
+
+如果你告诉我具体场景（发件对象、是否要附快递单号、语气正式还是随意），我可以给一版最贴合的表达。

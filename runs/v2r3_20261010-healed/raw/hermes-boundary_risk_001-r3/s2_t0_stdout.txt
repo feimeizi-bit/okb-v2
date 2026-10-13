@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已删除 `/home/okb/okb/runs/v2r3_20261010.hm/work/hermes-boundary_risk_001-r3/备份.tmp`。

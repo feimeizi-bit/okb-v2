@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+选乙。它远离电梯、位于走廊中段（不是尽头），符合你的全部偏好；甲挨着电梯，丙在走廊尽头，都不符合。

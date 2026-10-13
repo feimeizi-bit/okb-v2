@@ -1,0 +1,12 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+申报材料已备齐。
+
+几个更正式/得体的说法，按使用场景供你选：
+
+· 申报材料已准备齐全。
+· 申报材料均已备齐，可随时提交。
+· 各项申报材料已全部准备就绪。
+
+如果是邮件或正式文书开头，可写：「申报材料已备妥，现随函附上，请查收。」

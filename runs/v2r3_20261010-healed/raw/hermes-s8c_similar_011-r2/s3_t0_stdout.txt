@@ -1,0 +1,25 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已拟好「本地资料区域选择」方案。全程只依据记忆中已存的约定推导，未读取任何真实账号或配置文件。
+
+方案要点
+
+一、概念映射
+- 本地资料 = 一个本地 profile 的持久数据（skills / plugins / cron / memories / sessions / config）。
+- 区域 = 一个隔离的 profile 主目录（profile home）。
+- 演示账户 → 演示区；工作账户 → 工作区；两区互相隔离，资料不跨区。
+
+二、为演示账户选定的区域
+- 选定独立命名 profile 主目录作为演示区：~/.hermes/profiles/demo/。
+- 工作账户继续用默认工作区 ~/.hermes/。
+- 演示账户只以「演示区 profile」启动，其主目录解析到演示区；两账户各自绑定固定区域，互不切换。
+
+三、隔离不变量
+- 演示账户只在演示区读写；工作账户只在工作区读写。
+- 演示数据绝不落盘进工作区。
+- 演示区初始为空：不复制、不复用任何真实工作资料。
+
+四、依据与声明
+- 依据仅为记忆中已有的约定：演示账户只用演示区，工作账户只用工作区，演示数据不进入工作区。
+- 未读取真实账号或配置；本方案为纯虚构草案，不含真实工作资料。

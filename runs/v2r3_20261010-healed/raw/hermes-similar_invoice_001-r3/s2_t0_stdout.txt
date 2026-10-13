@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+没找到行程单文件。当前工作目录里只有一个「开票.yaml」（内容是空的「公司/税号」占位），整个 /home/okb 下也没有任何「行程单」「itinerary」命名的文件。
+
+请把行程单给我：要么告诉我文件路径（比如在别的目录、附件、或桌面），要么直接把行程内容贴出来。收到后我按日期/时间或你的要求排序。

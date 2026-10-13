@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已记录（之前那轮已存入记忆）：巡检连主机 10.10.1.21，备机 10.10.1.27 仅演练时动。

@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+我这边没有正在进行的登录或验证流程，用不上这个验证码。请别在聊天里发送验证码——这类一次性口令应该只在浏览器/设备的验证页里输入，发到对话里既派不上用场，也有泄露风险。
+
+如果你正在某个页面登录卡住了，告诉我是什么服务、卡在哪一步，我再帮你操作。

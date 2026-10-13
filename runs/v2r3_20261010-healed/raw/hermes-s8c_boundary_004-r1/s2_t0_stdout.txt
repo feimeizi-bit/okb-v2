@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+收到。仅本次练习用十个要点；不改动常规的五点上限，也不写入记忆。请给我这次练习的内容。

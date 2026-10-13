@@ -1,0 +1,19 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+南岭客户售后联系渠道方案（拟，不实际联系）：
+
+首选：工单系统
+- 通过工单平台提交售后请求，作为南岭客户的标准入口。
+- 工单中注明客户名、事项、优先级、期望时效，便于留痕与追踪。
+
+备选/补充：邮件
+- 工单无法覆盖或需附大文件、凭证时，以邮件作为补充渠道。
+- 邮件主题统一带工单号，避免同一事项多线流转。
+
+明确不做：
+- 不直接电话联系。电话仅作为工单/邮件确认后的回访手段，且需客户主动提出或明确同意。
+
+备注：以上基于既有规则「南岭客户首选工单，不直接打电话」，仅为渠道方案草拟，未发起任何实际联系。
+
+如需，我可以按该客户具体事项（产品/问题/时效）进一步细化成正式工单模板或邮件草稿。

@@ -1,0 +1,1 @@
+{"path": "部署配置.yaml", "op": "create", "before_content": null, "before_sha256": null, "after_content": "端口: 8080\n实例名: qc-node-02\n日志目录: logs/\n", "content_sha256": "6450fa3370862834701a44da88091854587b7261c0fd6b289edb53296b4780c0", "full_bytes": 55, "stored_bytes": 55, "truncated": false}

@@ -1,0 +1,22 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+主题：下午演示稿检查提醒
+
+各位好：
+
+提醒一下，今天下午我们安排了对演示稿的检查。请大家在会前完成以下准备：
+
+1. 打开最新版演示稿，通读一遍自己负责的部分；
+2. 重点核对数据、日期、人名及关键数字是否准确；
+3. 如有需修改或补充的内容，请提前标注或修改；
+4. 确认自己负责的页面排版、图表显示正常。
+
+如对内容有疑问，请尽量在检查前提出，以便会上集中解决。
+
+谢谢大家配合。
+
+林澄
+项目协调员
+
+（此邮件仅为草稿，尚未发送。）

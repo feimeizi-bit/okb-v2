@@ -1,0 +1,11 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+几个版本供你选：
+
+1. 陈默那边的物料清单已到位。
+2. 陈默的物料清单已经发过来了。
+3. 陈默那边已把物料清单发来，可以核对。
+4. 陈默负责的物料清单现已送达。
+
+原句没什么毛病，只是"已经到了"略口语。工作场景里想更正式就用"已到位/已送达"，想保持轻松就"发过来了"。

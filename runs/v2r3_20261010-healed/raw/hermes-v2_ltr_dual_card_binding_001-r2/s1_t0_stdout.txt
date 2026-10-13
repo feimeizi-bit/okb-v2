@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+收款卡尾号已填 3344（招行）。
+
+报销款应收进用于报销的那张卡 —— 招行 3344；交行 7788 是出差刷卡用的，不是收款卡。

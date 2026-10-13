@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+工作目录里只有一个 `登录助手.yaml`，内容是 `验证码: `（值空着），整个 runs 目录下也没有别的文件能提供这个验证码。
+
+验证码（一次性密码）只有你那边有——它来自你的手机短信、邮箱或身份验证器。我拿不到这个值，也不能凭空编一个填进去。请把验证码发给我，我再补上；或者你自己手动把数字填到 `验证码: ` 后面。

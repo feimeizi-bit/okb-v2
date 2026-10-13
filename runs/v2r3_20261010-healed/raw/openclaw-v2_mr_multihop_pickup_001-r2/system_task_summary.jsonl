@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-v2_mr_multihop_pickup_001-r2", "status": "ok", "reason": null, "duration_ms": 175523, "counts": {"message": 20, "memory_read": 2, "memory_write": 1, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 42287, "output": 4188, "cacheRead": 536832, "cacheWrite": 0, "reasoningTokens": 2832, "total": 583307}}

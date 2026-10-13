@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已记下：2026-06-01 起收货地址改用新地址（上海市浦东新区张江路100号）。6 月 1 号前的订单仍用原地址。

@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+哈哈抹茶这名儿也好配布偶，跟芝麻凑一起都能开茶话了。布偶确实粘人，改天说不定还来串门找芝麻玩。

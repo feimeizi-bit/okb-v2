@@ -1,0 +1,15 @@
+{
+ "paper_sha256": "bca2c68c82be510f42b6bb90b24f719c0e086f627767107103dbabc9affb52fe",
+ "samples": 92,
+ "by_dimension": {
+  "long_term_retention": 15,
+  "memory_recall": 15,
+  "dynamic_update": 15,
+  "similar_discrimination": 15,
+  "boundary_recognition": 15,
+  "task_reuse": 17
+ },
+ "plan_checks": 328,
+ "lint": "0 error / 61 warning (W205 x52, W207 x9 全带豁免)",
+ "traps_moved_to_ledger": 45
+}

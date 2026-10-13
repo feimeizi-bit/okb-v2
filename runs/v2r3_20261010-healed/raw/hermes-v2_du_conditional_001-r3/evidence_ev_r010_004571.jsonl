@@ -1,0 +1,1 @@
+{"path": "快递单.yaml", "op": "modify", "before_content": "收件人: 许沐\n收货地址: \n", "before_sha256": "d34fecf8937926438273e98db530ed01ff15d69025dca5ea39b18809d670da16", "after_content": "收件人: 许沐\n收货地址: 创业大厦 B 座 502\n", "content_sha256": "ef12e0e4f73bf5e9304fc85f1aebe8e7dc54b7eed1c8d967edf317e38275d54d", "full_bytes": 55, "stored_bytes": 55, "truncated": false}

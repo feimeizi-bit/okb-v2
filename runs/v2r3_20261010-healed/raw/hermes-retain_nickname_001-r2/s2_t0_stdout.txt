@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+阿鹿，我翻了整个环境，没找到值班表：没有叫「值班表 / duty / roster / 排班」的文件，当前工作目录里只有一个 `模板通知.md`（内容是"通知正文（抬头自定）"），跟排班无关，其余都是项目的测试脚本和样例数据。
+
+这周（2026-06-01 至 06-07）的值班安排在我这边没有任何可查来源。你把值班表发我，或者告诉我在哪个系统/文件里，我再帮你查。

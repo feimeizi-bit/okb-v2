@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-v2_du_propagate_001-r2", "status": "ok", "reason": null, "duration_ms": 170289, "counts": {"message": 21, "memory_read": 2, "file_write": 2}, "models": ["deepseek-v4-pro"], "usage": {"input": 15687, "output": 4785, "cacheRead": 569472, "cacheWrite": 0, "reasoningTokens": 3180, "total": 589944}}

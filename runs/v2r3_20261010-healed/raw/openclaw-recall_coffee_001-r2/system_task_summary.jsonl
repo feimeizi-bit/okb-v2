@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-recall_coffee_001-r2", "status": "ok", "reason": null, "duration_ms": 109772, "counts": {"message": 18, "memory_read": 2, "memory_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 6428, "output": 2619, "cacheRead": 306816, "cacheWrite": 0, "reasoningTokens": 1793, "total": 315863}}

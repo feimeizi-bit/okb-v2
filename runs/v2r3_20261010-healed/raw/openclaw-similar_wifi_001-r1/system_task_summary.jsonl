@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-similar_wifi_001-r1", "status": "ok", "reason": null, "duration_ms": 172532, "counts": {"message": 22, "memory_read": 2, "memory_write": 3, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 25790, "output": 5590, "cacheRead": 849408, "cacheWrite": 0, "reasoningTokens": 3187, "total": 880788}}

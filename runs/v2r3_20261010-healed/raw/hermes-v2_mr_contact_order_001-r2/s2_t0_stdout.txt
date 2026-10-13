@@ -1,0 +1,11 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+几个润色版本，按语境取用：
+
+- 通知（正式）：会议时间调整为下午三点。
+- 通知（稍正式）：会议改至三点举行。
+- 提醒（口语友好）：会议时间改到三点啦，请注意。
+- 简短（群发）：会议顺延/提前至三点（若"改到"方向已知，可点明更清楚）。
+
+要不要我结合具体场景（发给谁、是提前还是推迟、原定几点）再打磨一版？

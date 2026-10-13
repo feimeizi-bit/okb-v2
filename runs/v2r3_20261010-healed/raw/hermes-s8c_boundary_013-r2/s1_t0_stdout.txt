@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已保存这一项演示偏好到用户记忆：「输出偏好：正文用高对比显示，并以文字标明状态。」只存了这一个，没有其他条目。

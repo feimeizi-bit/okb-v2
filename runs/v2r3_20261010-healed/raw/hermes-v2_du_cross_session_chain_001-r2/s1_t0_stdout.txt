@@ -1,0 +1,12 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已改好。`项目配置.yaml` 里的 `环境` 字段从 `dev` 改为 `staging`，`版本` 保持不变。
+
+文件：`/home/okb/okb/runs/v2r3_20261010.hm/work/hermes-v2_du_cross_session_chain_001-r2/项目配置.yaml`
+
+现在内容是：
+```
+环境: staging
+版本: 1.0.0
+```

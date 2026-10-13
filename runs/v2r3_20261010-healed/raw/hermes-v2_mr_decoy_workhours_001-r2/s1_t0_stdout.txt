@@ -1,0 +1,8 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已改。排班表.md 里标准工时从「8 小时」改为「7.5 小时」，旧值 8 小时作废。
+
+当前内容：
+  # 排班表（2025 版）
+  - 标准工时: 7.5 小时

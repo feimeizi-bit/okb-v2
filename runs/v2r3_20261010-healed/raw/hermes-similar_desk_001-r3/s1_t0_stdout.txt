@@ -1,0 +1,13 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+记下了，工位 A301。
+
+不过"取快递送到工位"这个动作我做不了——我是终端里的编程 agent，没法真的去取件、搬运、送件到工位。
+
+能实际帮上的：
+- 查物流：把单号（和快递公司）发我，我帮你查状态
+- 整理取件信息：给我取件码和驿站位置，我做成取件提醒
+- 写收件地址：如果要寄到工位，把完整地址（工位号我已知是 A301，缺楼栋/街道/城市、收件人、电话）发我，我写进文件
+
+给我一个具体方向就行。

@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-v2_du_adjacent_field_001-r1", "status": "ok", "reason": null, "duration_ms": 116247, "counts": {"message": 21, "memory_read": 2, "memory_write": 1, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 7056, "output": 1555, "cacheRead": 377216, "cacheWrite": 0, "reasoningTokens": 727, "total": 385827}}

@@ -1,0 +1,1 @@
+{"key": "User's reports use milliseconds for timing and MiB for capacity; units must alwa", "value": "User's reports use milliseconds for timing and MiB for capacity; units must always be labeled explicitly.", "written_at": "2026-10-10T20:04:50+08:00", "written_at_source": "file_mtime", "source": "USER.md", "via": "probe_diff"}

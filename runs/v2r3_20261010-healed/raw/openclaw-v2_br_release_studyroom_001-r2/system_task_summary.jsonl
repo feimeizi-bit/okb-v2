@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-v2_br_release_studyroom_001-r2", "status": "ok", "reason": null, "duration_ms": 125622, "counts": {"message": 18, "memory_read": 2, "memory_write": 1, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 5152, "output": 1842, "cacheRead": 344320, "cacheWrite": 0, "reasoningTokens": 1064, "total": 351314}}

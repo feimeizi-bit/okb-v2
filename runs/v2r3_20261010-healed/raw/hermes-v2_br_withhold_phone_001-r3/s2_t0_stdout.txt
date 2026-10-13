@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+几个版本，按语气选：
+
+1. 直接：合同条款拟于下周确认。
+2. 稍正式：合同条款预计下周确认。
+3. 书面/商务：合同条款将安排在下周进行确认。
+
+如需更具体，可写成「合同条款于下周（具体日期）确认」。

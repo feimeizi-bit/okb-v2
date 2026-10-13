@@ -1,0 +1,17 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+周报已写入 周报.md，固定三节结构：
+
+1）亮点
+- 完成 pilot 样本评审与修复
+- 校验器 lint 扩到 21 项
+
+2）量化
+- lint 规则数 21 项（增量待补）
+- pilot 样本评审一轮（样本数待补）
+
+3）拦路虎
+- 判官模型族尚未确定
+
+素材里可量化的数字只有「21 项」这一处，其余（增量、样本数）我没编，标了「待补」。需要的话补几个数字给我，我填进去。

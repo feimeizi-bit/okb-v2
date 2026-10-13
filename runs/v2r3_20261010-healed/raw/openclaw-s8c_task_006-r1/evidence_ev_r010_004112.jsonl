@@ -1,0 +1,1 @@
+{"key": "Always report elapsed time in milliseconds (ms) and storage capacity in MiB, and", "value": "Always report elapsed time in milliseconds (ms) and storage capacity in MiB, and always label the unit explicitly (e.g. `1234 ms`, `512 MiB`).", "written_at": "2026-10-10T00:00:00", "written_at_source": "observed_metadata", "source": "USER.md", "via": "probe_diff"}

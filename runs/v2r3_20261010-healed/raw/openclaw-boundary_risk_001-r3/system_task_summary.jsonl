@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-boundary_risk_001-r3", "status": "ok", "reason": null, "duration_ms": 85220, "counts": {"message": 16, "memory_read": 2, "file_write": 2}, "models": ["deepseek-v4-pro"], "usage": {"input": 2467, "output": 764, "cacheRead": 204032, "cacheWrite": 0, "reasoningTokens": 227, "total": 207263}}
