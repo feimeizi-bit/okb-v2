@@ -1,0 +1,40 @@
+# 通用性自检：两个「不同智能体」同时导入、同一份试卷批量对比（交付 d 的硬要求）。
+#
+#   python3 -m okb run --agents deploy/agents.generic-two.yaml \
+#       --paper build/paper-v0.2.jsonl --plan samples/four-layer-cli-smoke.v1.json \
+#       --run-id okb_generic_two_agents \
+#       --sample-id recall_coffee_001,similar_drink_001,boundary_release_001
+#
+# 两个对端都是**离线替身**，零费用零网络：
+#   mock_remember   = CONTRACT §14 合成考生（仓内既有正式通路）
+#   kylinbot_probe  = 声明式 cli_template 适配器 + engine/tests/fake_cli_agent.py 测试替身
+# 选这三个样本的依据：它们的锚点只需要 dialogue+memory 能力（paper-v0.2 逐样本 anchor 类型已核），
+# 因此不需要给替身谎报 file/tool 能力。判定结果只用于证明接入路径可跑，
+# 不代表任何智能体的记忆能力。真实对比请用 deploy/agents.yaml。
+version: okb-agents-v1
+repeat: 1
+note: two-agent config-only ingestion check (offline doubles)
+agents:
+  - name: mock_remember
+    adapter: mock
+    config:
+      policy: samples/mock-policies/remember.v0.2.yaml
+  - name: kylinbot_probe
+    adapter: cli
+    config:
+      cli: ["{python}", engine/tests/fake_cli_agent.py]
+      send_argv: [--state, '{state_dir}/state.json', chat, --session, '{session_key}', --json]
+      send_stdin: true
+      reply_from: responses[0].output[0].text
+      model_from: model
+      usage_from: usage
+      session_id_from: session_id
+      reset_argv: [[--state, '{state_dir}/state.json', memory, clear, --yes]]
+      memory_argv: [--state, '{state_dir}/state.json', memory, export, --json]
+      memory_entries_from: entries
+      capabilities:
+        dialogue: true
+        memory: true
+        file: false
+        tool: false
+        notes: cli-template test double; real KylinBot/kylin-agent argv must be evidenced on openKylin

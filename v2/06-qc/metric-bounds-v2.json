@@ -1,0 +1,288 @@
+{
+ "format": "okb-metric-bounds-v2",
+ "run_id": "v2r3_20261010",
+ "plan_sha256": "7643b43a83aab4cb190dca14133a9f7229bff26bbbeb5827f0effc933c23a68e",
+ "note": "口径 B 为下界（unassessable 按失败计）；检查族按 check id 归类，仅诊断用",
+ "agents": {
+  "hermes": {
+   "planned": 276,
+   "pass_": 194,
+   "fail": 43,
+   "unassessable": 39,
+   "rate_assessed": 0.8186,
+   "rate_conservative": 0.7029,
+   "coverage": 0.8587,
+   "first_failure_families": {
+    "memory-store": 13,
+    "artifact": 6,
+    "reply": 4,
+    "other": 20
+   },
+   "contradicted_check_families": {
+    "memory-store": 23,
+    "artifact": 30,
+    "reply": 5,
+    "task-application": 2,
+    "other": 33
+   }
+  },
+  "openclaw": {
+   "planned": 276,
+   "pass_": 132,
+   "fail": 116,
+   "unassessable": 28,
+   "rate_assessed": 0.5323,
+   "rate_conservative": 0.4783,
+   "coverage": 0.8986,
+   "first_failure_families": {
+    "memory-store": 36,
+    "artifact": 26,
+    "reply": 6,
+    "task-application": 30,
+    "other": 18
+   },
+   "contradicted_check_families": {
+    "memory-store": 51,
+    "artifact": 72,
+    "reply": 16,
+    "task-application": 39,
+    "other": 33
+   }
+  }
+ },
+ "dimensions": {
+  "long_term_retention": {
+   "hermes": {
+    "planned": 45,
+    "pass_": 39,
+    "fail": 0,
+    "unassessable": 6,
+    "rate_assessed": 1.0,
+    "rate_conservative": 0.8667,
+    "coverage": 0.8667,
+    "first_failure_families": {},
+    "contradicted_check_families": {}
+   },
+   "openclaw": {
+    "planned": 45,
+    "pass_": 18,
+    "fail": 20,
+    "unassessable": 7,
+    "rate_assessed": 0.4737,
+    "rate_conservative": 0.4,
+    "coverage": 0.8444,
+    "first_failure_families": {
+     "memory-store": 1,
+     "artifact": 2,
+     "task-application": 17
+    },
+    "contradicted_check_families": {
+     "memory-store": 1,
+     "artifact": 2,
+     "task-application": 24
+    }
+   }
+  },
+  "memory_recall": {
+   "hermes": {
+    "planned": 45,
+    "pass_": 37,
+    "fail": 4,
+    "unassessable": 4,
+    "rate_assessed": 0.9024,
+    "rate_conservative": 0.8222,
+    "coverage": 0.9111,
+    "first_failure_families": {
+     "memory-store": 1,
+     "artifact": 2,
+     "other": 1
+    },
+    "contradicted_check_families": {
+     "memory-store": 1,
+     "artifact": 3,
+     "other": 2
+    }
+   },
+   "openclaw": {
+    "planned": 45,
+    "pass_": 31,
+    "fail": 14,
+    "unassessable": 0,
+    "rate_assessed": 0.6889,
+    "rate_conservative": 0.6889,
+    "coverage": 1.0,
+    "first_failure_families": {
+     "memory-store": 10,
+     "task-application": 4
+    },
+    "contradicted_check_families": {
+     "memory-store": 10,
+     "artifact": 5,
+     "task-application": 4
+    }
+   }
+  },
+  "dynamic_update": {
+   "hermes": {
+    "planned": 45,
+    "pass_": 27,
+    "fail": 13,
+    "unassessable": 5,
+    "rate_assessed": 0.675,
+    "rate_conservative": 0.6,
+    "coverage": 0.8889,
+    "first_failure_families": {
+     "memory-store": 8,
+     "artifact": 1,
+     "other": 4
+    },
+    "contradicted_check_families": {
+     "memory-store": 8,
+     "artifact": 2,
+     "reply": 1,
+     "other": 6
+    }
+   },
+   "openclaw": {
+    "planned": 45,
+    "pass_": 15,
+    "fail": 26,
+    "unassessable": 4,
+    "rate_assessed": 0.3659,
+    "rate_conservative": 0.3333,
+    "coverage": 0.9111,
+    "first_failure_families": {
+     "memory-store": 18,
+     "artifact": 6,
+     "other": 2
+    },
+    "contradicted_check_families": {
+     "memory-store": 18,
+     "artifact": 18,
+     "reply": 10,
+     "other": 5
+    }
+   }
+  },
+  "similar_discrimination": {
+   "hermes": {
+    "planned": 45,
+    "pass_": 41,
+    "fail": 3,
+    "unassessable": 1,
+    "rate_assessed": 0.9318,
+    "rate_conservative": 0.9111,
+    "coverage": 0.9778,
+    "first_failure_families": {
+     "artifact": 1,
+     "other": 2
+    },
+    "contradicted_check_families": {
+     "artifact": 3,
+     "other": 2
+    }
+   },
+   "openclaw": {
+    "planned": 45,
+    "pass_": 34,
+    "fail": 8,
+    "unassessable": 3,
+    "rate_assessed": 0.8095,
+    "rate_conservative": 0.7556,
+    "coverage": 0.9333,
+    "first_failure_families": {
+     "artifact": 3,
+     "task-application": 1,
+     "other": 4
+    },
+    "contradicted_check_families": {
+     "artifact": 6,
+     "task-application": 1,
+     "other": 4
+    }
+   }
+  },
+  "boundary_recognition": {
+   "hermes": {
+    "planned": 45,
+    "pass_": 32,
+    "fail": 8,
+    "unassessable": 5,
+    "rate_assessed": 0.8,
+    "rate_conservative": 0.7111,
+    "coverage": 0.8889,
+    "first_failure_families": {
+     "reply": 4,
+     "other": 4
+    },
+    "contradicted_check_families": {
+     "artifact": 4,
+     "reply": 4,
+     "other": 7
+    }
+   },
+   "openclaw": {
+    "planned": 45,
+    "pass_": 23,
+    "fail": 22,
+    "unassessable": 0,
+    "rate_assessed": 0.5111,
+    "rate_conservative": 0.5111,
+    "coverage": 1.0,
+    "first_failure_families": {
+     "reply": 6,
+     "task-application": 8,
+     "other": 8
+    },
+    "contradicted_check_families": {
+     "artifact": 7,
+     "reply": 6,
+     "task-application": 8,
+     "other": 11
+    }
+   }
+  },
+  "task_reuse": {
+   "hermes": {
+    "planned": 51,
+    "pass_": 18,
+    "fail": 15,
+    "unassessable": 18,
+    "rate_assessed": 0.5455,
+    "rate_conservative": 0.3529,
+    "coverage": 0.6471,
+    "first_failure_families": {
+     "memory-store": 4,
+     "artifact": 2,
+     "other": 9
+    },
+    "contradicted_check_families": {
+     "memory-store": 14,
+     "artifact": 18,
+     "task-application": 2,
+     "other": 16
+    }
+   },
+   "openclaw": {
+    "planned": 51,
+    "pass_": 11,
+    "fail": 26,
+    "unassessable": 14,
+    "rate_assessed": 0.2973,
+    "rate_conservative": 0.2157,
+    "coverage": 0.7255,
+    "first_failure_families": {
+     "memory-store": 7,
+     "artifact": 15,
+     "other": 4
+    },
+    "contradicted_check_families": {
+     "memory-store": 22,
+     "artifact": 34,
+     "task-application": 2,
+     "other": 13
+    }
+   }
+  }
+ }
+}

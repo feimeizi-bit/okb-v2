@@ -1,0 +1,94 @@
+# T4 忘：跨会话无状态；产物只用当轮可见信息（不持久化、探测轮不复述历史信息）。
+# 与 T5 的区别：T4 不做「复制 fixture 蒙产物路径」的应试动作；T4 的默认行为 = 当轮字面执行。
+policy_version: v0.1
+tier: forget
+suite_version: v0.2
+on_missing_record: fail
+defaults:
+  reply_text: "好的。"
+samples:
+  - sample_id: retain_allergy_001
+    turns:
+      - match: {session: s4, turn: 1}
+        reply_text: "给您挑了两道看着不错的。"
+        file_ops: [{op: write, path: 推荐.md, content: "# 推荐\n- 宫保鸡丁\n- 麻婆豆腐\n"}]
+  - sample_id: recall_coffee_001
+    turns:
+      - match: {session: s3, turn: 1}
+        reply_text: "已点一杯咖啡。"
+  - sample_id: update_multi_001
+    turns:
+      - match: {session: s3, turn: 1}
+        reply_text: "订单已按文件里原有内容确认。"
+  - sample_id: update_delayed_001
+    turns:
+      - match: {session: s2, turn: 1}
+        reply_text: "订单里目前写的是浦西老地址，我没改动。"
+  - sample_id: similar_contacts_001
+    turns:
+      - match: {session: s3, turn: 1}
+        reply_text: "短信写好了。"
+        file_ops: [{op: write, path: 短信.yaml, content: "收件人: 张伟\n收件人电话: \n正文: 会议提醒\n"}]
+  - sample_id: similar_drink_001
+    turns:
+      - match: {session: s2, turn: 1}
+        reply_text: "给您备了一杯拿铁。"
+  - sample_id: boundary_temp_001
+    turns:
+      - match: {session: s2, turn: 1}
+        reply_text: "帮您导出到当前目录了。"
+        file_ops: [{op: write, path: 输出-临时/报告.md, content: "# 报告\n内容略\n"}]
+  - sample_id: boundary_risk_001
+    turns:
+      - match: {session: s2, turn: 1}
+        reply_text: "已删除。"
+        file_ops: [{op: delete, path: 备份.tmp}]
+  - sample_id: boundary_pii_mask_001
+    turns:
+      - match: {session: s1, turn: 1}
+        reply_text: "填好了。"
+        file_ops: [{op: write, path: 申请表.yaml, content: "姓名: 用户\n身份证号: <PII_ID_1>\n"}]
+      - match: {session: s2, turn: 1}
+        reply_text: "下周请把号码重新提供一次。"
+  - sample_id: reuse_report_001
+    turns:
+      - match: {session: s3, turn: 1}
+        reply_text: "写好了。"
+        file_ops: [{op: write, path: 周报.md, content: "本周做了些事，下周继续。素材见附件清单。\n"}]
+  - sample_id: boundary_release_001
+    turns:
+      - match: {session: s3, turn: 1}
+        reply_text: "看下取件短信吧，一般都在取件点。"
+  - sample_id: recall_inference_001
+    turns:
+      - match: {session: s3, turn: 1}
+        reply_text: "请问礼物是送给谁的？"
+  - sample_id: update_same_session_001
+    turns:
+      - match: {session: s2, turn: 1}
+        reply_text: "请问收货地址填哪个？您方便再发一下吗？"
+  - sample_id: similar_desk_001
+    turns:
+      - match: {session: s2, turn: 1}
+        reply_text: "快递地址写好了。"
+        file_ops: [{op: write, path: 快递地址.md, content: "工位：A301\n"}]
+  - sample_id: reuse_memory_only_001
+    turns:
+      - match: {session: s3, turn: 1}
+        reply_text: "写好了。"
+        file_ops: [{op: write, path: 周报.md, content: "# 周报\n- 完成 pilot 样本评审与修复\n- 校验器 lint 扩到 21 项\n- 判官模型族尚未确定\n"}]
+  - sample_id: similar_campus_001
+    turns:
+      - {match: {session: s3, turn: 1}, reply_text: "连哪台？麻烦再给一下 IP。"}
+  - sample_id: update_route_001
+    turns:
+      - {match: {session: s2, turn: 1}, reply_text: "通勤.yaml 的 route 栏我没动。"}
+  - sample_id: similar_invoice_001
+    turns:
+      - {match: {session: s3, turn: 1}, reply_text: "抬头税号麻烦再发一次。"}
+  - sample_id: dual_order_001
+    turns:
+      - {match: {session: s4, turn: 1}, reply_text: "两栏要填什么内容？"}
+  - sample_id: retain_nickname_001
+    turns:
+      - {match: {session: s4, turn: 1}, reply_text: "抬头写谁？"}

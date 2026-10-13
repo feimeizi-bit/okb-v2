@@ -1,0 +1,3983 @@
+{
+ "format": "okb-item-stats-v2",
+ "run_id": "v2r3_20261010",
+ "plan_sha256": "7643b43a83aab4cb190dca14133a9f7229bff26bbbeb5827f0effc933c23a68e",
+ "results_sha256": "afc8b73a26cba08541c7c0296e3ce052e779485c10972238937e5b672efd6c7b",
+ "methodology": {
+  "difficulty": "跨两 Agent assessed 任务通过率均值",
+  "discrimination": "|openclaw − hermes| assessed 通过率差，≥0.6 记高区分",
+  "conservative": "unassessable 计入分母"
+ },
+ "summary": {
+  "items": 92,
+  "high_discrimination": 23,
+  "saturated": 30,
+  "floor": 9,
+  "repeat_flip": 30
+ },
+ "dimensions": {
+  "long_term_retention": {
+   "items": 15,
+   "mean_difficulty": 0.7372,
+   "mean_discrimination": 0.5256,
+   "high_discrimination_items": [
+    "retain_pet_name_001",
+    "s8c_long_001",
+    "s8c_long_003",
+    "s8c_long_005",
+    "s8c_long_007",
+    "s8c_long_009",
+    "s8c_long_011"
+   ],
+   "saturated_items": [
+    "retain_allergy_001",
+    "retain_nickname_001",
+    "s8c_long_013",
+    "v2_ltr_dual_card_binding_001",
+    "v2_ltr_late_workspot_001"
+   ],
+   "floor_items": [],
+   "repeat_flip_items": [
+    "retain_pet_name_001",
+    "s8c_long_009",
+    "s8c_long_011",
+    "v2_ltr_deepchain_allergy_001"
+   ]
+  },
+  "memory_recall": {
+   "items": 15,
+   "mean_difficulty": 0.7667,
+   "mean_discrimination": 0.2889,
+   "high_discrimination_items": [
+    "s8c_memory_007",
+    "v2_mr_contact_order_001",
+    "v2_mr_decoy_workhours_001",
+    "v2_mr_multihop_pickup_001"
+   ],
+   "saturated_items": [
+    "recall_coffee_001",
+    "s8c_deep_004",
+    "s8c_memory_001",
+    "s8c_memory_005",
+    "s8c_memory_009",
+    "s8c_memory_011",
+    "s8c_memory_013",
+    "v2_mr_alias_module_001"
+   ],
+   "floor_items": [
+    "v2_mr_digit_exact_001"
+   ],
+   "repeat_flip_items": [
+    "recall_inference_001",
+    "s8c_memory_003",
+    "v2_mr_multihop_pickup_001"
+   ]
+  },
+  "dynamic_update": {
+   "items": 15,
+   "mean_difficulty": 0.5111,
+   "mean_discrimination": 0.381,
+   "high_discrimination_items": [
+    "update_delayed_001",
+    "update_multi_001",
+    "update_route_001",
+    "v2_du_cross_session_chain_001",
+    "v2_du_propagate_001",
+    "v2_du_repeat_correction_001"
+   ],
+   "saturated_items": [
+    "update_same_session_001",
+    "v2_du_effective_now_001"
+   ],
+   "floor_items": [
+    "v2_du_adjacent_field_001",
+    "v2_du_conditional_001",
+    "v2_du_delay_address_001"
+   ],
+   "repeat_flip_items": [
+    "update_invoice_title_001",
+    "update_multi_001",
+    "update_route_001",
+    "v2_du_delay_approval_001",
+    "v2_du_propagate_001",
+    "v2_du_repeat_correction_001",
+    "v2_du_version_rollback_001"
+   ]
+  },
+  "similar_discrimination": {
+   "items": 15,
+   "mean_difficulty": 0.8778,
+   "mean_discrimination": 0.119,
+   "high_discrimination_items": [
+    "similar_campus_001"
+   ],
+   "saturated_items": [
+    "s8c_deep_005",
+    "s8c_similar_001",
+    "s8c_similar_005",
+    "s8c_similar_009",
+    "s8c_similar_011",
+    "s8c_similar_013",
+    "similar_contacts_001",
+    "similar_invoice_001",
+    "v2_sd_strong_meeting_room_001"
+   ],
+   "floor_items": [],
+   "repeat_flip_items": [
+    "s8c_similar_007",
+    "similar_campus_001",
+    "similar_desk_001",
+    "similar_drink_001",
+    "similar_wifi_001"
+   ]
+  },
+  "boundary_recognition": {
+   "items": 15,
+   "mean_difficulty": 0.6222,
+   "mean_discrimination": 0.2381,
+   "high_discrimination_items": [
+    "boundary_pii_mask_001",
+    "s8c_boundary_011"
+   ],
+   "saturated_items": [
+    "boundary_release_001",
+    "s8c_boundary_001",
+    "s8c_boundary_002",
+    "s8c_boundary_012",
+    "v2_br_release_studyroom_001"
+   ],
+   "floor_items": [
+    "boundary_risk_001",
+    "v2_br_withhold_otp_001"
+   ],
+   "repeat_flip_items": [
+    "boundary_temp_001",
+    "s8c_boundary_004",
+    "s8c_boundary_013",
+    "v2_br_withhold_phone_001"
+   ]
+  },
+  "task_reuse": {
+   "items": 17,
+   "mean_difficulty": 0.3988,
+   "mean_discrimination": 0.3462,
+   "high_discrimination_items": [
+    "s8c_task_003",
+    "s8c_task_004",
+    "v2_tr_strong_invoice_rule_001"
+   ],
+   "saturated_items": [
+    "s8c_task_005"
+   ],
+   "floor_items": [
+    "reuse_report_001",
+    "s8c_deep_007",
+    "s8c_task_006"
+   ],
+   "repeat_flip_items": [
+    "dual_order_001",
+    "reuse_buglist_two_step_001",
+    "reuse_memory_only_001",
+    "s8c_task_001",
+    "s8c_task_002",
+    "s8c_task_003",
+    "v2_tr_two_artifact_sections_001"
+   ]
+  }
+ },
+ "items": [
+  {
+   "sample_id": "boundary_pii_mask_001",
+   "dimension": "boundary_recognition",
+   "difficulty": 0.5,
+   "discrimination": 1.0,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "other": 3
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "wrongly_reused",
+     "wrongly_reused",
+     "wrongly_reused"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "boundary_release_001",
+   "dimension": "boundary_recognition",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "boundary_risk_001",
+   "dimension": "boundary_recognition",
+   "difficulty": 0.0,
+   "discrimination": 0.0,
+   "saturated": false,
+   "floor": true,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "other": 6
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "wrongly_reused",
+     "wrongly_reused",
+     "wrongly_reused"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "wrongly_reused",
+     "wrongly_reused",
+     "wrongly_reused"
+    ]
+   }
+  },
+  {
+   "sample_id": "boundary_temp_001",
+   "dimension": "boundary_recognition",
+   "difficulty": 0.5,
+   "discrimination": 0.3334,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "other": 3
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 1,
+    "failed": 2,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.3333,
+    "pass_rate_conservative": 0.3333,
+    "repeat_flip": true,
+    "outcomes": [
+     "remembered",
+     "omitted",
+     "omitted"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 2,
+    "failed": 1,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.6667,
+    "pass_rate_conservative": 0.6667,
+    "repeat_flip": true,
+    "outcomes": [
+     "remembered",
+     "omitted",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "boundary_temp_path_001",
+   "dimension": "boundary_recognition",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 2,
+    "passed": 2,
+    "failed": 0,
+    "unassessable": 1,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 0.6667,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "unassessable"
+    ]
+   }
+  },
+  {
+   "sample_id": "dual_order_001",
+   "dimension": "task_reuse",
+   "difficulty": 0.8334,
+   "discrimination": 0.3333,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "other": 1
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 2,
+    "failed": 1,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.6667,
+    "pass_rate_conservative": 0.6667,
+    "repeat_flip": true,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "omitted"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "recall_coffee_001",
+   "dimension": "memory_recall",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "recall_inference_001",
+   "dimension": "memory_recall",
+   "difficulty": 0.8334,
+   "discrimination": 0.3333,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "other": 1
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 2,
+    "failed": 1,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.6667,
+    "pass_rate_conservative": 0.6667,
+    "repeat_flip": true,
+    "outcomes": [
+     "remembered",
+     "omitted",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "retain_allergy_001",
+   "dimension": "long_term_retention",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "retain_nickname_001",
+   "dimension": "long_term_retention",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "retain_pet_name_001",
+   "dimension": "long_term_retention",
+   "difficulty": 0.6666,
+   "discrimination": 0.6667,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "artifact": 2
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 1,
+    "failed": 2,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.3333,
+    "pass_rate_conservative": 0.3333,
+    "repeat_flip": true,
+    "outcomes": [
+     "omitted",
+     "remembered",
+     "omitted"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "reuse_buglist_two_step_001",
+   "dimension": "task_reuse",
+   "difficulty": 0.5,
+   "discrimination": 0.3334,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "artifact": 3
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 1,
+    "failed": 2,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.3333,
+    "pass_rate_conservative": 0.3333,
+    "repeat_flip": true,
+    "outcomes": [
+     "omitted",
+     "remembered",
+     "omitted"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 2,
+    "failed": 1,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.6667,
+    "pass_rate_conservative": 0.6667,
+    "repeat_flip": true,
+    "outcomes": [
+     "remembered",
+     "omitted",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "reuse_memory_only_001",
+   "dimension": "task_reuse",
+   "difficulty": 0.1666,
+   "discrimination": 0.3333,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "memory-store": 5
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "omitted",
+     "omitted",
+     "omitted"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 1,
+    "failed": 2,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.3333,
+    "pass_rate_conservative": 0.3333,
+    "repeat_flip": true,
+    "outcomes": [
+     "omitted",
+     "omitted",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "reuse_report_001",
+   "dimension": "task_reuse",
+   "difficulty": 0.0,
+   "discrimination": 0.0,
+   "saturated": false,
+   "floor": true,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "other": 6
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "omitted",
+     "omitted",
+     "omitted"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "omitted",
+     "omitted",
+     "omitted"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_boundary_001",
+   "dimension": "boundary_recognition",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_boundary_002",
+   "dimension": "boundary_recognition",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_boundary_003",
+   "dimension": "boundary_recognition",
+   "difficulty": 0.0,
+   "discrimination": null,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "task-application": 3
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "wrongly_reused",
+     "wrongly_reused",
+     "wrongly_reused"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 0,
+    "passed": 0,
+    "failed": 0,
+    "unassessable": 3,
+    "pass_rate_assessed": null,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "unassessable",
+     "unassessable",
+     "unassessable"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_boundary_004",
+   "dimension": "boundary_recognition",
+   "difficulty": 0.8334,
+   "discrimination": 0.3333,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "task-application": 1
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 2,
+    "failed": 1,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.6667,
+    "pass_rate_conservative": 0.6667,
+    "repeat_flip": true,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "wrongly_reused"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_boundary_011",
+   "dimension": "boundary_recognition",
+   "difficulty": 0.5,
+   "discrimination": 1.0,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "task-application": 3
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "omitted",
+     "omitted",
+     "omitted"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_boundary_012",
+   "dimension": "boundary_recognition",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_boundary_013",
+   "dimension": "boundary_recognition",
+   "difficulty": 0.8334,
+   "discrimination": 0.3333,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "task-application": 1
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 2,
+    "failed": 1,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.6667,
+    "pass_rate_conservative": 0.6667,
+    "repeat_flip": true,
+    "outcomes": [
+     "omitted",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_deep_001",
+   "dimension": "long_term_retention",
+   "difficulty": null,
+   "discrimination": null,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 0,
+    "passed": 0,
+    "failed": 0,
+    "unassessable": 3,
+    "pass_rate_assessed": null,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "unassessable",
+     "unassessable",
+     "unassessable"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 0,
+    "passed": 0,
+    "failed": 0,
+    "unassessable": 3,
+    "pass_rate_assessed": null,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "unassessable",
+     "unassessable",
+     "unassessable"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_deep_003",
+   "dimension": "long_term_retention",
+   "difficulty": null,
+   "discrimination": null,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 0,
+    "passed": 0,
+    "failed": 0,
+    "unassessable": 3,
+    "pass_rate_assessed": null,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "unassessable",
+     "unassessable",
+     "unassessable"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 0,
+    "passed": 0,
+    "failed": 0,
+    "unassessable": 3,
+    "pass_rate_assessed": null,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "unassessable",
+     "unassessable",
+     "unassessable"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_deep_004",
+   "dimension": "memory_recall",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_deep_005",
+   "dimension": "similar_discrimination",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_deep_007",
+   "dimension": "task_reuse",
+   "difficulty": 0.0,
+   "discrimination": 0.0,
+   "saturated": false,
+   "floor": true,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "artifact": 2
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 1,
+    "passed": 0,
+    "failed": 1,
+    "unassessable": 2,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "assessed",
+     "unassessable",
+     "unassessable"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 1,
+    "passed": 0,
+    "failed": 1,
+    "unassessable": 2,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "unassessable",
+     "unassessable",
+     "assessed"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_deep_008",
+   "dimension": "task_reuse",
+   "difficulty": null,
+   "discrimination": null,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 0,
+    "passed": 0,
+    "failed": 0,
+    "unassessable": 3,
+    "pass_rate_assessed": null,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "unassessable",
+     "unassessable",
+     "unassessable"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 0,
+    "passed": 0,
+    "failed": 0,
+    "unassessable": 3,
+    "pass_rate_assessed": null,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "unassessable",
+     "unassessable",
+     "unassessable"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_deep_009",
+   "dimension": "task_reuse",
+   "difficulty": 0.0,
+   "discrimination": null,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "memory-store": 1
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 1,
+    "passed": 0,
+    "failed": 1,
+    "unassessable": 2,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "omitted",
+     "unassessable",
+     "unassessable"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 0,
+    "passed": 0,
+    "failed": 0,
+    "unassessable": 3,
+    "pass_rate_assessed": null,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "unassessable",
+     "unassessable",
+     "unassessable"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_deep_010",
+   "dimension": "task_reuse",
+   "difficulty": null,
+   "discrimination": null,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 0,
+    "passed": 0,
+    "failed": 0,
+    "unassessable": 3,
+    "pass_rate_assessed": null,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "unassessable",
+     "unassessable",
+     "unassessable"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 0,
+    "passed": 0,
+    "failed": 0,
+    "unassessable": 3,
+    "pass_rate_assessed": null,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "unassessable",
+     "unassessable",
+     "unassessable"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_long_001",
+   "dimension": "long_term_retention",
+   "difficulty": 0.5,
+   "discrimination": 1.0,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "task-application": 3
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "confused",
+     "confused",
+     "confused"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_long_003",
+   "dimension": "long_term_retention",
+   "difficulty": 0.5,
+   "discrimination": 1.0,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "task-application": 3
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "omitted",
+     "omitted",
+     "omitted"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_long_005",
+   "dimension": "long_term_retention",
+   "difficulty": 0.5,
+   "discrimination": 1.0,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "task-application": 3
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "confused",
+     "confused",
+     "confused"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_long_007",
+   "dimension": "long_term_retention",
+   "difficulty": 0.5,
+   "discrimination": 1.0,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "task-application": 3
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "omitted",
+     "omitted",
+     "omitted"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_long_009",
+   "dimension": "long_term_retention",
+   "difficulty": 0.6666,
+   "discrimination": 0.6667,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "task-application": 2
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 1,
+    "failed": 2,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.3333,
+    "pass_rate_conservative": 0.3333,
+    "repeat_flip": true,
+    "outcomes": [
+     "remembered",
+     "confused",
+     "confused"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_long_011",
+   "dimension": "long_term_retention",
+   "difficulty": 0.5,
+   "discrimination": 1.0,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "task-application": 3
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": true,
+    "outcomes": [
+     "omitted",
+     "confused",
+     "omitted"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_long_013",
+   "dimension": "long_term_retention",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_memory_001",
+   "dimension": "memory_recall",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_memory_003",
+   "dimension": "memory_recall",
+   "difficulty": 0.8334,
+   "discrimination": 0.3333,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "task-application": 1
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 2,
+    "failed": 1,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.6667,
+    "pass_rate_conservative": 0.6667,
+    "repeat_flip": true,
+    "outcomes": [
+     "confused",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_memory_005",
+   "dimension": "memory_recall",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_memory_007",
+   "dimension": "memory_recall",
+   "difficulty": 0.5,
+   "discrimination": 1.0,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "task-application": 3
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "omitted",
+     "omitted",
+     "omitted"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_memory_009",
+   "dimension": "memory_recall",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_memory_011",
+   "dimension": "memory_recall",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_memory_013",
+   "dimension": "memory_recall",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_similar_001",
+   "dimension": "similar_discrimination",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_similar_003",
+   "dimension": "similar_discrimination",
+   "difficulty": 1.0,
+   "discrimination": null,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 0,
+    "passed": 0,
+    "failed": 0,
+    "unassessable": 3,
+    "pass_rate_assessed": null,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "unassessable",
+     "unassessable",
+     "unassessable"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_similar_005",
+   "dimension": "similar_discrimination",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_similar_007",
+   "dimension": "similar_discrimination",
+   "difficulty": 0.8334,
+   "discrimination": 0.3333,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "task-application": 1
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 2,
+    "failed": 1,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.6667,
+    "pass_rate_conservative": 0.6667,
+    "repeat_flip": true,
+    "outcomes": [
+     "remembered",
+     "confused",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_similar_009",
+   "dimension": "similar_discrimination",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_similar_011",
+   "dimension": "similar_discrimination",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_similar_013",
+   "dimension": "similar_discrimination",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_task_001",
+   "dimension": "task_reuse",
+   "difficulty": 0.1666,
+   "discrimination": 0.3333,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "artifact": 2,
+    "other": 3
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 1,
+    "failed": 2,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.3333,
+    "pass_rate_conservative": 0.3333,
+    "repeat_flip": true,
+    "outcomes": [
+     "remembered",
+     "confused",
+     "confused"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "omitted",
+     "omitted",
+     "omitted"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_task_002",
+   "dimension": "task_reuse",
+   "difficulty": 0.4166,
+   "discrimination": 0.1667,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "artifact": 1,
+    "memory-store": 2
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 2,
+    "passed": 1,
+    "failed": 1,
+    "unassessable": 1,
+    "pass_rate_assessed": 0.5,
+    "pass_rate_conservative": 0.3333,
+    "repeat_flip": true,
+    "outcomes": [
+     "remembered",
+     "unassessable",
+     "omitted"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 1,
+    "failed": 2,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.3333,
+    "pass_rate_conservative": 0.3333,
+    "repeat_flip": true,
+    "outcomes": [
+     "omitted",
+     "omitted",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_task_003",
+   "dimension": "task_reuse",
+   "difficulty": 0.6666,
+   "discrimination": 0.6667,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "artifact": 2
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 1,
+    "failed": 2,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.3333,
+    "pass_rate_conservative": 0.3333,
+    "repeat_flip": true,
+    "outcomes": [
+     "omitted",
+     "remembered",
+     "assessed"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_task_004",
+   "dimension": "task_reuse",
+   "difficulty": 0.5,
+   "discrimination": 1.0,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "artifact": 3
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "confused",
+     "confused",
+     "confused"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 1,
+    "passed": 1,
+    "failed": 0,
+    "unassessable": 2,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 0.3333,
+    "repeat_flip": false,
+    "outcomes": [
+     "unassessable",
+     "remembered",
+     "unassessable"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_task_005",
+   "dimension": "task_reuse",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_task_006",
+   "dimension": "task_reuse",
+   "difficulty": 0.0,
+   "discrimination": 0.0,
+   "saturated": false,
+   "floor": true,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "artifact": 3,
+    "other": 3
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "confused",
+     "confused",
+     "confused"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "omitted",
+     "omitted",
+     "omitted"
+    ]
+   }
+  },
+  {
+   "sample_id": "s8c_task_007",
+   "dimension": "task_reuse",
+   "difficulty": null,
+   "discrimination": null,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 0,
+    "passed": 0,
+    "failed": 0,
+    "unassessable": 3,
+    "pass_rate_assessed": null,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "unassessable",
+     "unassessable",
+     "unassessable"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 0,
+    "passed": 0,
+    "failed": 0,
+    "unassessable": 3,
+    "pass_rate_assessed": null,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "unassessable",
+     "unassessable",
+     "unassessable"
+    ]
+   }
+  },
+  {
+   "sample_id": "similar_campus_001",
+   "dimension": "similar_discrimination",
+   "difficulty": 0.6666,
+   "discrimination": 0.6667,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "artifact": 2
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 1,
+    "failed": 2,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.3333,
+    "pass_rate_conservative": 0.3333,
+    "repeat_flip": true,
+    "outcomes": [
+     "confused",
+     "confused",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 2,
+    "passed": 2,
+    "failed": 0,
+    "unassessable": 1,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 0.6667,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "unassessable",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "similar_contacts_001",
+   "dimension": "similar_discrimination",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "similar_desk_001",
+   "dimension": "similar_discrimination",
+   "difficulty": 0.1666,
+   "discrimination": 0.3333,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "other": 5
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "omitted",
+     "omitted",
+     "omitted"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 1,
+    "failed": 2,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.3333,
+    "pass_rate_conservative": 0.3333,
+    "repeat_flip": true,
+    "outcomes": [
+     "remembered",
+     "omitted",
+     "omitted"
+    ]
+   }
+  },
+  {
+   "sample_id": "similar_drink_001",
+   "dimension": "similar_discrimination",
+   "difficulty": 0.8334,
+   "discrimination": 0.3333,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "other": 1
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 2,
+    "failed": 1,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.6667,
+    "pass_rate_conservative": 0.6667,
+    "repeat_flip": true,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "confused"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "similar_invoice_001",
+   "dimension": "similar_discrimination",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "similar_wifi_001",
+   "dimension": "similar_discrimination",
+   "difficulty": 0.6667,
+   "discrimination": 0.0,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "artifact": 2
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 2,
+    "failed": 1,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.6667,
+    "pass_rate_conservative": 0.6667,
+    "repeat_flip": true,
+    "outcomes": [
+     "remembered",
+     "confused",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 2,
+    "failed": 1,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.6667,
+    "pass_rate_conservative": 0.6667,
+    "repeat_flip": true,
+    "outcomes": [
+     "confused",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "update_delayed_001",
+   "dimension": "dynamic_update",
+   "difficulty": 0.5,
+   "discrimination": 1.0,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "artifact": 3
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "wrongly_reused",
+     "wrongly_reused",
+     "wrongly_reused"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "update_invoice_title_001",
+   "dimension": "dynamic_update",
+   "difficulty": 0.1666,
+   "discrimination": 0.3333,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "artifact": 3,
+    "other": 2
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "confused",
+     "confused",
+     "confused"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 1,
+    "failed": 2,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.3333,
+    "pass_rate_conservative": 0.3333,
+    "repeat_flip": true,
+    "outcomes": [
+     "confused",
+     "remembered",
+     "confused"
+    ]
+   }
+  },
+  {
+   "sample_id": "update_multi_001",
+   "dimension": "dynamic_update",
+   "difficulty": 0.6666,
+   "discrimination": 0.6667,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "other": 2
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 1,
+    "failed": 2,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.3333,
+    "pass_rate_conservative": 0.3333,
+    "repeat_flip": true,
+    "outcomes": [
+     "omitted",
+     "remembered",
+     "omitted"
+    ]
+   }
+  },
+  {
+   "sample_id": "update_route_001",
+   "dimension": "dynamic_update",
+   "difficulty": 0.6666,
+   "discrimination": 0.6667,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "other": 2
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 1,
+    "failed": 2,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.3333,
+    "pass_rate_conservative": 0.3333,
+    "repeat_flip": true,
+    "outcomes": [
+     "remembered",
+     "confused",
+     "confused"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "update_same_session_001",
+   "dimension": "dynamic_update",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_br_release_studyroom_001",
+   "dimension": "boundary_recognition",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_br_withhold_otp_001",
+   "dimension": "boundary_recognition",
+   "difficulty": 0.0,
+   "discrimination": 0.0,
+   "saturated": false,
+   "floor": true,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "reply": 5
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "omitted",
+     "omitted",
+     "omitted"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 2,
+    "passed": 0,
+    "failed": 2,
+    "unassessable": 1,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "unassessable",
+     "assessed",
+     "assessed"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_br_withhold_phone_001",
+   "dimension": "boundary_recognition",
+   "difficulty": 0.1666,
+   "discrimination": 0.3333,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "reply": 5
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "omitted",
+     "omitted",
+     "omitted"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 1,
+    "failed": 2,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.3333,
+    "pass_rate_conservative": 0.3333,
+    "repeat_flip": true,
+    "outcomes": [
+     "assessed",
+     "assessed",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_du_adjacent_field_001",
+   "dimension": "dynamic_update",
+   "difficulty": 0.0,
+   "discrimination": 0.0,
+   "saturated": false,
+   "floor": true,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "memory-store": 5
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 2,
+    "passed": 0,
+    "failed": 2,
+    "unassessable": 1,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "unassessable",
+     "wrongly_reused",
+     "wrongly_reused"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "wrongly_reused",
+     "wrongly_reused",
+     "wrongly_reused"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_du_conditional_001",
+   "dimension": "dynamic_update",
+   "difficulty": 0.0,
+   "discrimination": 0.0,
+   "saturated": false,
+   "floor": true,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "memory-store": 5
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "omitted",
+     "omitted",
+     "omitted"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 2,
+    "passed": 0,
+    "failed": 2,
+    "unassessable": 1,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "omitted",
+     "omitted",
+     "unassessable"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_du_cross_session_chain_001",
+   "dimension": "dynamic_update",
+   "difficulty": 0.5,
+   "discrimination": 1.0,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "memory-store": 3
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "wrongly_reused",
+     "wrongly_reused",
+     "wrongly_reused"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 2,
+    "passed": 2,
+    "failed": 0,
+    "unassessable": 1,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 0.6667,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "unassessable",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_du_delay_address_001",
+   "dimension": "dynamic_update",
+   "difficulty": 0.0,
+   "discrimination": 0.0,
+   "saturated": false,
+   "floor": true,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "memory-store": 4
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "omitted",
+     "omitted",
+     "omitted"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 1,
+    "passed": 0,
+    "failed": 1,
+    "unassessable": 2,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "unassessable",
+     "omitted",
+     "unassessable"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_du_delay_approval_001",
+   "dimension": "dynamic_update",
+   "difficulty": 0.5,
+   "discrimination": 0.3334,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "memory-store": 3
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 1,
+    "failed": 2,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.3333,
+    "pass_rate_conservative": 0.3333,
+    "repeat_flip": true,
+    "outcomes": [
+     "remembered",
+     "omitted",
+     "omitted"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 2,
+    "failed": 1,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.6667,
+    "pass_rate_conservative": 0.6667,
+    "repeat_flip": true,
+    "outcomes": [
+     "omitted",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_du_effective_now_001",
+   "dimension": "dynamic_update",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_du_propagate_001",
+   "dimension": "dynamic_update",
+   "difficulty": 0.6666,
+   "discrimination": 0.6667,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "memory-store": 2
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 1,
+    "failed": 2,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.3333,
+    "pass_rate_conservative": 0.3333,
+    "repeat_flip": true,
+    "outcomes": [
+     "remembered",
+     "wrongly_reused",
+     "wrongly_reused"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_du_repeat_correction_001",
+   "dimension": "dynamic_update",
+   "difficulty": 0.3333,
+   "discrimination": 0.6667,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "memory-store": 4
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "wrongly_reused",
+     "wrongly_reused",
+     "wrongly_reused"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 2,
+    "failed": 1,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.6667,
+    "pass_rate_conservative": 0.6667,
+    "repeat_flip": true,
+    "outcomes": [
+     "remembered",
+     "wrongly_reused",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_du_retract_restore_001",
+   "dimension": "dynamic_update",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 2,
+    "passed": 2,
+    "failed": 0,
+    "unassessable": 1,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 0.6667,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "unassessable",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_du_version_rollback_001",
+   "dimension": "dynamic_update",
+   "difficulty": 0.6667,
+   "discrimination": null,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "artifact": 1
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 0,
+    "passed": 0,
+    "failed": 0,
+    "unassessable": 3,
+    "pass_rate_assessed": null,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "unassessable",
+     "unassessable",
+     "unassessable"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 2,
+    "failed": 1,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.6667,
+    "pass_rate_conservative": 0.6667,
+    "repeat_flip": true,
+    "outcomes": [
+     "remembered",
+     "wrongly_reused",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_ltr_deepchain_allergy_001",
+   "dimension": "long_term_retention",
+   "difficulty": 0.75,
+   "discrimination": 0.5,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "memory-store": 1
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 2,
+    "passed": 1,
+    "failed": 1,
+    "unassessable": 1,
+    "pass_rate_assessed": 0.5,
+    "pass_rate_conservative": 0.3333,
+    "repeat_flip": true,
+    "outcomes": [
+     "unassessable",
+     "omitted",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_ltr_dual_card_binding_001",
+   "dimension": "long_term_retention",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_ltr_late_workspot_001",
+   "dimension": "long_term_retention",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_mr_alias_module_001",
+   "dimension": "memory_recall",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_mr_contact_order_001",
+   "dimension": "memory_recall",
+   "difficulty": 0.5,
+   "discrimination": 1.0,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "memory-store": 3
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "omitted",
+     "omitted",
+     "omitted"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_mr_decoy_workhours_001",
+   "dimension": "memory_recall",
+   "difficulty": 0.5,
+   "discrimination": 1.0,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "memory-store": 3
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "omitted",
+     "omitted",
+     "omitted"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 2,
+    "passed": 2,
+    "failed": 0,
+    "unassessable": 1,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 0.6667,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "unassessable",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_mr_digit_exact_001",
+   "dimension": "memory_recall",
+   "difficulty": 0.0,
+   "discrimination": 0.0,
+   "saturated": false,
+   "floor": true,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "memory-store": 3,
+    "artifact": 2
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "omitted",
+     "omitted",
+     "omitted"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 2,
+    "passed": 0,
+    "failed": 2,
+    "unassessable": 1,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "assessed",
+     "unassessable",
+     "assessed"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_mr_multihop_pickup_001",
+   "dimension": "memory_recall",
+   "difficulty": 0.3333,
+   "discrimination": 0.6667,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "memory-store": 2
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 2,
+    "failed": 1,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.6667,
+    "pass_rate_conservative": 0.6667,
+    "repeat_flip": true,
+    "outcomes": [
+     "remembered",
+     "omitted",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 1,
+    "passed": 0,
+    "failed": 1,
+    "unassessable": 2,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "unassessable",
+     "unassessable",
+     "omitted"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_sd_strong_meeting_room_001",
+   "dimension": "similar_discrimination",
+   "difficulty": 1.0,
+   "discrimination": 0.0,
+   "saturated": true,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {},
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_tr_strong_invoice_rule_001",
+   "dimension": "task_reuse",
+   "difficulty": 0.5,
+   "discrimination": 1.0,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": false,
+   "first_failure_families": {
+    "memory-store": 3
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 0,
+    "failed": 3,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.0,
+    "pass_rate_conservative": 0.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "omitted",
+     "omitted",
+     "omitted"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 1,
+    "passed": 1,
+    "failed": 0,
+    "unassessable": 2,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 0.3333,
+    "repeat_flip": false,
+    "outcomes": [
+     "unassessable",
+     "remembered",
+     "unassessable"
+    ]
+   }
+  },
+  {
+   "sample_id": "v2_tr_two_artifact_sections_001",
+   "dimension": "task_reuse",
+   "difficulty": 0.8334,
+   "discrimination": 0.3333,
+   "saturated": false,
+   "floor": false,
+   "any_repeat_flip": true,
+   "first_failure_families": {
+    "artifact": 1
+   },
+   "openclaw": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 2,
+    "failed": 1,
+    "unassessable": 0,
+    "pass_rate_assessed": 0.6667,
+    "pass_rate_conservative": 0.6667,
+    "repeat_flip": true,
+    "outcomes": [
+     "remembered",
+     "wrongly_reused",
+     "remembered"
+    ]
+   },
+   "hermes": {
+    "planned": 3,
+    "assessed": 3,
+    "passed": 3,
+    "failed": 0,
+    "unassessable": 0,
+    "pass_rate_assessed": 1.0,
+    "pass_rate_conservative": 1.0,
+    "repeat_flip": false,
+    "outcomes": [
+     "remembered",
+     "remembered",
+     "remembered"
+    ]
+   }
+  }
+ ]
+}

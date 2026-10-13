@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.tmp
+*.tmp*
+
+# 公开版排除：评测证据、私有笔记与运维材料
+notes/
+runs/
+score/
+build/
+HANDOVER.md

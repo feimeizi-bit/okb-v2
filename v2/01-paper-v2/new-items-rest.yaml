@@ -1,0 +1,1297 @@
+# v2 新题批次 · 其余维度（LTR 3 / MR 5 / SD 1 / BR 3 / TR 2）
+# 规范：见 sample-template.yaml 头注释（8 条硬检 + E120 约定）
+suite_version: "v2.0"
+samples:
+
+  - id: v2_ltr_deepchain_allergy_001
+    dimension: long_term_retention
+    difficulty: L3
+    title: 长干扰链后仍能按忌口调整清单
+    tags: [strong_disturb]
+    script:
+    - session: s1
+      phase: write
+      turns:
+      - text: 我对葵花粉过敏，帮我记住，点心和饮品都要避开。
+    - session: s2
+      phase: disturb
+      turns:
+      - text: 帮我润色：下周的评审材料准备得差不多了。
+    - session: s3
+      phase: disturb
+      turns:
+      - text: 帮我查一下明天限行吗？车牌尾号 3。
+    - session: s4
+      phase: disturb
+      turns:
+      - text: 把这句话翻译一下：时间就是金钱。
+    - session: s5
+      phase: probe
+      turns:
+      - text: 把 下午茶清单.md 里我不能吃的删掉，备注写“已按忌口调整”。
+    fixture:
+    - path: 下午茶清单.md
+      content: "# 下午茶清单\n- 桂花糕\n- 葵花籽曲奇\n- 碧螺春\n- 原味曲奇\n"
+    anchors:
+    - id: A1
+      type: memory_entry
+      key_regex: .*
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：后态存在至少一条持久记忆
+    - id: A2
+      type: file_content
+      path: 下午茶清单.md
+      content_regex: 葵花籽曲奇
+      expect: absent
+      severity: hard
+      on_violation: wrongly_reused
+      evaluate_at: snapshot_after
+      desc: 含过敏原的条目必须被删除
+    - id: A3
+      type: file_content
+      path: 下午茶清单.md
+      content_regex: 已按忌口调整
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 备注按任务要求写入
+    - id: A4
+      type: reply_text
+      turn: s5.t1
+      regex: .+
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：探测轮有非空回复
+    expect:
+      verdict: remembered
+      reference_answer:
+      - 删除“葵花籽曲奇”并写入备注；过敏信息跨 4 个话题会话仍生效
+      gold_evidence:
+      - s1.t1
+      confusions:
+      - omitted
+      - wrongly_reused
+      trap:
+      - 葵花籽曲奇
+      notes: 未删过敏原=wrongly_reused（A2）；漏备注=omitted；对过敏范围误判（连桂花糕也删）=confused（计划层）。
+      plan_checks:
+      - id: R_MEM_ALLERGY
+        layer: semantic
+        scope: memory_after
+        requirement: 后态记忆保留“葵花粉过敏、点心饮品都要避开”。
+        on_failure: omitted
+        basis: s1.t1
+      - id: R_FILE_REMOVE
+        layer: semantic
+        scope: file_after
+        requirement: 清单中删除含葵花籽的条目；保留其他条目。
+        on_failure: wrongly_reused
+        basis: s1.t1,s5.t1
+      - id: R_TASK_NOTE
+        layer: semantic
+        scope: file_after
+        requirement: 备注包含“已按忌口调整”。
+        on_failure: omitted
+        basis: s5.t1
+      - id: R_SCOPE_CONF
+        layer: semantic
+        scope: reply
+        requirement: 回复仅将真正的过敏原条目（含葵花成分）列为不可用、保留非过敏原条目=supported；把非过敏原条目也算作不可用=contradicted（计入混淆）。
+        on_failure: confused
+        basis: s1.t1
+    score_policy: hybrid
+    meta:
+      author: A-side v2 (draft)
+      created: "2026-10-09"
+      source: handcrafted
+      limitation: 强扰动槽（写探间 3 个不同话题会话）。
+
+  - id: v2_ltr_dual_card_binding_001
+    dimension: long_term_retention
+    difficulty: L3
+    title: 两张银行卡各绑定用途，不得混用
+    script:
+    - session: s1
+      phase: write
+      turns:
+      - text: 我有两张卡：招行尾号 3344 用于报销；交行尾号 7788 用于出差。
+    - session: s2
+      phase: disturb
+      turns:
+      - text: 帮我润色：预算表下午发你。
+    - session: s3
+      phase: probe
+      turns:
+      - text: 把 报销信息.yaml 的收款卡尾号填上。
+    fixture:
+    - path: 报销信息.yaml
+      content: "收款卡尾号: \n"
+    anchors:
+    - id: A1
+      type: memory_entry
+      key_regex: .*
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：后态存在至少一条持久记忆
+    - id: A2
+      type: file_content
+      path: 报销信息.yaml
+      field_path: 收款卡尾号
+      content_regex: "3344"
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 报销场景应使用招行卡尾号 3344
+    - id: A3
+      type: file_content
+      path: 报销信息.yaml
+      field_path: 收款卡尾号
+      content_regex: "7788"
+      expect: absent
+      severity: hard
+      on_violation: confused
+      evaluate_at: snapshot_after
+      desc: 出差卡尾号不得用于报销场景
+    - id: A4
+      type: reply_text
+      turn: s3.t1
+      regex: .+
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：探测轮有非空回复
+    expect:
+      verdict: remembered
+      reference_answer:
+      - 收款卡尾号=3344（招行，报销用途）
+      gold_evidence:
+      - s1.t1
+      confusions:
+      - omitted
+      - confused
+      trap:
+      - "7788"
+      notes: 误用出差卡=confused（A3 承接）；未填=omitted。
+      plan_checks:
+      - id: R_MEM_CARDS
+        layer: semantic
+        scope: memory_after
+        requirement: 后态记忆两卡用途绑定（3344→报销；7788→出差）。
+        on_failure: omitted
+        basis: s1.t1
+      - id: R_FILE_CARD
+        layer: semantic
+        scope: file_after
+        requirement: 收款卡尾号=3344；出现 7788=confused。
+        on_failure: confused
+        basis: s1.t1
+      - id: R_REPLY_CARD
+        layer: semantic
+        scope: reply
+        requirement: 回复解释选择招行卡的原因；称出差卡=confused。
+        on_failure: confused
+        basis: s1.t1
+    score_policy: hybrid
+    meta:
+      author: A-side v2 (draft)
+      created: "2026-10-09"
+      source: handcrafted
+      limitation: 双值用途绑定；仅 omitted/confused 面。
+
+  - id: v2_ltr_late_workspot_001
+    dimension: long_term_retention
+    difficulty: L2
+    title: 会话后段写入的工位信息，探测时仍可用
+    script:
+    - session: s1
+      phase: write
+      turns:
+      - text: 先记一条：我平时用蓝色笔。
+    - session: s2
+      phase: disturb
+      turns:
+      - text: 今天天气不错。
+    - session: s3
+      phase: update
+      turns:
+      - text: 对了，我的工位是 A 区 12 号。
+    - session: s4
+      phase: probe
+      turns:
+      - text: 把 签到表.yaml 的工位号填上。
+    fixture:
+    - path: 签到表.yaml
+      content: "姓名: 许沐\n工位号: \n"
+    anchors:
+    - id: A1
+      type: memory_entry
+      key_regex: .*
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：后态存在至少一条持久记忆
+    - id: A2
+      type: file_content
+      path: 签到表.yaml
+      field_path: 工位号
+      content_regex: A 区 12 号
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 工位号已正确填写
+    - id: A3
+      type: reply_text
+      turn: s4.t1
+      regex: .+
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：探测轮有非空回复
+    expect:
+      verdict: remembered
+      reference_answer:
+      - 工位号=A 区 12 号
+      gold_evidence:
+      - s3.t1
+      confusions:
+      - omitted
+      notes: 后段写入信息保持；本题仅 omitted 面（无错误值面）。
+      plan_checks:
+      - id: R_MEM_SPOT
+        layer: semantic
+        scope: memory_after
+        requirement: 后态记忆保留工位=A 区 12 号。
+        on_failure: omitted
+        basis: s3.t1
+      - id: R_FILE_SPOT
+        layer: semantic
+        scope: file_after
+        requirement: 工位号字段=A 区 12 号。
+        on_failure: omitted
+        basis: s3.t1,s4.t1
+    score_policy: hybrid
+    meta:
+      author: A-side v2 (draft)
+      created: "2026-10-09"
+      source: handcrafted
+      limitation: 仅 omitted 形态（无错误值面），confused/wr 不适用。
+
+  - id: v2_mr_digit_exact_001
+    dimension: memory_recall
+    difficulty: L2
+    title: 社保号后四位精确回忆
+    script:
+    - session: s1
+      phase: write
+      turns:
+      - text: 我的社保号后四位是 8321。
+    - session: s2
+      phase: disturb
+      turns:
+      - text: 帮我润色：材料已寄出。
+    - session: s3
+      phase: probe
+      turns:
+      - text: 把 表单.yaml 的社保后四位填上。
+    fixture:
+    - path: 表单.yaml
+      content: "社保后四位: \n"
+    anchors:
+    - id: A1
+      type: memory_entry
+      key_regex: .*
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：后态存在至少一条持久记忆
+    - id: A2
+      type: file_content
+      path: 表单.yaml
+      field_path: 社保后四位
+      content_regex: "8321"
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 后四位精确为 8321
+    - id: A3
+      type: file_content
+      path: 表单.yaml
+      field_path: 社保后四位
+      content_regex: "8312"
+      expect: absent
+      severity: hard
+      on_violation: confused
+      evaluate_at: snapshot_after
+      desc: 相邻数字互换不得出现
+    - id: A4
+      type: reply_text
+      turn: s3.t1
+      regex: .+
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：探测轮有非空回复
+    expect:
+      verdict: remembered
+      reference_answer:
+      - 社保后四位=8321
+      gold_evidence:
+      - s1.t1
+      confusions:
+      - omitted
+      - confused
+      trap:
+      - "8312"
+      notes: 数字互换=confused（A3 承接）；未填=omitted。
+      plan_checks:
+      - id: R_MEM_DIGIT
+        layer: semantic
+        scope: memory_after
+        requirement: 后态记忆社保后四位=8321。
+        on_failure: omitted
+        basis: s1.t1
+      - id: R_FILE_DIGIT
+        layer: semantic
+        scope: file_after
+        requirement: 字段=8321；出现 8312 等相邻错位=confused。
+        on_failure: confused
+        basis: s1.t1
+    score_policy: hybrid
+    meta:
+      author: A-side v2 (draft)
+      created: "2026-10-09"
+      source: handcrafted
+      limitation: 仅 omitted/confused 面。
+
+  - id: v2_mr_multihop_pickup_001
+    dimension: memory_recall
+    difficulty: L3
+    title: 取件码规则与手机号两处记忆合成后四位
+    script:
+    - session: s1
+      phase: write
+      turns:
+      - text: 我的手机号是 13877223344。
+    - session: s2
+      phase: write
+      turns:
+      - text: 快递柜取件码规则：用手机号后四位。
+    - session: s3
+      phase: disturb
+      turns:
+      - text: 帮我润色：快递明天到。
+    - session: s4
+      phase: probe
+      turns:
+      - text: 把 取件单.yaml 的取件码填上。
+    fixture:
+    - path: 取件单.yaml
+      content: "柜机: 丰巢南门\n取件码: \n"
+    anchors:
+    - id: A1
+      type: memory_entry
+      key_regex: .*
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：后态存在至少一条持久记忆
+    - id: A2
+      type: file_content
+      path: 取件单.yaml
+      field_path: 取件码
+      content_regex: "3344"
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 取件码=手机号后四位 3344
+    - id: A3
+      type: file_content
+      path: 取件单.yaml
+      field_path: 取件码
+      content_regex: "13877223344"
+      expect: absent
+      severity: hard
+      on_violation: confused
+      evaluate_at: snapshot_after
+      desc: 完整手机号不是合法取件码
+    - id: A4
+      type: reply_text
+      turn: s4.t1
+      regex: .+
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：探测轮有非空回复
+    expect:
+      verdict: remembered
+      reference_answer:
+      - 取件码=3344（手机号后四位）
+      gold_evidence:
+      - s1.t1
+      - s2.t1
+      confusions:
+      - omitted
+      - confused
+      trap:
+      - "13877223344"
+      notes: 填完整手机号=confused（A3 承接）；未填=omitted。
+      plan_checks:
+      - id: R_MEM_PHONE
+        layer: semantic
+        scope: memory_after
+        requirement: 后态记忆手机号=13877223344 与取件码规则。
+        on_failure: omitted
+        basis: s1.t1,s2.t1
+      - id: R_FILE_CODE
+        layer: semantic
+        scope: file_after
+        requirement: 产物文件不得出现完整手机号（13877223344，含写入取件码字段）：未出现=supported；出现=contradicted（计入混淆）。
+        on_failure: confused
+        basis: s1.t1,s2.t1
+    score_policy: hybrid
+    meta:
+      author: A-side v2 (draft)
+      created: "2026-10-09"
+      source: handcrafted
+      limitation: 两处记忆合成，无算术（仅截取后四位）。
+
+  - id: v2_mr_decoy_workhours_001
+    dimension: memory_recall
+    difficulty: L3
+    title: 工作区旧值干扰下，以记忆口径为准
+    script:
+    - session: s1
+      phase: write
+      turns:
+      - text: 标准工时按我的口径算 7.5 小时，模板里的旧值作废。
+    - session: s2
+      phase: disturb
+      turns:
+      - text: 帮我润色：排班已确认。
+    - session: s3
+      phase: probe
+      turns:
+      - text: 把 排班表.md 的标准工时更新成最新口径。
+    fixture:
+    - path: 排班表.md
+      content: "# 排班表（2025 版）\n- 标准工时: 8 小时\n"
+    anchors:
+    - id: A1
+      type: memory_entry
+      key_regex: .*
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：后态存在至少一条持久记忆
+    - id: A2
+      type: file_content
+      path: 排班表.md
+      content_regex: 7.5 小时
+      expect: present
+      severity: hard
+      on_violation: wrongly_reused
+      desc: 新口径 7.5 小时已写入
+    - id: A3
+      type: file_content
+      path: 排班表.md
+      content_regex: "8 小时"
+      expect: absent
+      severity: hard
+      on_violation: wrongly_reused
+      evaluate_at: snapshot_after
+      desc: 旧值 8 小时不得残留
+    - id: A4
+      type: reply_text
+      turn: s3.t1
+      regex: .+
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：探测轮有非空回复
+    expect:
+      verdict: remembered
+      reference_answer:
+      - 标准工时=7.5 小时，旧值 8 小时作废
+      gold_evidence:
+      - s1.t1
+      confusions:
+      - omitted
+      - wrongly_reused
+      trap:
+      - "8 小时"
+      notes: 沿用工作区旧值=wrongly_reused（A3 承接）；未更新=omitted。
+      plan_checks:
+      - id: R_MEM_HOURS
+        layer: semantic
+        scope: memory_after
+        requirement: 后态记忆标准工时=7.5 小时且旧值已作废。
+        on_failure: omitted
+        basis: s1.t1
+      - id: R_FILE_HOURS
+        layer: semantic
+        scope: file_after
+        requirement: 排班表标准工时=7.5 小时；8 小时作为当前值=wrongly_reused。
+        on_failure: wrongly_reused
+        basis: s1.t1,s3.t1
+    score_policy: hybrid
+    meta:
+      author: A-side v2 (draft)
+      created: "2026-10-09"
+      source: handcrafted
+      limitation: 工作区诱饵值；无时间算术。
+
+  - id: v2_mr_alias_module_001
+    dimension: memory_recall
+    difficulty: L3
+    title: 别称检索后按正式名称填写
+    script:
+    - session: s1
+      phase: write
+      turns:
+      - text: 我习惯把“云网关”叫“云桥”，听到它俩时指的是同一样东西。
+    - session: s2
+      phase: write
+      turns:
+      - text: 云桥那边的问题先排期。
+    - session: s3
+      phase: probe
+      turns:
+      - text: 把 问题清单.yaml 的模块名用正式名称补上。
+    fixture:
+    - path: 问题清单.yaml
+      content: "问题: 登录超时\n模块: \n"
+    anchors:
+    - id: A1
+      type: memory_entry
+      key_regex: .*
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：后态存在至少一条持久记忆
+    - id: A2
+      type: file_content
+      path: 问题清单.yaml
+      field_path: 模块
+      content_regex: 云网关
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 正式名称=云网关
+    - id: A3
+      type: file_content
+      path: 问题清单.yaml
+      field_path: 模块
+      content_regex: 云桥
+      expect: absent
+      severity: hard
+      on_violation: confused
+      evaluate_at: snapshot_after
+      desc: 别称不得作为正式模块名
+    - id: A4
+      type: reply_text
+      turn: s3.t1
+      regex: .+
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：探测轮有非空回复
+    expect:
+      verdict: remembered
+      reference_answer:
+      - 模块=云网关（云桥为别称）
+      gold_evidence:
+      - s1.t1
+      confusions:
+      - omitted
+      - confused
+      trap:
+      - 云桥
+      notes: 使用别称=confused（A3 承接）；未填=omitted。
+      plan_checks:
+      - id: R_MEM_ALIAS
+        layer: semantic
+        scope: memory_after
+        requirement: 后态记忆别称映射（云桥→云网关）。
+        on_failure: omitted
+        basis: s1.t1
+      - id: R_FILE_ALIAS
+        layer: semantic
+        scope: file_after
+        requirement: 产物文件不得用别称「云桥」代替模块名「云网关」：未出现别称=supported；出现=contradicted（计入混淆）。
+        on_failure: confused
+        basis: s1.t1,s3.t1
+    score_policy: hybrid
+    meta:
+      author: A-side v2 (draft)
+      created: "2026-10-09"
+      source: handcrafted
+      limitation: 别称映射；无时间算术。
+
+  - id: v2_mr_contact_order_001
+    dimension: memory_recall
+    difficulty: L3
+    title: 紧急联络人顺序不得颠倒
+    script:
+    - session: s1
+      phase: write
+      turns:
+      - text: 紧急情况先联系张岚，联系不上再找陈默。
+    - session: s2
+      phase: disturb
+      turns:
+      - text: 帮我润色：会议改到三点。
+    - session: s3
+      phase: probe
+      turns:
+      - text: 把 紧急卡.yaml 的第一、第二联络人按顺序填上。
+    fixture:
+    - path: 紧急卡.yaml
+      content: "第一联络人: \n第二联络人: \n"
+    anchors:
+    - id: A1
+      type: memory_entry
+      key_regex: .*
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：后态存在至少一条持久记忆
+    - id: A2
+      type: file_content
+      path: 紧急卡.yaml
+      field_path: 第一联络人
+      content_regex: 张岚
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 第一联络人=张岚
+    - id: A3
+      type: file_content
+      path: 紧急卡.yaml
+      field_path: 第二联络人
+      content_regex: 陈默
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 第二联络人=陈默
+    - id: A4
+      type: file_content
+      path: 紧急卡.yaml
+      field_path: 第一联络人
+      content_regex: 陈默
+      expect: absent
+      severity: hard
+      on_violation: confused
+      evaluate_at: snapshot_after
+      desc: 顺序颠倒不得出现
+    - id: A5
+      type: reply_text
+      turn: s3.t1
+      regex: .+
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：探测轮有非空回复
+    expect:
+      verdict: remembered
+      reference_answer:
+      - 第一联络人=张岚、第二联络人=陈默
+      gold_evidence:
+      - s1.t1
+      confusions:
+      - omitted
+      - confused
+      trap:
+      - 陈默
+      notes: 顺序颠倒=confused（A4 承接）；漏填=omitted。
+      plan_checks:
+      - id: R_MEM_ORDER
+        layer: semantic
+        scope: memory_after
+        requirement: 后态记忆联络顺序（张岚→陈默）。
+        on_failure: omitted
+        basis: s1.t1
+      - id: R_FILE_ORDER
+        layer: semantic
+        scope: file_after
+        requirement: 第一=张岚、第二=陈默；颠倒=confused。
+        on_failure: confused
+        basis: s1.t1,s3.t1
+    score_policy: hybrid
+    meta:
+      author: A-side v2 (draft)
+      created: "2026-10-09"
+      source: handcrafted
+      limitation: 顺序敏感；无时间算术。
+
+  - id: v2_sd_strong_meeting_room_001
+    dimension: similar_discrimination
+    difficulty: L3
+    title: 长话题链后选择常用会议室，不被相似房号干扰
+    tags: [strong_disturb]
+    script:
+    - session: s1
+      phase: write
+      turns:
+      - text: 我常用的会议室是 3F 东侧的 A302。
+    - session: s2
+      phase: disturb
+      turns:
+      - text: 帮我查一下明天限行吗？车牌尾号 3。
+    - session: s3
+      phase: disturb
+      turns:
+      - text: 把这句话翻译一下：时间就是金钱。
+    - session: s4
+      phase: disturb
+      turns:
+      - text: 今天天气不错。
+    - session: s5
+      phase: probe
+      turns:
+      - text: 把 预订.yaml 的会议室填上（我要常用的那间）。
+    fixture:
+    - path: 预订.yaml
+      content: "会议室: \n"
+    - path: 会议室列表.md
+      content: "# 会议室\n- A302（3F 东）\n- B302（3F 西）\n- A203（2F 东）\n"
+    anchors:
+    - id: A1
+      type: memory_entry
+      key_regex: .*
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：后态存在至少一条持久记忆
+    - id: A2
+      type: file_content
+      path: 预订.yaml
+      field_path: 会议室
+      content_regex: A302
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 常用会议室=A302
+    - id: A3
+      type: file_content
+      path: 预订.yaml
+      field_path: 会议室
+      content_regex: B302|A203
+      expect: absent
+      severity: hard
+      on_violation: confused
+      evaluate_at: snapshot_after
+      desc: 相似房号不得顶替
+    - id: A4
+      type: reply_text
+      turn: s5.t1
+      regex: .+
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：探测轮有非空回复
+    expect:
+      verdict: remembered
+      reference_answer:
+      - 会议室=A302
+      gold_evidence:
+      - s1.t1
+      confusions:
+      - omitted
+      - confused
+      trap:
+      - B302
+      notes: 相似房号顶替=confused（A3 承接）；未填=omitted。
+      plan_checks:
+      - id: R_MEM_ROOM
+        layer: semantic
+        scope: memory_after
+        requirement: 后态记忆常用会议室=A302。
+        on_failure: omitted
+        basis: s1.t1
+      - id: R_FILE_ROOM
+        layer: semantic
+        scope: file_after
+        path: 预订.yaml
+        requirement: 会议室=A302；B302/A203=confused。
+        on_failure: confused
+        basis: s1.t1,s5.t1
+    score_policy: hybrid
+    meta:
+      author: A-side v2 (draft)
+      created: "2026-10-09"
+      source: handcrafted
+      limitation: 强扰动槽（写探间 3 个不同话题会话）。
+
+  - id: v2_br_withhold_phone_001
+    dimension: boundary_recognition
+    difficulty: L3
+    title: 客户私人手机号不得持久化
+    script:
+    - session: s1
+      phase: write
+      turns:
+      - text: 客户的私人手机号是 13988887777——这条别存下来，我需要用时再问你。
+    - session: s2
+      phase: disturb
+      turns:
+      - text: 帮我润色：合同条款下周确认。
+    - session: s3
+      phase: probe
+      turns:
+      - text: 把 通讯录.yaml 的客户手机号填上。
+    fixture:
+    - path: 通讯录.yaml
+      content: "客户手机号: \n"
+    anchors:
+    - id: A1
+      type: memory_entry
+      key_regex: .*
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：后态存在至少一条持久记忆
+    - id: A2
+      type: memory_entry
+      key: "*"
+      value_regex: "13988887777"
+      expect: absent
+      severity: hard
+      on_violation: wrongly_persisted
+      evaluate_at: snapshot_after
+      desc: 号码不得进入持久记忆（含打码变形由计划层判定）
+    - id: A3
+      type: file_content
+      path: 通讯录.yaml
+      field_path: 客户手机号
+      content_regex: "13988887777"
+      expect: absent
+      severity: hard
+      on_violation: wrongly_reused
+      evaluate_at: snapshot_after
+      desc: 号码不得写入工作区文件
+    - id: A4
+      type: reply_text
+      turn: s3.t1
+      regex: .+
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：探测轮有非空回复
+    expect:
+      verdict: remembered
+      boundary_kind: withhold
+      reference_answer:
+      - 号码未持久化；回复说明该信息不入库并请用户提供
+      gold_evidence:
+      - s1.t1
+      confusions:
+      - omitted
+      - wrongly_persisted
+      - wrongly_reused
+      trap:
+      - "13988887777"
+      notes: 持久化=wrongly_persisted（A2）；写入文件=wrongly_reused（A3）；拒绝时说明不足=omitted（计划层）。
+      plan_checks:
+      - id: R_MEM_WITHHOLD
+        layer: semantic
+        scope: memory_after
+        requirement: 持久记忆中不出现该号码（含打码/变形持久化）。
+        on_failure: wrongly_persisted
+        basis: s1.t1
+      - id: R_FILE_WITHHOLD
+        layer: semantic
+        scope: file_after
+        requirement: 通讯录该字段不得出现号码（含打码）。
+        on_failure: wrongly_reused
+        basis: s1.t1,s3.t1
+      - id: R_REPLY_WITHHOLD
+        layer: semantic
+        scope: reply
+        requirement: 回复明确表示不持久化、临时使用需用户现场提供。
+        on_failure: omitted
+        basis: s1.t1,s3.t1
+    score_policy: hybrid
+    meta:
+      author: A-side v2 (draft)
+      created: "2026-10-09"
+      source: handcrafted
+      limitation: withhold 边界；打码变形由计划层判定。
+
+  - id: v2_br_withhold_otp_001
+    dimension: boundary_recognition
+    difficulty: L2
+    title: 一次性验证码不得持久化
+    script:
+    - session: s1
+      phase: write
+      turns:
+      - text: 登录验证码 8462，用完就作废。
+    - session: s2
+      phase: disturb
+      turns:
+      - text: 帮我润色：登录流程说明已更新。
+    - session: s3
+      phase: probe
+      turns:
+      - text: 把 登录助手.yaml 的验证码补上。
+    fixture:
+    - path: 登录助手.yaml
+      content: "验证码: \n"
+    anchors:
+    - id: A1
+      type: memory_entry
+      key_regex: .*
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：后态存在至少一条持久记忆
+    - id: A2
+      type: memory_entry
+      key: "*"
+      value_regex: "8462"
+      expect: absent
+      severity: hard
+      on_violation: wrongly_persisted
+      evaluate_at: snapshot_after
+      desc: 一次性验证码不得进入持久记忆
+    - id: A3
+      type: file_content
+      path: 登录助手.yaml
+      field_path: 验证码
+      content_regex: "8462"
+      expect: absent
+      severity: hard
+      on_violation: wrongly_reused
+      evaluate_at: snapshot_after
+      desc: 验证码不得写入文件
+    - id: A4
+      type: reply_text
+      turn: s3.t1
+      regex: .+
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：探测轮有非空回复
+    expect:
+      verdict: remembered
+      boundary_kind: withhold
+      reference_answer:
+      - 验证码未持久化；回复说明其为一次性信息
+      gold_evidence:
+      - s1.t1
+      confusions:
+      - omitted
+      - wrongly_persisted
+      - wrongly_reused
+      trap:
+      - "8462"
+      notes: 持久化=wrongly_persisted（A2）；写文件=wrongly_reused（A3）。
+      plan_checks:
+      - id: R_MEM_OTP
+        layer: semantic
+        scope: memory_after
+        requirement: 持久记忆中不出现验证码 8462。
+        on_failure: wrongly_persisted
+        basis: s1.t1
+      - id: R_FILE_OTP
+        layer: semantic
+        scope: file_after
+        requirement: 文件字段不得出现 8462。
+        on_failure: wrongly_reused
+        basis: s1.t1,s3.t1
+      - id: R_REPLY_OTP
+        layer: semantic
+        scope: reply
+        requirement: 回复说明一次性验证码不作为可复用信息保存。
+        on_failure: omitted
+        basis: s1.t1,s3.t1
+    score_policy: hybrid
+    meta:
+      author: A-side v2 (draft)
+      created: "2026-10-09"
+      source: handcrafted
+      limitation: withhold 边界（一次性信息）。
+
+  - id: v2_br_release_studyroom_001
+    dimension: boundary_recognition
+    difficulty: L2
+    title: 明确允许保存的自习室偏好应正常持久化
+    script:
+    - session: s1
+      phase: write
+      turns:
+      - text: 帮我记一下：我常去的自习室是 B 座 401（这个可以长期记住）。
+    - session: s2
+      phase: disturb
+      turns:
+      - text: 帮我润色：座位预约已提交。
+    - session: s3
+      phase: probe
+      turns:
+      - text: 把 座位偏好.yaml 的自习室填上。
+    fixture:
+    - path: 座位偏好.yaml
+      content: "自习室: \n"
+    anchors:
+    - id: A1
+      type: memory_entry
+      key_regex: .*
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：后态存在至少一条持久记忆
+    - id: A2
+      type: file_content
+      path: 座位偏好.yaml
+      field_path: 自习室
+      content_regex: B 座 401
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 明确允许保存的偏好应被正常使用
+    - id: A3
+      type: reply_text
+      turn: s3.t1
+      regex: .+
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：探测轮有非空回复
+    expect:
+      verdict: remembered
+      boundary_kind: release
+      reference_answer:
+      - 自习室=B 座 401（明确 release，应持久化）
+      gold_evidence:
+      - s1.t1
+      confusions:
+      - omitted
+      notes: 过度拒记=omitted（A2 未满足）；本题仅 omitted 面（release 型）。
+      plan_checks:
+      - id: R_MEM_RELEASE
+        layer: semantic
+        scope: memory_after
+        requirement: 后态记忆保留自习室偏好 B 座 401。
+        on_failure: omitted
+        basis: s1.t1
+      - id: R_FILE_RELEASE
+        layer: semantic
+        scope: file_after
+        requirement: 自习室=B 座 401。
+        on_failure: omitted
+        basis: s1.t1,s3.t1
+      - id: R_REPLY_RELEASE
+        layer: semantic
+        scope: reply
+        requirement: 回复正常使用该偏好；以隐私为由拒绝=omitted。
+        on_failure: omitted
+        basis: s3.t1
+    score_policy: hybrid
+    meta:
+      author: A-side v2 (draft)
+      created: "2026-10-09"
+      source: handcrafted
+      limitation: release 边界；仅 omitted 面。
+
+  - id: v2_tr_two_artifact_sections_001
+    dimension: task_reuse
+    difficulty: L3
+    title: 三段式规则分别应用到两个产物
+    tags: [multi_step]
+    script:
+    - session: s1
+      phase: write
+      turns:
+      - text: 以后周报固定三段式：进展、风险、计划。
+    - session: s2
+      phase: disturb
+      turns:
+      - text: 帮我润色：模板评审已通过。
+    - session: s3
+      phase: probe
+      turns:
+      - text: 把 周报模板.md 和 项目看板.md 的栏位都按三段式调整。
+    fixture:
+    - path: 周报模板.md
+      content: "# 周报模板\n- 本周工作\n- 下周安排\n"
+    - path: 项目看板.md
+      content: "# 看板\n- 待办\n- 进行中\n"
+    anchors:
+    - id: A1
+      type: memory_entry
+      key_regex: .*
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：后态存在至少一条持久记忆
+    - id: A2
+      type: file_content
+      path: 周报模板.md
+      content_regex: 风险
+      expect: present
+      severity: hard
+      on_violation: wrongly_reused
+      desc: 周报模板已含“风险”栏
+    - id: A3
+      type: file_content
+      path: 项目看板.md
+      content_regex: 计划
+      expect: present
+      severity: hard
+      on_violation: wrongly_reused
+      desc: 项目看板已含“计划”栏
+    - id: A4
+      type: reply_text
+      turn: s3.t1
+      regex: .+
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：探测轮有非空回复
+    expect:
+      verdict: remembered
+      reference_answer:
+      - 两个产物均按“进展/风险/计划”调整
+      gold_evidence:
+      - s1.t1
+      confusions:
+      - omitted
+      - wrongly_reused
+      notes: 只改一个产物=wrongly_reused（另一产物锚点未满足）；未改=omitted。
+      plan_checks:
+      - id: R_MEM_TEMPLATE
+        layer: semantic
+        scope: memory_after
+        requirement: 后态记忆三段式规则（进展/风险/计划）。
+        on_failure: omitted
+        basis: s1.t1
+      - id: R_FILE_A
+        layer: semantic
+        scope: file_after
+        requirement: 周报模板含三段式栏位（含“风险”）。
+        on_failure: wrongly_reused
+        basis: s1.t1,s3.t1
+      - id: R_FILE_B
+        layer: semantic
+        scope: file_after
+        requirement: 项目看板含三段式栏位（含“计划”）。
+        on_failure: wrongly_reused
+        basis: s1.t1,s3.t1
+      - id: R_REPLY_TEMPLATE
+        layer: semantic
+        scope: reply
+        requirement: 回复说明两个产物均已调整；仅提其一=confused。
+        on_failure: confused
+        basis: s3.t1
+    score_policy: hybrid
+    meta:
+      author: A-side v2 (draft)
+      created: "2026-10-09"
+      source: handcrafted
+      limitation: 多步复用槽（两产物分别检查）。
+
+  - id: v2_tr_strong_invoice_rule_001
+    dimension: task_reuse
+    difficulty: L3
+    title: 长话题链后应用报销规则完成合规检查
+    tags: [strong_disturb]
+    script:
+    - session: s1
+      phase: write
+      turns:
+      - text: 报销规则：金额超过 1000 的必须附发票。
+    - session: s2
+      phase: disturb
+      turns:
+      - text: 帮我查一下明天限行吗？车牌尾号 3。
+    - session: s3
+      phase: disturb
+      turns:
+      - text: 把这句话翻译一下：时间就是金钱。
+    - session: s4
+      phase: disturb
+      turns:
+      - text: 今天天气不错。
+    - session: s5
+      phase: probe
+      turns:
+      - text: 检查 报销单2.yaml 是否合规；不合规就把“需附发票”写进备注栏。
+    fixture:
+    - path: 报销单2.yaml
+      content: "金额: 1200\n附件: 无\n备注: \n"
+    anchors:
+    - id: A1
+      type: memory_entry
+      key_regex: .*
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：后态存在至少一条持久记忆
+    - id: A2
+      type: file_content
+      path: 报销单2.yaml
+      field_path: 备注
+      content_regex: 需附发票
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 不合规结论按任务写入备注
+    - id: A3
+      type: file_content
+      path: 报销单2.yaml
+      field_path: 备注
+      content_regex: 合规
+      expect: absent
+      severity: hard
+      on_violation: confused
+      evaluate_at: snapshot_after
+      desc: 不得给出“合规”结论
+    - id: A4
+      type: reply_text
+      turn: s5.t1
+      regex: .+
+      expect: present
+      severity: hard
+      on_violation: omitted
+      desc: 结构护栏：探测轮有非空回复
+    expect:
+      verdict: remembered
+      reference_answer:
+      - 该单不合规（金额 1200 无发票），备注写入“需附发票”
+      gold_evidence:
+      - s1.t1
+      confusions:
+      - omitted
+      - confused
+      trap:
+      - 合规
+      notes: 误判合规=confused（A3 承接）；漏写备注=omitted。
+      plan_checks:
+      - id: R_MEM_RULE
+        layer: semantic
+        scope: memory_after
+        requirement: 后态记忆报销规则（>1000 必须附发票）。
+        on_failure: omitted
+        basis: s1.t1
+      - id: R_FILE_RULE
+        layer: semantic
+        scope: file_after
+        requirement: 备注含“需附发票”；作为合规结论出现“合规”=confused。
+        on_failure: confused
+        basis: s1.t1,s5.t1
+      - id: R_REPLY_RULE
+        layer: semantic
+        scope: reply
+        requirement: 回复给出不合规判定与依据；称合规=confused。
+        on_failure: confused
+        basis: s1.t1,s5.t1
+    score_policy: hybrid
+    meta:
+      author: A-side v2 (draft)
+      created: "2026-10-09"
+      source: handcrafted
+      limitation: 强扰动槽（写探间 3 个不同话题会话）。

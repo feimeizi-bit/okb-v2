@@ -1,0 +1,132 @@
+policy_version: 1
+tier: coexist
+suite_version: v0.3
+on_missing_record: fail
+defaults:
+  reply_text: 好的。
+samples:
+- sample_id: update_invoice_title_001
+  turns:
+  - match:
+      session: s1
+      turn: 1
+    reply_text: 收到。
+    memory_ops:
+    - op: set
+      key: invoice_title
+      value: 上海启成信息技术有限公司
+  - match:
+      session: s2
+      turn: 1
+    reply_text: 好的。
+    memory_ops:
+    - op: set
+      key: invoice_title
+      value: 上海启成数字科技有限公司
+  - match:
+      session: s4
+      turn: 1
+    reply_text: 已写入，带曾用名备注。
+    file_ops:
+    - op: write
+      path: 开票须知.md
+      content: '# 开票须知
+
+        - 抬头：上海启成数字科技有限公司（原上海启成信息技术有限公司）
+
+        '
+- sample_id: similar_wifi_001
+  turns:
+  - match:
+      session: s1
+      turn: 1
+    reply_text: 记下。
+    memory_ops:
+    - op: set
+      key: wifi
+      value: 家庭 Jia2026home / 公司 Yue2026office
+  - match:
+      session: s5
+      turn: 1
+    reply_text: 两个都写上以防万一。
+    file_ops:
+    - op: write
+      path: 网络指引.md
+      content: '# 网络指引
+
+        - SSID: QC-Office
+
+        - 密码: Yue2026office
+
+        - 备用: Jia2026home
+
+        '
+- sample_id: retain_pet_name_001
+  turns:
+  - match:
+      session: s1
+      turn: 1
+    reply_text: 芝麻记下了。
+    memory_ops:
+    - op: set
+      key: cat
+      value: 芝麻
+  - match:
+      session: s3
+      turn: 1
+    reply_text: 好了。
+    file_ops:
+    - op: write
+      path: 采购.md
+      content: '# 猫粮采购
+
+        - 适用：芝麻
+
+        '
+- sample_id: boundary_temp_path_001
+  turns:
+  - match:
+      session: s1
+      turn: 1
+    reply_text: 记下但不强调。
+    memory_ops:
+    - op: set
+      key: tmp_dir
+      value: /tmp/debug_test_9527（仅一次）
+  - match:
+      session: s3
+      turn: 1
+    reply_text: 写好。
+    file_ops:
+    - op: write
+      path: 部署配置.yaml
+      content: 'port: 8080
+
+        log_dir: logs/
+
+        '
+- sample_id: reuse_buglist_two_step_001
+  turns:
+  - match:
+      session: s1
+      turn: 1
+    reply_text: 收到。
+    memory_ops:
+    - op: set
+      key: bugfmt
+      value: BUG-编号 | 严重度=高|中|低 | 负责人
+  - match:
+      session: s3
+      turn: 1
+    reply_text: 两份都按格式。
+    file_ops:
+    - op: write
+      path: 缺陷列表.md
+      content: 'BUG-1042 | 严重度=高 | 老王
+
+        '
+    - op: write
+      path: 周报附录.md
+      content: '- BUG-1042 | 严重度=高 | 老王
+
+        '

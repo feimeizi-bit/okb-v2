@@ -1,0 +1,19 @@
+[Unit]
+Description=Local Embedding Server (fastembed BAAI/bge-small-zh-v1.5)
+After=network.target
+
+[Service]
+Type=simple
+User=okb
+WorkingDirectory=/home/okb/embed-server
+Environment=HF_ENDPOINT=https://hf-mirror.com
+# 持久缓存 + 禁 xet（2026-09-28 新增：/tmp 缓存重启即丢、xet CAS 镜像 401）
+# 注意：一律绝对路径——%h 在 system 单元里可能展开到 /root（2026-09-28 实测踩坑）
+Environment=FASTEMBED_CACHE_PATH=/home/okb/embed-server/cache
+Environment=HF_HUB_DISABLE_XET=1
+ExecStart=/home/okb/embed-server/venv/bin/python -m uvicorn server:app --host 127.0.0.1 --port 18001
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

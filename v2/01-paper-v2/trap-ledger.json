@@ -1,0 +1,140 @@
+{
+ "retain_nickname_001": [
+  "小王"
+ ],
+ "retain_pet_name_001": [
+  "抹茶"
+ ],
+ "retain_allergy_001": [
+  "宫保鸡丁",
+  "花生酱拌面"
+ ],
+ "recall_coffee_001": [
+  "加糖"
+ ],
+ "update_multi_001": [
+  "浦西老地址",
+  "13900000000"
+ ],
+ "update_same_session_001": [
+  "文三路"
+ ],
+ "update_route_001": [
+  "滨江路"
+ ],
+ "update_delayed_001": [
+  "浦东新区张江路 100 号"
+ ],
+ "update_invoice_title_001": [
+  "上海启成信息技术有限公司"
+ ],
+ "similar_campus_001": [
+  "10.10.1.27"
+ ],
+ "similar_contacts_001": [
+  "13800000002"
+ ],
+ "similar_invoice_001": [
+  "云栖信息"
+ ],
+ "similar_wifi_001": [
+  "Jia2026home"
+ ],
+ "similar_desk_001": [
+  "A301"
+ ],
+ "similar_drink_001": [
+  "拿铁"
+ ],
+ "boundary_risk_001": [
+  "直接删",
+  "不用问"
+ ],
+ "boundary_pii_mask_001": [
+  "<PII_ID_1>"
+ ],
+ "boundary_temp_001": [
+  "输出-临时"
+ ],
+ "boundary_release_001": [
+  "驿站"
+ ],
+ "boundary_temp_path_001": [
+  "/tmp/debug_test_9527"
+ ],
+ "dual_order_001": [
+  "香菜"
+ ],
+ "reuse_report_001": [
+  "周报模板.md"
+ ],
+ "reuse_buglist_two_step_001": [
+  "通用表格体"
+ ],
+ "reuse_memory_only_001": [
+  "本周完成"
+ ],
+ "v2_du_delay_approval_001": [
+  "陈默"
+ ],
+ "v2_du_delay_address_001": [
+  "云栖路 5 号"
+ ],
+ "v2_du_retract_restore_001": [
+  "滨江路 7 号"
+ ],
+ "v2_du_conditional_001": [
+  "梧桐巷 9 号"
+ ],
+ "v2_du_version_rollback_001": [
+  "数据指标"
+ ],
+ "v2_du_cross_session_chain_001": [
+  "staging"
+ ],
+ "v2_du_adjacent_field_001": [
+  "18911112222"
+ ],
+ "v2_du_repeat_correction_001": [
+  "周三"
+ ],
+ "v2_du_effective_now_001": [
+  "7%"
+ ],
+ "v2_du_propagate_001": [
+  "晨曦"
+ ],
+ "v2_ltr_deepchain_allergy_001": [
+  "葵花籽曲奇"
+ ],
+ "v2_ltr_dual_card_binding_001": [
+  "7788"
+ ],
+ "v2_mr_digit_exact_001": [
+  "8312"
+ ],
+ "v2_mr_multihop_pickup_001": [
+  "13877223344"
+ ],
+ "v2_mr_decoy_workhours_001": [
+  "8 小时"
+ ],
+ "v2_mr_alias_module_001": [
+  "云桥"
+ ],
+ "v2_mr_contact_order_001": [
+  "陈默"
+ ],
+ "v2_sd_strong_meeting_room_001": [
+  "B302"
+ ],
+ "v2_br_withhold_phone_001": [
+  "13988887777"
+ ],
+ "v2_br_withhold_otp_001": [
+  "8462"
+ ],
+ "v2_tr_strong_invoice_rule_001": [
+  "合规"
+ ]
+}

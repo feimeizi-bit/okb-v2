@@ -1,0 +1,41 @@
+{
+  "format": "okb-four-layer-v1",
+  "paper_sha256": "b5d71fd8c95c5385232fdf07604a1e9b8e072e0fa82105e0b8f37df95f357788",
+  "samples": [
+    {
+      "sample_id": "retain_allergy_001",
+      "anchor_disposition": {
+        "A1": {"role":"semantic","checks":["persisted_allergy"],"reason":"Natural-language memory; current subject, polarity and validity matter, not Chinese keyword presence."},
+        "A2a": {"role":"mixed","checks":["artifact_exists","two_suitable_dishes"],"reason":"File existence is objective; suitability of selected dishes is a semantic requirement from the menu and user allergy."},
+        "A2b": {"role":"semantic","checks":["two_suitable_dishes"],"reason":"User requests two suitable dishes, not exactly the author's pair; alternative valid selection is not automatically wrong."},
+        "A3": {"role":"semantic","checks":["no_forbidden_dish"],"reason":"Check actual recommendations, not incidental mention of forbidden dishes."},
+        "A5": {"role":"diagnostic","checks":[],"reason":"User asked for dish names only, not an explanatory reply. Removing mandatory reply keyword changes the rubric and is disclosed; not a same-rubric accuracy gain."},
+        "A4": {"role":"diagnostic","checks":[],"reason":"Unobserved memory retrieval event cannot prove failure; persistent memory and artifact checked separately."}
+      },
+      "checks": [
+        {"id":"artifact_exists","layer":"objective","op":"file_exists","path":"推荐.md","on_failure":"omitted","basis":"s4.t1 explicitly requests 推荐.md"},
+        {"id":"no_forbidden_dish","layer":"semantic","scope":"file_final","path":"推荐.md","requirement":"The actual recommended dishes do not include any dish marked in the supplied menu as containing peanuts. A quoted excluded example is not a recommendation. A missing or empty output cannot support this requirement: use insufficient unless actual recommendations are observable.","on_failure":"wrongly_reused","basis":"s1.t1 user peanut allergy and avoidance; s4.t1 choose edible dishes from menu"},
+        {"id":"persisted_allergy","layer":"semantic","scope":"memory_after","requirement":"At task end the observed persistent memory contains a currently applicable affirmative fact that the current user is allergic to peanuts (花生), or an equivalent directive that explicitly preserves this allergy fact. Accept equivalent language/paraphrase. Mentions of others, negation, quoted examples, hypothetical statements and superseded facts do not establish it. Complete observed memory lacking this fact contradicts this persistence requirement; ambiguous conflicting facts are insufficient.","on_failure":"omitted","basis":"s1.t1 stable allergy and future avoidance request"},
+        {"id":"two_suitable_dishes","layer":"semantic","scope":"file_final","path":"推荐.md","requirement":"The final file actually recommends two distinct dishes from the supplied menu that are suitable for the user's peanut allergy. Exact author-chosen dish names are not mandatory if other menu choices satisfy the user. Missing, empty, invented, insufficient-count or unsafe recommendations fail this requirement. Do not use reply promises as evidence of file contents.","on_failure":"omitted","basis":"s4.t1 choose two edible menu dishes and write names in file"}
+      ]
+    },
+    {
+      "sample_id": "dual_order_001",
+      "anchor_disposition": {
+        "A1": {"role":"semantic","checks":["memory_food"],"reason":"Semantic persistence of cilantro avoidance, language-independent."},
+        "A2": {"role":"semantic","checks":["memory_seat"],"reason":"Semantic persistence of seating preference, including quietness stated by user."},
+        "A3": {"role":"mixed","checks":["order_exists","order_preferences"],"reason":"Artifact existence objective; correct semantic placement of both requirements in YAML checked together."},
+        "A4": {"role":"semantic","checks":["order_preferences"],"reason":"Requires window and quiet preference from actual user instruction; stronger than legacy window-only regex, explicitly not same rubric."},
+        "A5": {"role":"semantic","checks":["no_swapped_fields"],"reason":"Field meanings must not be exchanged; word presence in explanations is not swapping."},
+        "A6": {"role":"semantic","checks":["no_swapped_fields"],"reason":"Reverse swap is the same semantic wrong-field failure."}
+      },
+      "checks": [
+        {"id":"order_exists","layer":"objective","op":"file_exists","path":"订餐.yaml","on_failure":"omitted","basis":"s4.t1 explicitly requests filling 订餐.yaml"},
+        {"id":"no_swapped_fields","layer":"semantic","scope":"file_final","path":"订餐.yaml","requirement":"The order's 备注 and 座位 fields do not exchange dietary and seating preferences. Dietary restriction belongs in 备注 and seat choice in 座位. A missing/empty artifact is insufficient for this no-swap check; incidental explanatory mention is not automatically an exchanged value.","on_failure":"confused","basis":"s1/s2 preferences and s4 requested separate fields"},
+        {"id":"memory_food","layer":"semantic","scope":"memory_after","requirement":"Observed current persistent memory retains that the current user is allergic to cilantro (香菜) and orders should exclude cilantro. Equivalent languages/directives are allowed. Other people, negation, obsolete or merely quoted facts are not enough. Complete observation without the fact contradicts; unresolved meaning is insufficient.","on_failure":"omitted","basis":"s1.t1 always put no cilantro in order notes"},
+        {"id":"memory_seat","layer":"semantic","scope":"memory_after","requirement":"Observed current persistent memory retains the current user's preference for window seats and quieter seating. Accept equivalent language; other persons, negated or obsolete preferences do not qualify. Complete observation without the preference contradicts; unresolved meaning is insufficient.","on_failure":"omitted","basis":"s2.t1 prefers window and quiet seat"},
+        {"id":"order_preferences","layer":"semantic","scope":"file_final","path":"订餐.yaml","requirement":"The final order actually fills 备注 with no cilantro (香菜) and 座位 with the user's window and quiet seating preference. Read actual YAML field meanings, not an Agent's completion promise. Missing required components contradict this requirement. If quietness is genuinely ambiguous rather than clearly absent, explain and use insufficient.","on_failure":"omitted","basis":"s1.t1/s2.t1 preferences applied to s4.t1 order"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,758 @@
+suite_version: v2.0
+samples:
+- id: v2_du_delay_address_001
+  dimension: dynamic_update
+  difficulty: L3
+  title: 新收货地址下月15号起生效，生效日前不得提前使用
+  script:
+  - session: s1
+    phase: write
+    time: 2026-05-28 09:00:00+08:00
+    turns:
+    - text: 从下个月 15 号起，我的收货地址换成云栖路 5 号。
+  - session: s2
+    phase: disturb
+    time: 2026-06-01 14:00:00+08:00
+    turns:
+    - text: 帮我润色这句话：会议室已经预订好了。
+  - session: s3
+    phase: probe
+    time: 2026-06-02 10:00:00+08:00
+    turns:
+    - text: 把地址簿.yaml 里的“当前收货地址”补全，并告诉我现在生效的是哪个地址。
+  fixture:
+  - path: 地址簿.yaml
+    content: "当前收货地址: 江畔路 3 号\n备用地址: \n"
+  anchors:
+  - id: A1
+    type: memory_entry
+    key_regex: .*
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 结构护栏：后态存在至少一条持久记忆（内容由计划判据判定）
+  - id: A2
+    type: file_content
+    path: 地址簿.yaml
+    field_path: 当前收货地址
+    content_regex: 江畔路 3 号
+    expect: present
+    severity: hard
+    on_violation: wrongly_reused
+    desc: 6/15 前当前地址仍是旧址（旧值保持型断言天然与 fixture 一致（W207 豁免）；区分力由 A3 与计划检查承担）
+  - id: A3
+    type: file_content
+    path: 地址簿.yaml
+    field_path: 当前收货地址
+    content_regex: 云栖路 5 号
+    expect: absent
+    severity: hard
+    on_violation: wrongly_reused
+    evaluate_at: snapshot_after
+    desc: 生效日前不得提前把新址写进“当前”栏
+  - id: A4
+    type: reply_text
+    turn: s3.t1
+    regex: .+
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 结构护栏：探测轮有非空回复（语义在计划层）
+  expect:
+    verdict: remembered
+    reference_answer:
+    - 当前收货地址保持江畔路 3 号；回复说明 6/15 起才切换为云栖路 5 号
+    gold_evidence:
+    - s1.t1
+    confusions:
+    - omitted
+    - wrongly_reused
+    trap:
+    - 云栖路 5 号
+    notes: 提前写入新址=wrongly_reused（A3）；回复无条件称已切换=confused（计划层承接）；未填/未回应=omitted。时间=逻辑时间（faketime）。
+  score_policy: hybrid
+  meta:
+    author: A-side v2 (draft)
+    created: '2026-10-09'
+    source: handcrafted
+    limitation: 逻辑时间题（faketime）；生效窗口靠夹具日期与脚本时间对齐。
+  tags:
+  - time_anchor
+- id: v2_du_retract_restore_001
+  dimension: dynamic_update
+  difficulty: L3
+  title: 地址说错后撤回，最终回到原值
+  script:
+  - session: s1
+    phase: write
+    time: 2026-07-01 10:00:00+08:00
+    turns:
+    - text: 我的收货地址改成滨江路 7 号。
+  - session: s2
+    phase: disturb
+    time: 2026-07-01 16:00:00+08:00
+    turns:
+    - text: 刚才说错了——地址不变，滨江路 7 号是同事的；还是柳荫街 12 号。
+  - session: s3
+    phase: probe
+    time: 2026-07-03 09:30:00+08:00
+    turns:
+    - text: 把通讯录.yaml 的收货地址改成最新的（我确认过，就是现在这个）。
+  fixture:
+  - path: 通讯录.yaml
+    content: '收货地址: 柳荫街 12 号
+
+      手机: 13800000000
+
+      '
+  anchors:
+  - id: A1
+    type: memory_entry
+    key_regex: .*
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 结构护栏：后态存在至少一条持久记忆
+  - id: A2
+    type: file_content
+    path: 通讯录.yaml
+    field_path: 收货地址
+    content_regex: 柳荫街 12 号
+    expect: present
+    severity: hard
+    on_violation: wrongly_reused
+    desc: 撤回后当前地址应回到原值（旧值保持型断言天然与 fixture 一致（W207 豁免）；区分力由 A3 与计划检查承担）
+  - id: A3
+    type: file_content
+    path: 通讯录.yaml
+    field_path: 收货地址
+    content_regex: 滨江路 7 号
+    expect: absent
+    severity: hard
+    on_violation: wrongly_reused
+    evaluate_at: snapshot_after
+    desc: 被撤回的地址不得被采用
+  - id: A4
+    type: reply_text
+    turn: s3.t1
+    regex: .+
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 结构护栏：探测轮有非空回复
+  expect:
+    verdict: remembered
+    reference_answer:
+    - 收货地址为柳荫街 12 号；滨江路 7 号是同事的、已撤回
+    gold_evidence:
+    - s2.t1
+    confusions:
+    - omitted
+    - wrongly_reused
+    trap:
+    - 滨江路 7 号
+    notes: 采用撤回前的新值=wrongly_reused（A3）；未写=omitted；回复称已改为滨江路=confused（计划层）。
+  score_policy: hybrid
+  meta:
+    author: A-side v2 (draft)
+    created: '2026-10-09'
+    source: handcrafted
+    limitation: 同日内跨会话撤回；无时间算术。
+- id: v2_du_conditional_001
+  dimension: dynamic_update
+  difficulty: L3
+  title: 条件性更新：出差定了，寄件用公司地址
+  script:
+  - session: s1
+    phase: write
+    time: 2026-07-10 11:00:00+08:00
+    turns:
+    - text: 如果下周我去武汉出差，快递就寄到公司（创业大厦 B 座 502）；不去的话寄家里（梧桐巷 9 号）。
+  - session: s2
+    phase: disturb
+    time: 2026-07-12 15:00:00+08:00
+    turns:
+    - text: 出差定了，去武汉。
+  - session: s3
+    phase: probe
+    time: 2026-07-14 10:00:00+08:00
+    turns:
+    - text: 把快递单.yaml 的收货地址按最新情况补上。
+  fixture:
+  - path: 快递单.yaml
+    content: "收件人: 许沐\n收货地址: \n"
+  anchors:
+  - id: A1
+    type: memory_entry
+    key_regex: .*
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 结构护栏：后态存在至少一条持久记忆
+  - id: A2
+    type: file_content
+    path: 快递单.yaml
+    field_path: 收货地址
+    content_regex: 创业大厦 B 座 502
+    expect: present
+    severity: hard
+    on_violation: wrongly_reused
+    desc: 条件已触发（出差确定），应为公司地址
+  - id: A3
+    type: file_content
+    path: 快递单.yaml
+    field_path: 收货地址
+    content_regex: 梧桐巷 9 号
+    expect: absent
+    severity: hard
+    on_violation: wrongly_reused
+    evaluate_at: snapshot_after
+    desc: 条件触发后不得仍用家里地址
+  - id: A4
+    type: reply_text
+    turn: s3.t1
+    regex: .+
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 结构护栏：探测轮有非空回复
+  expect:
+    verdict: remembered
+    reference_answer:
+    - 收货地址为创业大厦 B 座 502（条件已触发）
+    gold_evidence:
+    - s1.t1
+    - s2.t1
+    confusions:
+    - omitted
+    - wrongly_reused
+    trap:
+    - 梧桐巷 9 号
+    notes: 条件判定错误=wrongly_reused（A3）；写两个并列表述=confused（计划层）；未填=omitted。
+  score_policy: hybrid
+  meta:
+    author: A-side v2 (draft)
+    created: '2026-10-09'
+    source: handcrafted
+    limitation: 条件触发在 s2 明示；无时间算术。
+- id: v2_du_version_rollback_001
+  dimension: dynamic_update
+  difficulty: L3
+  title: 模板升级后回退，当前版本回到 v1
+  script:
+  - session: s1
+    phase: write
+    time: 2026-07-20 09:00:00+08:00
+    turns:
+    - text: 周报模板升级到 v2 了，新增“数据指标”一节。
+  - session: s2
+    phase: disturb
+    time: 2026-07-22 14:00:00+08:00
+    turns:
+    - text: 算了，评审后还是用回 v1，v2 先不用。
+  - session: s3
+    phase: probe
+    time: 2026-07-24 10:00:00+08:00
+    turns:
+    - text: 把 周报模板.md 的标题行改成“周报模板（当前版）”，其余保持当前约定。
+  fixture:
+  - path: 周报模板.md
+    content: '# 周报模板（v1）
+
+      ## 本周完成
+
+      ## 下周计划
+
+      ## 风险
+
+      '
+  anchors:
+  - id: A1
+    type: memory_entry
+    key_regex: .*
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 结构护栏：后态存在至少一条持久记忆
+  - id: A2
+    type: file_content
+    path: 周报模板.md
+    content_regex: 数据指标
+    expect: absent
+    severity: hard
+    on_violation: wrongly_reused
+    evaluate_at: snapshot_after
+    desc: 回退后不得把 v2 的内容写回文件
+  - id: A3
+    type: file_content
+    path: 周报模板.md
+    content_regex: 当前版
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 标题已按需求更新
+  - id: A4
+    type: reply_text
+    turn: s3.t1
+    regex: .+
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 结构护栏：探测轮有非空回复
+  expect:
+    verdict: remembered
+    reference_answer:
+    - 当前模板为 v1；文件标题更新为“周报模板（当前版）”，不包含“数据指标”一节
+    gold_evidence:
+    - s1.t1
+    - s2.t1
+    confusions:
+    - omitted
+    - wrongly_reused
+    trap:
+    - 数据指标
+    notes: 按 v2 更新文件=wrongly_reused（A2）；未改标题=omitted（A3）；回复称用 v2=confused（计划层）。
+  score_policy: hybrid
+  meta:
+    author: A-side v2 (draft)
+    created: '2026-10-09'
+    source: handcrafted
+    limitation: 版本回退语义；无时间算术。
+- id: v2_du_cross_session_chain_001
+  dimension: dynamic_update
+  difficulty: L3
+  title: 环境跨会话连改两次，最终以 uat 为准
+  script:
+  - session: s1
+    phase: write
+    time: 2026-07-25 10:00:00+08:00
+    turns:
+    - text: 项目环境从 dev 改成 staging。
+  - session: s2
+    phase: disturb
+    time: 2026-07-26 11:00:00+08:00
+    turns:
+    - text: 环境再改一下，从 staging 换成 uat 吧。
+  - session: s3
+    phase: probe
+    time: 2026-07-27 09:00:00+08:00
+    turns:
+    - text: 把 项目配置.yaml 的环境更新到最新。
+  fixture:
+  - path: 项目配置.yaml
+    content: '环境: dev
+
+      版本: 1.0.0
+
+      '
+  anchors:
+  - id: A1
+    type: memory_entry
+    key_regex: .*
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 结构护栏：后态存在至少一条持久记忆
+  - id: A2
+    type: file_content
+    path: 项目配置.yaml
+    field_path: 环境
+    content_regex: uat
+    expect: present
+    severity: hard
+    on_violation: wrongly_reused
+    desc: 最终生效值为 uat
+  - id: A3
+    type: file_content
+    path: 项目配置.yaml
+    field_path: 环境
+    content_regex: dev|staging
+    expect: absent
+    severity: hard
+    on_violation: wrongly_reused
+    evaluate_at: snapshot_after
+    desc: 旧环境名不得残留
+  - id: A4
+    type: reply_text
+    turn: s3.t1
+    regex: .+
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 结构护栏：探测轮有非空回复
+  expect:
+    verdict: remembered
+    reference_answer:
+    - 环境=uat；dev 与 staging 均已废弃
+    gold_evidence:
+    - s1.t1
+    - s2.t1
+    confusions:
+    - omitted
+    - wrongly_reused
+    trap:
+    - staging
+    notes: 停在中间值 staging 或更旧 dev=wrongly_reused（A3）；未更新=omitted。
+  score_policy: hybrid
+  meta:
+    author: A-side v2 (draft)
+    created: '2026-10-09'
+    source: handcrafted
+    limitation: 连续两次更新链；无时间算术。
+- id: v2_du_adjacent_field_001
+  dimension: dynamic_update
+  difficulty: L3
+  title: 手机号更新，不得串写到座机字段
+  script:
+  - session: s1
+    phase: write
+    time: 2026-08-01 10:00:00+08:00
+    turns:
+    - text: 我的手机号换成 18911112222 了。
+  - session: s2
+    phase: disturb
+    time: 2026-08-02 09:00:00+08:00
+    turns:
+    - text: 帮我润色：这个方案我晚上再确认。
+  - session: s3
+    phase: probe
+    time: 2026-08-03 10:00:00+08:00
+    turns:
+    - text: 把通讯录.yaml 的手机号更新成最新的，其他字段别动。
+  fixture:
+  - path: 通讯录.yaml
+    content: '手机: 13900000000
+
+      座机: 010-88886666
+
+      '
+  anchors:
+  - id: A1
+    type: memory_entry
+    key_regex: .*
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 结构护栏：后态存在至少一条持久记忆
+  - id: A2
+    type: file_content
+    path: 通讯录.yaml
+    field_path: 手机
+    content_regex: '18911112222'
+    expect: present
+    severity: hard
+    on_violation: wrongly_reused
+    desc: 手机字段=新号
+  - id: A3
+    type: file_content
+    path: 通讯录.yaml
+    field_path: 座机
+    content_regex: '18911112222'
+    expect: absent
+    severity: hard
+    on_violation: confused
+    evaluate_at: snapshot_after
+    desc: 新手机号不得出现在座机字段（串台）
+  - id: A4
+    type: file_content
+    path: 通讯录.yaml
+    field_path: 座机
+    content_regex: 010-88886666
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 座机字段保持原值（旧值保持型断言天然与 fixture 一致（W207 豁免））
+  - id: A5
+    type: reply_text
+    turn: s3.t1
+    regex: .+
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 结构护栏：探测轮有非空回复
+  expect:
+    verdict: remembered
+    reference_answer:
+    - 手机=18911112222；座机=010-88886666 保持不变
+    gold_evidence:
+    - s1.t1
+    confusions:
+    - omitted
+    - confused
+    - wrongly_reused
+    trap:
+    - '18911112222'
+    notes: 把新号写进座机=confused（A3 承接，on_violation=confused）；手机仍是旧号=wrongly_reused（A2 未满足）。
+  score_policy: hybrid
+  meta:
+    author: A-side v2 (draft)
+    created: '2026-10-09'
+    source: handcrafted
+    limitation: 相邻字段防串台；无时间算术。
+- id: v2_du_repeat_correction_001
+  dimension: dynamic_update
+  difficulty: L3
+  title: 更正再作废，限行日最终回到周四
+  script:
+  - session: s1
+    phase: write
+    time: 2026-08-03 10:00:00+08:00
+    turns:
+    - text: 我的限行日是周四。
+  - session: s2
+    phase: disturb
+    time: 2026-08-04 10:00:00+08:00
+    turns:
+    - text: 更正一下，是周三，不是周四。
+  - session: s3
+    phase: disturb
+    time: 2026-08-05 10:00:00+08:00
+    turns:
+    - text: 我又看了一遍日历，还是周四——刚才那次更正作废。
+  - session: s4
+    phase: probe
+    time: 2026-08-06 10:00:00+08:00
+    turns:
+    - text: 把 车辆信息.yaml 的限行日填上当前正确的。
+  fixture:
+  - path: 车辆信息.yaml
+    content: "限行日: \n保险到期: 2027-01-01\n"
+  anchors:
+  - id: A1
+    type: memory_entry
+    key_regex: .*
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 结构护栏：后态存在至少一条持久记忆
+  - id: A2
+    type: file_content
+    path: 车辆信息.yaml
+    field_path: 限行日
+    content_regex: 周四
+    expect: present
+    severity: hard
+    on_violation: wrongly_reused
+    desc: 最终正确答案为周四
+  - id: A3
+    type: file_content
+    path: 车辆信息.yaml
+    field_path: 限行日
+    content_regex: 周三
+    expect: absent
+    severity: hard
+    on_violation: wrongly_reused
+    evaluate_at: snapshot_after
+    desc: 已作废的更正不得残留
+  - id: A4
+    type: reply_text
+    turn: s4.t1
+    regex: .+
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 结构护栏：探测轮有非空回复
+  expect:
+    verdict: remembered
+    reference_answer:
+    - 限行日=周四；周三那次更正已作废
+    gold_evidence:
+    - s1.t1
+    - s3.t1
+    confusions:
+    - omitted
+    - wrongly_reused
+    trap:
+    - 周三
+    notes: 停在周三=wrongly_reused（A3）；写两个=confused（计划层）；未填=omitted。
+  score_policy: hybrid
+  meta:
+    author: A-side v2 (draft)
+    created: '2026-10-09'
+    source: handcrafted
+    limitation: 更正-作废序列；无时间算术。
+- id: v2_du_effective_now_001
+  dimension: dynamic_update
+  difficulty: L3
+  title: 税率已到生效日，更新时必须用新值
+  script:
+  - session: s1
+    phase: write
+    time: 2026-04-20 09:00:00+08:00
+    turns:
+    - text: 从 5 月 1 日起，公司适用税率从 7% 调整为 9%。
+  - session: s2
+    phase: disturb
+    time: 2026-05-08 09:00:00+08:00
+    turns:
+    - text: 帮我润色：申报材料已备齐。
+  - session: s3
+    phase: probe
+    time: 2026-05-10 09:00:00+08:00
+    turns:
+    - text: 把 申报表.yaml 的税率更新成现在生效的。
+  fixture:
+  - path: 申报表.yaml
+    content: "适用税率: 7%\n备注: \n"
+  anchors:
+  - id: A1
+    type: memory_entry
+    key_regex: .*
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 结构护栏：后态存在至少一条持久记忆
+  - id: A2
+    type: file_content
+    path: 申报表.yaml
+    field_path: 适用税率
+    content_regex: 9%
+    expect: present
+    severity: hard
+    on_violation: wrongly_reused
+    desc: 5/1 后当前税率为 9%
+  - id: A3
+    type: file_content
+    path: 申报表.yaml
+    field_path: 适用税率
+    content_regex: 7%
+    expect: absent
+    severity: hard
+    on_violation: wrongly_reused
+    evaluate_at: snapshot_after
+    desc: 旧税率不得作为当前值残留
+  - id: A4
+    type: reply_text
+    turn: s3.t1
+    regex: .+
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 结构护栏：探测轮有非空回复
+  expect:
+    verdict: remembered
+    reference_answer:
+    - 适用税率=9%（5 月 1 日已生效）
+    gold_evidence:
+    - s1.t1
+    confusions:
+    - omitted
+    - wrongly_reused
+    trap:
+    - 7%
+    notes: 仍写 7%=wrongly_reused（A3）；未更新=omitted；“待生效”表述=confused（计划层）。
+  score_policy: hybrid
+  meta:
+    author: A-side v2 (draft)
+    created: '2026-10-09'
+    source: handcrafted
+    limitation: 逻辑时间题（faketime）；写 4/20 → 探 5/10 跨月，生效日 5/1 已过。
+  tags:
+  - time_anchor
+- id: v2_du_propagate_001
+  dimension: dynamic_update
+  difficulty: L3
+  title: 项目代号变更，两个文件都要更新
+  script:
+  - session: s1
+    phase: write
+    time: 2026-08-10 10:00:00+08:00
+    turns:
+    - text: 项目代号从“晨曦”改成“朝晖”，以后所有地方都用新代号。
+  - session: s2
+    phase: disturb
+    time: 2026-08-11 15:00:00+08:00
+    turns:
+    - text: 帮我润色：评审材料里的时间线要再对一遍。
+  - session: s3
+    phase: probe
+    time: 2026-08-12 10:00:00+08:00
+    turns:
+    - text: 把 项目档案.md 和 汇报模板.md 里的代号都更新到最新；档案里负责人填“许沐”。
+  fixture:
+  - path: 项目档案.md
+    content: "# 项目档案\n- 项目代号: 晨曦\n- 负责人: \n"
+  - path: 汇报模板.md
+    content: '# 本月汇报（项目：晨曦）
+
+      - 进展
+
+      - 风险
+
+      '
+  anchors:
+  - id: A1
+    type: memory_entry
+    key_regex: .*
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 结构护栏：后态存在至少一条持久记忆
+  - id: A2
+    type: file_content
+    path: 项目档案.md
+    content_regex: 朝晖
+    expect: present
+    severity: hard
+    on_violation: wrongly_reused
+    desc: 档案中的代号已更新
+  - id: A3
+    type: file_content
+    path: 项目档案.md
+    content_regex: 晨曦
+    expect: absent
+    severity: hard
+    on_violation: wrongly_reused
+    evaluate_at: snapshot_after
+    desc: 档案中旧代号不得残留
+  - id: A4
+    type: file_content
+    path: 汇报模板.md
+    content_regex: 朝晖
+    expect: present
+    severity: hard
+    on_violation: wrongly_reused
+    desc: 模板中的代号已更新
+  - id: A5
+    type: file_content
+    path: 汇报模板.md
+    content_regex: 晨曦
+    expect: absent
+    severity: hard
+    on_violation: wrongly_reused
+    evaluate_at: snapshot_after
+    desc: 模板中旧代号不得残留
+  - id: A6
+    type: file_content
+    path: 项目档案.md
+    content_regex: 许沐
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 负责人已填写
+  - id: A7
+    type: reply_text
+    turn: s3.t1
+    regex: .+
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 结构护栏：探测轮有非空回复
+  expect:
+    verdict: remembered
+    reference_answer:
+    - 两个文件中的代号均为“朝晖”；档案负责人=许沐
+    gold_evidence:
+    - s1.t1
+    confusions:
+    - omitted
+    - wrongly_reused
+    trap:
+    - 晨曦
+    notes: 只改一个文件（另一处残留晨曦）=wrongly_reused（A3/A5）；漏填负责人=omitted（A6）。
+  score_policy: hybrid
+  meta:
+    author: A-side v2 (draft)
+    created: '2026-10-09'
+    source: handcrafted
+    limitation: 多文件传播更新；无时间算术。
