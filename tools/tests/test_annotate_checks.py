@@ -155,6 +155,52 @@ class AnnotateChecksTests(unittest.TestCase):
         self.assertIn("insufficient", judge_labels, "判官的 insufficient 也必须进比对，不静默丢")
         self.assertEqual(len(rep2["disagreements"]), 1)
 
+    def test_human_vs_judge_single_rater(self):
+        keys = [i["row_key"] for i in A.read_jsonl(self.worklist)[1:]]
+        priv = self.root / "priv-hvj"
+        self.assertEqual(A.main(["emit-judge-keys", "--worklist", str(self.worklist),
+                                 "--score-dir", str(self.pkg), "--private-dir", str(priv)]), 0)
+        judge = {k["row_key"]: k["judge_result"]
+                 for k in A.read_jsonl(priv / "judge-keys.jsonl")}
+        human, flags = {}, {}
+        for k in keys:
+            j = judge[k]
+            if j == "contradicted":
+                human[k] = "supported"
+                flags["kill"] = k
+            elif j == "insufficient":
+                human[k] = "contradicted"
+                flags["abstain"] = k
+            elif "pass" not in flags:
+                human[k] = "contradicted"
+                flags["pass"] = k
+            else:
+                human[k] = "supported"
+        labels = self.root / "human.jsonl"
+        labels.write_text(labels_from(list(human.items())), encoding="utf-8", newline="\n")
+        self.assertEqual(A.main(["human-vs-judge", "--worklist", str(self.worklist),
+                                 "--labels", str(labels),
+                                 "--judge-keys", str(priv / "judge-keys.jsonl")]), 2)
+        closed = self.root / "closed-hvj.jsonl"
+        rows = A.read_jsonl(self.worklist)
+        rows[0]["state"] = "closed"
+        closed.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows),
+                          encoding="utf-8", newline="\n")
+        out = self.root / "hvj.json"
+        self.assertEqual(A.main(["human-vs-judge", "--worklist", str(closed),
+                                 "--labels", str(labels), "--rater-name", "owner",
+                                 "--judge-keys", str(priv / "judge-keys.jsonl"),
+                                 "--out", str(out)]), 0)
+        rep = json.loads(out.read_text(encoding="utf-8"))
+        self.assertEqual(rep["mode"], "single-adjudicated-rater")
+        self.assertEqual(rep["rater"], "owner")
+        self.assertEqual(rep["items"], 4)
+        self.assertAlmostEqual(rep["observed_agreement"], 0.25)
+        self.assertEqual([d["row_key"] for d in rep["judge_false_kills"]], [flags["kill"]])
+        self.assertEqual([d["row_key"] for d in rep["judge_false_passes"]], [flags["pass"]])
+        self.assertEqual([d["row_key"] for d in rep["judge_abstains"]], [flags["abstain"]])
+        self.assertEqual(len(rep["disagreements"]), 3)
+
     def test_judge_keys_refuses_to_overwrite_and_covers_every_row(self):
         priv = self.root / "priv"
         A.main(["emit-judge-keys", "--worklist", str(self.worklist), "--score-dir", str(self.pkg),

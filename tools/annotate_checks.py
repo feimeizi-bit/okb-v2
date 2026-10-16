@@ -12,6 +12,8 @@
   validate        校验标注包：行集一致、无重复、标签三选一、理由必填
   agreement       双真人一致率（Cohen's κ + 3×3 混淆 + 分歧清单）；
                   只有在双方都 closed 且提供 --judge-keys 时才追加「真人 vs 判官」两两 κ
+  human-vs-judge  单份人工裁决标签 vs 判官（无第二人时不假造 κ：只报人机一致率、
+                  误杀/假通过/判官弃权清单；需 worklist 已闭合）
 确定性：抽样按 on_failure 分层 + 固定 seed，可复算；row_key 绑定 request_sha256，
 换一份评分包就换一套行号，防止拿旧标签蒙。
 
@@ -380,6 +382,66 @@ FLAG_TO_LABEL = {"capture_gap_suspect": "harness_capture_gap",
 MAX_VALUE_CHARS = 400
 
 
+def cmd_human_vs_judge(args) -> int:
+    """单份人工裁决标签 vs 判官：没有第二个人时不假造双人 κ，只报人机一致率与争议清单。"""
+    worklist = read_jsonl(Path(args.worklist).resolve())
+    head = worklist[0]
+    if head.get("state") not in CLOSED_STATES:
+        print("worklist state must be one of " + "/".join(CLOSED_STATES)
+              + " before judge reveal", file=sys.stderr)
+        return 2
+    rows = {l["row_key"]: l for l in read_jsonl(Path(args.labels).resolve())}
+    want = [i["row_key"] for i in worklist[1:]]
+    if set(rows) != set(want):
+        print("labels must cover every row", file=sys.stderr)
+        return 2
+    keys = {k["row_key"]: k for k in read_jsonl(Path(args.judge_keys).resolve())}
+    if not set(keys) >= set(want):
+        print("judge keys must cover every row", file=sys.stderr)
+        return 2
+    usable = [k for k in want if keys[k]["judge_result"] in LABELS
+              and not keys[k].get("judge_error")]
+    pairs = [(rows[k]["label"], keys[k]["judge_result"]) for k in usable]
+    cats = [c for c in LABELS if any(c in ab for ab in pairs)] or list(LABELS)
+    kappa, po, pe = cohen(pairs, cats)
+    conf = {a: {b: sum(1 for x, y in pairs if x == a and y == b) for b in LABELS}
+            for a in LABELS}
+
+    def row_of(k):
+        return dict(row_key=k, human=rows[k]["label"], judge=keys[k]["judge_result"],
+                    human_note=rows[k]["note"], judge_rationale=keys[k]["judge_rationale"])
+
+    out = dict(format="okb-check-human-vs-judge-v1", mode="single-adjudicated-rater",
+               worklist_state=head.get("state"), rater=args.rater_name, items=len(pairs),
+               cohens_kappa=kappa, observed_agreement=po, chance_agreement=pe,
+               agreement_exact95_lower_bound=exact_lower_bound(
+                   sum(1 for x, y in pairs if x == y), len(pairs)),
+               confusion_human_rows_judge_cols=conf,
+               judge_false_kills=[row_of(k) for k in usable
+                                  if (rows[k]["label"], keys[k]["judge_result"])
+                                  == ("supported", "contradicted")],
+               judge_false_passes=[row_of(k) for k in usable
+                                   if (rows[k]["label"], keys[k]["judge_result"])
+                                   == ("contradicted", "supported")],
+               judge_abstains=[row_of(k) for k in usable
+                               if keys[k]["judge_result"] == "insufficient"
+                               and rows[k]["label"] in ("supported", "contradicted")],
+               disagreements=[row_of(k) for k in usable
+                              if rows[k]["label"] != keys[k]["judge_result"]],
+               limits=["single rater: no inter-human kappa; labels are AI-prefilled and "
+                       "human-adjudicated (disclose accordingly)",
+                       "judge labels come from a specific model+package; see judge-keys "
+                       "request_sha256 binding",
+                       "sample is stratified across on_failure classes, not a random draw; "
+                       "do not read as overall accuracy",
+                       "agreement is not correctness: both sides can be wrong together"])
+    text = json.dumps(out, ensure_ascii=False, indent=2) + "\n"
+    if args.out:
+        write_new(Path(args.out).resolve(), text)
+    print(text, end="")
+    return 0
+
+
 def harness_row_key(task_id: str, obs: dict) -> str:
     return "%s#obs#%s" % (task_id, sha256(obs)[:12])
 
@@ -595,6 +657,15 @@ def main(argv=None) -> int:
     g.add_argument("--judge-keys", default=None)
     g.add_argument("--out", default=None)
     g.set_defaults(func=cmd_agreement)
+
+    j = sub.add_parser("human-vs-judge",
+                       help="单份人工裁决标签 vs 判官（无第二人时不假造 κ；需 worklist 已闭合）")
+    j.add_argument("--worklist", required=True)
+    j.add_argument("--labels", required=True)
+    j.add_argument("--judge-keys", required=True)
+    j.add_argument("--rater-name", default="rater")
+    j.add_argument("--out", default=None)
+    j.set_defaults(func=cmd_human_vs_judge)
 
     h = sub.add_parser("make-harness-worklist",
                        help="从归因报告出『仪器说不清』的盲题包（题面只给观测事实）")

@@ -68,12 +68,14 @@ dpkg-deb --build --root-owner-group "$stage" "$deb" >/dev/null
 dpkg-deb -c "$deb" | awk '{print $6}' | grep -v '/$' | sort > "${deb%.deb}.members.txt"
 # 内容指纹：对"包内每个文件的路径+内容哈希"求摘要。容器 sha256 绑定构建实例（mtime/gzip 头），
 # 换一台机器重建就对不上，无法当作文档引用值；内容指纹在同样的树下逐字节相同，才是可跨机核对的量。
+# 注意：`sort` 排序受 locale 影响（本包在 zh_CN.UTF-8 构建面生成 feccf393…）；
+# 跨机复算需同 locale，例如 LC_ALL=zh_CN.UTF-8；换成 C/字节序会得到另一值（内容仍相同）。
 ( x=$(mktemp -d); dpkg-deb -x "$deb" "$x"
   ( cd "$x" && find . -type f | sort | while read -r f; do
       printf '%s:%s\n' "${f#./}" "$(sha256sum "$f" | cut -d' ' -f1)"
     done ) | sha256sum | cut -d' ' -f1 > "${deb%.deb}.content.sha256"
   rm -rf "$x" )
-echo "   content: $(cat "${deb%.deb}.content.sha256")（跨机可比）"
+echo "   content: $(cat "${deb%.deb}.content.sha256")（跨机可比；复算需同 locale）"
 echo "   members: $(wc -l <"${deb%.deb}.members.txt") 个文件 → ${deb%.deb}.members.txt"
 echo "✅ 构建完成：$deb"
 echo "   size: $(wc -c <"$deb") bytes   sha256: $(sha256sum "$deb" | cut -d' ' -f1)"

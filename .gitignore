@@ -3,3 +3,7 @@ __pycache__/
 .pytest_cache/
 *.tmp
 *.tmp*
+
+# 构建产物：由 tools/build_paper.py 从卷 YAML 确定性重建（测试会自建并核对冻结 sha）。
+# 不追踪可避免 2026-10-13 那类"陈旧残件冒充冻结卷"的事故（build/paper-v0.2.jsonl 指纹漂移）。
+build/

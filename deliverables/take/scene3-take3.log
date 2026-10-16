@@ -1,0 +1,134 @@
+[H[2J[3J═══ 第 3 幕 · 两款智能体现场运行评测（2 题 × 2 Agent × 1 轮）═══
+
+现场运行：2 题 × 2 Agent × 1 轮（run-id=demo_1016_1306）
+{
+  "format": "okb-run-summary-v1",
+  "run_id": "demo_1016_1306",
+  "started_at": "2026-10-16T05:06:12Z",
+  "out_root": "/home/okb/okb/build/demo_live",
+  "run_dir": "/home/okb/okb/runs/demo_1016_1306",
+  "paper": "/home/okb/okb/v2/01-paper-v2/_paperv2.jsonl",
+  "plan": "/home/okb/okb/build/demo_live/plan.subset.json",
+  "plan_source": "/home/okb/okb/v2/01-paper-v2/paper-v2.plan.json",
+  "sample_filter": [
+    "similar_wifi_001",
+    "update_delayed_001"
+  ],
+  "outcome_version": "v2",
+  "evidence_policy": "scoped-v2",
+  "agents_file": "/home/okb/okb/deploy/agents.yaml",
+  "agents": [
+    "openclaw",
+    "hermes"
+  ],
+  "repeat": 1,
+  "score_args": [],
+  "stages": {
+    "run": {
+      "stage": "run",
+      "status": "done",
+      "run_dir": "runs/demo_1016_1306",
+      "tasks": 4,
+      "task_status": {
+        "ok": 4
+      },
+      "samples": 2,
+      "suite_version": "v2.0",
+      "repeat": 1,
+      "agents": [
+        {
+          "name": "openclaw",
+          "adapter": "OpenClawAdapter",
+          "capabilities": {
+            "dialogue": true,
+            "memory": true,
+            "file": true,
+            "tool": true,
+            "notes": "记忆面 = workspace/{MEMORY.md,USER.md,memory/*.md}；短期召回由 memory forget 清理",
+            "supports_time_anchor": true
+          },
+          "config": {
+            "cli": "openclaw",
+            "agent_id": "okb",
+            "home": "~/.openclaw",
+            "workspace": "~/.openclaw/workspace",
+            "baseline_dir": "~/.okb/baseline/openclaw",
+            "supports_time_anchor": true,
+            "agent_name": "openclaw",
+            "health_commands": [
+              [
+                "systemctl",
+                "is-active",
+                "embed-server"
+              ]
+            ]
+          }
+        },
+        {
+          "name": "hermes",
+          "adapter": "HermesAdapter",
+          "capabilities": {
+            "dialogue": true,
+            "memory": true,
+            "file": true,
+            "tool": true,
+            "notes": "内置记忆 = memories/{MEMORY.md,USER.md}；无条目级时间戳（written_at 用 mtime）",
+            "supports_time_anchor": true
+          },
+          "config": {
+            "cli": "hermes",
+            "home": "~/.hermes",
+            "baseline_dir": "~/.okb/baseline/hermes",
+            "agent_name": "hermes"
+          }
+        }
+      ],
+      "guards": {
+        "max_tokens": null,
+        "min_free_mb": 512.0,
+        "health_interval": 300.0
+      },
+      "planned_run_dir_note": "runs/demo_1016_1306"
+    },
+    "score": {
+      "stage": "score",
+      "status": "skipped",
+      "reason": "--skip-score"
+    },
+    "report": {
+      "stage": "report",
+      "status": "skipped",
+      "reason": "no completed score bundle (score stage skipped, failed or incomplete)"
+    },
+    "radar": {
+      "stage": "radar",
+      "status": "skipped",
+      "reason": "no rendered report (report/report.json)"
+    }
+  },
+  "artifacts": [
+    "runs/demo_1016_1306"
+  ],
+  "main_chain": {
+    "evidence_collected": true,
+    "evidence_valid": null,
+    "assessed": null,
+    "unassessable": null,
+    "evidence_tiers": null,
+    "judge_mode": null,
+    "verdicts_available": false,
+    "note": "prepare mode never makes semantic passes: assessed=0 is expected until a fact judge is explicitly supplied via --score-arg --live/--replay"
+  },
+  "finished_at": "2026-10-16T05:16:11Z",
+  "exit_code": 0
+}
+
+== 逐轮原件（证据不是转述，是可审计的真身） ==
+hermes-similar_wifi_001
+hermes-update_delayed_001
+openclaw-similar_wifi_001
+openclaw-update_delayed_001
+run
+run-id 记一下：demo_1016_1306
+
+──── （现场运行完成）────

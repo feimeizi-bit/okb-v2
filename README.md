@@ -18,6 +18,9 @@
 | `v2/05-assertions/` | 断言库 registry + judge-bench 骨架 + 迭代机制设计 | — |
 | `v2/06-qc/` | 质检报告 + 五档预期格（expect-cells-v2.json） | — |
 | `v2/02-generators/` | 全部生成器（可复算链路） | — |
+| `score/` | 判官批次与最终报告（索引：`score/README.md`） | 证据归档 |
+| `runs/` | 运行证据（552 任务冻结证据；索引：`runs/README.md`） | 证据归档 |
+| `deliverables/` | 赛题交付 a–e（README + 五个交付物） | 提交件 |
 
 ## 复算链路（确定性，已验证 sha 复现）
 
@@ -57,6 +60,23 @@ python v2/02-generators/qc_v2.py              # 质检总检（红线1/3/4/5 + �
   （pilot-v0.2/judge-anchor-cases/four-layer-r1 等）；修 `tools/report.py` 3.11 兼容；
   修 `tools/portable/bundle.py` 离线入口在 Windows 上的 spawn 泄漏（platform.system/machine 回退到子进程）；
   `tools/tests` 全绿（872 passed / 63 skipped，skip 均带理由），`engine/tests` 42 passed。
+
+## 2026-10-14 冻结（赛题线 v2.0-R12）
+
+- **状态**：赛题线冻结；维护模式。**先读数据卡** [`docs/data-card-v2.md`](docs/data-card-v2.md)
+  （冻结清单/口径/关键数字/覆盖矩阵/限制/v2.1 扩展计划/维护规则）。
+- **交付物**：[`deliverables/`](deliverables/README.md) —— a 方案说明（含数据生成方式）、
+  b 样例包（`v2/07-deliverable-b/`）、c 复现说明 + **openKylin 回执**（VM 链重建同 sha、
+  评分重放与宿主逐字节一致、deb 安装可用）、d .deb 工具包、e 录屏脚本（待录制）。
+- **冻结验证**：`v2/06-qc/final-verification.txt` —— 复算链 54 产物 0 漂移；
+  `python -m pytest tools/tests engine/tests -q` → **921 passed / 63 skipped / 0 failed**
+  （冻结时 914；新增 7 项为 B 环复核工具测试）。
+- **字节约定**：`.gitattributes = * -text`、`core.autocrlf=false`；全仓 LF，
+  仅 `paper-v2.plan.json` 保持 CRLF（判官记录绑定其 sha）。
+  2026-10-13 的 autocrlf 检出事故已修复（run 目录 13101/13101 还原为锁定字节）。
+- `build/` 已入 `.gitignore`（构建产物由卷 YAML 确定性重建）。
+- 未完成项（不阻塞冻结，见数据卡 §5/§6）：录屏、双人 κ（B 环单裁 48 例已回收：
+  人机一致 91.7%、0 假通过）、v2.1 扩展包（时间 2 题 + 敏感 2-3 题 + 深轮次 2-3 题）。
 - **判官 A/A 稳定性（2026-10-13）**：同计划同请求再跑一轮 `score/judge-full-4`
   （1674/1674 成功），`tools/judge_aa.py` 报告：请求级翻转 **21/1674 = 1.25%**
   （决定性 supported↔contradicted 仅 2 条 = 0.12%；其余为 sufficient↔insufficient 弃权摆动），
@@ -66,5 +86,5 @@ python v2/02-generators/qc_v2.py              # 质检总检（红线1/3/4/5 + �
 ## 边界
 
 - 旧仓 `D:\project\okb-int` 与暂存 `D:\project\okb-holdings` 保留为**只读历史**，不再在其上推进 v2；
-- 本工作区尚未 `git init`（如需独立仓，一条命令即可）；
+- 本工作区为独立 git 仓（已有提交；后续提交需用户口令）；
 - VM 侧运行需重新同步本工作区的引擎+卷+计划。

@@ -1,0 +1,6 @@
+# 字节级冻结：本仓含被哈希引用的证据/计划产物，禁止 git 做任何换行转换。
+# 约定（见 docs/data-card-v2.md）：
+#   - 全部文本文件 = LF（各工具写盘原始字节）；
+#   - 仅 v2/01-paper-v2/paper-v2.plan.json 保持 CRLF —— 判官记录绑定其字节 sha（7643b43a…）；
+#   - 历史事故：core.autocrlf=true 的检出曾把 1.1 万文件转成 CRLF 导致重放失败（2026-10-13/14）。
+* -text

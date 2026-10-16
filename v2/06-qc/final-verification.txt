@@ -1,0 +1,63 @@
+# okb-v2 冻结验证记录（2026-10-14，含 openKylin 复现）
+
+范围：赛题线收尾的最终验证。判官重放为零调用回放；VM 演练未调用 Agent/判官。
+
+## 1. 复算链幂等
+build_stock_v2 → assemble_v2 → build_registry → qc_v2 连续重跑：54 个产物 0 漂移；
+`94 rewrites`、`plan-lint: 0 error / 0 warning`；paper sha `bca2c68c82be510f`。
+
+## 2. 校验
+- `tools/plan_lint.py`：0 error；`tools/validate.py`：0 error / 61 warning；
+- pilot 冻结卷 `build/paper-v0.2.jsonl` = `b5d71fd8…`（与计划绑定值一致）。
+
+## 3. 测试
+`python -m pytest tools/tests engine/tests -q` → **914 passed / 63 skipped / 0 failed**。
+
+## 4. 字节冻结事故与修复（2026-10-13/14）
+- 现象：判官重放报 `records outside current request set`（宿主与 VM 同时复现）；
+- 根因：`core.autocrlf=true` 的提交/检出把工作区 1.1 万文本文件从 LF 转成 CRLF，
+  而判官记录绑定 LF 字节（source_binding 含 raw 文件哈希）；
+- 修复：run 目录逐文件还原锁定 LF 字节（**13101/13101 与 input-lock 一致**）；
+  全仓统一 LF（仅 `paper-v2.plan.json` 保持 CRLF，记录绑定其 sha）；
+  新增 `.gitattributes`（`* -text`）+ 本地 `core.autocrlf=false` 防复发；
+- 修复后重放：全部分数结论不变（pass 326 / fail 159 / unassessable 67）。
+
+## 5. openKylin 跨机验证（详见 `deliverables/c-openkylin-verify/receipt.md`）
+- 复算链在 VM 重建：paper sha 与宿主一致 `bca2c68c…`；
+- 判官评分重放：1674/1674 命中，`results.json` sha `afc8b73a26cba085…` —— **与宿主逐字节一致**；
+- `.deb` 构建/安装/CLI 冒烟通过（内容指纹 `feccf393…`）。
+
+## 6. 冻结产物指纹（前 16 位；完整口径见 docs/data-card-v2.md §1）
+| 产物 | sha256 |
+|---|---|
+| `v2/01-paper-v2/_paperv2.jsonl` | `bca2c68c82be510f` |
+| `v2/01-paper-v2/paper-v2.plan.json`（CRLF） | `7643b43a83aab4cb` |
+| `v2/05-assertions/registry-v2.json` | `8c622737d4b677f5` |
+| `runs/v2r3_20261010-healed/manifest.json` | `e2c2dde93c86d588` |
+| `runs/v2r3_20261010-healed/evidence.jsonl` | `3852ba1767984ba9` |
+| `score/judge-full-3/records.jsonl` | `6e5d68e66d390c02` |
+| `score/judge-full-3-replay/results.json` | `afc8b73a26cba085` |
+| `score/judge-full-4/records.jsonl` | `6acf7cd21bb969b5` |
+| `score/final-report-r12/report.json` | `9a9d88d6a65526a6` |
+| `score/final-report-r12/radar-six-dim.json` | `b6a5d2798f130cc5` |
+| `v2/06-qc/item-stats-v2.json` | `0d3a6d347f214c5b` |
+| `v2/06-qc/metric-bounds-v2.json` | `45f2d0232e451c8b` |
+| `v2/06-qc/judge-aa-v2.json` | `3ce35fe2e69bebef` |
+
+## 7. 结论
+赛题线冻结为 **v2.0-R12**，交付 a–e 物化在 `deliverables/`（e 待用户录制）。
+口径、限制、维护规则见 `docs/data-card-v2.md`。
+
+## 8. 收尾终检与清理（2026-10-14）
+
+- 冻结指纹 §6 表 13/13 复验一致；`paper-v2.plan.json` CRLF 5685 行、0 孤立 LF；paper 无 CRLF。
+- 全套测试：`tools/tests`+`engine/tests` = **921 passed / 63 skipped / 0 failed**
+  （冻结时 914；新增 7 项为 B 环复核工具测试）。
+- B 环判官校准并入：单裁 48 例（AI 预筛 + 人工裁决）人机一致 **44/48 = 91.7%**（κ 0.76），
+  **0 假通过**、2 误杀 2 弃权；件在 `v2/03-review/check-blind-2026-10-14{,-private}/`；
+  文档已同步（数据卡 §3/§5.1、交付 a §5/§7/§11）。
+- 清理：删除全部 `__pycache__`/`.pytest_cache`、空目录 `runs/_replay` 与 `v2/04-scoring`、
+  冗余 `check-label.html`（已被 `review-sheet.html` 取代）；新增 `score/README.md`、`runs/README.md` 索引。
+- deb 内容指纹复验：VM（zh_CN.UTF-8）原生 `dpkg-deb` 复算 = `feccf393…` 与旁证一致
+  （本地按字节序复算会得 `727b6f3e…`，属 locale 排序差异；口径已注记于 `deploy/build-deb.sh` 与交付 d）。
+- 结论：树结构与文档口径一致，可提交（待录屏 e 与 git 提交口令）。

@@ -1,0 +1,9 @@
+take 记录（2026-10-16 · 终版 v6）
+- 成片: ../recording-2026-10-16.mp4（4:39.2 · 1920x1080 · 中文字幕烧录；字幕源 final6.srt）
+- 结构：环境幕 → 系统进程监视（ps 实时快照）→ 双 Agent 幕 → CLI/试卷 →
+  现场运行【左窗=运行命令 · 右窗=实时运行监视：当前任务/事件流/落盘计数/活跃进程 CPU，÷13】→
+  评分回放 → 判定解释 → 雷达卡 → 冻结口径
+- 第 3 幕补拍素材: raw-archive/scene3-dualwindow-clip7.webm（含一次真实任务重试过程）
+- 监视器素材: raw-archive/monitor-clip3.webm；主素材: raw-archive/recording-2026-10-16-raw-screen0.webm
+- 说明：GUI 系统监视器在 VM 渲染 broken，改用终端实时视图（ps 每秒快照）；R12 时间线台账见 timeline.log/timeline7.log
+- 历史废片（v1 裁边等）均在 raw-archive/

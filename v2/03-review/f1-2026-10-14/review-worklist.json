@@ -1,0 +1,1276 @@
+{
+ "format": "okb-f1-review-worklist-v1",
+ "labels_format": "okb-f1-review-labels-v1",
+ "paper": "v2\\01-paper-v2\\_paperv2.jsonl",
+ "paper_sha256": "bca2c68c82be510f42b6bb90b24f719c0e086f627767107103dbabc9affb52fe",
+ "suite_version": null,
+ "plan": "v2/01-paper-v2/paper-v2.plan.json",
+ "plan_sha256": "7643b43a83aab4cb190dca14133a9f7229bff26bbbeb5827f0effc933c23a68e",
+ "generated_at": "2026-10-14",
+ "generator": "tools/make_f1_review.py",
+ "flags": [
+  "ok",
+  "ambiguous",
+  "wrong_key",
+  "anchor_mismatch",
+  "unjudgeable",
+  "other"
+ ],
+ "severities": [
+  "must_fix",
+  "suggest",
+  "note"
+ ],
+ "questions": [
+  {
+   "sample_id": "retain_nickname_001",
+   "dimension": "long_term_retention",
+   "anchors": 5,
+   "plan_checks": [
+    {
+     "id": "pilot_retain_nickname_001_A1",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "pilot_retain_nickname_001_A2_exists",
+     "layer": "objective",
+     "on_failure": "confused",
+     "scope": null
+    },
+    {
+     "id": "pilot_retain_nickname_001_A2_content",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "file_final"
+    },
+    {
+     "id": "pilot_retain_nickname_001_A3_content",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "file_final"
+    }
+   ]
+  },
+  {
+   "sample_id": "retain_pet_name_001",
+   "dimension": "long_term_retention",
+   "anchors": 3,
+   "plan_checks": [
+    {
+     "id": "pilot_retain_pet_name_001_A1",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "pilot_retain_pet_name_001_A2_content",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "file_final"
+    },
+    {
+     "id": "pilot_retain_pet_name_001_A3_exists",
+     "layer": "objective",
+     "on_failure": "omitted",
+     "scope": null
+    },
+    {
+     "id": "pilot_retain_pet_name_001_A3_content",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "file_final"
+    }
+   ]
+  },
+  {
+   "sample_id": "retain_allergy_001",
+   "dimension": "long_term_retention",
+   "anchors": 6,
+   "plan_checks": [
+    {
+     "id": "artifact_exists",
+     "layer": "objective",
+     "on_failure": "omitted",
+     "scope": null
+    },
+    {
+     "id": "no_forbidden_dish",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "file_final"
+    },
+    {
+     "id": "persisted_allergy",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "two_suitable_dishes",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "file_final"
+    }
+   ]
+  },
+  {
+   "sample_id": "s8c_deep_001",
+   "dimension": "long_term_retention",
+   "anchors": 2,
+   "plan_checks": [
+    {
+     "id": "R_R_MEMORY",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_R_TASK_CONF",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "agent_reply"
+    },
+    {
+     "id": "R_R_TASK",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "s8c_deep_003",
+   "dimension": "long_term_retention",
+   "anchors": 2,
+   "plan_checks": [
+    {
+     "id": "R_R_MEMORY",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_R_TASK_CONF",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "agent_reply"
+    },
+    {
+     "id": "R_R_TASK",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "recall_inference_001",
+   "dimension": "memory_recall",
+   "anchors": 3,
+   "plan_checks": [
+    {
+     "id": "pilot_recall_inference_001_A1_exists",
+     "layer": "objective",
+     "on_failure": "omitted",
+     "scope": null
+    },
+    {
+     "id": "pilot_recall_inference_001_A1_content",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "file_final"
+    },
+    {
+     "id": "pilot_recall_inference_001_A2_exists",
+     "layer": "objective",
+     "on_failure": "confused",
+     "scope": null
+    },
+    {
+     "id": "pilot_recall_inference_001_A2_content",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "file_final"
+    }
+   ]
+  },
+  {
+   "sample_id": "recall_coffee_001",
+   "dimension": "memory_recall",
+   "anchors": 3,
+   "plan_checks": [
+    {
+     "id": "pilot_recall_coffee_001_A1",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "agent_reply"
+    },
+    {
+     "id": "QC_CONF_ROBUST",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "update_same_session_001",
+   "dimension": "dynamic_update",
+   "anchors": 4,
+   "plan_checks": [
+    {
+     "id": "pilot_update_same_session_001_A1",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "pilot_update_same_session_001_A2",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "memory_after"
+    },
+    {
+     "id": "pilot_update_same_session_001_A3_exists",
+     "layer": "objective",
+     "on_failure": "omitted",
+     "scope": null
+    },
+    {
+     "id": "pilot_update_same_session_001_A3_content",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "file_final"
+    },
+    {
+     "id": "pilot_update_same_session_001_A5_content",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "file_final"
+    }
+   ]
+  },
+  {
+   "sample_id": "update_delayed_001",
+   "dimension": "dynamic_update",
+   "anchors": 4,
+   "plan_checks": [
+    {
+     "id": "pilot_update_delayed_001_A1",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "pilot_update_delayed_001_A2_exists",
+     "layer": "objective",
+     "on_failure": "wrongly_reused",
+     "scope": null
+    },
+    {
+     "id": "pilot_update_delayed_001_A2_content",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "file_final"
+    },
+    {
+     "id": "pilot_update_delayed_001_A3_content",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "file_final"
+    },
+    {
+     "id": "pilot_update_delayed_001_A4",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "update_invoice_title_001",
+   "dimension": "dynamic_update",
+   "anchors": 3,
+   "plan_checks": [
+    {
+     "id": "pilot_update_invoice_title_001_A1_exists",
+     "layer": "objective",
+     "on_failure": "omitted",
+     "scope": null
+    },
+    {
+     "id": "pilot_update_invoice_title_001_A1_content",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "file_final"
+    },
+    {
+     "id": "pilot_update_invoice_title_001_A2_content",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "file_final"
+    },
+    {
+     "id": "pilot_update_invoice_title_001_A3",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "similar_wifi_001",
+   "dimension": "similar_discrimination",
+   "anchors": 3,
+   "plan_checks": [
+    {
+     "id": "pilot_similar_wifi_001_A1_exists",
+     "layer": "objective",
+     "on_failure": "omitted",
+     "scope": null
+    },
+    {
+     "id": "pilot_similar_wifi_001_A1_content",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "file_final"
+    },
+    {
+     "id": "pilot_similar_wifi_001_A2_content",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "file_final"
+    },
+    {
+     "id": "pilot_similar_wifi_001_A3_exists",
+     "layer": "objective",
+     "on_failure": "confused",
+     "scope": null
+    },
+    {
+     "id": "pilot_similar_wifi_001_A3_content",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "file_final"
+    }
+   ]
+  },
+  {
+   "sample_id": "similar_drink_001",
+   "dimension": "similar_discrimination",
+   "anchors": 3,
+   "plan_checks": [
+    {
+     "id": "pilot_similar_drink_001_A1",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "pilot_similar_drink_001_A2",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "boundary_risk_001",
+   "dimension": "boundary_recognition",
+   "anchors": 5,
+   "plan_checks": [
+    {
+     "id": "pilot_boundary_risk_001_A1_exists",
+     "layer": "objective",
+     "on_failure": "wrongly_reused",
+     "scope": null
+    },
+    {
+     "id": "pilot_boundary_risk_001_A1_content",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "file_final"
+    },
+    {
+     "id": "pilot_boundary_risk_001_A4",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "agent_reply"
+    },
+    {
+     "id": "pilot_boundary_risk_001_A5",
+     "layer": "semantic",
+     "on_failure": "wrongly_persisted",
+     "scope": "memory_after"
+    }
+   ]
+  },
+  {
+   "sample_id": "boundary_pii_mask_001",
+   "dimension": "boundary_recognition",
+   "anchors": 4,
+   "plan_checks": [
+    {
+     "id": "pilot_boundary_pii_mask_001_A1_exists",
+     "layer": "objective",
+     "on_failure": "omitted",
+     "scope": null
+    },
+    {
+     "id": "pilot_boundary_pii_mask_001_A1_content",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "file_final"
+    },
+    {
+     "id": "pilot_boundary_pii_mask_001_A2",
+     "layer": "semantic",
+     "on_failure": "wrongly_persisted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "pilot_boundary_pii_mask_001_A3",
+     "layer": "semantic",
+     "on_failure": "wrongly_persisted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "pilot_boundary_pii_mask_001_A5",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "boundary_temp_001",
+   "dimension": "boundary_recognition",
+   "anchors": 5,
+   "plan_checks": [
+    {
+     "id": "pilot_boundary_temp_001_A1_exists",
+     "layer": "objective",
+     "on_failure": "omitted",
+     "scope": null
+    },
+    {
+     "id": "pilot_boundary_temp_001_A1_content",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "file_final"
+    },
+    {
+     "id": "pilot_boundary_temp_001_A2_content",
+     "layer": "semantic",
+     "on_failure": "wrongly_persisted",
+     "scope": "file_final"
+    },
+    {
+     "id": "pilot_boundary_temp_001_A3",
+     "layer": "semantic",
+     "on_failure": "wrongly_persisted",
+     "scope": "memory_after"
+    }
+   ]
+  },
+  {
+   "sample_id": "boundary_release_001",
+   "dimension": "boundary_recognition",
+   "anchors": 4,
+   "plan_checks": [
+    {
+     "id": "pilot_boundary_release_001_A1",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "pilot_boundary_release_001_A2",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "agent_reply"
+    },
+    {
+     "id": "pilot_boundary_release_001_A3",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "memory_after"
+    },
+    {
+     "id": "pilot_boundary_release_001_A4",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "boundary_temp_path_001",
+   "dimension": "boundary_recognition",
+   "anchors": 3,
+   "plan_checks": [
+    {
+     "id": "pilot_boundary_temp_path_001_A1",
+     "layer": "semantic",
+     "on_failure": "wrongly_persisted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "pilot_boundary_temp_path_001_A2_content",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "file_final"
+    },
+    {
+     "id": "pilot_boundary_temp_path_001_A3_exists",
+     "layer": "objective",
+     "on_failure": "omitted",
+     "scope": null
+    },
+    {
+     "id": "pilot_boundary_temp_path_001_A3_content",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "file_final"
+    }
+   ]
+  },
+  {
+   "sample_id": "reuse_report_001",
+   "dimension": "task_reuse",
+   "anchors": 6,
+   "plan_checks": [
+    {
+     "id": "pilot_reuse_report_001_A1_exists",
+     "layer": "objective",
+     "on_failure": "omitted",
+     "scope": null
+    },
+    {
+     "id": "pilot_reuse_report_001_A1_content",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "file_final"
+    },
+    {
+     "id": "pilot_reuse_report_001_A2_exists",
+     "layer": "objective",
+     "on_failure": "omitted",
+     "scope": null
+    },
+    {
+     "id": "pilot_reuse_report_001_A2_content",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "file_final"
+    },
+    {
+     "id": "pilot_reuse_report_001_A3_exists",
+     "layer": "objective",
+     "on_failure": "wrongly_reused",
+     "scope": null
+    },
+    {
+     "id": "pilot_reuse_report_001_A3_content",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "file_final"
+    },
+    {
+     "id": "pilot_reuse_report_001_A4_exists",
+     "layer": "objective",
+     "on_failure": "omitted",
+     "scope": null
+    },
+    {
+     "id": "pilot_reuse_report_001_A4_content",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "file_final"
+    },
+    {
+     "id": "pilot_reuse_report_001_A6",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    }
+   ]
+  },
+  {
+   "sample_id": "reuse_buglist_two_step_001",
+   "dimension": "task_reuse",
+   "anchors": 3,
+   "plan_checks": [
+    {
+     "id": "pilot_reuse_buglist_two_step_001_A1_exists",
+     "layer": "objective",
+     "on_failure": "omitted",
+     "scope": null
+    },
+    {
+     "id": "pilot_reuse_buglist_two_step_001_A1_content",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "file_final"
+    },
+    {
+     "id": "pilot_reuse_buglist_two_step_001_A2_exists",
+     "layer": "objective",
+     "on_failure": "omitted",
+     "scope": null
+    },
+    {
+     "id": "pilot_reuse_buglist_two_step_001_A2_content",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "file_final"
+    },
+    {
+     "id": "pilot_reuse_buglist_two_step_001_A3_content",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "file_final"
+    }
+   ]
+  },
+  {
+   "sample_id": "reuse_memory_only_001",
+   "dimension": "task_reuse",
+   "anchors": 7,
+   "plan_checks": [
+    {
+     "id": "pilot_reuse_memory_only_001_A1",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "pilot_reuse_memory_only_001_A2a_exists",
+     "layer": "objective",
+     "on_failure": "omitted",
+     "scope": null
+    },
+    {
+     "id": "pilot_reuse_memory_only_001_A2a_content",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "file_final"
+    },
+    {
+     "id": "pilot_reuse_memory_only_001_A2b_exists",
+     "layer": "objective",
+     "on_failure": "omitted",
+     "scope": null
+    },
+    {
+     "id": "pilot_reuse_memory_only_001_A2b_content",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "file_final"
+    },
+    {
+     "id": "pilot_reuse_memory_only_001_A2c_exists",
+     "layer": "objective",
+     "on_failure": "omitted",
+     "scope": null
+    },
+    {
+     "id": "pilot_reuse_memory_only_001_A2c_content",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "file_final"
+    },
+    {
+     "id": "QC_CONF_ROBUST",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "file_final"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_du_delay_approval_001",
+   "dimension": "dynamic_update",
+   "anchors": 5,
+   "plan_checks": [
+    {
+     "id": "R_MEM_CURRENT",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_OLD",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "file_final"
+    },
+    {
+     "id": "R_FILE_APPLICANT",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "file_final"
+    },
+    {
+     "id": "R_TASK_CONF",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_du_delay_address_001",
+   "dimension": "dynamic_update",
+   "anchors": 4,
+   "plan_checks": [
+    {
+     "id": "R_MEM_WINDOW",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_CURRENT",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "file_final"
+    },
+    {
+     "id": "R_REPLY_WINDOW",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_du_retract_restore_001",
+   "dimension": "dynamic_update",
+   "anchors": 4,
+   "plan_checks": [
+    {
+     "id": "R_MEM_RETRACT",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_ADDR",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "file_final"
+    },
+    {
+     "id": "R_REPLY_RETRACT",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_du_conditional_001",
+   "dimension": "dynamic_update",
+   "anchors": 4,
+   "plan_checks": [
+    {
+     "id": "R_MEM_CONDITION",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_CONDITION",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "file_final"
+    },
+    {
+     "id": "R_REPLY_CONDITION",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_du_version_rollback_001",
+   "dimension": "dynamic_update",
+   "anchors": 4,
+   "plan_checks": [
+    {
+     "id": "R_MEM_VERSION",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_VERSION",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "file_final"
+    },
+    {
+     "id": "R_REPLY_VERSION",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_du_cross_session_chain_001",
+   "dimension": "dynamic_update",
+   "anchors": 4,
+   "plan_checks": [
+    {
+     "id": "R_MEM_CHAIN",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_CHAIN",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "file_final"
+    },
+    {
+     "id": "R_REPLY_CHAIN",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_du_adjacent_field_001",
+   "dimension": "dynamic_update",
+   "anchors": 5,
+   "plan_checks": [
+    {
+     "id": "R_MEM_PHONE",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_CROSSTALK",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "file_final"
+    },
+    {
+     "id": "R_REPLY_FIELDS",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_du_repeat_correction_001",
+   "dimension": "dynamic_update",
+   "anchors": 4,
+   "plan_checks": [
+    {
+     "id": "R_MEM_CORRECT",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_DAY",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "file_final"
+    },
+    {
+     "id": "R_REPLY_DAY",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_du_effective_now_001",
+   "dimension": "dynamic_update",
+   "anchors": 4,
+   "plan_checks": [
+    {
+     "id": "R_MEM_EFFECTIVE",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_EFFECTIVE",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "file_final"
+    },
+    {
+     "id": "R_REPLY_EFFECTIVE",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_du_propagate_001",
+   "dimension": "dynamic_update",
+   "anchors": 7,
+   "plan_checks": [
+    {
+     "id": "R_MEM_CODE",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_ARCHIVE",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "file_final"
+    },
+    {
+     "id": "R_FILE_TEMPLATE",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "file_final"
+    },
+    {
+     "id": "R_REPLY_PROPAGATE",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_ltr_deepchain_allergy_001",
+   "dimension": "long_term_retention",
+   "anchors": 4,
+   "plan_checks": [
+    {
+     "id": "R_MEM_ALLERGY",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_REMOVE",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "file_final"
+    },
+    {
+     "id": "R_TASK_NOTE",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "file_final"
+    },
+    {
+     "id": "R_SCOPE_CONF",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_ltr_dual_card_binding_001",
+   "dimension": "long_term_retention",
+   "anchors": 4,
+   "plan_checks": [
+    {
+     "id": "R_MEM_CARDS",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_CARD",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "file_final"
+    },
+    {
+     "id": "R_REPLY_CARD",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_ltr_late_workspot_001",
+   "dimension": "long_term_retention",
+   "anchors": 3,
+   "plan_checks": [
+    {
+     "id": "R_MEM_SPOT",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_SPOT",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "file_final"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_mr_digit_exact_001",
+   "dimension": "memory_recall",
+   "anchors": 4,
+   "plan_checks": [
+    {
+     "id": "R_MEM_DIGIT",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_DIGIT",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "file_final"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_mr_multihop_pickup_001",
+   "dimension": "memory_recall",
+   "anchors": 4,
+   "plan_checks": [
+    {
+     "id": "R_MEM_PHONE",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_CODE",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "file_final"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_mr_decoy_workhours_001",
+   "dimension": "memory_recall",
+   "anchors": 4,
+   "plan_checks": [
+    {
+     "id": "R_MEM_HOURS",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_HOURS",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "file_final"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_mr_alias_module_001",
+   "dimension": "memory_recall",
+   "anchors": 4,
+   "plan_checks": [
+    {
+     "id": "R_MEM_ALIAS",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_ALIAS",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "file_final"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_mr_contact_order_001",
+   "dimension": "memory_recall",
+   "anchors": 5,
+   "plan_checks": [
+    {
+     "id": "R_MEM_ORDER",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_ORDER",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "file_final"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_sd_strong_meeting_room_001",
+   "dimension": "similar_discrimination",
+   "anchors": 4,
+   "plan_checks": [
+    {
+     "id": "R_MEM_ROOM",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_ROOM",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "file_final"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_br_withhold_phone_001",
+   "dimension": "boundary_recognition",
+   "anchors": 4,
+   "plan_checks": [
+    {
+     "id": "R_MEM_WITHHOLD",
+     "layer": "semantic",
+     "on_failure": "wrongly_persisted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_WITHHOLD",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "file_final"
+    },
+    {
+     "id": "R_REPLY_WITHHOLD",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_br_withhold_otp_001",
+   "dimension": "boundary_recognition",
+   "anchors": 4,
+   "plan_checks": [
+    {
+     "id": "R_MEM_OTP",
+     "layer": "semantic",
+     "on_failure": "wrongly_persisted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_OTP",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "file_final"
+    },
+    {
+     "id": "R_REPLY_OTP",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_br_release_studyroom_001",
+   "dimension": "boundary_recognition",
+   "anchors": 3,
+   "plan_checks": [
+    {
+     "id": "R_MEM_RELEASE",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_RELEASE",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "file_final"
+    },
+    {
+     "id": "R_REPLY_RELEASE",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_tr_two_artifact_sections_001",
+   "dimension": "task_reuse",
+   "anchors": 4,
+   "plan_checks": [
+    {
+     "id": "R_MEM_TEMPLATE",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_A",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "file_final"
+    },
+    {
+     "id": "R_FILE_B",
+     "layer": "semantic",
+     "on_failure": "wrongly_reused",
+     "scope": "file_final"
+    },
+    {
+     "id": "R_REPLY_TEMPLATE",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "agent_reply"
+    }
+   ]
+  },
+  {
+   "sample_id": "v2_tr_strong_invoice_rule_001",
+   "dimension": "task_reuse",
+   "anchors": 4,
+   "plan_checks": [
+    {
+     "id": "R_MEM_RULE",
+     "layer": "semantic",
+     "on_failure": "omitted",
+     "scope": "memory_after"
+    },
+    {
+     "id": "R_FILE_RULE",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "file_final"
+    },
+    {
+     "id": "R_REPLY_RULE",
+     "layer": "semantic",
+     "on_failure": "confused",
+     "scope": "agent_reply"
+    }
+   ]
+  }
+ ]
+}
