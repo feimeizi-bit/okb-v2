@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+文件里只有一个字段 `社保后四位: `，值是空的。我不知道这四位数字是什么——不能瞎填。请告诉我你的社保号后四位，我马上填进去。

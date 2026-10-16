@@ -1,0 +1,63 @@
+WARNING [W205] <build>:retain_nickname_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:retain_pet_name_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W207] <build>:retain_allergy_001:anchors[1]: anchors[1] 单独看无区分力：它的内容在 fixture 上已经成立，Agent 不改这个文件也能通过（样本整体仍有别的正向门槛，故不阻断；若这是唯一的产物断言，请加 must_differ_from_fixture 或改断言语义）
+WARNING [W207] <build>:retain_allergy_001:anchors[2]: anchors[2] 单独看无区分力：它的内容在 fixture 上已经成立，Agent 不改这个文件也能通过（样本整体仍有别的正向门槛，故不阻断；若这是唯一的产物断言，请加 must_differ_from_fixture 或改断言语义）
+WARNING [W205] <build>:retain_allergy_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['omitted', 'wrongly_reused']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:recall_inference_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:update_multi_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:update_same_session_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:update_route_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W207] <build>:update_delayed_001:anchors[1]: anchors[1] 单独看无区分力：它的内容在 fixture 上已经成立，Agent 不改这个文件也能通过（样本整体仍有别的正向门槛，故不阻断；若这是唯一的产物断言，请加 must_differ_from_fixture 或改断言语义）
+WARNING [W205] <build>:update_delayed_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['omitted', 'wrongly_reused']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:update_invoice_title_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:s8c_similar_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:s8c_similar_003:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:s8c_similar_005:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:s8c_similar_007:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:s8c_similar_009:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:s8c_similar_011:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:s8c_similar_013:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:similar_campus_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:similar_contacts_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:similar_invoice_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:similar_wifi_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:similar_desk_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:s8c_deep_005:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W207] <build>:boundary_risk_001:anchors[0]: anchors[0] 单独看无区分力：它的内容在 fixture 上已经成立，Agent 不改这个文件也能通过（样本整体仍有别的正向门槛，故不阻断；若这是唯一的产物断言，请加 must_differ_from_fixture 或改断言语义）
+WARNING [W205] <build>:boundary_risk_001:anchors: 本样本的 hard 锚点声明了 3 种不同的 on_violation ['omitted', 'wrongly_persisted', 'wrongly_reused']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:boundary_pii_mask_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['omitted', 'wrongly_persisted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:boundary_temp_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['omitted', 'wrongly_persisted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:boundary_release_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:boundary_temp_path_001:anchors: 本样本的 hard 锚点声明了 3 种不同的 on_violation ['omitted', 'wrongly_persisted', 'wrongly_reused']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:dual_order_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W207] <build>:reuse_report_001:anchors[2]: anchors[2] 单独看无区分力：它的内容在 fixture 上已经成立，Agent 不改这个文件也能通过（样本整体仍有别的正向门槛，故不阻断；若这是唯一的产物断言，请加 must_differ_from_fixture 或改断言语义）
+WARNING [W205] <build>:reuse_report_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['omitted', 'wrongly_reused']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:reuse_buglist_two_step_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W207] <build>:v2_du_delay_approval_001:anchors[1]: anchors[1] 单独看无区分力：它的内容在 fixture 上已经成立，Agent 不改这个文件也能通过（样本整体仍有别的正向门槛，故不阻断；若这是唯一的产物断言，请加 must_differ_from_fixture 或改断言语义）
+WARNING [W205] <build>:v2_du_delay_approval_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['omitted', 'wrongly_reused']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W207] <build>:v2_du_delay_address_001:anchors[1]: anchors[1] 单独看无区分力：它的内容在 fixture 上已经成立，Agent 不改这个文件也能通过（样本整体仍有别的正向门槛，故不阻断；若这是唯一的产物断言，请加 must_differ_from_fixture 或改断言语义）
+WARNING [W205] <build>:v2_du_delay_address_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['omitted', 'wrongly_reused']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W207] <build>:v2_du_retract_restore_001:anchors[1]: anchors[1] 单独看无区分力：它的内容在 fixture 上已经成立，Agent 不改这个文件也能通过（样本整体仍有别的正向门槛，故不阻断；若这是唯一的产物断言，请加 must_differ_from_fixture 或改断言语义）
+WARNING [W205] <build>:v2_du_retract_restore_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['omitted', 'wrongly_reused']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:v2_du_conditional_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['omitted', 'wrongly_reused']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:v2_du_version_rollback_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['omitted', 'wrongly_reused']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:v2_du_cross_session_chain_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['omitted', 'wrongly_reused']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W207] <build>:v2_du_adjacent_field_001:anchors[3]: anchors[3] 单独看无区分力：它的内容在 fixture 上已经成立，Agent 不改这个文件也能通过（样本整体仍有别的正向门槛，故不阻断；若这是唯一的产物断言，请加 must_differ_from_fixture 或改断言语义）
+WARNING [W205] <build>:v2_du_adjacent_field_001:anchors: 本样本的 hard 锚点声明了 3 种不同的 on_violation ['confused', 'omitted', 'wrongly_reused']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:v2_du_repeat_correction_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['omitted', 'wrongly_reused']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:v2_du_effective_now_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['omitted', 'wrongly_reused']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:v2_du_propagate_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['omitted', 'wrongly_reused']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:v2_ltr_deepchain_allergy_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['omitted', 'wrongly_reused']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:v2_ltr_dual_card_binding_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:v2_mr_digit_exact_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:v2_mr_multihop_pickup_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:v2_mr_decoy_workhours_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['omitted', 'wrongly_reused']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:v2_mr_alias_module_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:v2_mr_contact_order_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:v2_sd_strong_meeting_room_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:v2_br_withhold_phone_001:anchors: 本样本的 hard 锚点声明了 3 种不同的 on_violation ['omitted', 'wrongly_persisted', 'wrongly_reused']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:v2_br_withhold_otp_001:anchors: 本样本的 hard 锚点声明了 3 种不同的 on_violation ['omitted', 'wrongly_persisted', 'wrongly_reused']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:v2_tr_two_artifact_sections_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['omitted', 'wrongly_reused']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+WARNING [W205] <build>:v2_tr_strong_invoice_rule_001:anchors: 本样本的 hard 锚点声明了 2 种不同的 on_violation ['confused', 'omitted']；同时违反多条时的定类优先级由 CONTRACT §5 规定（首条命中的 hard 锚点优先），请确认这个顺序符合预期
+
+✅ 生成 D:\project\okb-v2\v2\01-paper-v2\_paperv2.jsonl：92 条样本（suite_version=v2.0）

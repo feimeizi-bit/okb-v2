@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+"模板评审已通过。" 几种更正式的写法，按语境取用：
+
+1. 进展汇报（推荐）：模板评审已通过，无遗留问题。
+2. 简洁版：模板已完成评审并通过。
+3. 正式书面：模板评审工作已完成，评审结论为通过。
+
+如果这是周报「进展」里的一项，建议用第 1 种，补上"无遗留问题"能让这条进展更完整。需要我把这句并入一段完整的周报进展段落吗？

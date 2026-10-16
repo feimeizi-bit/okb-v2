@@ -1,0 +1,1 @@
+{"path": "座位偏好.yaml", "op": "modify", "before_content": "自习室: \n", "before_sha256": "13ebea3162f8336d1b8a33fb15041d77aeb5417cb30efb58ece592fbcccf3163", "after_content": "自习室: B 座 401\n", "content_sha256": "cff9d5c6255a7b4698bf07a09fb21ce7166fa3cb0cbd63f13e17b4f22b13c6bf", "full_bytes": 21, "stored_bytes": 21, "truncated": false}

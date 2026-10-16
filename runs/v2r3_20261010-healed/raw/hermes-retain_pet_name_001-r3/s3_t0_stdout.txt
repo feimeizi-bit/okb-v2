@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+清单已写好：/home/okb/okb/runs/v2r3_20261010.hm/work/hermes-retain_pet_name_001-r3/采购.md
+
+涵盖主食（干粮/冻干）、湿粮罐头、零食、营养补充（化毛膏、鱼油等）和猫砂耗材，另附换粮过渡和储存备注。想按芝麻的年龄、口味或预算再细化，说一声即可。

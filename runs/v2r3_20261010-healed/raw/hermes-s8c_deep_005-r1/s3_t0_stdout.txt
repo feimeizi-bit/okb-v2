@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+北桥林禾（负责部署）。
+
+说明：记忆里只记录了按姓名分工，未标注各自所属项目，所以无法回答“哪个项目”这一半。

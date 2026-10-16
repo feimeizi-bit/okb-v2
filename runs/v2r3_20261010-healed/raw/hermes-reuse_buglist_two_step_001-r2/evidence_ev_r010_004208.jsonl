@@ -1,0 +1,1 @@
+{"path": "缺陷列表.md", "op": "create", "before_content": null, "before_sha256": null, "after_content": "BUG-1042 | 严重度=高 | 登录超时 | 老王\nBUG-1043 | 严重度=中 | 导出乱码 | 小李\nBUG-1044 | 严重度=低 | 头像裁切 | 小张\n", "content_sha256": "0a500fd31b7fcf398a842fe9a14dba5cf0fad40321d198a91d21b084c6d2b4d6", "full_bytes": 147, "stored_bytes": 147, "truncated": false}

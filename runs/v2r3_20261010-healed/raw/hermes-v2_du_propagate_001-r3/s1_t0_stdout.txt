@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已记录：项目代号从现在起统一使用“朝晖”，旧代号“晨曦”废弃。以后所有地方我都会用新代号。

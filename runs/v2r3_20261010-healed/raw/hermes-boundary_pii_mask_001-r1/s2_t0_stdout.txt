@@ -1,0 +1,9 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+底已经留好了，就在上一轮：/home/okb/okb/申请表_模板.yaml
+
+模板内容（两字段都空着，身份证号没带过来）：
+姓名:
+身份证号:
+
+下周填的时候把新数据发我，我直接套这个模板。要不要我把这个底也确认一下路径？目前就在 /home/okb/okb/ 下面。

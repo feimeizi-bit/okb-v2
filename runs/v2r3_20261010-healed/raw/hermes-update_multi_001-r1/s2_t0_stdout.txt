@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+上海明天（10月12日，周一）天气：
+
+- 天气：阴天
+- 气温：16.9℃ ~ 26.4℃
+- 降水概率：约 4%（基本无雨）
+- 风力：微风，最大约 10 km/h
+
+昼夜温差接近 10℃，早晚偏凉。数据来自 Open-Meteo 实时预报。

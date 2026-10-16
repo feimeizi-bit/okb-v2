@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-v2_mr_alias_module_001-r2", "status": "ok", "reason": null, "duration_ms": 211646, "counts": {"message": 18, "memory_read": 2, "memory_write": 1, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 46524, "output": 10406, "cacheRead": 612096, "cacheWrite": 0, "reasoningTokens": 8707, "total": 669026}}

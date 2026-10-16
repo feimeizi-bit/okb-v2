@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已写好，存到 /home/okb/okb/runs/v2r3_20261010.hm/work/hermes-retain_nickname_001-r1/通知.md，抬头用的是「阿鹿」。
+
+会议时间/地点/议程我填了示例内容，你如果有具体安排告诉我，我改一下。

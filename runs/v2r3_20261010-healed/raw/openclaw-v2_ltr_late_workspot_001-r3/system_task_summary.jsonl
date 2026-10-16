@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-v2_ltr_late_workspot_001-r3", "status": "ok", "reason": null, "duration_ms": 132725, "counts": {"message": 20, "memory_read": 2, "memory_write": 2, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 7890, "output": 1345, "cacheRead": 408320, "cacheWrite": 0, "reasoningTokens": 434, "total": 417555}}

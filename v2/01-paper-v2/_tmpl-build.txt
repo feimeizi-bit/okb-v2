@@ -1,0 +1,4 @@
+﻿WARNING [W207] <build>:v2_du_delay_approval_001:anchors[1]: anchors[1] 鍗曠嫭鐪嬫棤鍖哄垎鍔涳細瀹冪殑鍐呭鍦?fixture 涓婂凡缁忔垚绔嬶紝Agent 涓嶆敼杩欎釜鏂囦欢涔熻兘閫氳繃锛堟牱鏈暣浣撲粛鏈夊埆鐨勬鍚戦棬妲涳紝鏁呬笉闃绘柇锛涜嫢杩欐槸鍞竴鐨勪骇鐗╂柇瑷€锛岃鍔?must_differ_from_fixture 鎴栨敼鏂█璇箟锛?
+WARNING [W205] <build>:v2_du_delay_approval_001:anchors: 鏈牱鏈殑 hard 閿氱偣澹版槑浜?2 绉嶄笉鍚岀殑 on_violation ['omitted', 'wrongly_reused']锛涘悓鏃惰繚鍙嶅鏉℃椂鐨勫畾绫讳紭鍏堢骇鐢?CONTRACT 搂5 瑙勫畾锛堥鏉″懡涓殑 hard 閿氱偣浼樺厛锛夛紝璇风‘璁よ繖涓『搴忕鍚堥鏈?
+
+鉁?鐢熸垚 D:\project\okb-holdings\paper-v2\01-paper-v2\_tmpl.jsonl锛? 鏉℃牱鏈紙suite_version=v2.0锛?

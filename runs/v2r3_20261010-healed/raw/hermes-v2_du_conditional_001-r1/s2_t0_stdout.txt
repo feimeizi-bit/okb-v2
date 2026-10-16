@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+收到。出差去武汉，需要我做点什么吗？
+
+比如查交通（从哪出发、哪天走）、订酒店、看武汉这几天的天气，或者列个出差准备清单。告诉我出发地和日期，我就能动手。

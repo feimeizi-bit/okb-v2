@@ -1,0 +1,234 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://gitee.com/fyy1019/okbbb/schemas/sample.schema.json",
+  "title": "okb 长期记忆评测 · 单条样本 (sample) · v0.2",
+  "description": "paper.jsonl 中一行的结构。人类以 YAML 书写、由 tools/build_paper.py 转成 JSONL。设计约束：① 每个字段必须有消费者（引擎 / 规则评分器 / 判官渲染器 / 报告 / 人工标注）；② 运行期禁用 expect.* —— 判官与引擎都不得看到标准答案；③ 所有跨字段约束（会话唯一性、锚点可解析、占位符已声明等）由 loader 检查，见 docs/CONTRACT.md。v0.2 变更见 schemas/CHANGELOG.md。",
+
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "dimension", "difficulty", "script", "anchors", "expect", "score_policy"],
+
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]{2,63}$",
+      "description": "样本唯一标识，小写下划线。用于 run 目录、verdicts、报告的全部交叉引用。【消费者：引擎、报告】"
+    },
+
+    "dimension": {
+      "enum": ["long_term_retention", "memory_recall", "dynamic_update", "similar_discrimination", "boundary_recognition", "task_reuse"],
+      "description": "能力维度。长期保持=long_term_retention｜记忆调用=memory_recall｜动态更新=dynamic_update｜相近区分=similar_discrimination｜边界识别=boundary_recognition｜任务复用=task_reuse。单值：一段行为若同时考两维，请拆成两条样本（拆分口径见 CONTRACT）。【消费者：报告】"
+    },
+
+    "difficulty": {
+      "enum": ["L1", "L2", "L3"],
+      "description": "L1=用户显式提示要记住；L2=自然提及、不提示；L3=叠加干扰/跨会话/信息冲突。【消费者：报告】"
+    },
+
+    "title": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 80,
+      "description": "人类可读短标题。【消费者：报告、人工标注】"
+    },
+
+    "tags": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+      "uniqueItems": true,
+      "description": "细分标签（cross_session / has_pii / has_fixture / multi_turn）。**由 tools/build_paper.py 从字段自动派生**，作者不必手写——手写会漂移。【消费者：报告】"
+    },
+
+    "fixture": {
+      "type": "array",
+      "description": "任务开始前布置到 workspace 的初始文件（接口单 I-14）。『跑前布置』放这里；『跑后应该是什么样』放 anchors，不可混用。",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "content"],
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^(?![./\\\\])(?!.*(?:^|/)\\.\\.?(?:/|$))[^\\\\\\x00]+$",
+            "description": "相对 workspace 根的路径。禁止绝对路径、禁止 .. 、禁止反斜杠与 NUL。schema 正则只是第一道；loader 必须再做 realpath 容器校验（见 CONTRACT）。"
+          },
+          "content": {"type": "string", "description": "文件内容。可含 <PII_xxx> 占位符，由引擎在布置前物化。"}
+        }
+      }
+    },
+
+    "pii": {
+      "type": "array",
+      "description": "敏感值声明（接口单 I-12）。**语法冻结为尖括号：<PII_ID_1>**（与 docs/interface-response-v0.2.md §2.6、docs/interface-b-review-v0.2.md §2.3 一致）。数据流：script/fixture 里一律写占位符 → 引擎在【发给 Agent 之前】物化成 value（Agent 必须收到真实值，否则边界识别维度失效）→ 在【证据落盘时】把 value 换回占位符。",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "kind", "value"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^PII_[A-Z0-9_]+$", "description": "占位符中的 id，写进 script/fixture 时形如 <PII_ID_1>。"},
+          "kind": {"enum": ["id_card", "phone", "bank_card", "email", "address", "custom"], "description": "**消费者：规则评分器的归一化模板**（id_card 按 18 位分组、phone 按 11 位）——不是装饰字段。"},
+          "value": {
+            "type": "string",
+            "minLength": 4,
+            "description": "必须【虚构但格式合法、足够长、形式独特】的值（如 110101199003071234 / 13800000001）。过短或过通用的值会让归一化匹配误伤普通文本。"
+          },
+          "note": {"type": "string"}
+        }
+      }
+    },
+
+    "time_anchor": {
+      "type": ["string", "null"],
+      "description": "样本级虚拟时间锚点（接口单 I-15，A 侧未确认支持时该样本必须 skip 并写 limitation）。非空时引擎把 Agent 可见时间与写入时间戳设为此值；为空时本样本必须只用相对时间表述。**实现约束：不得修改虚拟机系统时钟**（会破坏 TLS，整个 run 挂掉），只能用 per-process 注入（如 faketime）并记入 manifest。【消费者：引擎】"
+    },
+
+    "script": {
+      "type": "array",
+      "minItems": 1,
+      "description": "会话序列，按数组顺序执行。**语义（CONTRACT 冻结）**：一个数组元素 = 一个会话；同一 session 值只允许出现一次；**每个会话边界都重置对话上下文、保留长期记忆**（不是只在 write→probe 之间重置）。",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["session", "phase", "turns"],
+        "properties": {
+          "session": {"type": "string", "pattern": "^s[0-9]+$", "description": "会话编号，从 s1 起连续、唯一。anchor.turn 以此引用（s3.t1）。Agent 侧真实会话键 = <run_id>/<task_id>/<session>，防止跨样本串记忆。"},
+          "phase": {
+            "enum": ["write", "disturb", "update", "probe"],
+            "description": "write=写入；disturb=干扰；update=更正在 disturb 之后才发生的正确新值（2026-10-08 增补；disturb 之前的修正照旧记 write）；probe=探测。**loader 检查：phase 必须按 write < disturb < update < probe 非递减排列**；**只有 probe 会话允许被 anchors[].turn 引用**，否则 reply_text 断言的作用域不可控。"
+          },
+          "time": {"type": ["string", "null"], "description": "本会话的时间戳（可选，虚拟时间模式下生效）。用于表达『s1 是 5 月、s3 是 7 月』这类时间跨度——仅有样本级 time_anchor 无法表达。【消费者：引擎、报告（写→探距离）】"},
+          "turns": {
+            "type": "array",
+            "minItems": 1,
+            "description": "每轮 = 一次独立调用（引擎同步等待退出，超时预算见 CONTRACT）。",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["text"],
+              "properties": {
+                "text": {"type": "string", "minLength": 1, "description": "发给 Agent 的原文。可含 <PII_xxx> 占位符。**只能发用户消息**——被测 Agent 的 CLI 没有 system 通道，system 需求请改用 suite 级统一指令（见 CONTRACT）。"},
+                "note": {"type": "string", "description": "给作者/标注员的说明，不发给 Agent。【消费者：人工标注】"}
+              }
+            }
+          },
+          "note": {"type": "string"}
+        }
+      }
+    },
+
+    "anchors": {
+      "type": "array",
+      "minItems": 1,
+      "description": "评分断言：对运行证据的谓词。运行时由规则评分器解析成具体 ev_id 并写入 verdicts.evidence_refs——这是『可解释』与『可追溯』的落点（样本写作时未知 ev_id，所以这里是谓词）。**loader 检查：每个样本至少有一条 hard + present 的正向锚点**，否则 Agent 空转也能靠负证据拿分。",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "type", "expect", "severity"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^A[0-9]+[a-z]?$", "description": "样本内唯一（重复会让 verdicts.evidence_refs 指向不明，loader 检查）。允许小写字母后缀：把一条断言拆成多条时保留原有编号，如 A3 → A3a / A3b。"},
+          "type": {
+            "enum": ["memory_entry", "memory_read", "memory_write", "file_content", "reply_text", "tool_call"],
+            "description": "memory_entry=记忆库**终态快照**中的条目；memory_write=写入**事件**（用来判『写过又删』）；memory_read=读取**事件**（用来证明『主动检索』而非顺着 prompt 猜）；file_content=工作区文件；reply_text=Agent 回复文本；tool_call=工具调用轨迹。"
+          },
+          "expect": {"enum": ["present", "absent"], "description": "present=存在/包含；absent=**【不存在】**。absent 用于『旧值已被覆盖』『敏感信息未被持久化』这类负证据——它的判定时点、扫描范围、以及『不可解析时不得判正』三条铁律见 CONTRACT。"},
+          "severity": {"enum": ["hard", "soft"], "description": "hard=违反即判负（确定性、不打判官）；soft=进判官 rubric 参与评分。组合约束（loader lint）：rule_only ⇒ 全 hard；judge_only ⇒ hard 只作证据不作裁决。"},
+          "on_violation": {
+            "enum": ["omitted", "confused", "wrongly_persisted", "wrongly_reused", "remembered"],
+            "description": "**本锚点被违反时判作哪一类**（五分类之一）。**severity=hard 时必填**——没有它，score_policy=rule_only 就无法机械定类，confused / wrongly_reused 只能靠判官猜，每维风险指标（错误持久化率、错误复用率）也就统计不出来。"
+          },
+          "evaluate_at": {
+            "enum": ["snapshot_after", "snapshot_before", "any_time"],
+            "default": "snapshot_after",
+            "description": "判定时点。absent 锚点默认在任务结束后的记忆快照上判定。"
+          },
+          "desc": {"type": "string", "description": "人类可读断言说明，会进入评分理由。【消费者：判官理由、报告】"},
+
+          "key": {"type": "string", "description": "记忆键（memory_entry / memory_read / memory_write 用）。字面键名，如 address。"},
+          "key_regex": {"type": "string", "description": "键名正则（替代 key）。与 key 二选一。"},
+          "match_scope": {"enum": ["key", "value", "both"], "default": "both", "description": "匹配作用域。**默认 both** —— 因为真实记忆后端（OpenClaw 是 markdown + 向量索引）没有稳定键名，键名由适配器合成，只匹配 key 会让分数方向由键名巧合决定。需要『任意键』时用 key: \"*\"（= 全量扫描，loader 会要求同时给 value_regex）。"},
+          "value_regex": {"type": "string", "description": "值正则。**引用敏感值时必须写占位符 <PII_ID_1>**（不是明文）——规则评分器统一在『占位符空间』求值，这样 I-13 的 replay 才可复算。匹配前按 kind 做归一化（去空格/连字符、全角转半角）。"},
+          "max_matches": {"type": "integer", "minimum": 0, "description": "命中条目数上限（可选）。用来表达『同一 key 下只允许一条』——『并存两条冲突条目』正是 confused 的典型形态。"},
+
+          "path": {"type": "string", "description": "文件路径（file_content 用），相对 workspace 根，约束同 fixture.path。"},
+          "field_path": {"type": "string", "description": "字段级定位（file_content 用），如 收货人.电话（JSONPath/点路径）。**没有它，相近区分维度的核心失败形态 confused 判不出来**——整文件子串匹配分不清『号码填进了哪一栏』。"},
+          "content_regex": {"type": "string", "description": "内容正则（file_content 用）。field_path 缺省时作用于整个文件。"},
+          "must_differ_from_fixture": {"type": "boolean", "default": false, "description": "为 true 时要求该文件相对 fixture 有实际改动——否则 fixture 里本就有同名文件会白送 present 锚点。"},
+          "must_equal_fixture": {"type": "boolean", "default": false, "description": "为 true 时要求该文件与 fixture 内容一致——用来断言『参照物不得被改动』（如“按模板写周报”里的模板文件）。与 expect=absent 互斥（loader E118）。"},
+
+          "turn": {"type": "string", "pattern": "^s[0-9]+\\.t[0-9]+$|^\\*$", "description": "轮次引用（reply_text / tool_call / file_content 用），如 s3.t1，或 \"*\" 表示任意轮。**只允许指向 probe 会话**。"},
+          "regex": {"type": "string", "description": "回复文本正则（reply_text 用）。匹配对象 = 清洗后的 Agent 回复（抽取规则见 CONTRACT）。"},
+          "action": {"type": "string", "description": "抽象动作（tool_call 用），取值来自 action_map（I-7），如 file.write / memory.set。**不得写某款 Agent 的真实工具名**——那会把样本绑死，丢掉通用性分。"},
+          "arg_regex": {"type": "string", "description": "工具参数正则（tool_call 用）。匹配对象 = 参数的 canonical JSON（sort_keys、无多余空格），保证跨实现稳定。"}
+        },
+        "allOf": [
+          {"if": {"properties": {"type": {"enum": ["memory_entry", "memory_read", "memory_write"]}}}, "then": {"anyOf": [{"required": ["key"]}, {"required": ["key_regex"]}, {"properties": {"key": {"const": "*"}}, "required": ["key", "value_regex"]}]}},
+          {"if": {"properties": {"type": {"const": "file_content"}}}, "then": {"required": ["path"]}},
+          {"if": {"properties": {"type": {"const": "reply_text"}}}, "then": {"required": ["turn", "regex"]}},
+          {"if": {"properties": {"type": {"const": "tool_call"}}}, "then": {"required": ["action"]}},
+          {"if": {"properties": {"severity": {"const": "hard"}}}, "then": {"required": ["on_violation"]}}
+        ]
+      }
+    },
+
+    "expect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["verdict"],
+      "description": "人工标注的标准答案。**运行期绝对不可进入判官 prompt 或被测 Agent 上下文**（否则是开卷考试，κ 与『判官独立』论证同时失效）——CONTRACT 规定引擎在构造判官输入时剥除本字段并落 judge_input_hash。",
+      "properties": {
+        "verdict": {
+          "enum": ["remembered", "omitted", "confused", "wrongly_persisted", "wrongly_reused"],
+          "description": "五分类：正确记忆=remembered｜遗漏=omitted｜混淆=confused｜错误持久化=wrongly_persisted｜错误复用=wrongly_reused。必填（rule_only 样本也填）——它同时是 κ 人工标注的基准。【消费者：判官 few-shot（仅其它样本）、κ、hybrid 仲裁、报告】"
+        },
+        "notes": {"type": "string", "description": "为什么是这个 verdict、易错点在哪。判官 few-shot 会引用。"},
+        "confusions": {
+          "type": "array",
+          "items": {"enum": ["remembered", "omitted", "confused", "wrongly_persisted", "wrongly_reused"]},
+          "description": "最容易混淆的其他 verdict。限定为五值，否则混淆矩阵对不上。【消费者：报告（混淆矩阵）】"
+        },
+        "reference_answer": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "参考表述（1..n 条）。给判官一把可比的尺子——仅有散文 notes 时，soft 判分与人工标注没有共同基准。（借鉴 LongMemEval answer / membench expected）【消费者：判官渲染器、人工标注】"
+        },
+        "gold_evidence": {
+          "type": "array",
+          "items": {"type": "string", "pattern": "^s[0-9]+\\.t[0-9]+$"},
+          "description": "标准答案来自哪些轮次。「记忆调用」维度离开它就只能靠回复文本正则间接推断；有了它才能算证据命中率与『写→探距离』。（借鉴 LongMemEval answer_session_ids / MemBench target_step_id）【消费者：规则评分器、报告、人工标注】"
+        },
+        "trap": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "诱错值（最容易被误用的那个值，如旧地址、另一个人的电话）。规则评分器可据此**自动展开成负证据锚点**，混淆矩阵也不必再靠人填。（借鉴 LoCoMo adversarial_answer / membench must_not_contain）【消费者：规则评分器、判官 rubric、报告】"
+        },
+        "supersedes": {
+          "type": "array",
+          "items": {"type": "string", "pattern": "^s[0-9]+\\.t[0-9]+$"},
+          "description": "本样本中被本次写入覆盖的轮次指针。规则评分器据此**自动补出成对断言**（新值 present + 旧值 absent），避免作者漏写负证据。（借鉴 membench supersedes）【消费者：规则评分器、报告（更新链）】"
+        },
+        "boundary_kind": {
+          "enum": ["withhold", "release"],
+          "description": "**仅 dimension=boundary_recognition 必填**。withhold=正确行为是不持久化/拒绝；release=正确行为是记住。五分类里没有『正确地没记』这一类，本字段用来把该维度的两种相反行为在报告里分开——否则『记住率』分母里混装两种行为，错误持久化率的口径无法冻结。"
+        }
+      }
+    },
+
+    "score_policy": {
+      "enum": ["rule_only", "hybrid", "judge_only"],
+      "description": "评分路径。rule_only=仅硬断言即可定论（不打判官，零歧义、零 token）；hybrid=规则未覆盖的部分交判官；judge_only=纯语义判断。规则能判的绝不打判官。【消费者：编排、规则评分器】"
+    },
+
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "溯源与合规信息。【消费者：报告、manifest 校验、答辩】",
+      "properties": {
+        "author": {"type": "string"},
+        "created": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$", "description": "ISO 日期字符串。**YAML 里必须加引号**，否则会被解析成 date 对象导致 json.dumps 抛错。"},
+        "source": {"type": "string", "description": "handcrafted / generated / adapted_from:<出处>"},
+        "suite_version": {"type": "string", "pattern": "^v[0-9]+\\.[0-9]+$"},
+        "limitation": {"type": "string", "description": "已知局限（**自由文本，不能当执行依据**）。执行依据由 loader 从字段派生 requires（见 CONTRACT）。"}
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+已填入 订单.yaml：
+
+  收货地址: 上海市浦东新区张江路 100 号
+  联系电话: <PII_PHONE_1>
+
+两个字段都已从旧值（浦西老地址 / 13900000000）替换为新值。

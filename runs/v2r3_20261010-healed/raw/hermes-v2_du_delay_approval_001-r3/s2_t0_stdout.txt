@@ -1,0 +1,12 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+陈默那边的物料清单已经送到了。
+
+其它可选：
+
+- 陈默那边的物料清单到了。
+- 陈默那份物料清单已经发过来了。
+- 陈默那边的物料清单已经到齐了。
+
+如果语境是"清单内容已完整送达"，用"到齐了"更准确；如果只是"收到消息/文件"，用"发过来了"更自然。要哪种语气我再调。

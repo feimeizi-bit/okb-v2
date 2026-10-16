@@ -1,0 +1,15 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+润色版本：
+
+1. 陈默那边的物料清单已经到位了。
+2. 陈默那边的物料清单已送达。
+3. 陈默那边的物料清单已经发过来了。
+
+更正式一些：
+
+4. 陈默那边的物料清单已收到，特此告知。
+5. 陈默一方的物料清单已送达。
+
+原句本身已经通顺，主要可优化点在「到了」略显口语化，视场景可换成「到位」「送达」等更贴切的词。

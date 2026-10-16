@@ -1,0 +1,31 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+主机 10.10.1.21 连不上(按记忆约定巡检该连主机,但 ping 100% 丢包、SSH 22 端口超时),拿不到那台的磁盘数据。下面是本机(当前沙箱环境)的磁盘用量排行。
+
+文件系统/挂载点使用率排行(降序)
+ 1. / 及其 overlay(/usr、/etc、/var/lib 同一块盘)  已用 23G / 40G  60%
+ 2. /data                                             已用 3.2G / 15G  24%
+ 3. /boot                                             已用 116M / 2.0G  7%
+ 4. /run                                              已用 22M / 593M  4%
+ 5. /dev/shm、/run/user/* 等 tmpfs                      均 <2%
+
+一级目录占用排行(降序)
+ 1. /sysroot  23G  (overlay 根,含下面 /usr)
+ 2. /usr      14G
+ 3. /data     2.9G
+ 4. /boot     115M
+ 5. /etc      17M
+
+占用大头细分
+ - /usr/share   5.8G
+ - /usr/lib     5.0G
+ - /usr/libexec 1.0G
+ - /usr/local   808M
+ - /usr/bin     698M
+ - /data/home   2.9G  (占 /data 的 90%+)
+ - /home/okb/embed-server 289M  /home/okb/okb 71M
+
+一句话结论:根盘 40G 已用 60%,压力主要在 /usr(14G,其中 share+lib 就 10.8G);/data 单盘 15G 只用 24%,大头是 /data/home 的 2.9G。
+
+需要的话我可以再钻一层(比如 /usr/share 内部、或 /data/home 内部的具体目录排行)。

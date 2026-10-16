@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "hermes-update_invoice_title_001-r2", "status": "ok", "reason": null, "duration_ms": 53505, "counts": {"message": 22, "memory_read": 2, "memory_write": 1, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": null}

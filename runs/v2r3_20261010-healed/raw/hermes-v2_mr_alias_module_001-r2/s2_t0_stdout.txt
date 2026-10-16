@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已排期：把「云桥」对应的问题排到了最前。问题清单.yaml 里那条「登录超时」已补上模块=云网关、优先级 1（云桥是别称，正式字段里用「云网关」）。

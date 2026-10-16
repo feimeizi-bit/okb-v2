@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已写入：`通勤.yaml` 的 route 字段 = `望江路`（出发时间 08:30 保持不变）。旧路线滨江路未出现在字段中。
+
+文件路径：/home/okb/okb/runs/v2r3_20261010.hm/work/hermes-update_route_001-r2/通勤.yaml

@@ -1,0 +1,8 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已补全：申请人写为「许沐」。
+
+这单的审批人是「张岚」。
+
+（当前时间 2026-05-29，早于 6 月 1 日，所以审批人仍是张岚，不是陈默。）

@@ -1,0 +1,8 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+我这没有任何值班表数据。当前目录里只有一份素材.md，内容是缺陷清单：
+
+  缺陷：登录超时(高,老王)；导出乱码(中,小李)；头像裁切(低,小张)。编号 1042/1043/1044。
+
+没有值班表相关文件或信息。要讨论值班表，请把值班表内容发我（或告诉我文件路径）；如果值班表不在手边，也可以先说明这周值班安排是什么，我再接着聊。

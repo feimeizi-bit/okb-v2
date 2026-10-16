@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+明天（2026-10-11，周日）不限行。
+
+判断依据：
+- 按国务院 2026 年放假安排，国庆节 10月1日—7日放假，调休上班日是 9月20日（周日）和 10月10日（周六）——也就是今天。明天 10月11日是正常周末，不是调休上班日。
+- 北京尾号限行只针对工作日（周一至周五及调休上班日），周末和法定节假日不限行。
+
+注：你没说明城市，我按北京判断的。绝大多数城市的尾号限行在周日同样不实施；如果你在杭州（西湖景区周末有单双号限行）之类有特殊规则的城市，告诉我城市我再查。

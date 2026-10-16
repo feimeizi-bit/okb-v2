@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已把 `通勤.yaml` 的 `route` 字段从空填为 `滨江路`，`出发时间: 08:30` 保持不变。

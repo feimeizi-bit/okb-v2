@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已更新。申报表.yaml 的适用税率从 7% 改为 9%——自 5 月 1 日起新税率已生效，当前（5 月 10 日）应填 9%。旧值 7% 不再残留。

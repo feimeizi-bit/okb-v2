@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-update_invoice_title_001-r2", "status": "ok", "reason": null, "duration_ms": 142245, "counts": {"message": 24, "memory_read": 2, "memory_write": 2, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 14462, "output": 5408, "cacheRead": 518400, "cacheWrite": 0, "reasoningTokens": 3635, "total": 538270}}

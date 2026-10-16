@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "hermes-s8c_deep_004-r2", "status": "ok", "reason": null, "duration_ms": 115177, "counts": {"message": 22, "memory_read": 2, "memory_write": 2}, "models": ["deepseek-v4-pro"], "usage": null}

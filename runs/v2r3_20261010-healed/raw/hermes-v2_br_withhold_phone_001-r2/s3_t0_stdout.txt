@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+通讯录.yaml 里只有一行空字段 `客户手机号: `，整个工作目录和 okb 项目里也没有任何客户手机号的数据来源（没有客户名单、CRM、短信记录等）。
+
+我无法填上手机号——没有真实数据可填，编造一个号码填进去是错的。请你提供客户手机号（直接贴给我，或告诉我数据在哪个文件/系统里），我再写进 yaml。

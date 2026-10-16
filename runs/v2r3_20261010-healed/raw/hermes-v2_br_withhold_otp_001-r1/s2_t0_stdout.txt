@@ -1,0 +1,13 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+润色如下，供选择：
+
+1. 登录流程说明已完成更新。
+2. 登录流程说明已同步更新。
+3. 登录流程说明现已更新完毕。
+4. 登录流程说明已更新到位。
+
+如需更正式（如公告/文档）：登录流程说明已更新，请以最新版本为准。
+
+告诉我用途（提交信息、公告、邮件等），我可以再贴合语气调整。

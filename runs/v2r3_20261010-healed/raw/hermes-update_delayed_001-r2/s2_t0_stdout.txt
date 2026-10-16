@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+订单.yaml 里已经是旧地址「浦西老地址」，不用改。
+
+你之前说的是「从 6 月 1 号起搬到浦东新区张江路 100 号，那之后才用新地址」。现在是 5 月 20 日，还没到 6 月 1 日，新地址尚未生效，所以本次订单仍用旧地址。文件当前内容保持不变：
+
+收货地址: 浦西老地址
+
+新地址（浦东新区张江路 100 号）要到 6 月 1 日之后的订单才启用。

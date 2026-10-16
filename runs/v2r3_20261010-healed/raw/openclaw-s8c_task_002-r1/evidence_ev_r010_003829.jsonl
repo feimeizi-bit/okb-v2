@@ -1,0 +1,1 @@
+{"path": "订餐.yaml", "op": "create", "before_content": null, "before_sha256": null, "after_content": "# 订餐.yaml — 虚构午餐要求（仅登记，未下单）\n订单:\n  状态: 未下单\n  餐点: 虚构午餐\n  备注: 不要香菜\n  座位: 靠窗\n", "content_sha256": "b4ff3db0aea4a032cc8be27c10b56ad205e383efb4b7cffdc08e77bd2dd3e3b9", "full_bytes": 155, "stored_bytes": 155, "truncated": false}

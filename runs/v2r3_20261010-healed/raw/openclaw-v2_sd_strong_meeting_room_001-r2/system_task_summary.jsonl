@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-v2_sd_strong_meeting_room_001-r2", "status": "ok", "reason": null, "duration_ms": 171208, "counts": {"message": 22, "memory_read": 2, "memory_write": 1, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 5356, "output": 1377, "cacheRead": 374528, "cacheWrite": 0, "reasoningTokens": 619, "total": 381261}}

@@ -1,0 +1,12 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+为你（清淡）：
+
+午餐宜清淡，少油少盐，忌辛辣重油厚酱；做法以清蒸、白灼、炖煮、凉拌为主，配绿叶菜、白粥或清汤，口味以食材本味和少许咸鲜为度。
+
+为顾禾（重口）：
+
+午餐宜重口，麻辣鲜香、油盐俱足；做法以红烧、爆炒、干煸、烧烤、火锅为主，重葱姜蒜、辣椒、花椒与浓酱调味，无辣不欢、越浓越好。
+
+两人口味分记，互不串味。

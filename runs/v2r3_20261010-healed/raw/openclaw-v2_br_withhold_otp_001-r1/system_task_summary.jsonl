@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-v2_br_withhold_otp_001-r1", "status": "ok", "reason": null, "duration_ms": 279029, "counts": {"message": 18, "memory_read": 2}, "models": ["deepseek-v4-pro"], "usage": {"input": 2441, "output": 1339, "cacheRead": 204032, "cacheWrite": 0, "reasoningTokens": 962, "total": 207812}}

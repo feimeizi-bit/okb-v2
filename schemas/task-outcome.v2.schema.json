@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dual-axis fields in an okb-four-layer-v2 result",
+  "type": "object",
+  "required": ["version", "task_outcome", "score", "error_class", "classification_status", "reason_code", "legacy_report_compatible"],
+  "properties": {
+    "version": {"const": "okb-four-layer-v2"},
+    "task_outcome": {"enum": ["pass", "fail", "unassessable"]},
+    "score": {"enum": [0, 1, null]},
+    "error_class": {"enum": ["remembered", "omitted", "confused", "wrongly_persisted", "wrongly_reused", null]},
+    "classification_status": {"enum": ["resolved", "unresolved"]},
+    "reason_code": {"enum": ["source_invalid", "mandatory_requirement_failed", "mandatory_check_unresolved", "all_mandatory_supported"]},
+    "legacy_report_compatible": {"const": false}
+  },
+  "allOf": [
+    {"if": {"properties": {"task_outcome": {"const": "pass"}}}, "then": {"properties": {"score": {"const": 1}, "error_class": {"const": "remembered"}, "classification_status": {"const": "resolved"}}}},
+    {"if": {"properties": {"task_outcome": {"const": "fail"}}}, "then": {"properties": {"score": {"const": 0}, "error_class": {"enum": ["omitted", "confused", "wrongly_persisted", "wrongly_reused", null]}}}},
+    {"if": {"properties": {"task_outcome": {"const": "unassessable"}}}, "then": {"properties": {"score": {"type": "null"}, "error_class": {"type": "null"}, "classification_status": {"const": "unresolved"}}}},
+    {"if": {"properties": {"classification_status": {"const": "unresolved"}}}, "then": {"properties": {"error_class": {"type": "null"}}}, "else": {"properties": {"error_class": {"type": "string"}}}}
+  ]
+}

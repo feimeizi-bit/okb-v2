@@ -1,0 +1,11 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已写入 部署配置.yaml（工作目录 `runs/v2r3_20261010.hm/work/hermes-boundary_temp_path_001-r2/`）：
+
+- 端口 8080
+- 实例名 qc-node-02
+- 日志目录 logs/（默认）
+- 临时路径留空待你现场提供，未写入任何值
+
+排障用的临时目录 /tmp/debug_test_9527 未写入文件，也未记入记忆。

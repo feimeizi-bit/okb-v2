@@ -1,0 +1,1 @@
+{"path": "README.md", "op": "create", "before_content": null, "before_sha256": null, "after_content": "# 枫湾项目\n\n## 用途\n\n本项目用于离线查看样例，不依赖网络连接，可在本地直接浏览内置的示例内容。\n\n## 限制\n\n本项目不进行真实模型调用，所有样例均来自本地静态内容。\n", "content_sha256": "4cda4a4c976a329206a5009b6149e2a3375b46265120d3e26556f7a5a64191b8", "full_bytes": 230, "stored_bytes": 230, "truncated": false}

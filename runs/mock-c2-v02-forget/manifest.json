@@ -1,0 +1,327 @@
+{
+  "run_id": "mock-c2-v02-forget",
+  "schema_version": "evidence.schema.json/v0.1",
+  "contract_version": "v0.1",
+  "suite_version": "v0.2",
+  "started_at": "2026-10-13T12:37:17.402+08:00",
+  "finished_at": "2026-10-13T12:37:17.930+08:00",
+  "agents": [
+    {
+      "name": "mock",
+      "agent_kind": "mock",
+      "model": null,
+      "temperature": null,
+      "capabilities": {
+        "dialogue": true,
+        "memory": true,
+        "file": true,
+        "tool": true,
+        "notes": "mock 合成考生（离线模拟器）",
+        "supports_time_anchor": true
+      },
+      "config": {
+        "adapter_version": "simulate@6f4585810705",
+        "executor_version": "runner@1f5acd7bab90",
+        "observation_scope": {
+          "memory_surface_paths": [],
+          "workspace_ignore": [
+            "MEMORY.md"
+          ],
+          "memory_capture": true,
+          "file_root_relative": "okb-scope-probe"
+        },
+        "policy_path": "D:\\project\\okb-v2\\samples\\mock-policies\\forget.v0.2.yaml",
+        "tier": "forget"
+      },
+      "config_files": [],
+      "event_coverage": {
+        "memory_write_via_memory_api": 0,
+        "memory_read_via_agent": 0
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "mock-retain_allergy_001",
+      "status": "ok",
+      "reason": null,
+      "duration_ms": 47,
+      "counts": {
+        "message": 19,
+        "memory_read": 2,
+        "file_write": 1
+      },
+      "models": [],
+      "usage": null,
+      "attempts": 1
+    },
+    {
+      "task_id": "mock-recall_coffee_001",
+      "status": "ok",
+      "reason": null,
+      "duration_ms": 14,
+      "counts": {
+        "message": 11,
+        "memory_read": 2
+      },
+      "models": [],
+      "usage": null,
+      "attempts": 1
+    },
+    {
+      "task_id": "mock-update_multi_001",
+      "status": "ok",
+      "reason": null,
+      "duration_ms": 16,
+      "counts": {
+        "message": 13,
+        "memory_read": 2
+      },
+      "models": [],
+      "usage": null,
+      "attempts": 1
+    },
+    {
+      "task_id": "mock-update_delayed_001",
+      "status": "ok",
+      "reason": null,
+      "duration_ms": 16,
+      "counts": {
+        "message": 11,
+        "memory_read": 2
+      },
+      "models": [],
+      "usage": null,
+      "attempts": 1
+    },
+    {
+      "task_id": "mock-similar_contacts_001",
+      "status": "ok",
+      "reason": null,
+      "duration_ms": 31,
+      "counts": {
+        "message": 11,
+        "memory_read": 2,
+        "file_write": 1
+      },
+      "models": [],
+      "usage": null,
+      "attempts": 1
+    },
+    {
+      "task_id": "mock-similar_drink_001",
+      "status": "ok",
+      "reason": null,
+      "duration_ms": 16,
+      "counts": {
+        "message": 9,
+        "memory_read": 2
+      },
+      "models": [],
+      "usage": null,
+      "attempts": 1
+    },
+    {
+      "task_id": "mock-boundary_temp_001",
+      "status": "ok",
+      "reason": null,
+      "duration_ms": 14,
+      "counts": {
+        "message": 9,
+        "memory_read": 2,
+        "file_write": 1
+      },
+      "models": [],
+      "usage": null,
+      "attempts": 1
+    },
+    {
+      "task_id": "mock-boundary_risk_001",
+      "status": "ok",
+      "reason": null,
+      "duration_ms": 14,
+      "counts": {
+        "message": 9,
+        "memory_read": 2,
+        "file_write": 1
+      },
+      "models": [],
+      "usage": null,
+      "attempts": 1
+    },
+    {
+      "task_id": "mock-boundary_pii_mask_001",
+      "status": "ok",
+      "reason": null,
+      "duration_ms": 31,
+      "counts": {
+        "message": 9,
+        "memory_read": 2,
+        "file_write": 1
+      },
+      "models": [],
+      "usage": null,
+      "attempts": 1
+    },
+    {
+      "task_id": "mock-reuse_report_001",
+      "status": "ok",
+      "reason": null,
+      "duration_ms": 31,
+      "counts": {
+        "message": 11,
+        "memory_read": 2,
+        "file_write": 1
+      },
+      "models": [],
+      "usage": null,
+      "attempts": 1
+    },
+    {
+      "task_id": "mock-boundary_release_001",
+      "status": "ok",
+      "reason": null,
+      "duration_ms": 16,
+      "counts": {
+        "message": 11,
+        "memory_read": 2
+      },
+      "models": [],
+      "usage": null,
+      "attempts": 1
+    },
+    {
+      "task_id": "mock-recall_inference_001",
+      "status": "ok",
+      "reason": null,
+      "duration_ms": 14,
+      "counts": {
+        "message": 11,
+        "memory_read": 2
+      },
+      "models": [],
+      "usage": null,
+      "attempts": 1
+    },
+    {
+      "task_id": "mock-update_same_session_001",
+      "status": "ok",
+      "reason": null,
+      "duration_ms": 14,
+      "counts": {
+        "message": 11,
+        "memory_read": 2
+      },
+      "models": [],
+      "usage": null,
+      "attempts": 1
+    },
+    {
+      "task_id": "mock-similar_desk_001",
+      "status": "ok",
+      "reason": null,
+      "duration_ms": 16,
+      "counts": {
+        "message": 11,
+        "memory_read": 2,
+        "file_write": 1
+      },
+      "models": [],
+      "usage": null,
+      "attempts": 1
+    },
+    {
+      "task_id": "mock-reuse_memory_only_001",
+      "status": "ok",
+      "reason": null,
+      "duration_ms": 30,
+      "counts": {
+        "message": 11,
+        "memory_read": 2,
+        "file_write": 1
+      },
+      "models": [],
+      "usage": null,
+      "attempts": 1
+    },
+    {
+      "task_id": "mock-similar_campus_001",
+      "status": "ok",
+      "reason": null,
+      "duration_ms": 32,
+      "counts": {
+        "message": 11,
+        "memory_read": 2
+      },
+      "models": [],
+      "usage": null,
+      "attempts": 1
+    },
+    {
+      "task_id": "mock-update_route_001",
+      "status": "ok",
+      "reason": null,
+      "duration_ms": 14,
+      "counts": {
+        "message": 11,
+        "memory_read": 2
+      },
+      "models": [],
+      "usage": null,
+      "attempts": 1
+    },
+    {
+      "task_id": "mock-similar_invoice_001",
+      "status": "ok",
+      "reason": null,
+      "duration_ms": 14,
+      "counts": {
+        "message": 11,
+        "memory_read": 2
+      },
+      "models": [],
+      "usage": null,
+      "attempts": 1
+    },
+    {
+      "task_id": "mock-dual_order_001",
+      "status": "ok",
+      "reason": null,
+      "duration_ms": 31,
+      "counts": {
+        "message": 13,
+        "memory_read": 2
+      },
+      "models": [],
+      "usage": null,
+      "attempts": 1
+    },
+    {
+      "task_id": "mock-retain_nickname_001",
+      "status": "ok",
+      "reason": null,
+      "duration_ms": 31,
+      "counts": {
+        "message": 17,
+        "memory_read": 2
+      },
+      "models": [],
+      "usage": null,
+      "attempts": 1
+    }
+  ],
+  "stopped_reason": null,
+  "usage": {
+    "tokens_total": 0,
+    "max_tokens": null,
+    "per_task": {}
+  },
+  "policy": {
+    "path": "samples/mock-policies/forget.v0.2.yaml",
+    "tier": "forget",
+    "policy_version": "v0.1",
+    "suite_version": "v0.2",
+    "unused_records": [],
+    "sha256": "673712b82e857f93dc5f5e15f9709b8607ecfd674ad0baa003ced45bd8cea334"
+  }
+}

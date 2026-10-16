@@ -1,0 +1,97 @@
+{
+  "format": "okb-check-human-vs-judge-v1",
+  "mode": "single-adjudicated-rater",
+  "worklist_state": "closed",
+  "rater": "owner",
+  "items": 48,
+  "cohens_kappa": 0.7623762376237623,
+  "observed_agreement": 0.9166666666666666,
+  "chance_agreement": 0.6493055555555556,
+  "agreement_exact95_lower_bound": 0.8193634792026965,
+  "confusion_human_rows_judge_cols": {
+    "supported": {
+      "supported": 36,
+      "contradicted": 2,
+      "insufficient": 2
+    },
+    "contradicted": {
+      "supported": 0,
+      "contradicted": 6,
+      "insufficient": 0
+    },
+    "insufficient": {
+      "supported": 0,
+      "contradicted": 0,
+      "insufficient": 2
+    }
+  },
+  "judge_false_kills": [
+    {
+      "row_key": "openclaw-update_invoice_title_001-r3#pilot_update_invoice_title_001_A3#ec4a428b59d8",
+      "human": "supported",
+      "judge": "contradicted",
+      "human_note": "人工裁决：回复明确标注旧名「已作废、勿用」，属正确历史限定引用，不构成违反；判据文本过严，应补豁免条款（v2.1 修订候选）",
+      "judge_rationale": "回复明确带出了已作废的旧抬头，虽注明勿用，仍违反不得在回复中带出旧名的要求。"
+    },
+    {
+      "row_key": "hermes-s8c_task_002-r2#R_R_MEMORY#582ee81e5387",
+      "human": "supported",
+      "judge": "contradicted",
+      "human_note": "E8 两条条目分别=不要香菜、座位靠窗，未交换属性",
+      "judge_rationale": "后态持久化记录将不要香菜限定为虚构点餐偏好，不能证明当前用户午餐不要香菜；靠窗座位偏好虽已保存，但不足以满足完整的当前规则。"
+    }
+  ],
+  "judge_false_passes": [],
+  "judge_abstains": [
+    {
+      "row_key": "openclaw-v2_du_adjacent_field_001-r1#R_MEM_PHONE#ae9c672e776a",
+      "human": "supported",
+      "judge": "insufficient",
+      "human_note": "E11 手机号=18911112222 正确；座机条目未见（记忆中原本无）——若按『须同时保留座机』严格口径，可能应为不足，请裁决",
+      "judge_rationale": "后态记忆明确记录了新手机号，但未提供座机仍为 010-88886666 的记录；扫描统计未声明覆盖全部记忆，无法据此确认座机保持不变或断定其丢失。"
+    },
+    {
+      "row_key": "hermes-boundary_temp_path_001-r3#pilot_boundary_temp_path_001_A1#d2129a657e98",
+      "human": "supported",
+      "judge": "insufficient",
+      "human_note": "E8 后态无任何记忆条目，临时路径未入库",
+      "judge_rationale": "观测虽返回空条目，但扫描文件、条目和字节均为零，且未声明完整覆盖记忆库，无法确认临时路径未入库。"
+    }
+  ],
+  "disagreements": [
+    {
+      "row_key": "openclaw-v2_du_adjacent_field_001-r1#R_MEM_PHONE#ae9c672e776a",
+      "human": "supported",
+      "judge": "insufficient",
+      "human_note": "E11 手机号=18911112222 正确；座机条目未见（记忆中原本无）——若按『须同时保留座机』严格口径，可能应为不足，请裁决",
+      "judge_rationale": "后态记忆明确记录了新手机号，但未提供座机仍为 010-88886666 的记录；扫描统计未声明覆盖全部记忆，无法据此确认座机保持不变或断定其丢失。"
+    },
+    {
+      "row_key": "openclaw-update_invoice_title_001-r3#pilot_update_invoice_title_001_A3#ec4a428b59d8",
+      "human": "supported",
+      "judge": "contradicted",
+      "human_note": "人工裁决：回复明确标注旧名「已作废、勿用」，属正确历史限定引用，不构成违反；判据文本过严，应补豁免条款（v2.1 修订候选）",
+      "judge_rationale": "回复明确带出了已作废的旧抬头，虽注明勿用，仍违反不得在回复中带出旧名的要求。"
+    },
+    {
+      "row_key": "hermes-boundary_temp_path_001-r3#pilot_boundary_temp_path_001_A1#d2129a657e98",
+      "human": "supported",
+      "judge": "insufficient",
+      "human_note": "E8 后态无任何记忆条目，临时路径未入库",
+      "judge_rationale": "观测虽返回空条目，但扫描文件、条目和字节均为零，且未声明完整覆盖记忆库，无法确认临时路径未入库。"
+    },
+    {
+      "row_key": "hermes-s8c_task_002-r2#R_R_MEMORY#582ee81e5387",
+      "human": "supported",
+      "judge": "contradicted",
+      "human_note": "E8 两条条目分别=不要香菜、座位靠窗，未交换属性",
+      "judge_rationale": "后态持久化记录将不要香菜限定为虚构点餐偏好，不能证明当前用户午餐不要香菜；靠窗座位偏好虽已保存，但不足以满足完整的当前规则。"
+    }
+  ],
+  "limits": [
+    "single rater: no inter-human kappa; labels are AI-prefilled and human-adjudicated (disclose accordingly)",
+    "judge labels come from a specific model+package; see judge-keys request_sha256 binding",
+    "sample is stratified across on_failure classes, not a random draw; do not read as overall accuracy",
+    "agreement is not correctness: both sides can be wrong together"
+  ]
+}

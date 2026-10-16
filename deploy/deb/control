@@ -1,0 +1,19 @@
+Package: okb
+Version: @@VERSION@@
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: okb (openKylin 长期记忆评测 benchmark) <okb@local>
+Depends: python3 (>= 3.10), python3-yaml, python3-jsonschema
+Description: openKylin 智能体长期记忆评测 benchmark 工具链（一键 CLI）
+ openKylin 长期记忆评测 benchmark 的命令行工具链，入口 okb（薄分发器直连仓库 tools/）。
+ 主链路一条命令跑完：okb run --agents deploy/agents.yaml —— 运行 → 证据采集 → 四层
+ 自动评分（默认 v2 + scoped-v2 分层证据门）→ 诊断报告 → 六维对比雷达图。
+ 其它子命令：run / score / score-vnext / report / report-vnext / report-multirun /
+ simulate / validate / c2-run / c2-parity / annotate / annotate-semantic / kappa /
+ drift / review-semantic-split / review-judge-cost / review-cost-group /
+ capture-identity / build-portable / verify-offline。
+ 随包安装数据面：okb tools engine samples schemas deploy（含智能体配置 agents.yaml、
+ agents.offline.yaml 与 openKylin 执行单 RUN_ON_OPENKYLIN.md）。
+ 工作目录 /opt/okb，入口 /usr/bin/okb（python3 -m okb）。
+ Version 取值来源：pyproject.toml 的 [project].version（构建时由 deploy/build-deb.sh 注入）。

@@ -1,0 +1,1 @@
+{"path": "订餐.yaml", "op": "create", "before_content": null, "before_sha256": null, "after_content": "# 订餐.yaml —— 虚构午餐订餐单（仅记录，勿下单）\n午餐:\n  日期: 2026-10-11\n  餐品: 番茄鸡蛋面\n  备注: 素食，不要葱蒜，少油\n  座位: 3楼 A区 12号\n", "content_sha256": "8d296e1b75e949fc8680c3625921fce2d9f4cc8fb8ef037ff02cb2ba05233cd8", "full_bytes": 192, "stored_bytes": 192, "truncated": false}

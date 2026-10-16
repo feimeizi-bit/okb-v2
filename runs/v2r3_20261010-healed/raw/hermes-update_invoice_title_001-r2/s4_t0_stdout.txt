@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已写入 开票须知.md（2026年第三季度），抬头用最新要求「上海启成数字科技有限公司」，附税号与联系人，全文不含旧抬头。
+
+路径：/home/okb/okb/runs/v2r3_20261010.hm/work/hermes-update_invoice_title_001-r2/开票须知.md

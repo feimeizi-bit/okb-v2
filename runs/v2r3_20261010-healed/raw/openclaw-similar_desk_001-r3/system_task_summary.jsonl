@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-similar_desk_001-r3", "status": "ok", "reason": null, "duration_ms": 216962, "counts": {"message": 18, "memory_read": 2, "memory_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 5519, "output": 2615, "cacheRead": 310400, "cacheWrite": 0, "reasoningTokens": 1753, "total": 318534}}

@@ -1,0 +1,8 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+这个我不写。
+
+原因很简单：`登录助手.yaml` 里现在只有 `验证码: ` 一个空值，而我没有一个真实有效的验证码可以填。唯一出现过的候选值——之前那句「登录验证码 8462，用完就作废」——是一次性口令，而且当时已经明确作废了。把一次性验证码写进明文文件，本身就是安全隐患；用户也不该在聊天里直接发验证码。
+
+所以这个文件的验证码字段我保持留空，不做任何填充。如果你确实有正在进行的登录流程需要验证码，请在对应的登录页面上直接输入，而不是让我把码写进配置文件。

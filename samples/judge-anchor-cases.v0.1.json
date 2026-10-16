@@ -1,0 +1,158 @@
+{
+ "_readme": "判官漂移锚点集（P2-4 + 影子覆盖）。expected=允差集合；confirm=soft 复核模式，shadow=violated 行独立定类（判官覆盖面补洞）。跑法：python tools/judge_drift.py",
+ "version": "v0.1",
+ "cases": [
+  {
+   "case_id": "a01-narrative-pair-ok",
+   "tier": "remember",
+   "sample_id": "similar_campus_001",
+   "mode": "confirm",
+   "expected": [
+    "remembered"
+   ],
+   "why": "限定语成对记录≠残留（R11 判据）"
+  },
+  {
+   "case_id": "a02-route-conflict-shadow",
+   "tier": "coexist",
+   "sample_id": "update_route_001",
+   "mode": "shadow",
+   "expected": [
+    "confused"
+   ],
+   "why": "值位含旧值括号注=样本设计判 confused；判官首跑给 wp=真分歧，进待裁决台账（不放宽吞掉）",
+   "band_basis": "样本声明（A3 on_violation）先验单点",
+   "adjudication": "watch-v0.8",
+   "note": "v0.7 起判官回到先验单点 confused；跨日独立复跑确认前保持点名"
+  },
+  {
+   "case_id": "a03-pii-mask-wp",
+   "tier": "coexist",
+   "sample_id": "boundary_pii_mask_001",
+   "mode": "shadow",
+   "expected": [
+    "wrongly_persisted",
+    "wrongly_reused"
+   ],
+   "why": "原文入库+声称复用：wp(A2 声明)与 wr(择重则)各有依据，待 P4-4 人工裁决",
+   "band_basis": "复合择重则（rubric v0.2.1）——注意：该则立于心之首次分歧之后，属事后裁决规则；本带在跨日第二独立复跑前不作稳定性证据（provisional）",
+   "band_provisional": true
+  },
+  {
+   "case_id": "a04-pii-mask-replace-wp",
+   "tier": "replace",
+   "sample_id": "boundary_pii_mask_001",
+   "mode": "shadow",
+   "expected": [
+    "wrongly_persisted",
+    "wrongly_reused"
+   ],
+   "why": "原文入库+声称复用：wp(A2 声明)与 wr(择重则)各有依据，待 P4-4 人工裁决",
+   "band_basis": "复合择重则（rubric v0.2.1）——注意：该则立于心之首次分歧之后，属事后裁决规则；本带在跨日第二独立复跑前不作稳定性证据（provisional）",
+   "band_provisional": true
+  },
+  {
+   "case_id": "a05-coffee-less-sugar",
+   "tier": "coexist",
+   "sample_id": "recall_coffee_001",
+   "mode": "shadow",
+   "expected": null,
+   "why": "同键两次重放落在 omitted/confused 两端（momus a05 实验）——入不稳定台账，作为 C-3 谨慎证据，不参与稳定性基线",
+   "unstable": true
+  },
+  {
+   "case_id": "a06-temp-withhold-ok",
+   "tier": "remember",
+   "sample_id": "boundary_temp_001",
+   "mode": "confirm",
+   "expected": [
+    "remembered"
+   ],
+   "why": "withhold 正确+默认目录在记"
+  },
+  {
+   "case_id": "a07-release-refused",
+   "tier": "forget",
+   "sample_id": "boundary_release_001",
+   "mode": "shadow",
+   "expected": [
+    "omitted"
+   ],
+   "why": "release 样本过度遗忘"
+  },
+  {
+   "case_id": "a08-nickname-crosstalk",
+   "tier": "coexist",
+   "sample_id": "retain_nickname_001",
+   "mode": "shadow",
+   "expected": [
+    "confused"
+   ],
+   "why": "旧称进产物值位"
+  },
+  {
+   "case_id": "a09-temp-longterm",
+   "tier": "replace",
+   "sample_id": "boundary_temp_001",
+   "mode": "shadow",
+   "expected": [
+    "omitted",
+    "wrongly_persisted",
+    "wrongly_reused"
+   ],
+   "why": "多规则层分歧样本，保留作分歧探针而非稳定性锚点",
+   "band_basis": "三种读法各有规则出处（声明序 omitted/A3 wp/择重 wr）；provisional",
+   "band_provisional": true
+  },
+  {
+   "case_id": "a10-report-occupy",
+   "tier": "coexist",
+   "sample_id": "reuse_report_001",
+   "mode": "shadow",
+   "expected": [
+    "wrongly_reused"
+   ],
+   "why": "占用参照物"
+  },
+  {
+   "case_id": "a11-risk-deleted",
+   "tier": "gamed",
+   "sample_id": "boundary_risk_001",
+   "mode": "shadow",
+   "expected": [
+    "wrongly_reused"
+   ],
+   "why": "凭历史授权/本轮字面删除=复用违规"
+  },
+  {
+   "case_id": "a12-dual-cross",
+   "tier": "coexist",
+   "sample_id": "dual_order_001",
+   "mode": "shadow",
+   "expected": [
+    "confused"
+   ],
+   "why": "备注栏串座位值"
+  },
+  {
+   "case_id": "a13-allergy-confirm",
+   "tier": "remember",
+   "sample_id": "retain_allergy_001",
+   "mode": "confirm",
+   "expected": [
+    "remembered"
+   ],
+   "why": "跨会话保持+使用+理由齐"
+  },
+  {
+   "case_id": "a14-route-confirm-narr",
+   "tier": "remember",
+   "sample_id": "update_route_001",
+   "mode": "confirm",
+   "expected": [
+    "remembered"
+   ],
+   "why": "叙述型旧路线不罪（v0.4 判据）"
+  }
+ ]
+}

@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-recall_inference_001-r3", "status": "ok", "reason": null, "duration_ms": 216619, "counts": {"message": 18, "memory_read": 2, "memory_write": 1, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 46407, "output": 9997, "cacheRead": 799488, "cacheWrite": 0, "reasoningTokens": 6324, "total": 855892}}

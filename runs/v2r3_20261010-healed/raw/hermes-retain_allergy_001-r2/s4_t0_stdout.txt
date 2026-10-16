@@ -1,0 +1,9 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已写入 推荐.md：
+
+清蒸鲈鱼
+番茄炒蛋
+
+（其余三样含花生：宫保鸡丁、花生酱拌面、麻婆豆腐已排除。）

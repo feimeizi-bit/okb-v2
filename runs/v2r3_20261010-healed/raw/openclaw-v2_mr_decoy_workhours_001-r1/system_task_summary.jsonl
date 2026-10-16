@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-v2_mr_decoy_workhours_001-r1", "status": "ok", "reason": null, "duration_ms": 140026, "counts": {"message": 18, "memory_read": 2, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 8484, "output": 3011, "cacheRead": 446976, "cacheWrite": 0, "reasoningTokens": 1608, "total": 458471}}

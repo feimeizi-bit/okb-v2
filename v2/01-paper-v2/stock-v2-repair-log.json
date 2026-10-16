@@ -1,0 +1,141 @@
+[
+ {
+  "sample_id": "retain_pet_name_001",
+  "fixes": [
+   "R5:evaluate_at A2",
+   "R10:判官口径归一化 pilot_retain_pet_name_001_A2_content"
+  ]
+ },
+ {
+  "sample_id": "retain_allergy_001",
+  "fixes": [
+   "R3:reply护栏 A5",
+   "R9:W207 豁免 A2a",
+   "R9:W207 豁免 A2b"
+  ]
+ },
+ {
+  "sample_id": "s8c_deep_001",
+  "fixes": [
+   "R1:probe→逻辑时间"
+  ]
+ },
+ {
+  "sample_id": "s8c_deep_003",
+  "fixes": [
+   "R1:probe→逻辑时间"
+  ]
+ },
+ {
+  "sample_id": "recall_coffee_001",
+  "fixes": [
+   "R3:reply护栏 A1"
+  ]
+ },
+ {
+  "sample_id": "update_same_session_001",
+  "fixes": [
+   "R4:移除事件锚点 x1",
+   "R11:判官口径归一化 pilot_update_same_session_001_A2"
+  ]
+ },
+ {
+  "sample_id": "update_delayed_001",
+  "fixes": [
+   "R3:reply护栏 A4",
+   "R9:W207 豁免 A2"
+  ]
+ },
+ {
+  "sample_id": "update_invoice_title_001",
+  "fixes": [
+   "R5:evaluate_at A2",
+   "R11:判官口径归一化 pilot_update_invoice_title_001_A2_content"
+  ]
+ },
+ {
+  "sample_id": "similar_wifi_001",
+  "fixes": [
+   "R5:evaluate_at A2"
+  ]
+ },
+ {
+  "sample_id": "similar_drink_001",
+  "fixes": [
+   "R3:reply护栏 A2"
+  ]
+ },
+ {
+  "sample_id": "boundary_risk_001",
+  "fixes": [
+   "R3:reply护栏 A4",
+   "R9:W207 豁免 A1"
+  ]
+ },
+ {
+  "sample_id": "boundary_pii_mask_001",
+  "fixes": [
+   "R3:reply护栏 A5",
+   "R4:移除事件锚点 x1"
+  ]
+ },
+ {
+  "sample_id": "boundary_temp_001",
+  "fixes": [
+   "R2:soft A1",
+   "R8:结构护栏 A5"
+  ]
+ },
+ {
+  "sample_id": "boundary_release_001",
+  "fixes": [
+   "R3:reply护栏 A2",
+   "R3:reply护栏 A4"
+  ]
+ },
+ {
+  "sample_id": "boundary_temp_path_001",
+  "fixes": [
+   "R5:evaluate_at A1",
+   "R5:evaluate_at A2"
+  ]
+ },
+ {
+  "sample_id": "reuse_report_001",
+  "fixes": [
+   "R2:soft A1",
+   "R2:soft A2",
+   "R2:soft A4",
+   "R9:W207 豁免 A3"
+  ]
+ },
+ {
+  "sample_id": "reuse_buglist_two_step_001",
+  "fixes": [
+   "R5:evaluate_at A3",
+   "R11:判官口径归一化 pilot_reuse_buglist_two_step_001_A3_content"
+  ]
+ },
+ {
+  "sample_id": "reuse_memory_only_001",
+  "fixes": [
+   "R2:soft A2a",
+   "R2:soft A2b",
+   "R2:soft A2c",
+   "R8:结构护栏 A5"
+  ]
+ },
+ {
+  "sample_id": "retain_nickname_001",
+  "fixes": [
+   "R10:判官口径归一化 pilot_retain_nickname_001_A2_content",
+   "R10:判官口径归一化 pilot_retain_nickname_001_A3_content"
+  ]
+ },
+ {
+  "sample_id": "recall_inference_001",
+  "fixes": [
+   "R10:判官口径归一化 pilot_recall_inference_001_A2_content"
+  ]
+ }
+]

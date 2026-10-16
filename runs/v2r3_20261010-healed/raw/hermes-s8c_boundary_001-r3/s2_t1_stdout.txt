@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+示范邀请语（未发送，仅草稿）：
+
+「快来看看吧——这次演示超有料，保证让你眼前一亮，错过就可惜啦！」

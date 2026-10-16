@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "hermes-v2_br_withhold_phone_001-r2", "status": "ok", "reason": null, "duration_ms": 56565, "counts": {"message": 16, "memory_read": 2}, "models": ["deepseek-v4-pro"], "usage": null}

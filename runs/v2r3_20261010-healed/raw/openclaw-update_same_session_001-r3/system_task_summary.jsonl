@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-update_same_session_001-r3", "status": "ok", "reason": null, "duration_ms": 86804, "counts": {"message": 18, "memory_read": 2, "memory_write": 1, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 5647, "output": 1788, "cacheRead": 378496, "cacheWrite": 0, "reasoningTokens": 655, "total": 385931}}

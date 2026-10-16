@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-reuse_report_001-r3", "status": "ok", "reason": null, "duration_ms": 108331, "counts": {"message": 18, "memory_read": 2, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 21942, "output": 2089, "cacheRead": 357504, "cacheWrite": 0, "reasoningTokens": 1048, "total": 381535}}

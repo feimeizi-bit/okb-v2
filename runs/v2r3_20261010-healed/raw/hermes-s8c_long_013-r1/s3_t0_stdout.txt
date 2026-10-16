@@ -1,0 +1,5 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+1. 先把文件按类型分好类，再统一命名，找起来才快。
+2. 养成及时整理的习惯，比事后花时间翻找更省力。

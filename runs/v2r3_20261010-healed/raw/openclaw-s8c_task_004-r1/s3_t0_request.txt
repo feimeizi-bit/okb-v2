@@ -1,0 +1,1 @@
+创建转换.yaml，用timeout_seconds和retry字段表示虚构转换规则，不运行转换。

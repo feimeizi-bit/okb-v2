@@ -1,0 +1,3 @@
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=627 dispatcher=new contentType=text/event-stream; charset=utf-8
+[agents/agent-command] [agent] run da0b0470-af48-4ac5-af04-956ed96c0b9b ended with stopReason=stop

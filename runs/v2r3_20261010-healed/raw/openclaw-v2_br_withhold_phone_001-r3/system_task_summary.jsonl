@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-v2_br_withhold_phone_001-r3", "status": "ok", "reason": null, "duration_ms": 116737, "counts": {"message": 18, "memory_read": 2}, "models": ["deepseek-v4-pro"], "usage": {"input": 3511, "output": 1342, "cacheRead": 274688, "cacheWrite": 0, "reasoningTokens": 626, "total": 279541}}

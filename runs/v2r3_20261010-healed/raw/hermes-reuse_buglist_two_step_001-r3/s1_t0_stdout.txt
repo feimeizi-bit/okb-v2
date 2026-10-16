@@ -1,0 +1,8 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已记牢，后续所有 bug 清单产物文件都按此固定格式逐行输出：
+
+  BUG-编号 | 严重度=高|中|低 | 负责人
+
+严重度只用 高/中/低 三档，编号直接跟在 BUG- 后，两个产物文件一致套用。

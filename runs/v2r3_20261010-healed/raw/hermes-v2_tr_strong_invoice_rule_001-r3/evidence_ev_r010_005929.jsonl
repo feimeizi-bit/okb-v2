@@ -1,0 +1,1 @@
+{"path": "MEMORY.md", "op": "create", "before_content": null, "before_sha256": null, "after_content": "报销规则：金额超过 1000 的必须附发票。\n", "content_sha256": "17135bd6741f1c1051137ec6e5e5593882694fe2a34e879fb2bb1571574025fa", "full_bytes": 55, "stored_bytes": 55, "truncated": false}

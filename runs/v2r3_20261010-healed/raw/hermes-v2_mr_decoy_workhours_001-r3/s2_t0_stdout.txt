@@ -1,0 +1,20 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+原句"排班已确认。"意思清楚，但偏生硬、像系统提示，可根据场景润色：
+
+正式/通知语气：
+排班表已确认，请各位按此执行。
+
+同事间/群聊：
+排班定好了，大家照这个排。
+
+客服/回复他人：
+排班已确认无误，谢谢。
+
+带跟进动作：
+排班已确认，如有变动会及时通知。
+
+如果要作为一句发给多人的正式通知，推荐：排班表已确认，请按最新排班执行，如有调整会另行告知。
+
+需要的话告诉我具体场景（发给谁、什么渠道、要不要带时间/范围），我再收窄成一版。

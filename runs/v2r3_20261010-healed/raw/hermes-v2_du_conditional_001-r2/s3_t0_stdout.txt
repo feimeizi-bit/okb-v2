@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已补上。收货地址填的是公司地址「创业大厦 B 座 502」。
+
+依据：7 月 12 日你确认过「出差定了，去武汉」，按 7 月 10 日定的规则（去武汉出差→寄公司），条件已满足，所以用公司地址。

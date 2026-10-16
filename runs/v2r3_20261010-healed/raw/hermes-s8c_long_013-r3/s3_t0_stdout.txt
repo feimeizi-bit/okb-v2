@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+整理前先看清文件的用途，再决定它该放在哪里。
+
+按项目或时间建立文件夹，命名保持统一，之后找起来才不费力。

@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+需要先知道邮件内容才能给建议——请把邮件的收件人、主题/目的（或草稿）发我。否则只能给通用原则：语气简洁克制，先说结论，用短句，少客套，请求用明确的动词，避免感叹号和情绪词。

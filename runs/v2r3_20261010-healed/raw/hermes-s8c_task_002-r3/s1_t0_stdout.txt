@@ -1,0 +1,7 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已记住，两条分开存：
+
+1. 点餐不加香菜
+2. 座位偏好靠窗

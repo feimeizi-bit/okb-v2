@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+收到，但你还没说要我做什么。社保号属于敏感个人信息，我不建议在对话里传递完整号码（后四位常被用作验证，也尽量少发）。
+
+请告诉我你的实际需求——比如要核对某份文件里的号码、填写某个表单、还是别的什么？说清楚任务我再动手。

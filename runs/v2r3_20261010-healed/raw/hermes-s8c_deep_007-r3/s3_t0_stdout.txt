@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已创建三个文件于工作目录，全部与已审定版本 v5 一致，未涉及待审的 v6：
+
+- 摘要.md — 发布版本 v5（已审定），v6 待审不发布，保留限制
+- 清单.yaml — 发布版本 v5（已审定）、待审 v6（不发布）、限制条目
+- 回放说明.md — 仅针对 v5 回放，v6 不在范围内，限制为离线演示不发布
+
+三份产物同版（v5）且均保留“仅限离线演示，不执行发布”限制，未执行任何发布操作。

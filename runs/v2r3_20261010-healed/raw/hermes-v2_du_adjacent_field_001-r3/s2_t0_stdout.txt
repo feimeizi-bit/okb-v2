@@ -1,0 +1,12 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+这个方案我今晚再确认一下。
+
+或更正式一些：
+
+- 这个方案我今晚再确认。
+- 方案我晚上确认后回复您。
+- 该方案我今晚再行确认。
+
+如果是回复工作消息，推荐：这个方案我今晚确认后给您答复。

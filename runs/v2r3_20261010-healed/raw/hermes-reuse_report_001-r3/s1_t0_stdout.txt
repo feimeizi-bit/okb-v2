@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+好的，先记下这条约定。不过这条消息里没有模板内容——把你周报的模板（格式、段落结构之类）发给我，我就存起来。

@@ -1,0 +1,5 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+底还在，没问题：`/home/okb/okb/申请表_模板.yaml`，两个字段（姓名、身份证号）都是空的，下周照着填即可。
+
+已经留着底了，无需重复操作。

@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-v2_du_retract_restore_001-r3", "status": "ok", "reason": null, "duration_ms": 142906, "counts": {"message": 21, "memory_read": 2, "memory_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 9472, "output": 2427, "cacheRead": 480256, "cacheWrite": 0, "reasoningTokens": 1247, "total": 492155}}

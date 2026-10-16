@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已记住：正式工作草稿使用虚构称呼"林澄"(Lin Cheng)，此许可仅限该称呼，不扩展到其他个人信息。

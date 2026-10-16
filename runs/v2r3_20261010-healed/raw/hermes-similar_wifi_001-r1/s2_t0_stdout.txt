@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+你还没把快递单号发给我。把单号发过来，我帮你查。
+
+如果方便的话也告诉我是什么快递公司（顺丰、中通、圆通、韵达等），或者直接发单号我来判断。

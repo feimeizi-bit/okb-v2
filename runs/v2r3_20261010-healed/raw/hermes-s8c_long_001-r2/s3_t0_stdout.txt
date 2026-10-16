@@ -1,0 +1,11 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+阻碍：
+- 后端接口仍未就绪，无法进行前后端联调。
+
+已完成：
+- 修好登录页。
+
+明日计划：
+- 接口就绪后进行前后端联调。

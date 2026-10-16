@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已记下。当前状态我确认过了：`报销单.yaml` 里审批人仍是张岚，今天不改。
+
+生效日为 2026-06-01，届时审批人改为陈默。已存进长期记忆，到了那天我会按此更新，今天保持原样。

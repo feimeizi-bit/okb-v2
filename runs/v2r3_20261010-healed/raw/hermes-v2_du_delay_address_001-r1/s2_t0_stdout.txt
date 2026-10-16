@@ -1,0 +1,9 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+会议室已预订妥当。
+
+其他可选：
+- 会议室已订好。
+- 会议室预订已完成。
+- 会议室已确认预订。

@@ -1,0 +1,12 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已补全。文件内容现在是：
+
+申请人: 许沐
+审批人: 张岚
+金额: 1280
+
+这单的审批人是张岚。
+
+说明：文件不在桌面（桌面目录是空的），实际位置在 /home/okb/okb/runs/v2r3_20261010.hm/work/hermes-v2_du_delay_approval_001-r3/报销单.yaml。另外，审批人陈默要 2026-06-01 才生效，当前是 2026-05-29，所以仍按张岚处理。

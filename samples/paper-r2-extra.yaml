@@ -1,0 +1,228 @@
+# samples/paper-r2-extra.yaml —— r2 候选卷的**新增题族**（基线/准入族，authored，不由外部卡片派生）
+#
+# 为什么需要这一族（实测缺口）：paper-r1 的检查项 scope 是 memory_after 93 / agent_reply 82 /
+# file_final 69 / **memory_before 0**。没有任务前基线断言时，"这轮没记住"与"这条从来没被写过"
+# 在评分上塌成同一个 omitted——而这两者对记忆系统的诊断意义相反（保留能力 vs 写入/准入能力）。
+#
+# 机制（不碰契约）：`evaluate_at: snapshot_before` 是题卡 schema 已有的一等字段，规则评分器
+# （tools/scoring/anchors.py 已消费 snapshot_before），采集侧每个任务前也真的落一份 before 快照
+# （engine/runner.py 调 adapter.probe_memory("before")）。缺的只是派生器把它映射到 memory_before
+# scope（本轮已修 tools/freeze_candidates.py:derive_pilot_checks）。
+#
+# 判据边界（重要）：每题的 A3 是**基线污染判定**，不是正确性判定；value_regex 只匹配题卡自己声明的
+# 那条文本（作者即文本来源），正确性仍只由四层语义检查依据题面要求判定。违反时归入既有失败类
+# （wrongly_persisted / wrongly_reused / confused / omitted），不新增枚举、不动 CONTRACT。
+suite_version: v2.0
+samples:
+- id: baseline_no_prewritten_order_001
+  dimension: long_term_retention
+  difficulty: L2
+  title: 写入归因基线：任务前不得已知道验收顺序
+  script:
+  - session: s1
+    phase: write
+    turns:
+    - text: 请记住，云岸验收前先核对实际依赖，再核对报告版本，顺序不要反。
+  - session: s2
+    phase: probe
+    turns:
+    - text: 新会话里，请给云岸列验收前顺序，不执行。
+  anchors:
+  - id: A1
+    type: memory_entry
+    key_regex: .*
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 'structural anchor only: at least one observed persistent-memory entry exists after the task; no keyword is asserted (the card package forbids ''string appears = correct''), the requirement itself is judged by the four-layer semantic check'
+  - id: A2
+    type: reply_text
+    turn: s2.t1
+    regex: .+
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 'structural anchor only: the probe turn produced a non-empty reply; no keyword is asserted, the requirement itself is judged by the four-layer semantic check'
+  - id: A3
+    type: memory_entry
+    key: '*'
+    value_regex: 核对实际依赖|核对报告版本
+    expect: absent
+    evaluate_at: snapshot_before
+    severity: hard
+    on_violation: wrongly_persisted
+    desc: 基线污染判定（非正确性判定）：任务开始前，记忆面不得已包含本任务 s1 将要写入的验收顺序约定（题卡自述内容：核对实际依赖 / 核对报告版本）。若基线快照里已存在该内容，则 s2 的召回成功不能归因于本次写入，本任务的“长期保持”读数无效，应记为错误持久化。
+  expect:
+    verdict: remembered
+    confusions:
+    - omitted
+    - wrongly_persisted
+    gold_evidence:
+    - s1.t1
+    notes: authored for the r2 candidate volume (baseline/admission family); the pre-task baseline assertion is what makes write-attribution possible
+  score_policy: hybrid
+  meta:
+    author: tools/paper-r2-extra:current-coding-agent
+    created: '2026-10-05'
+    source: handcrafted
+    limitation: baseline assertion depends on the harness actually resetting the agent memory face; on agents whose memory lives in a fixed home directory a residual baseline is a real capability signal, not a harness bug 定类优先级：本题有 2 种 hard 锚点 on_violation（正向 A1/A2=omitted，基线 A3=wrongly_persisted），按 CONTRACT §5 首条命中优先——锚点顺序为 A1,A2,A3，所以『既没记住又基线污染』会先判 omitted，只有召回成功而基线被污染时才判 wrongly_persisted。这是有意选择（不把归因不明的失败标成更严重的类），报告需保留 A3 的行级结果以便复核。
+- id: baseline_clean_slate_ticket_001
+  dimension: task_reuse
+  difficulty: L2
+  title: 洁净起点基线：任务前记忆面不得已含上一任务的合成工单号
+  script:
+  - session: s1
+    phase: write
+    turns:
+    - text: 记下这条内部编号：工单 SYN-K7781 由我负责，明天前给结论。
+  - session: s2
+    phase: disturb
+    turns:
+    - text: 请将虚构句子“屋内桌面很整洁”改写一次，不查询网络。
+  - session: s3
+    phase: probe
+    turns:
+    - text: 新会话里，我的工单编号是什么？只回答编号。
+  anchors:
+  - id: A1
+    type: memory_entry
+    key_regex: .*
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 'structural anchor only: at least one observed persistent-memory entry exists after the task; no keyword is asserted (the card package forbids ''string appears = correct''), the requirement itself is judged by the four-layer semantic check'
+  - id: A2
+    type: reply_text
+    turn: s3.t1
+    regex: .+
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 'structural anchor only: the probe turn produced a non-empty reply; no keyword is asserted, the requirement itself is judged by the four-layer semantic check'
+  - id: A3
+    type: memory_entry
+    key: '*'
+    value_regex: SYN-K7781
+    expect: absent
+    evaluate_at: snapshot_before
+    severity: hard
+    on_violation: wrongly_persisted
+    desc: 基线污染判定（非正确性判定）：任务开始前，记忆面不得已含本任务即将写入的合成工单编号 SYN-K7781（题卡自述内容）。基线里已有它，说明上一任务的私有编号残留在本任务的记忆面上：本任务的召回不再是本次写入的结果，且暴露跨任务残留（本题不涉及个人信息），应记为错误持久化。
+  expect:
+    verdict: remembered
+    confusions:
+    - omitted
+    - wrongly_persisted
+    gold_evidence:
+    - s1.t1
+    notes: authored for the r2 candidate volume; classified under task_reuse (cross-task residue), not boundary_recognition, because the latter requires expect.boundary_kind per loader rule E112
+  score_policy: hybrid
+  meta:
+    author: tools/paper-r2-extra:current-coding-agent
+    created: '2026-10-05'
+    source: handcrafted
+    limitation: 维度归 task_reuse 而非 boundary_recognition：loader 规则 E112 要求 boundary 维度必须声明 boundary_kind（withhold/release），而本题判的是跨任务残留、不是"该不该说"。工单号是合成标识、不含任何个人信息，因此本题不使用 pii 机制（pii 会走占位符物化/证据回脱敏，与基线锚点的字面匹配互相干扰）。基线非空既可能是真实跨任务残留，也可能是评测环境没重置记忆面，两种解释都要保留，报告不得默认取其一。 定类优先级：本题有 2 种 hard 锚点 on_violation（正向 A1/A2=omitted，基线 A3=wrongly_persisted），按 CONTRACT §5 首条命中优先——锚点顺序为 A1,A2,A3，所以『既没记住又基线污染』会先判 omitted，只有召回成功而基线被污染时才判 wrongly_persisted。这是有意选择（不把归因不明的失败标成更严重的类），报告需保留 A3 的行级结果以便复核。
+- id: baseline_no_prior_preference_001
+  dimension: similar_discrimination
+  difficulty: L2
+  title: 相近区分基线：任务前不得已存在会被混淆的邻项
+  script:
+  - session: s1
+    phase: write
+    turns:
+    - text: 以后给我默认点美式，不要拿铁。
+  - session: s2
+    phase: probe
+    turns:
+    - text: 新会话里，我要默认点哪杯？只回答饮品名。
+  anchors:
+  - id: A1
+    type: memory_entry
+    key_regex: .*
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 'structural anchor only: at least one observed persistent-memory entry exists after the task; no keyword is asserted (the card package forbids ''string appears = correct''), the requirement itself is judged by the four-layer semantic check'
+  - id: A2
+    type: reply_text
+    turn: s2.t1
+    regex: .+
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 'structural anchor only: the probe turn produced a non-empty reply; no keyword is asserted, the requirement itself is judged by the four-layer semantic check'
+  - id: A3
+    type: memory_entry
+    key: '*'
+    value_regex: 拿铁
+    expect: absent
+    evaluate_at: snapshot_before
+    severity: hard
+    on_violation: confused
+    desc: 基线污染判定（非正确性判定）：任务开始前，记忆面不得已存在“拿铁”这条与本任务相邻/被否定的偏好（题卡 s1 明确否定它）。若基线已有，s2 回答拿铁既可能是本次写入失败，也可能是基线残留，二者无法区分；先有基线断言，混淆读数才成立。
+  expect:
+    verdict: remembered
+    confusions:
+    - confused
+    - omitted
+    gold_evidence:
+    - s1.t1
+    notes: authored for the r2 candidate volume; makes the confused rate attributable instead of confounded by baseline residue
+  score_policy: hybrid
+  meta:
+    author: tools/paper-r2-extra:current-coding-agent
+    created: '2026-10-05'
+    source: handcrafted
+    limitation: the neighbour value appears in the card's own instruction text, so an agent that writes it as “not 拿铁” may legitimately create a post-present entry; the assertion is only about the pre-task snapshot 定类优先级：本题有 2 种 hard 锚点 on_violation（正向 A1/A2=omitted，基线 A3=confused），按 CONTRACT §5 首条命中优先——锚点顺序为 A1,A2,A3，所以『既没记住又基线污染』会先判 omitted，只有召回成功而基线被污染时才判 confused。这是有意选择（不把归因不明的失败标成更严重的类），报告需保留 A3 的行级结果以便复核。
+- id: baseline_no_reuse_of_other_task_001
+  dimension: task_reuse
+  difficulty: L2
+  title: 任务复用基线：任务前不得已含其它任务的会议时间
+  script:
+  - session: s1
+    phase: write
+    turns:
+    - text: 评审会改到周四 15:00，记下来。
+  - session: s2
+    phase: probe
+    turns:
+    - text: 新会话里，评审会现在几点？只回答时间。
+  anchors:
+  - id: A1
+    type: memory_entry
+    key_regex: .*
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 'structural anchor only: at least one observed persistent-memory entry exists after the task; no keyword is asserted (the card package forbids ''string appears = correct''), the requirement itself is judged by the four-layer semantic check'
+  - id: A2
+    type: reply_text
+    turn: s2.t1
+    regex: .+
+    expect: present
+    severity: hard
+    on_violation: omitted
+    desc: 'structural anchor only: the probe turn produced a non-empty reply; no keyword is asserted, the requirement itself is judged by the four-layer semantic check'
+  - id: A3
+    type: memory_entry
+    key: '*'
+    value_regex: 周五 ?10:00
+    expect: absent
+    evaluate_at: snapshot_before
+    severity: hard
+    on_violation: wrongly_reused
+    desc: 基线污染判定（非正确性判定）：任务开始前，记忆面不得已含另一任务的会议时间“周五 10:00”（本题族配套任务自述的内容）。基线里已有它，说明别的任务的时间被带进本任务上下文，本任务回答该时间属于跨任务误用，应记为错误复用。
+  expect:
+    verdict: remembered
+    confusions:
+    - wrongly_reused
+    - omitted
+    gold_evidence:
+    - s1.t1
+    notes: authored for the r2 candidate volume; the companion task that writes 周五 10:00 must run before this one for the assertion to carry signal
+  score_policy: hybrid
+  meta:
+    author: tools/paper-r2-extra:current-coding-agent
+    created: '2026-10-05'
+    source: handcrafted
+    limitation: if the companion task is not scheduled before this one, the baseline assertion is trivially satisfied and contributes no signal 定类优先级：本题有 2 种 hard 锚点 on_violation（正向 A1/A2=omitted，基线 A3=wrongly_reused），按 CONTRACT §5 首条命中优先——锚点顺序为 A1,A2,A3，所以『既没记住又基线污染』会先判 omitted，只有召回成功而基线被污染时才判 wrongly_reused。这是有意选择（不把归因不明的失败标成更严重的类），报告需保留 A3 的行级结果以便复核。

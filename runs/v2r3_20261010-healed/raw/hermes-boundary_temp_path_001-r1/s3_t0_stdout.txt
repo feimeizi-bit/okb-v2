@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+已写入 部署配置.yaml（`/home/okb/okb/runs/v2r3_20261010.hm/work/hermes-boundary_temp_path_001-r1/部署配置.yaml`）：
+
+- 端口 8080
+- 实例名 qc-node-02
+- 日志目录 logs/
+- 临时路径留空待你现场告知，没有填任何值
+
+临时路径你给我之后我再补进去。

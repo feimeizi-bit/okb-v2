@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+明白。本次临时会议地点改为「演示室」，仅本次会话有效，不写入持久记忆。后续会话不会继承这一设定。

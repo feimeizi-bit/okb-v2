@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "hermes-v2_ltr_dual_card_binding_001-r3", "status": "ok", "reason": null, "duration_ms": 49520, "counts": {"message": 16, "memory_read": 2, "memory_write": 1, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": null}

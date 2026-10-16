@@ -1,0 +1,15 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+按北京查的（你没指定城市，我按北京规则查的）：
+
+明天是 2026年10月11日，星期日 —— 北京周末不限行，所以明天尾号 3 不限行，可以正常上路。
+
+补充（万一你问的是工作日）：
+
+当前北京尾号限行轮换周期（2026年9月28日–12月27日）：
+周一限 5、0；周二限 1、6；周三限 2、7；周四限 3、8；周五限 4、9。
+
+尾号 3 的工作日限行日是 周四，限行时间 7:00–20:00，范围五环路以内（不含五环）。纯电动车不受此限。
+
+如果你不在北京，告诉我城市我再按当地规则查。

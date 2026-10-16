@@ -1,0 +1,8 @@
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=3073 dispatcher=new contentType=text/event-stream; charset=utf-8
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=437 dispatcher=new contentType=text/event-stream; charset=utf-8
+[tools] intent failed: authenticated channel and sender identity is unavailable for this turn; retry from an authenticated channel conversation raw_params={"action":"create","description":"当用户提到下周武汉出差/行程时，提醒确认快递收货地址规则","triggerKeywords":["武汉","出差","行程"],"scope":"channel","maxFires":5}
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=184 dispatcher=reused contentType=text/event-stream; charset=utf-8
+[agents/agent-command] [agent] run cbfa85dc-cd45-41df-b022-9f69533d1917 ended with stopReason=stop

@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+通讯录.yaml 的收货地址已经是「柳荫街 12 号」，就是最新确认的那个，无需改动。
+
+原因：之前 7 月 1 日你说过搬到「滨江路 7 号」，当天下午又更正——那是同事的地址，收货仍用「柳荫街 12 号」。所以现在文件里就是最新值，手机号 13800000000 未动。

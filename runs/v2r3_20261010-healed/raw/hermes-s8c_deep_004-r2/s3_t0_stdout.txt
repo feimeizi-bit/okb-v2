@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+云杉结论稿的末尾应列出「限制与未决项」（limitations 与 unresolved/open items），而不能用一个漂亮的摘要来收尾替代。
+
+也就是说：结尾部分必须明确写出这项结论受哪些限制约束、还有哪些尚未解决的问题；漂亮但空洞的总结性收尾不符合云杉规则。
+
+顺带明确两个反例，均不属于云杉规则：
+- 「松岩」项目稿末尾用致谢——不是云杉规则；
+- 「海湾」项目稿用长篇附录——也不是云杉规则。

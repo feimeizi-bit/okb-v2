@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-boundary_temp_001-r3", "status": "ok", "reason": null, "duration_ms": 118943, "counts": {"message": 16, "memory_read": 2, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 41761, "output": 4008, "cacheRead": 393344, "cacheWrite": 0, "reasoningTokens": 2924, "total": 439113}}

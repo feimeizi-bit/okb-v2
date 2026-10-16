@@ -1,0 +1,1 @@
+{"path": "摘要.md", "op": "create", "before_content": null, "before_sha256": null, "after_content": "# 摘要\n\n- 虚构依赖清单：已审。\n- 采集说明：待审，未审核材料不能称为定稿。\n- 环境回执：缺失，需优先补齐回执。\n\n当前不执行任何部署或采集操作。\n", "content_sha256": "03254e5ab00a0497e154fe76ea16df9253d5bd1cb61592b385889bf3b310d4c6", "full_bytes": 204, "stored_bytes": 204, "truncated": false}

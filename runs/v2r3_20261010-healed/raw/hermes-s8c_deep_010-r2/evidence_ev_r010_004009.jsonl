@@ -1,0 +1,1 @@
+{"path": "状态.yaml", "op": "create", "before_content": null, "before_sha256": null, "after_content": "依赖清单:\n  状态: 已审\n  结论: 虚构依赖清单已通过审核\n\n采集说明:\n  状态: 待审\n  结论: 未经审核，不能称为定稿\n\n环境回执:\n  状态: 缺\n  结论: 未收到环境回执，需优先补齐\n\n执行决策: 不执行\n", "content_sha256": "86703a97638f09f1da3fde60189c4525685660a766a4771bd69542116434da73", "full_bytes": 255, "stored_bytes": 255, "truncated": false}

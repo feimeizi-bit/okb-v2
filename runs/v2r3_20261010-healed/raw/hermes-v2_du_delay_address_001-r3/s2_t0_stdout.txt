@@ -1,0 +1,13 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+会议室已经预订好了。
+
+润色版本：
+
+1. 会议室已预订妥当。
+2. 会议室已经订好了。
+3. 会议室已安排就绪。
+4. 会议室已预订完成，随时可用。
+
+需要更贴合具体场景（邮件、通知、口语）的版本，告诉我用途即可。

@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "hermes-s8c_memory_013-r1", "status": "ok", "reason": null, "duration_ms": 32800, "counts": {"message": 16, "memory_read": 2, "memory_write": 1}, "models": ["deepseek-v4-pro"], "usage": null}

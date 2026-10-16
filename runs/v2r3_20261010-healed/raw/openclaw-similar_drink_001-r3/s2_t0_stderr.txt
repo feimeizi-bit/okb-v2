@@ -1,0 +1,33 @@
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=452 dispatcher=new contentType=text/event-stream; charset=utf-8
+[tools] nodes failed: agent=okb node=auto gateway=default action=status: Gateway not reachable at ws://127.0.0.1:18789 (ECONNREFUSED).
+Start it with `openclaw gateway run` or check `openclaw gateway status`.
+Gateway target: ws://127.0.0.1:18789
+Source: local loopback
+Config: /home/okb/.openclaw/openclaw.json
+Bind: loopback raw_params={"action":"status"}
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=223 dispatcher=reused contentType=text/event-stream; charset=utf-8
+[memory] sync failed (session-startup-catchup): Error: Timed out waiting for memory workspace lock at plugin-state:memory-core/short-term-locks/884e29cd370c0b01a5825f97557e6f6f88f2993af52ee51f6d672a8d39b80a73
+[tools] ask_user failed: Gateway not reachable at ws://127.0.0.1:18789 (ECONNREFUSED).
+Start it with `openclaw gateway run` or check `openclaw gateway status`.
+Gateway target: ws://127.0.0.1:18789
+Source: local loopback
+Config: /home/okb/.openclaw/openclaw.json
+Bind: loopback raw_params={"questions":[{"id":"coffee_plan","header":"准备方式","question":"我这边没有接入任何智能咖啡机,也没查到你的咖啡偏好记录——你希望我怎么帮你准备明天的咖啡?","options":[{"label":"明早定时提醒你冲咖啡 (Recommended)","description":"我设一个闹钟/提醒,到点叫你"},{"label":"帮我查手冲/浓缩配方步骤","description":"给我咖啡豆或器具,我整理一份操作清单"},{"label":"我有智能咖啡机,教你接进来","description":"告诉我设备型号/品牌,我看看能不能联动"}]}]}
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=175 dispatcher=reused contentType=text/event-stream; charset=utf-8
+[memory] sync failed (session update): Error: Timed out waiting for memory workspace lock at plugin-state:memory-core/short-term-locks/884e29cd370c0b01a5825f97557e6f6f88f2993af52ee51f6d672a8d39b80a73
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=250 dispatcher=reused contentType=text/event-stream; charset=utf-8
+[tools] ask_user failed: Gateway not reachable at ws://127.0.0.1:18789 (ECONNREFUSED).
+Start it with `openclaw gateway run` or check `openclaw gateway status`.
+Gateway target: ws://127.0.0.1:18789
+Source: local loopback
+Config: /home/okb/.openclaw/openclaw.json
+Bind: loopback raw_params={"questions":[{"header":"准备方式","id":"coffee_plan","options":[{"description":"我设一个明早的定时提醒,到点叫你冲咖啡","label":"明早定时提醒你 (Recommended)"},{"description":"给我咖啡豆/器具,我整理一份手冲或浓缩的操作步骤","label":"帮我查冲煮配方"},{"description":"告诉我咖啡机品牌/型号,我看看能不能联动控制","label":"我有智能咖啡机"}],"question":"我这边没有接入任何智能咖啡机,也查不到你的咖啡偏好记录——你希望我怎么帮你准备明天的咖啡?"}]}
+[provider-transport-fetch] [model-fetch] start provider=deepseek api=openai-completions model=deepseek-v4-pro method=POST url=https://api.deepseek.com/chat/completions timeoutMs=undefined proxy=none policy=custom
+[provider-transport-fetch] [model-fetch] response provider=deepseek api=openai-completions model=deepseek-v4-pro status=200 elapsedMs=189 dispatcher=reused contentType=text/event-stream; charset=utf-8
+[memory] sync failed (session update): Error: Timed out waiting for memory workspace lock at plugin-state:memory-core/short-term-locks/884e29cd370c0b01a5825f97557e6f6f88f2993af52ee51f6d672a8d39b80a73
+[memory] sync failed (session update): Error: Timed out waiting for memory workspace lock at plugin-state:memory-core/short-term-locks/884e29cd370c0b01a5825f97557e6f6f88f2993af52ee51f6d672a8d39b80a73
+[agents/agent-command] [agent] run adfbd88e-03a5-45c8-bd44-f060e3078704 ended with stopReason=stop

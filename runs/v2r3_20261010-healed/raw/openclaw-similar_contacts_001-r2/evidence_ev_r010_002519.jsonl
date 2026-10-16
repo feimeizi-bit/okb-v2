@@ -1,0 +1,1 @@
+{"path": "短信.yaml", "op": "modify", "before_content": "收件人: \n收件人电话: \n正文: \n", "before_sha256": "73a629de87705dd460b891c00eaf117eb99fd66f55b6db0be8ff22e2b3df7d6d", "after_content": "收件人: 张伟\n收件人电话: 13800000001\n正文: \n", "content_sha256": "e7b7fd7bce8f305508e8fec642af2aaa7b92d1e2889d8a9fca302531ab6a3f15", "full_bytes": 56, "stored_bytes": 56, "truncated": false}

@@ -1,0 +1,35 @@
+# 通用性自检：只用配置接入「第三个智能体」，不改任何适配器代码。
+#
+#   python3 -m okb run --agents deploy/agents.cli-fake.yaml \
+#       --paper build/paper-v0.2.jsonl --plan samples/four-layer-pilot.v1.json \
+#       --run-id okb_generic_third_agent --sample-id retain_allergy_001,dual_order_001
+#
+# 对端是 engine/tests/fake_cli_agent.py —— 一个**测试替身**，不是真智能体：
+# 它只证明「声明式 CLI 模板能跑完 运行→采集→评分→报告→雷达」这条通用接入路径，
+# 其分数与判定**不得**当作任何智能体的记忆能力结果。
+# 换成 KylinBot / kylin-agent 时只需改本文件的 argv 与字段路径（需在真机上取证）。
+version: okb-agents-v1
+repeat: 1
+note: generic cli-template adapter check (test double, not an agent capability result)
+agents:
+  - name: kylinbot_probe
+    adapter: cli
+    config:
+      cli: ["{python}", engine/tests/fake_cli_agent.py]
+      send_argv: [--state, '{state_dir}/state.json', chat, --session, '{session_key}', --json]
+      send_stdin: true
+      send_first_turn_argv_extra: []
+      reply_from: responses[0].output[0].text
+      model_from: model
+      usage_from: usage
+      session_id_from: session_id
+      reset_argv: [[--state, '{state_dir}/state.json', memory, clear, --yes]]
+      memory_argv: [--state, '{state_dir}/state.json', memory, export, --json]
+      memory_entries_from: entries
+      capabilities:
+        dialogue: true
+        memory: true
+        file: false
+        tool: false
+        supports_time_anchor: false
+        notes: test double via cli_template; real agent argv must be evidenced on openKylin

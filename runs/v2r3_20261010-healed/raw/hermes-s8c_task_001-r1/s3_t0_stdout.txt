@@ -1,0 +1,8 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已写入 /home/okb/okb/日报.md，格式为阻碍、完成、计划各一段：
+
+阻碍：环境回执缺失，尚未收到，影响后续环节推进。
+完成：完成图表。
+计划：明天核对回执。

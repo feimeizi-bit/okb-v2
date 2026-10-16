@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已更新。手机号从 13900000000 改为 18911112222（记忆里 2026-08-01 的最新号），座机字段保持 010-88886666 未动。

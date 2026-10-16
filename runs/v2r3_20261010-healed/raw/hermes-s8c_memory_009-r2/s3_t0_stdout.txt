@@ -1,0 +1,8 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+归入「草稿区」。
+
+依据你的约定：只有已审定的结论才能进结论区，未审定的草稿不得直接放入结论区。这份记录是「未审」状态，所以应归入草稿区，待审定后再移入结论区。
+
+（未移动任何文件。）

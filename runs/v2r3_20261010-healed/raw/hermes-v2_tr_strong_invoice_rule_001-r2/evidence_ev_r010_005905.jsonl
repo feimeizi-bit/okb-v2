@@ -1,0 +1,1 @@
+{"path": "报销单2.yaml", "op": "modify", "before_content": "金额: 1200\n附件: 无\n备注: \n", "before_sha256": "3717e88b9736e28678ac1130f394ad8b2812c99dbacd18fd0024ff8dac5988d8", "after_content": "金额: 1200\n附件: 无\n备注: 需附发票\n", "content_sha256": "5fa3017fa788819d27eee8e9a74f7d91d3239370a37602c102c362efaddcb204", "full_bytes": 46, "stored_bytes": 46, "truncated": false}

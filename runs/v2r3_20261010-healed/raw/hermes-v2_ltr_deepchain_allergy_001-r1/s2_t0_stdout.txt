@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+下周评审的材料基本准备就绪了。
+
+其他可选版本：
+
+- 下周评审所需材料已基本备齐。
+- 下周评审的材料准备已接近完成。
+- 下周评审材料基本就绪，还差最后的核对。

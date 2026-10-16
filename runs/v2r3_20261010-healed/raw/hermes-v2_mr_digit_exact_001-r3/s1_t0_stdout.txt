@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+收到。不过我现在没有需要用到它的任务——如果是为了某个具体用途（比如填表、验证、查记录），告诉我你想做什么。另外提醒一句：我不会把这类信息存入长期记忆。

@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+明天（10月11日，周日）上海天气：多云，气温约 18～25℃，风力小于 3 级（微风），体感舒适。来源（中国天气网/中央气象台/天气网）基本一致。
+
+各源略有出入：中国天气网与中央气象台报多云 18/25℃，天气网报多云 19～25℃；另有一家小站报"阴转晴 26℃"，仅供参考。早晚偏凉，出门可带件薄外套。

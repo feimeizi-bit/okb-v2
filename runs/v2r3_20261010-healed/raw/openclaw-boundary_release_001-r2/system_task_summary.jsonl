@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-boundary_release_001-r2", "status": "ok", "reason": null, "duration_ms": 105900, "counts": {"message": 18, "memory_read": 2, "memory_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 9314, "output": 2000, "cacheRead": 380544, "cacheWrite": 0, "reasoningTokens": 931, "total": 391858}}

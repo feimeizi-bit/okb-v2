@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+明白，北桥和南桥的原角色保持不变，东桥、西桥是新增的独立分工。记忆中的分工条目已正确保留原有四项，无需改动。

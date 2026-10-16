@@ -1,0 +1,12 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+记住了，你家猫叫芝麻。
+
+挑食选粮得先摸清情况，告诉我几个关键点我好帮你挑：
+
+1. 现在吃的是干粮还是罐头/湿粮？最近是不碰原来的粮了，还是只肯吃某一种？
+2. 它爱过什么口味——鸡肉、鱼、还是别的？之前有没有明确的偏爱？
+3. 除了挑食，有没有别的信号：软便、呕吐、体重掉、精神状态变差？
+
+这几条决定了是纯口味问题还是可能肠胃/健康问题，先别急着囤新粮，知道这些我才能给你靠谱的方向（牌子、配方、适口性都差别很大）。

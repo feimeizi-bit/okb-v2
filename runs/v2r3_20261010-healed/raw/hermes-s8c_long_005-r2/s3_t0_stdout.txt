@@ -1,0 +1,9 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+演示文稿字号建议（只列正文与标题）：
+
+标题：32–44 磅
+正文：24–32 磅
+
+说明：标题至少 32 磅，正文至少 24 磅（符合你设定的约定，方便后排阅读）；层级越多字号越大，若只有两级，建议标题 36 磅、正文 28 磅。

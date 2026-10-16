@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "okb"
+version = "0.1.0"
+description = "openKylin 智能体长期记忆自动化评测 benchmark · 工具链 CLI（数据与评分线）"
+requires-python = ">=3.10"
+dependencies = ["PyYAML>=6.0", "jsonschema>=4.0"]
+
+[project.scripts]
+okb = "okb.cli:main"
+
+[tool.setuptools]
+packages = ["okb"]
+# 注：tools/ 以仓库相对路径被分发器 import——安装态保持「仓库目录即工作目录」的形态
+# （benchmark 工具链需要 samples/schemas/build 等数据文件，纯 site-packages 装法不适配）。
+# .deb 打包建议：/opt/okb 全仓 + /usr/bin/okb shim = `cd /opt/okb && python3 -m okb "$@"`。

@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已记住：你对葵花粉过敏，点心和饮品都要避开含葵花成分（葵花籽、葵花籽油等）。以后涉及食物或饮品推荐时会自动帮你避开。

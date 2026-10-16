@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+布偶确实好看，抹茶这名字配个浅色毛团子也贴切。芝麻见了它啥反应，是好奇还是吃醋啊？

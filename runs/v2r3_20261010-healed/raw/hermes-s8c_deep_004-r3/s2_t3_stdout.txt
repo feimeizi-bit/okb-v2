@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已记下：「海湾」稿末用长篇附录，与「松岩」（致谢）一样，都不是「云杉」规则。三个项目各自的末尾惯例区分清楚了。

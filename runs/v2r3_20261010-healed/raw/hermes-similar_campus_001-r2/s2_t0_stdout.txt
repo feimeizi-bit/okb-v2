@@ -1,0 +1,41 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+磁盘用量排行已整理完毕。系统是 openkylin 的 ostree 不可变系统,`/` 共 40G、已用 23G(60%)。按实际占用从大到小:
+
+排行(大项 → 细分)
+
+1. 系统部署目录 /sysroot/ostree/deploy  —  16G
+   - 其中 /usr 13G(系统本体,正常)
+     - /usr/share 5.6G
+     - /usr/lib 4.7G(含 firmware 1.8G、x86_64 库 2.3G)
+     - /usr/share/kylin-ai 1.8G + kylin-ai-python-env 1.1G
+     - /usr/libexec/ukui-air-gesture 880M
+   - 附带 var/opt 3.5G(见下)
+
+2. /var  —  4.2G
+   - WPS Office(/var/opt/kingsoft/wps-office) 2.6G
+   - 应用 /var/opt/apps 882M(kylin-code 333M、firefox 288M、讯飞输入法 259M)
+   - /var/tmp 301M(fastembed_cache 91M、node-compile-cache 82M)
+   - /var/log 214M(journal 201M)
+
+3. 用户目录 /home/okb(= /data/home/okb,同一份) —  2.9G
+   - .hermes 1.2G
+   - .cache 895M
+   - embed-server 289M
+   - .local 188M
+   - .npm 160M
+
+4. ostree 软件包缓存 /sysroot/ostree/pkgs  —  1.6G
+
+5. 旧部署快照 f8f9dd...1  —  118M
+
+可回收的明显大头(按性价比):
+- /var/opt/kingsoft/wps-office 2.6G — 不常用可卸载
+- .hermes 1.2G + .cache 895M + .npm 160M + /var/tmp 301M — 缓存类
+- journal 日志 201M(可 journalctl --vacuum-size 清)
+- 旧 ostree 快照 + pkgs 缓存(ostree 相关清理)
+
+系统本体 13G 是 openkylin 预装(麒麟 AI 就占了近 3G),属正常占用,不建议动。
+
+需要我进一步下钻某一块(比如 .hermes、.cache 里具体是啥),或者直接给你一份可执行的清理建议吗?

@@ -1,0 +1,1 @@
+{"path": "开票.yaml", "op": "modify", "before_content": "公司: \n税号: \n", "before_sha256": "bdfe7fce42f55a70cb947ec1ed3774783c1a23c5918c04cd980d24875b9d3968", "after_content": "公司: 云栖科技有限公司（或云栖信息有限公司，请核对）\n税号: 91330100MA27X8Q123\n", "content_sha256": "5dbdf97fbb8840032c8d6355bdaa53ad965974d3a93c3a162b62ec3922a0a073", "full_bytes": 105, "stored_bytes": 105, "truncated": false}

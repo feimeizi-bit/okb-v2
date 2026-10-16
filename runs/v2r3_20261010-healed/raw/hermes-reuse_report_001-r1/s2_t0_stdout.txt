@@ -1,0 +1,11 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+明天（10月11日，周日）上海天气：
+
+- 天气：多云
+- 气温：18~25℃
+- 风力：北风 <3级
+- 空气质量：优
+
+来源：中国天气网 / 中央气象台（nmc.cn）。整体舒适，早晚偏凉，出门可带件薄外套。

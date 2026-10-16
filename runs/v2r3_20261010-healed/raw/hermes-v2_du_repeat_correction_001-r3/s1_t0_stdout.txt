@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+2026-08-03 是星期一，不是你的限行日（周四），今天可以正常开车。
+
+需要我帮你记下“周四限行”这个信息，方便以后每次直接帮你判断当天是否限行吗？

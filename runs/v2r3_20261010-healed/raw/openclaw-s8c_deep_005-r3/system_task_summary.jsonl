@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-s8c_deep_005-r3", "status": "ok", "reason": null, "duration_ms": 135736, "counts": {"message": 22, "memory_read": 2, "memory_write": 9}, "models": ["deepseek-v4-pro"], "usage": {"input": 16072, "output": 3610, "cacheRead": 564224, "cacheWrite": 0, "reasoningTokens": 2304, "total": 583906}}

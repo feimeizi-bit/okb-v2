@@ -1,0 +1,16 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+明白这条规则：
+
+- 去武汉出差 → 快递寄 创业大厦 B 座 502（公司）
+- 不去 → 寄 梧桐巷 9 号（家里）
+
+这是临时条件（只针对下周这一次），不是长期偏好，所以我先记在脑子里，不写进永久记忆。
+
+但还差两个信息才能动手：
+
+1. 具体是什么快递/包裹？现在有要寄的东西吗，还是等下周确认行程后再定？
+2. 我怎么知道你去不去武汉——是你到时候告诉我，还是让我在某个时间点主动问你？
+
+告诉我这两点，我就按对应地址执行。

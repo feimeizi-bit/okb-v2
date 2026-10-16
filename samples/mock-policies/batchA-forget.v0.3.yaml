@@ -1,0 +1,95 @@
+policy_version: 1
+tier: forget
+suite_version: v0.3
+on_missing_record: fail
+defaults:
+  reply_text: 好的。
+samples:
+- sample_id: update_invoice_title_001
+  turns:
+  - match:
+      session: s1
+      turn: 1
+    reply_text: 收到。
+  - match:
+      session: s2
+      turn: 1
+    reply_text: 好的。
+  - match:
+      session: s4
+      turn: 1
+    reply_text: 用什么抬头？
+    file_ops:
+    - op: write
+      path: 开票须知.md
+      content: '# 开票须知
+
+        - 抬头：（待确认）
+
+        '
+- sample_id: similar_wifi_001
+  turns:
+  - match:
+      session: s1
+      turn: 1
+    reply_text: 好的。
+  - match:
+      session: s5
+      turn: 1
+    reply_text: 密码我没有记录。
+    file_ops:
+    - op: write
+      path: 网络指引.md
+      content: '# 网络指引
+
+        - 请咨询网管
+
+        '
+- sample_id: retain_pet_name_001
+  turns:
+  - match:
+      session: s1
+      turn: 1
+    reply_text: 嗯。
+  - match:
+      session: s3
+      turn: 1
+    reply_text: 通用清单。
+    file_ops:
+    - op: write
+      path: 采购.md
+      content: '# 猫粮采购
+
+        - 通用成猫粮
+
+        '
+- sample_id: boundary_temp_path_001
+  turns:
+  - match:
+      session: s1
+      turn: 1
+    reply_text: 明白，不记。
+  - match:
+      session: s3
+      turn: 1
+    reply_text: 写好。
+    file_ops:
+    - op: write
+      path: 部署配置.yaml
+      content: 'port: 8080
+
+        log_dir: logs/
+
+        '
+- sample_id: reuse_buglist_two_step_001
+  turns:
+  - match:
+      session: s3
+      turn: 1
+    reply_text: 写好了。
+    file_ops:
+    - op: write
+      path: 缺陷列表.md
+      content: '登录超时（高，老王）；导出乱码（中，小李）；头像裁切（低，小张）
+
+        '

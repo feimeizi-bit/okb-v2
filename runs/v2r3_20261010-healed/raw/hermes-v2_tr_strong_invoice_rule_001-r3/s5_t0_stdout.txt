@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+不合规。金额 1200 超过 1000 却「附件: 无」，违反规则「金额超过 1000 的必须附发票」。已在备注栏写入「需附发票」。

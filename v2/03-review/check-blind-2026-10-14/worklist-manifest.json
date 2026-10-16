@@ -1,0 +1,17 @@
+{
+  "format": "okb-check-worklist-v1",
+  "state": "open",
+  "label_values": [
+    "supported",
+    "contradicted",
+    "insufficient"
+  ],
+  "note": "one line per row_key per rater; labels must be written without seeing the judge answer or the other rater",
+  "source_package": "D:\\project\\okb-v2\\score\\judge-full-3-replay",
+  "e_policy": "scoped-v2",
+  "mode": "replay",
+  "pool_size": 1674,
+  "sampled": 48,
+  "seed": 20261014,
+  "decided_only": true
+}

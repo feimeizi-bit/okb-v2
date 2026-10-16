@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+我没有周四下午会议室预订的记录——我的记忆里只有两条 WiFi 口令（家里 Jia2026home / 公司 Yue2026office），当前工作区的素材.md 也只有 SSID 名称（QC-Office / QC-Home），没有任何会议室楼层或预订信息。
+
+如果你指的是某个日历或预订系统里的记录，告诉我查哪个来源（比如某个文件或日历账号），我去看；否则我没法凭空回答楼层。

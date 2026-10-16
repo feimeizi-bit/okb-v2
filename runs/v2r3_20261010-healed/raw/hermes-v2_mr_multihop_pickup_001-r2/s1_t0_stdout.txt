@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+收到。这个手机号你想让我做什么？比如查归属地、注册/绑定某个服务，还是别的用途？
+
+另外提示一下：除非任务需要，我不会把这类个人信息写入长期记忆。

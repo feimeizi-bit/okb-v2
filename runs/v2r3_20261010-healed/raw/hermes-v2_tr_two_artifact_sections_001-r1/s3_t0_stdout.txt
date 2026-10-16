@@ -1,0 +1,7 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+两个文件的栏位都已改成三段式：
+
+- 周报模板.md：「本周工作 / 下周安排」→「进展 / 风险 / 计划」
+- 项目看板.md：「待办 / 进行中」→「进展 / 风险 / 计划」

@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-v2_mr_digit_exact_001-r2", "status": "ok", "reason": null, "duration_ms": 110153, "counts": {"message": 18, "memory_read": 2}, "models": ["deepseek-v4-pro"], "usage": {"input": 3670, "output": 1369, "cacheRead": 273664, "cacheWrite": 0, "reasoningTokens": 749, "total": 278703}}

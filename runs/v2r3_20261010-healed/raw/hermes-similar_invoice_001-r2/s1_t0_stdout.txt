@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已记住。报销开票抬头固定为母公司「云栖科技有限公司」，税号 91330100MA27X8Q123；子公司「云栖信息有限公司」不用于开票。

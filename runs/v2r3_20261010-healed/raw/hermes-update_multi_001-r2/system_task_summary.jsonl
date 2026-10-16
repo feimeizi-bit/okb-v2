@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "hermes-update_multi_001-r2", "status": "ok", "reason": null, "duration_ms": 130788, "counts": {"message": 18, "memory_read": 2, "memory_write": 2, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": null}

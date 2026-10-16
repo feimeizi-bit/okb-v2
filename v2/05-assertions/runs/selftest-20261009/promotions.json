@@ -1,0 +1,65 @@
+[
+ {
+  "slot_id": "s_bad_0:R_Y",
+  "from": "impl:C",
+  "to": null,
+  "auto_applied": false,
+  "reason": "incumbent fails gates and no qualified candidate"
+ },
+ {
+  "slot_id": "s_bad_1:R_Y",
+  "from": "impl:C",
+  "to": null,
+  "auto_applied": false,
+  "reason": "incumbent fails gates and no qualified candidate"
+ },
+ {
+  "slot_id": "s_bad_2:R_Y",
+  "from": "impl:C",
+  "to": null,
+  "auto_applied": false,
+  "reason": "incumbent fails gates and no qualified candidate"
+ },
+ {
+  "slot_id": "s_bad_3:R_Y",
+  "from": "impl:C",
+  "to": null,
+  "auto_applied": false,
+  "reason": "incumbent fails gates and no qualified candidate"
+ },
+ {
+  "slot_id": "s_ok_0:R_X",
+  "from": "impl:A",
+  "to": "impl:B",
+  "auto_applied": false,
+  "reason": "candidate meets gates and outranks incumbent"
+ },
+ {
+  "slot_id": "s_ok_1:R_X",
+  "from": "impl:A",
+  "to": "impl:B",
+  "auto_applied": false,
+  "reason": "candidate meets gates and outranks incumbent"
+ },
+ {
+  "slot_id": "s_ok_2:R_X",
+  "from": "impl:A",
+  "to": "impl:B",
+  "auto_applied": false,
+  "reason": "candidate meets gates and outranks incumbent"
+ },
+ {
+  "slot_id": "s_ok_3:R_X",
+  "from": "impl:A",
+  "to": "impl:B",
+  "auto_applied": false,
+  "reason": "candidate meets gates and outranks incumbent"
+ },
+ {
+  "slot_id": "s_ok_4:R_X",
+  "from": "impl:A",
+  "to": "impl:B",
+  "auto_applied": false,
+  "reason": "candidate meets gates and outranks incumbent"
+ }
+]

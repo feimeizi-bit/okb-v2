@@ -1,0 +1,12 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+按项目现有风格（蛇形英文、描述业务行为与结果，如 `test_invalid_contract_creates_no_journal`、`test_unreviewed_request_never_reserves_or_sends`），建议：
+
+  test_wrong_credentials_reject_login
+
+备选：
+  test_login_fails_with_invalid_password
+  test_unknown_user_cannot_log_in
+
+主推第一个：直接点明触发条件（错误凭据）和业务结果（拒绝登录），符合“描述业务行为、不用数字序号”的约定。

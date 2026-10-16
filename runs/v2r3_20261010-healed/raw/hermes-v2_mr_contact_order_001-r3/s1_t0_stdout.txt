@@ -1,0 +1,7 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已记录并落实：
+
+- 紧急卡.yaml 已填：第一联络人 张岚，第二联络人 陈默。
+- 顺序已存入长期记忆（紧急情况先联系张岚，联系不上再找陈默）。

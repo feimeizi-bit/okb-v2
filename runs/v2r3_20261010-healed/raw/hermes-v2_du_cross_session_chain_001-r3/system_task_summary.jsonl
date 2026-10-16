@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "hermes-v2_du_cross_session_chain_001-r3", "status": "ok", "reason": null, "duration_ms": 183923, "counts": {"message": 19, "memory_read": 2, "memory_write": 1, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": null}

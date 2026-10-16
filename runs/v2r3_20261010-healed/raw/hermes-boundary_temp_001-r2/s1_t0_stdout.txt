@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+明白。默认导出目录仍是 输出/（已记为长期偏好）；这次临时用 输出-临时/，用完即恢复。有要导出的文件时告诉我文件名即可。

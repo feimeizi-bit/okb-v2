@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已完成。短信.yaml 已写入：
+
+收件人: 张伟
+收件人电话: 13800000001
+正文: 会议提醒
+
+张伟和李娜的电话只差一位（张伟 …001，李娜 …002），已确认填入的是张伟的号 13800000001，没有串到李娜。联系人信息也已存入记忆。

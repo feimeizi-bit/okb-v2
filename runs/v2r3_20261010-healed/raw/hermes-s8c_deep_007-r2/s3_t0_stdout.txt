@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已创建三个文件（当前工作目录 `/home/okb/okb/runs/v2r3_20261010.hm/work/hermes-s8c_deep_007-r2/`）：
+
+- 摘要.md — 发布版本 v5（已审定）；v6 待审、不发布
+- 清单.yaml — 发布版本 v5 / 已审定；待审 v6 标注「待审（不发布）」；产物三项
+- 回放说明.md — 回放仅针对 v5；v6 不在范围内
+
+三份均同版指向 v5，并保留限制「仅限离线演示，不执行发布」。未执行任何发布动作。

@@ -1,0 +1,1 @@
+{"key": "Always write the timezone explicitly in any schedule/draft (e.g. `14:00 (UTC+8)`", "value": "Always write the timezone explicitly in any schedule/draft (e.g. `14:00 (UTC+8)`), never leave it ambiguous.", "written_at": "2026-10-10T18:38:41+08:00", "written_at_source": "file_mtime", "source": "USER.md", "via": "probe_diff"}

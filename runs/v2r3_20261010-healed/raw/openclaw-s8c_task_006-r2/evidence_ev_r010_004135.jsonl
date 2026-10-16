@@ -1,0 +1,1 @@
+{"key": "Always report time/duration figures in milliseconds (ms) and storage/capacity fi", "value": "Always report time/duration figures in milliseconds (ms) and storage/capacity figures in MiB, and always include the unit.", "written_at": "2026-10-10T00:00:00", "written_at_source": "observed_metadata", "source": "USER.md", "via": "probe_diff"}

@@ -1,0 +1,1 @@
+{"action": "health_after", "ok": true, "checks": [{"name": "cli", "ok": true, "detail": "/home/okb/.local/bin/hermes"}]}

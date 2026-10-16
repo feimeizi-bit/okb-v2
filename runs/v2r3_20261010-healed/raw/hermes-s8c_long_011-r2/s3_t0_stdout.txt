@@ -1,0 +1,16 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+书籍订单包装要求（草稿）
+
+1. 单品防护：每本书先套入无酸聚乙烯自封袋，再以牛卡纸板或瓦楞纸板夹板固定四角，防止书角磕碰、封面弯折。
+
+2. 缓冲材料：箱内空隙一律使用纸质缓冲（蜂窝纸、皱纸团或牛皮纸揉团），禁止使用泡沫填充。
+
+3. 装箱：硬精装书竖立放置，书脊朝上；平装书平放叠置，每层之间隔一张硬纸板，避免封面互相压痕。
+
+4. 外箱：选用五层瓦楞纸箱，尺寸与书堆贴合，单边空隙不超过 3 厘米，超出部分用纸质缓冲填实。
+
+5. 封箱与标识：胶带封口压实，外箱标注"易碎·勿重压·防水"，单箱重量不超过 15 公斤。
+
+以上为草稿，细节（如具体纸板克重、箱型规格）可再定。

@@ -1,0 +1,12 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+明天（2026-10-11，星期日）北京不限行，尾号 3 全天可正常上路。
+
+依据：
+- 明天是普通周日。国庆节调休上班日是 10 月 10 日（周六），不是 11 日；11 日是正常周末。
+- 北京尾号限行只针对工作日（周一至周五 7:00–20:00，五环路以内不含五环），周末以及因调休上班的周六日都明确不限行（官方通告原文："因法定节假日放假调休而调整为上班的星期六、星期日除外"）。
+
+补充（供工作日参考）：当前轮换期（2026/9/28–12/27）尾号 3 和 8 的限行日是周四。
+
+注：你未指定城市，我按北京规则查询。如果你在其他城市，告诉我城市名我再核对——各地限行规则不同。

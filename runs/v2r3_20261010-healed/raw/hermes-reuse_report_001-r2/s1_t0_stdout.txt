@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+模板内容我没收到 —— 你的消息里只有"这是我写周报的模板"这句话，后面没有粘贴模板正文，也没有附件或文件路径。
+
+把模板发我（直接粘贴文字，或告诉我文件路径），我就存下来，以后你说"写周报"就按它来。

@@ -1,0 +1,12 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已补全地址簿。现在生效的收货地址是 江畔路 3 号。
+
+说明：
+- 你之前（5 月 28 日）说 6 月 15 日起收货地址换成云栖路 5 号。今天是 6 月 2 日，还没到生效日，所以当前收货地址仍是原来的 江畔路 3 号，我没有把它改掉。
+- 我把即将生效的新地址云栖路 5 号记在了"备用地址"一栏，并标注了 6 月 15 日生效，避免到时候忘了切换。
+
+当前地址簿内容：
+当前收货地址: 江畔路 3 号
+备用地址: 云栖路 5 号（2026-06-15 起生效）

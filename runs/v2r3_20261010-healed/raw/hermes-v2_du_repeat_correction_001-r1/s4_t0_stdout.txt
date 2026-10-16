@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已把 `车辆信息.yaml` 的限行日填为「周四」，并同步写入记忆（周三那次更正已作废，最终以周四为准）。
+
+当前文件内容：
+```
+限行日: 周四
+保险到期: 2027-01-01
+```

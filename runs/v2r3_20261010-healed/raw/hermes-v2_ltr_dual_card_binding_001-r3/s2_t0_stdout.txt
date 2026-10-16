@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+润色后（按场合选）：
+
+- 正式/对上级：「预算表我会在今天下午发给您。」
+- 对同事：「预算表下午发你，稍后留意一下。」
+- 更正式书面：「预算表将于今天下午发送，届时请查收。」
+
+需要更偏某种语气（更客气/更简短）可以再调。

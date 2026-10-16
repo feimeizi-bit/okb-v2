@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+申报材料已全部备齐。
+
+其他可选：
+
+- 申报材料已准备齐全。
+- 本次申报所需材料已全部备妥。
+- 申报材料已备妥，可随时提交。

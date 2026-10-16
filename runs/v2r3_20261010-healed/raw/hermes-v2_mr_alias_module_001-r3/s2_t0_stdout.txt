@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已排期。问题清单.yaml 里那条「登录超时」归到云桥（正式名「云网关」）名下，并排到最前：
+
+问题: 登录超时
+模块: 云网关
+优先级: 1
+
+说明：你习惯把「云网关」叫「云桥」，两者同指一事，所以模块字段填的是正式名称「云网关」，未把别称「云桥」写进正式字段。

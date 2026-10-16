@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+明天（周日，10月11日）上海天气：
+
+- 天气：晴到多云（阳光较多），降水概率约 6%
+- 气温：最高约 27°C，最低约 18°C
+- 风：东北风，5–10 mph（约 8–16 km/h）
+
+来源：weather.com（上海 11 天预报）与 Metaweather 数据一致（约 25.6°C / 18.1°C，晴朗）。整体晴好舒适，适合出行。

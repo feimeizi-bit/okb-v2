@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-retain_pet_name_001-r3", "status": "ok", "reason": null, "duration_ms": 98627, "counts": {"message": 18, "memory_read": 2, "memory_write": 1, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 4441, "output": 2382, "cacheRead": 272768, "cacheWrite": 0, "reasoningTokens": 1356, "total": 279591}}

@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+记住了。以后涉及点心和饮品时，我都会帮你避开葵花相关成分（葵花粉、葵花籽、葵花籽油等）。

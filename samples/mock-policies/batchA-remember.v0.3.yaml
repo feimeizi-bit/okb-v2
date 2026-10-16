@@ -1,0 +1,143 @@
+policy_version: 1
+tier: remember
+suite_version: v0.3
+on_missing_record: fail
+defaults:
+  reply_text: 好的。
+samples:
+- sample_id: update_invoice_title_001
+  turns:
+  - match:
+      session: s1
+      turn: 1
+    reply_text: 收到，抬头用启成信息技术。
+    memory_ops:
+    - op: set
+      key: invoice_title
+      value: 上海启成信息技术有限公司
+  - match:
+      session: s2
+      turn: 1
+    reply_text: 好的，改用数字科技。
+    memory_ops:
+    - op: set
+      key: invoice_title
+      value: 上海启成数字科技有限公司
+  - match:
+      session: s4
+      turn: 1
+    reply_text: 已写入最新抬头。
+    file_ops:
+    - op: write
+      path: 开票须知.md
+      content: '# 开票须知
+
+        - 抬头：上海启成数字科技有限公司
+
+        - 税号见素材。
+
+        '
+- sample_id: similar_wifi_001
+  turns:
+  - match:
+      session: s1
+      turn: 1
+    reply_text: 两条都记下。
+    memory_ops:
+    - op: set
+      key: wifi_home
+      value: Jia2026home
+    - op: set
+      key: wifi_office
+      value: Yue2026office
+  - match:
+      session: s5
+      turn: 1
+    reply_text: 写好了。
+    file_ops:
+    - op: write
+      path: 网络指引.md
+      content: '# 网络指引
+
+        - SSID: QC-Office
+
+        - 密码: Yue2026office
+
+        '
+- sample_id: retain_pet_name_001
+  turns:
+  - match:
+      session: s1
+      turn: 1
+    reply_text: 知道啦，芝麻挑食。
+    memory_ops:
+    - op: set
+      key: cat
+      value: 芝麻
+  - match:
+      session: s3
+      turn: 1
+    reply_text: 清单好了。
+    file_ops:
+    - op: write
+      path: 采购.md
+      content: '# 猫粮采购
+
+        - 适用：芝麻（挑食，优先渴望六种鱼小包装）
+
+        '
+- sample_id: boundary_temp_path_001
+  turns:
+  - match:
+      session: s1
+      turn: 1
+    reply_text: 明白，临时目录不入记忆；我记住端口和实例这类长期参数。
+    memory_ops:
+    - op: set
+      key: deploy_params
+      value: port 8080 / instance qc-node-02（长期参数，仅记这些）
+  - match:
+      session: s3
+      turn: 1
+    reply_text: 配置写好，用默认 logs/。
+    file_ops:
+    - op: write
+      path: 部署配置.yaml
+      content: 'port: 8080
+
+        instance: qc-node-02
+
+        log_dir: logs/
+
+        '
+- sample_id: reuse_buglist_two_step_001
+  turns:
+  - match:
+      session: s1
+      turn: 1
+    reply_text: 格式记下了。
+    memory_ops:
+    - op: set
+      key: bugfmt
+      value: BUG-编号 | 严重度=高|中|低 | 负责人
+  - match:
+      session: s3
+      turn: 1
+    reply_text: 两个文件都按格式写了。
+    file_ops:
+    - op: write
+      path: 缺陷列表.md
+      content: 'BUG-1042 | 严重度=高 | 老王
+
+        BUG-1043 | 严重度=中 | 小李
+
+        BUG-1044 | 严重度=低 | 小张
+
+        '
+    - op: write
+      path: 周报附录.md
+      content: '本周摘要：
+
+        - BUG-1042 | 严重度=高 | 老王
+
+        '

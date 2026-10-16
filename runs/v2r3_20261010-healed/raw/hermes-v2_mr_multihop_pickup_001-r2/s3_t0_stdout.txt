@@ -1,0 +1,9 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+几个润色版本，按语气分：
+
+1. 简洁自然：快递明天就到。
+2. 偏口语：快递明天能到。
+3. 正式书面：快递预计明天送达。
+4. 稍带情绪：快递明天应该就能到了。

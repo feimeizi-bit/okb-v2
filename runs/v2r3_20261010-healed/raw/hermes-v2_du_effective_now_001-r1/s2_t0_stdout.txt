@@ -1,0 +1,11 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+几个可选的润色版本，视语境取用：
+
+1. 申报材料已准备齐全。
+2. 申报材料均已备齐，可随时提交。
+3. 各项申报材料已按要求备齐。
+4. 申报材料已齐备，静候审核。
+
+如用于正式公文结尾，推荐第 3 句；口语或邮件通知，第 2 句更自然。

@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+给你（口味清淡）：
+
+午餐虚构要求：主食一碗清汤面或白粥，配水煮青菜、蒸鱼或白灼虾，调味只用少许盐和葱姜，忌油、忌辣、忌腌渍与油炸；饭后一杯温热的淡茶或白水即可，不要甜点和冰饮。
+
+给顾禾（口味重口）：
+
+午餐虚构要求：主食一碗红油担担面或香辣盖饭打底，配麻辣香锅或回锅肉，调味须有辣椒、花椒、豆瓣酱与蒜蓉，可加酸豆角、泡椒提味，忌清汤寡水与纯蒸煮；饭后一杯冰镇酸梅汤或咸柠七解辣。

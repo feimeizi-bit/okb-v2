@@ -1,0 +1,3 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+这条之前已经记过了，收货地址就是上海市浦东新区张江路100号，无需重复添加。

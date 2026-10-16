@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+模板评审已通过。
+
+这句本身已经通顺。若按周报「进展」的口吻润色，可选：
+
+- 模板评审已顺利通过。
+- 模板已通过评审。
+- 模板评审已获通过。

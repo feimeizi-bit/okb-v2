@@ -1,0 +1,9 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已写入 网络指引.md，内容为公司的 SSID 和密码：
+
+- SSID：QC-Office
+- 密码：Yue2026office
+
+并注明别误连 QC-Home（家庭网络）。文件路径：/home/okb/okb/runs/v2r3_20261010.hm/work/hermes-similar_wifi_001-r3/网络指引.md

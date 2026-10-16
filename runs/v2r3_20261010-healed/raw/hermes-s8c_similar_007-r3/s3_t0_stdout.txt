@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+虚构午餐口味要求如下：
+
+用户本人：清蒸鲈鱼配白灼时蔬，主食杂粮饭。要求少油少盐、不辣，酱汁单独放，以清淡鲜味为主，忌油炸和重口调味。
+
+顾禾：辣子鸡丁配回锅肉，主食白米饭。要求重油重盐、偏辣，辣椒和花椒可以多放，口味要浓、下饭，不接受清淡寡味。
+
+需要我把这两份再拟成具体的点餐清单或菜单描述吗？

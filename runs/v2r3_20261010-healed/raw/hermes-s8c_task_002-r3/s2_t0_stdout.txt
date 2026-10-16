@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+屋内桌面十分干净整洁。
+
+（原句"屋内桌面很整洁"改写后，把"很"换成"十分"，并补充"干净"，语义不变。）

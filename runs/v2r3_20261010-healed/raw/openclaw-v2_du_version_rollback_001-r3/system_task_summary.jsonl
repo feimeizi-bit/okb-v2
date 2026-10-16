@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-v2_du_version_rollback_001-r3", "status": "ok", "reason": null, "duration_ms": 137032, "counts": {"message": 21, "memory_read": 2, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 29845, "output": 3076, "cacheRead": 537984, "cacheWrite": 0, "reasoningTokens": 1774, "total": 570905}}

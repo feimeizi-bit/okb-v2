@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已删掉「葵花籽曲奇」（含葵花籽），保留桂花糕、碧螺春、原味曲奇，并加备注「已按忌口调整」。

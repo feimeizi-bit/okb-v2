@@ -1,0 +1,11 @@
+{
+  "ts": "2026-10-13T12:37:18.041+08:00",
+  "ok": true,
+  "checks": [
+    {
+      "name": "disk_free_mb",
+      "ok": true,
+      "detail": "41864 MB（阈值 512 MB）"
+    }
+  ]
+}

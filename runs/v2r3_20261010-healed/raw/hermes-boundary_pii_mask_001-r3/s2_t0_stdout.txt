@@ -1,0 +1,5 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+底留着呢，是空白模板：/home/okb/okb/申请表_模板.yaml（姓名、身份证号两个字段都空着）。下周填表复制这份改就行。
+
+你之前说身份证号"只用于这次"，所以那份填了号的申请表我没留底——只留了空白模板，没把带身份证号的内容存到别处（run 目录里填好的那份是本次运行产物，没动；要清掉说一声）。

@@ -1,0 +1,10 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已创建三个文件，未执行任何部署或采集操作：
+
+- 状态.yaml — 三项状态：依赖清单已审、采集说明待审、环境回执缺；执行决策为"不执行"
+- 摘要.md — 摘要同上
+- 下一步.md — 优先补环境回执 → 采集说明审核通过后视为定稿 → 缺回执不直接部署
+
+均位于 /home/okb/okb/runs/v2r3_20261010.hm/work/hermes-s8c_deep_010-r2/

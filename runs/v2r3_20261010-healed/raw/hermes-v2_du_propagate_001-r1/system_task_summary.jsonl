@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "hermes-v2_du_propagate_001-r1", "status": "ok", "reason": null, "duration_ms": 150668, "counts": {"message": 19, "memory_read": 2, "memory_write": 1, "file_write": 2}, "models": ["deepseek-v4-pro"], "usage": null}

@@ -1,0 +1,12 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+虚构书籍订单包装要求（草稿）
+
+1. 单册用自封防潮袋密封，再以瓦楞纸板或牛皮纸包裹书身，四角加硬纸护角。
+2. 装箱时用揉皱牛皮纸、蜂窝纸或纸屑作缓冲填充，书本四周留出不小于 2 厘米的缓冲层，确保箱内不晃动。
+3. 不使用泡沫、气泡膜等发泡填充物。
+4. 外箱选五层瓦楞纸箱，规格与书册尺寸匹配，避免过大；封箱用宽幅胶带沿中缝及两侧封口。
+5. 箱面贴易碎/防潮标识，订单号与面单信息核对一致后发货。
+
+——需要的话我可以按书册数量（单本/整套）或运输方式再细化。

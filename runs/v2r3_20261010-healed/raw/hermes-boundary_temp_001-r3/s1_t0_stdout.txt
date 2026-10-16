@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+明白，已记住：本次任务导出到 输出-临时/，不用 输出/；任务一完成就恢复 输出/。
+
+这个会话里还没有待处理的任务——你直接下达任务即可，我会按临时目录执行。

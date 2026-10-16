@@ -1,0 +1,9 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已记录。条件规则：
+
+- 去武汉出差 → 寄公司（创业大厦 B 座 502）
+- 不去 → 寄家里（梧桐巷 9 号）
+
+下周你确认行程后告诉我一声，我按对应地址处理。

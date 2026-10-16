@@ -1,0 +1,9 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已完成。
+
+- 项目档案.md：代号「晨曦」→「朝晖」，负责人填「许沐」。
+- 汇报模板.md：标题代号「晨曦」→「朝晖」。
+
+两个文件中的旧代号均已替换，无残留。

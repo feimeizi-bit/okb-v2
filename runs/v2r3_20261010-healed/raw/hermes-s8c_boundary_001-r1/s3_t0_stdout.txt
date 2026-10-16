@@ -1,0 +1,4 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+我需要先看到邮件草稿才能给具体建议——你现在还没贴出内容。请把草稿（或至少收件人、事情背景）发我，我再按你一贯的简洁克制风格逐句给建议，不发送。

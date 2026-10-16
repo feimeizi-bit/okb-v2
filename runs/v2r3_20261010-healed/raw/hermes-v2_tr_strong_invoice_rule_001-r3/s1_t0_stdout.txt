@@ -1,0 +1,11 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已记录报销规则：「金额超过 1000 的必须附发票」。
+
+顺带核对了一下工作区里的 报销单2.yaml：
+
+- 金额：1200（> 1000）
+- 附件：无
+
+按该规则此单不合规 —— 金额超限但未附发票，需补附发票后才能报销。需要我现在把「需附发票」写进备注栏吗，还是等你另行指示？

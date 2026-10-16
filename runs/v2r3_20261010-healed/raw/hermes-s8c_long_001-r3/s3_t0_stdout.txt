@@ -1,0 +1,13 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+日报
+
+阻碍
+- 接口仍未就绪
+
+已完成
+- 修好登录页
+
+明日计划
+- 联调

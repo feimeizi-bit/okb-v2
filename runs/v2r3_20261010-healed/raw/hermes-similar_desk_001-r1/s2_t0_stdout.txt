@@ -1,0 +1,6 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+已写入 快递地址.md，地址为「工位 A310」（上周已从 A301 调换，采用新工位）。
+
+文件路径：/home/okb/okb/runs/v2r3_20261010.hm/work/hermes-similar_desk_001-r1/快递地址.md

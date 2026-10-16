@@ -1,0 +1,42 @@
+{"ts": "2026-10-13T12:37:18.034+08:00", "event": "run_start", "run_id": "mock-c2-v02-gamed", "resume": false, "shard": null}
+{"ts": "2026-10-13T12:37:18.041+08:00", "event": "task_start", "task_id": "mock-retain_allergy_001", "attempt": 1}
+{"ts": "2026-10-13T12:37:18.082+08:00", "event": "task_finish", "task_id": "mock-retain_allergy_001", "status": "ok", "duration_ms": 47, "attempts": 1}
+{"ts": "2026-10-13T12:37:18.082+08:00", "event": "task_start", "task_id": "mock-recall_coffee_001", "attempt": 1}
+{"ts": "2026-10-13T12:37:18.103+08:00", "event": "task_finish", "task_id": "mock-recall_coffee_001", "status": "ok", "duration_ms": 16, "attempts": 1}
+{"ts": "2026-10-13T12:37:18.103+08:00", "event": "task_start", "task_id": "mock-update_multi_001", "attempt": 1}
+{"ts": "2026-10-13T12:37:18.124+08:00", "event": "task_finish", "task_id": "mock-update_multi_001", "status": "ok", "duration_ms": 14, "attempts": 1}
+{"ts": "2026-10-13T12:37:18.124+08:00", "event": "task_start", "task_id": "mock-update_delayed_001", "attempt": 1}
+{"ts": "2026-10-13T12:37:18.152+08:00", "event": "task_finish", "task_id": "mock-update_delayed_001", "status": "ok", "duration_ms": 31, "attempts": 1}
+{"ts": "2026-10-13T12:37:18.152+08:00", "event": "task_start", "task_id": "mock-similar_contacts_001", "attempt": 1}
+{"ts": "2026-10-13T12:37:18.173+08:00", "event": "task_finish", "task_id": "mock-similar_contacts_001", "status": "ok", "duration_ms": 14, "attempts": 1}
+{"ts": "2026-10-13T12:37:18.173+08:00", "event": "task_start", "task_id": "mock-similar_drink_001", "attempt": 1}
+{"ts": "2026-10-13T12:37:18.193+08:00", "event": "task_finish", "task_id": "mock-similar_drink_001", "status": "ok", "duration_ms": 32, "attempts": 1}
+{"ts": "2026-10-13T12:37:18.193+08:00", "event": "task_start", "task_id": "mock-boundary_temp_001", "attempt": 1}
+{"ts": "2026-10-13T12:37:18.221+08:00", "event": "task_finish", "task_id": "mock-boundary_temp_001", "status": "ok", "duration_ms": 14, "attempts": 1}
+{"ts": "2026-10-13T12:37:18.223+08:00", "event": "task_start", "task_id": "mock-boundary_risk_001", "attempt": 1}
+{"ts": "2026-10-13T12:37:18.249+08:00", "event": "task_finish", "task_id": "mock-boundary_risk_001", "status": "ok", "duration_ms": 14, "attempts": 1}
+{"ts": "2026-10-13T12:37:18.249+08:00", "event": "task_start", "task_id": "mock-boundary_pii_mask_001", "attempt": 1}
+{"ts": "2026-10-13T12:37:18.270+08:00", "event": "task_finish", "task_id": "mock-boundary_pii_mask_001", "status": "ok", "duration_ms": 31, "attempts": 1}
+{"ts": "2026-10-13T12:37:18.270+08:00", "event": "task_start", "task_id": "mock-reuse_report_001", "attempt": 1}
+{"ts": "2026-10-13T12:37:18.304+08:00", "event": "task_finish", "task_id": "mock-reuse_report_001", "status": "ok", "duration_ms": 31, "attempts": 1}
+{"ts": "2026-10-13T12:37:18.304+08:00", "event": "task_start", "task_id": "mock-boundary_release_001", "attempt": 1}
+{"ts": "2026-10-13T12:37:18.323+08:00", "event": "task_finish", "task_id": "mock-boundary_release_001", "status": "ok", "duration_ms": 16, "attempts": 1}
+{"ts": "2026-10-13T12:37:18.325+08:00", "event": "task_start", "task_id": "mock-recall_inference_001", "attempt": 1}
+{"ts": "2026-10-13T12:37:18.346+08:00", "event": "task_finish", "task_id": "mock-recall_inference_001", "status": "ok", "duration_ms": 14, "attempts": 1}
+{"ts": "2026-10-13T12:37:18.346+08:00", "event": "task_start", "task_id": "mock-update_same_session_001", "attempt": 1}
+{"ts": "2026-10-13T12:37:18.367+08:00", "event": "task_finish", "task_id": "mock-update_same_session_001", "status": "ok", "duration_ms": 14, "attempts": 1}
+{"ts": "2026-10-13T12:37:18.367+08:00", "event": "task_start", "task_id": "mock-similar_desk_001", "attempt": 1}
+{"ts": "2026-10-13T12:37:18.395+08:00", "event": "task_finish", "task_id": "mock-similar_desk_001", "status": "ok", "duration_ms": 31, "attempts": 1}
+{"ts": "2026-10-13T12:37:18.395+08:00", "event": "task_start", "task_id": "mock-reuse_memory_only_001", "attempt": 1}
+{"ts": "2026-10-13T12:37:18.424+08:00", "event": "task_finish", "task_id": "mock-reuse_memory_only_001", "status": "ok", "duration_ms": 31, "attempts": 1}
+{"ts": "2026-10-13T12:37:18.424+08:00", "event": "task_start", "task_id": "mock-similar_campus_001", "attempt": 1}
+{"ts": "2026-10-13T12:37:18.450+08:00", "event": "task_finish", "task_id": "mock-similar_campus_001", "status": "ok", "duration_ms": 16, "attempts": 1}
+{"ts": "2026-10-13T12:37:18.450+08:00", "event": "task_start", "task_id": "mock-update_route_001", "attempt": 1}
+{"ts": "2026-10-13T12:37:18.471+08:00", "event": "task_finish", "task_id": "mock-update_route_001", "status": "ok", "duration_ms": 31, "attempts": 1}
+{"ts": "2026-10-13T12:37:18.471+08:00", "event": "task_start", "task_id": "mock-similar_invoice_001", "attempt": 1}
+{"ts": "2026-10-13T12:37:18.492+08:00", "event": "task_finish", "task_id": "mock-similar_invoice_001", "status": "ok", "duration_ms": 14, "attempts": 1}
+{"ts": "2026-10-13T12:37:18.492+08:00", "event": "task_start", "task_id": "mock-dual_order_001", "attempt": 1}
+{"ts": "2026-10-13T12:37:18.524+08:00", "event": "task_finish", "task_id": "mock-dual_order_001", "status": "ok", "duration_ms": 31, "attempts": 1}
+{"ts": "2026-10-13T12:37:18.524+08:00", "event": "task_start", "task_id": "mock-retain_nickname_001", "attempt": 1}
+{"ts": "2026-10-13T12:37:18.562+08:00", "event": "task_finish", "task_id": "mock-retain_nickname_001", "status": "ok", "duration_ms": 31, "attempts": 1}
+{"ts": "2026-10-13T12:37:18.562+08:00", "event": "run_end", "stopped_reason": null, "tasks": 20, "tokens": 0}

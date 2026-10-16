@@ -1,0 +1,1 @@
+{"action": "task_summary", "task_id": "openclaw-retain_nickname_001-r2", "status": "ok", "reason": null, "duration_ms": 137574, "counts": {"message": 24, "memory_read": 2, "memory_write": 1, "file_write": 1}, "models": ["deepseek-v4-pro"], "usage": {"input": 17704, "output": 3906, "cacheRead": 587648, "cacheWrite": 0, "reasoningTokens": 1778, "total": 609258}}

@@ -1,0 +1,17 @@
+# okb 离线自检配置：不调用任何真实智能体/模型/网络，用来验证"运行→采集→评分→报告→雷达"
+# 这条主链路本身是否完好。跑 A 的真实对比之前，先在本机用这条命令打通一次：
+#
+#   python3 -m okb run --agents deploy/agents.offline.yaml \
+#       --paper build/paper-v0.2.jsonl --plan samples/four-layer-pilot.v1.json \
+#       --run-id okb_offline_smoke
+#
+# mock 策略文件即"合成考生"（engine/adapters/mock.py，CONTRACT §14 独立子进程），
+# 证据由统一采集管线真实落盘，因此它检验的是采集与评分链路，不是智能体能力。
+version: okb-agents-v1
+repeat: 1
+note: offline pipeline smoke (no agent, no network, zero cost)
+agents:
+  - name: mock
+    adapter: mock
+    config:
+      policy: samples/mock-policies/remember.v0.2.yaml

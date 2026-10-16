@@ -1,0 +1,22 @@
+⚠️  Normalized model 'deepseek/deepseek-v4-pro' to 'deepseek-v4-pro' for 
+deepseek.
+日志在 /home/okb/.hermes/logs/errors.log（agent.log 同步记一份）。最近这一批基本都是 WARNING 级，几类反复出现：
+
+1. git 致命错误（数量最多）—— 多次在 /home/okb/okb 下跑 git status/branch/log，但该目录不是 git 仓库，返回「致命错误：不是 git 仓库」（exit 128）。
+
+2. 命令被安全策略拦截 —— python -c/-e 脚本、execute_code 被 BLOCKED：单查询模式(-q)下没有可交互审批的用户，危险脚本执行直接拒绝。
+
+3. 依赖/工具缺失 ——
+   · tirith 安全扫描器二进制不存在（spawn failed: No such file or directory 'tirith'），连续 3 次失败后熔断 300s；
+   · ripgrep 未安装 → 宽泛文件搜索被禁用（"Broad local file search without ripgrep is disabled"）；
+   · xxd 未找到命令（exit 127）。
+
+4. 网络搜索失败 —— Firecrawl Keyless 搜索 403 Forbidden。
+
+5. 读文件失败 —— 一批不存在的文件：项目档案.md、汇报模板.md、报销信息.yaml、签到表.yaml 等。
+
+6. memory 工具误用 —— "Unknown action 'None'. Use: add, replace, remove"（22:45 出现两次）。
+
+7. 常驻告警 —— SQLite 3.46.1 的 WAL 损坏漏洞（降级 journal_mode=DELETE）；后台 MCP 发现无已连接服务器、反复重试。
+
+如果你说的「那个报错」是具体某一条，给我个时间点或关键词，我直接定位到行。

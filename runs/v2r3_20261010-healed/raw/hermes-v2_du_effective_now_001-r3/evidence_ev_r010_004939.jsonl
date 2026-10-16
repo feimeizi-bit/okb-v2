@@ -1,0 +1,1 @@
+{"path": "申报表.yaml", "op": "modify", "before_content": "适用税率: 7%\n备注: \n", "before_sha256": "e298e3556a42e9fab9364db3f18d21f6cb8372580454e3175fe206483a74f29b", "after_content": "适用税率: 9%\n备注: \n", "content_sha256": "df98616aed12b1febd8f8c4fa3bb2751dfdc53fd0f223b1e31cf1a7f97e0e297", "full_bytes": 26, "stored_bytes": 26, "truncated": false}

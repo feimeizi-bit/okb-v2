@@ -1,0 +1,1 @@
+{"path": "订餐.yaml", "op": "modify", "before_content": "备注: \n座位: \n", "before_sha256": "717e58d0de1ae49566072a92d30629923f6518fb4427ea069ace4c9003c49726", "after_content": "备注: 免香菜，座位靠窗也可写这里\n座位: 靠窗\n", "content_sha256": "5e8539313908dac63146ad4c40692ffa8e62a4799e49c706579912df2597a388", "full_bytes": 63, "stored_bytes": 63, "truncated": false}
